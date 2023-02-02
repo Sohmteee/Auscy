@@ -48,7 +48,6 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       _messages.insert(0, message);
       _isTyping = true;
-      // reply = null;
     });
 
     _controller.clear();
