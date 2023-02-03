@@ -24,27 +24,11 @@ class _ChatMessageState extends State<ChatMessage> {
   Widget build(BuildContext context) {
     return SwipeTo(
       onRightSwipe: () {
-        void setResponse(bool val) {
-          setState(() {
-            isResponse = val;
-
-            debugPrint(isResponse.toString());
-          });
-        }
-
-        void setReplyMessage(ChatMessage message) {
-          setState(() {
-            replyMessage = message;
-          });
-        }
-
         setState(() {
           isResponse = true;
-          setReplyMessage(
-            ChatMessage(
-              text: widget.text,
-              sender: widget.sender,
-            ),
+          replyMessage = ChatMessage(
+            text: widget.text,
+            sender: widget.sender,
           );
         });
       },
