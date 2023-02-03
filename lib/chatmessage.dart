@@ -27,7 +27,7 @@ class _ChatMessageState extends State<ChatMessage> {
         void setResponse(bool val) {
           setState(() {
             isResponse = val;
-            
+
             debugPrint(isResponse.toString());
           });
         }
@@ -39,7 +39,7 @@ class _ChatMessageState extends State<ChatMessage> {
         }
 
         setState(() {
-          isResponse = true
+          isResponse = true;
           setReplyMessage(
             ChatMessage(
               text: widget.text,
