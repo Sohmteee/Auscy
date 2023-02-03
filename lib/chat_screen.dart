@@ -24,8 +24,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     chatGPT = OpenAI.instance.build(
-        token: "sk-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",
-        baseOption: HttpSetup(receiveTimeout: 60000));
+      token: "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",
+      baseOption: HttpSetup(receiveTimeout: 60000),
+      isLogger: true,
+    );
     super.initState();
   }
 
@@ -57,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     final response = await chatGPT!.onCompleteText(request: request);
     Vx.log(response!.choices[0].text);
-    insertNewData(response.choices[0].text);
+    insertNewData(response.choices[0].text.trim());
   }
 
   void insertNewData(String response) {
