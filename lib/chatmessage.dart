@@ -39,7 +39,7 @@ class _ChatMessageState extends State<ChatMessage> {
         }
 
         setState(() {
-          setResponse(true);
+          isResponse = true
           setReplyMessage(
             ChatMessage(
               text: widget.text,
