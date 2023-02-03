@@ -141,7 +141,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    buildReplyHoverBubble(),
+                    setSt
                     Container(
                       decoration: BoxDecoration(
                         color: Vx.zinc200,
