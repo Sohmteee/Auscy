@@ -30,6 +30,7 @@ class _ChatMessageState extends State<ChatMessage> {
             text: widget.text,
             sender: widget.sender,
           );
+          dp
         });
       },
       child: ChatBubble(
