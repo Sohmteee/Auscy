@@ -75,7 +75,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  Widget _buildTextComposer() {
+  Widget buildTextComposer() {
     return Row(
       children: [
         Expanded(
@@ -151,7 +151,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 bottom: Radius.circular(20))
                             : BorderRadius.circular(20),
                       ),
-                      child: _buildTextComposer(),
+                      child: buildTextComposer(),
                     ),
                   ],
                 ),
