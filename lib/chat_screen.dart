@@ -1,6 +1,7 @@
 import 'package:chat_gpt_02/reply_hover_bubble.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
@@ -24,7 +25,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     chatGPT = OpenAI.instance.build(
-      token: "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",
+      token: dotenv.env['OPENAI_API_KEY'],
       baseOption: HttpSetup(receiveTimeout: 60000),
       isLogger: true,
     );
