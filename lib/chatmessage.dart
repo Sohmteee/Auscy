@@ -33,7 +33,7 @@ class _ChatMessageState extends State<ChatMessage> {
           );
           debugPrint("Replying to: ${replyMessage!.text}");
           ChatScreen chatScreen = ChatScreen();
-          chatScreen.
+          chatScreen.bui
         });
       },
       child: ChatBubble(
