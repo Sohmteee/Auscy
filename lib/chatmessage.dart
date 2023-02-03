@@ -32,7 +32,7 @@ class _ChatMessageState extends State<ChatMessage> {
             sender: widget.sender,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
-          ChatScreen()
+          ChatScreen.bu
         });
       },
       child: ChatBubble(
