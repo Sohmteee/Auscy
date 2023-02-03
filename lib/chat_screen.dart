@@ -14,6 +14,8 @@ class ChatScreen extends StatefulWidget {
     void build,
   });
 
+  final void
+
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
