@@ -1,3 +1,3 @@
-class Provider extends ChangeNotifier {
+class MyProvider extends ChangeNotifier {
 
 }
