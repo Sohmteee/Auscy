@@ -2,7 +2,7 @@ import 'package:chat_gpt_02/chatmessage.dart';
 import 'package:chat_gpt_02/reply_hover_bubble.dart';
 import 'package:flutter/material.dart';
 
-class MyProvider extends StatefulWidget with ChangeNotifier {
+class MyProvider extends StatelessWidget with ChangeNotifier {
   MyProvider({
     super.key,
     required this.sender,
@@ -16,11 +16,6 @@ class MyProvider extends StatefulWidget with ChangeNotifier {
   void Function(bool) setResponse;
   void Function(ChatMessage) setReplyMessage;
 
-  @override
-  State<MyProvider> createState() => _MyProviderState();
-}
-
-class _MyProviderState extends State<MyProvider> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
