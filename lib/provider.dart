@@ -1,1 +1,1 @@
-class Provider with 
+class Provider extends ChangeNo
