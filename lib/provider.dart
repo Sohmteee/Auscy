@@ -16,8 +16,5 @@ class MyProvider extends StatelessWidget with ChangeNotifier {
   void Function(bool) setResponse;
   void Function(ChatMessage) setReplyMessage;
 
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+
 }
