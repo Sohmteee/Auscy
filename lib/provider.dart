@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class MyProvider extends ChangeNotifier {
   String sender;
   String text;
-  void Function();
+  void Function(bool);
+  
   ReplyHoverBubble replyHoverBubble = ReplyHoverBubble(sender: sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage)
 
 }
