@@ -1,1 +1,1 @@
-class Provider extends ChangeNo
+class Provider extends ChangeNotifier{}
