@@ -3,7 +3,7 @@ import 'package:chat_gpt_02/reply_hover_bubble.dart';
 import 'package:flutter/material.dart';
 
 class MyProvider extends StatefulWidget with ChangeNotifier {
-  const MyProvider({super.key});
+   MyProvider({super.key});
 
   @override
   State<MyProvider> createState() => _MyProviderState();
