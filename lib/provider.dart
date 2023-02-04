@@ -8,7 +8,7 @@ class MyProvider extends ChangeNotifier {
   void Function(bool);
   void Function(ChatMessage);
 
-MyProvider({required this.sender, re})
+MyProvider({required this.sender, required this.text, required this})
 
 
   ReplyHoverBubble replyHoverBubble = ReplyHoverBubble(sender: sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage)
