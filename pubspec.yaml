@@ -37,6 +37,7 @@ dependencies:
     sdk: flutter
   flutter_chat_bubble: ^2.0.2
   flutter_dotenv: ^5.0.2
+  provider: ^6.0.5
   swipe_to: ^1.0.2
   velocity_x: ^3.6.0
 
