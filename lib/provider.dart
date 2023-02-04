@@ -15,6 +15,6 @@ class MyProvider extends ChangeNotifier {
     required this.setReplyMessage,
   });
 
-  ReplyHoverBubble replyHoverBubble = ReplyHoverBubble(sender: thi.sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage);
+  ReplyHoverBubble replyHoverBubble = ReplyHoverBubble(sender: sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage);
 
 }
