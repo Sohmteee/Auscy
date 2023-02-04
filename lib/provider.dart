@@ -8,6 +8,8 @@ class MyProvider extends ChangeNotifier {
   void Function(bool);
   void Function(ChatMessage);
 
+  
+
   ReplyHoverBubble replyHoverBubble = ReplyHoverBubble(sender: sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage)
 
 }
