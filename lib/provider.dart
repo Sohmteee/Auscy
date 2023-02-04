@@ -9,16 +9,12 @@ class MyProvider extends StatefulWidget with ChangeNotifier {
     required this.text,
     required this.setResponse,
     required this.setReplyMessage,
-    
+  });
 
   String sender;
   String text;
   void Function(bool) setResponse;
   void Function(ChatMessage) setReplyMessage;
-
-  ReplyHoverBubble replyHoverBubble = ReplyHoverBubble(sender: sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage);
-
-  });
 
   @override
   State<MyProvider> createState() => _MyProviderState();
