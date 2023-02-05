@@ -58,7 +58,8 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     _controller.clear();
-    
+
+    String pr
 
     for (ChatMessage msg in _messages) {
       
