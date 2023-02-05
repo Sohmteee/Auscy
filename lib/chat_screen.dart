@@ -59,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
-    for (var element in collection) {
+    for (ChatMessage msg in collection) {
       
     }
 
