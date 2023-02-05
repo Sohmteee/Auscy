@@ -25,6 +25,13 @@ class _ChatScreenState extends State<ChatScreen> {
 
   bool _isTyping = false;
 
+  void init() {
+    final openai = await OpenAI.create(
+    apiKey: '<YOUR_API_KEY>',
+    models: ['davinci'],
+  );
+  }
+
   @override
   void initState() {
     chatGPT = OpenAI.instance.build(
