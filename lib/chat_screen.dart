@@ -64,7 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
         : _messages.join('\n'); */
 
     final request =
-        CompleteText(prompt: message.text, model: kTranslateModelV3);
+        CompleteText(prompt: message.text, model: "text-davinci-003");
 
     final response = await chatGPT!.onCompleteText(request: request);
     Vx.log(response!.choices[0].text);
