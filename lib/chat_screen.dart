@@ -59,12 +59,12 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
-    String prmpt = "";
+    /* String prmpt = "";
 
     List<String> promptList =
         _messages.take(20).map((msg) => msg.text.trim()).toList();
 
-    prmpt = promptList.join('\n');
+    prmpt = promptList.join('\n'); */
 
     final request =
         CompleteText(prompt: message.text, model: "text-davinci-003");
