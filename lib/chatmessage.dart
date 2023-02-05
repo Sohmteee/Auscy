@@ -20,8 +20,6 @@ class ChatMessage extends StatefulWidget {
   State<ChatMessage> createState() => _ChatMessageState();
 }
 
-hey
-
 class _ChatMessageState extends State<ChatMessage> {
   @override
   Widget build(BuildContext context) {
