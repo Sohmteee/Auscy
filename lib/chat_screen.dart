@@ -58,6 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     _controller.clear();
+    
 
     for (ChatMessage msg in _messages) {
       
