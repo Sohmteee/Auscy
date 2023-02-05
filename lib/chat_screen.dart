@@ -59,7 +59,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
-    for
+    for (var element in collection) {
+      
+    }
 
     /* String msg = _messages.length > 20
         ? _messages.take(20).join('\n')
