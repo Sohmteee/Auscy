@@ -57,12 +57,10 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     _controller.clear();
+    
 
-    String msg = _messages.length > 20
-        ? _messages.take(20).join('\n')
-        : _messages.join('\n');
-
-    final request = CompleteText(prompt: msg, model: kTranslateModelV3);
+    final request =
+        CompleteText(prompt: message.text, model: kTranslateModelV3);
 
     final response = await chatGPT!.onCompleteText(request: request);
     Vx.log(response!.choices[0].text);
