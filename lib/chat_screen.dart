@@ -58,6 +58,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
+    String prompt = messages.length > 20
+        ? messages.take(20).join('\n')
+        : messages.join('\n');
+
     final request =
         CompleteText(prompt: message.text, model: kTranslateModelV3);
 
