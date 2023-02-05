@@ -32,6 +32,10 @@ class _ChatScreenState extends State<ChatScreen> {
       baseOption: HttpSetup(receiveTimeout: 60000),
       isLogger: true,
     );
+    final openai = await OpenAI.create(
+    apiKey: '<YOUR_API_KEY>',
+    models: ['davinci'],
+  );
     super.initState();
   }
 
