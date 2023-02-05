@@ -62,7 +62,8 @@ class _ChatScreenState extends State<ChatScreen> {
     String prmpt = "";
 
     for (int index = 0; index < 20; index++) {
-      ChatMessage msg = _messages;
+      ChatMessage msg = _messages[index];
+      String
     }
 
     /* String msg = _messages.length > 20
