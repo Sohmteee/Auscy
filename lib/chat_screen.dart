@@ -59,6 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
+
     String prmpt = "";
 
     for (int index = 0; index < 20; index++) {
