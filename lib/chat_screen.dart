@@ -64,9 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
     List<String> promptList =
         _messages.take(20).map((msg) => msg.text.trim()).toList();
 
-    prmpt = promptList.length > 20
-        ? promptList.take(20).join('\n')
-        : promptList.join('\n');
+    prmpt = promptList.join('\n');
 
     final request =
         CompleteText(prompt: message.text, model: "text-davinci-003");
