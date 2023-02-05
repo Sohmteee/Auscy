@@ -59,11 +59,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
-    String pr
+    String prmpt = "";
 
-    for (ChatMessage msg in _messages) {
-      
-    }
+    for (ChatMessage msg in _messages) {}
 
     /* String msg = _messages.length > 20
         ? _messages.take(20).join('\n')
