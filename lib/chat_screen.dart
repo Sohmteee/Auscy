@@ -71,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     final response = await chatGPT!.onCompleteText(request: request);
     Vx.log(response!.choices[0].text);
-    insertNewData(response.choices[0].text.trim());
+    insertNewData(response.choices[1].text.trim());
   }
 
   void insertNewData(String response) {
