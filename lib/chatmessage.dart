@@ -24,8 +24,9 @@ class ChatMessage extends StatefulWidget {
 
 class _ChatMessageState extends State<ChatMessage> {
   void isReply() {
-    isReply
+    widget.isReply = true;
   }
+
   @override
   Widget build(BuildContext context) {
     return SwipeTo(
