@@ -24,7 +24,7 @@ class ChatMessage extends StatefulWidget {
 
 class _ChatMessageState extends State<ChatMessage> {
   void isReply() {
-    
+    isReply
   }
   @override
   Widget build(BuildContext context) {
