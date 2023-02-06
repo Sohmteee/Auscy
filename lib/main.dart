@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 import 'chat_screen.dart';
 
 Future main() async {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      crea
+      create: 
       child: MaterialApp(
         title: 'ChatGPT',
         debugShowCheckedModeBanner: false,
