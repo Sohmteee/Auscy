@@ -15,7 +15,7 @@ class ChatMessage extends StatefulWidget {
 
   final String text;
   final String sender;
-  bool is
+  bool isReply = false;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
