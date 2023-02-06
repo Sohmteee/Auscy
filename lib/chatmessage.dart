@@ -11,6 +11,7 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
+    this.isReply,
   });
 
   final String text;
