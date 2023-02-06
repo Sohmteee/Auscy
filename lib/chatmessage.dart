@@ -7,7 +7,7 @@ import 'package:velocity_x/velocity_x.dart';
 import 'data.dart';
 
 class ChatMessage extends StatefulWidget {
-  const ChatMessage({
+  ChatMessage({
     super.key,
     required this.text,
     required this.sender,
@@ -16,7 +16,7 @@ class ChatMessage extends StatefulWidget {
 
   final String text;
   final String sender;
-  final bool isReply;
+  bool isReply;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
