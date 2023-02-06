@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => 
+      create: (context) => Chat
       child: MaterialApp(
         title: 'ChatGPT',
         debugShowCheckedModeBanner: false,
