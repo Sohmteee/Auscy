@@ -1,3 +1,4 @@
+import 'package:chat_gpt_02/chatmessage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => Chat
+      create: (context) => ChatMessageData(),
       child: MaterialApp(
         title: 'ChatGPT',
         debugShowCheckedModeBanner: false,
