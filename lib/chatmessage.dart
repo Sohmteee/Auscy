@@ -66,4 +66,4 @@ class _ChatMessageState extends State<ChatMessage> {
   }
 }
 
-class
+class ChatMessageData with Chang
