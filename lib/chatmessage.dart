@@ -18,8 +18,8 @@ class ChatMessage extends StatefulWidget {
   final String sender;
   bool isReply;
 
-  void isReply() {
-    widget.isReply = true;
+  void toggleReply() {
+    isReply = true;
   }
 
   @override
