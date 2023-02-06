@@ -14,14 +14,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ChatGPT',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      crea
+      child: MaterialApp(
+        title: 'ChatGPT',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+          useMaterial3: true,
+        ),
+        home: const ChatScreen(),
       ),
-      home: const ChatScreen(),
     );
   }
 }
