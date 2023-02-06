@@ -67,5 +67,5 @@ class _ChatMessageState extends State<ChatMessage> {
 }
 
 class ChatMessageData with ChangeNotifier{
-  
+  void isReply
 }
