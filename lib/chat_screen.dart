@@ -66,8 +66,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prmpt = promptList.join('\n'); */
 
-    final request = CompleteText(
-        prompt: "Hello \n How are you?", model: "text-davinci-003");
+    final request =
+        CompleteText(prompt: message.text, model: "text-davinci-003");
 
     final response = await chatGPT!.onCompleteText(request: request);
     Vx.log(response!.choices[0].text);
