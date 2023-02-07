@@ -68,7 +68,7 @@ class _ChatMessageState extends State<ChatMessage> {
 
 class ChatMessageData with ChangeNotifier {
   bool isReply(ChatMessage chatMessage) {
-    
+    return 
   }
   void toggleReply(ChatMessage chatMessage) {
     chatMessage.toggleReply();
