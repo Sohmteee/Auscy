@@ -2,7 +2,6 @@ import 'package:chat_gpt_02/reply_hover_bubble.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
@@ -154,7 +153,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Consumer<ChatMessageData>(builder: (context, data, child){child: buildReplyHoverBubble()};
+                    buildReplyHoverBubble(),
                     Container(
                       decoration: BoxDecoration(
                         color: Vx.zinc200,
