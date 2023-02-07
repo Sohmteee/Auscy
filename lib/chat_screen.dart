@@ -154,7 +154,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Consumer<ChatMessageData>(builder: (context, data, child){child: buildReplyHoverBubble()),
+                    Consumer<ChatMessageData>(builder: (context, data, child){child: buildReplyHoverBubble()};
                     Container(
                       decoration: BoxDecoration(
                         color: Vx.zinc200,
