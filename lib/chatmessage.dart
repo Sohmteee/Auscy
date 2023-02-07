@@ -11,21 +11,16 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
-    this.isReply = false,
   });
 
   final String text;
   final String sender;
-  final bool isReply;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-  void isReply() {
-    isReply = true
-  }
   @override
   Widget build(BuildContext context) {
     return SwipeTo(
