@@ -9,7 +9,7 @@ class ReplyPreview extends StatefulWidget {
     required this.text,
     required this.setResponse,
     required this.setReplyMessage,
-    required this.replyBuble,
+    required this.replyBubble,
   });
 
   final String text;
