@@ -1,5 +1,4 @@
 import 'package:chat_gpt_02/chat_screen.dart';
-import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:swipe_to/swipe_to.dart';
@@ -33,7 +32,6 @@ class _ChatMessageState extends State<ChatMessage> {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
-          ReplyPreview(sender: sender, text: text, setResponse: setResponse, setReplyMessage: setReplyMessage, replyBubble: replyBubble)
           isResponse = true;
           replyMessage = ChatMessage(
             text: widget.text,
