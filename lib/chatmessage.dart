@@ -7,7 +7,7 @@ import 'package:velocity_x/velocity_x.dart';
 import 'data.dart';
 
 class ChatMessage extends StatefulWidget {
-  ChatMessage({
+  const ChatMessage({
     super.key,
     required this.text,
     required this.sender,
@@ -16,23 +16,21 @@ class ChatMessage extends StatefulWidget {
 
   final String text;
   final String sender;
-  bool isReply;
-
-  void toggleReply() {
-    isReply = true;
-  }
+  final bool isReply;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
 }
 
 class _ChatMessageState extends State<ChatMessage> {
+  void isReply() {
+    isReply = true
+  }
   @override
   Widget build(BuildContext context) {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
-          P
           isResponse = true;
           replyMessage = ChatMessage(
             text: widget.text,
@@ -64,16 +62,5 @@ class _ChatMessageState extends State<ChatMessage> {
         ),
       ),
     );
-  }
-}
-
-class ChatMessageData with ChangeNotifier {
-  bool isReply(ChatMessage chatMessage) {
-    return chatMessage.isReply;
-  }
-
-  void toggleReply(ChatMessage chatMessage) {
-    chatMessage.toggleReply();
-    notifyListeners();
   }
 }
