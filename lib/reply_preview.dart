@@ -9,13 +9,14 @@ class ReplyPreview extends StatefulWidget {
     required this.text,
     required this.setResponse,
     required this.setReplyMessage,
-    required this.reply
+    required this.replyBuble,
   });
 
   final String text;
   final String sender;
   final void Function(bool val) setResponse;
   final void Function(ChatMessage message) setReplyMessage;
+  final ChatMessage
 
   @override
   State<ReplyPreview> createState() => _ReplyPreviewState();
