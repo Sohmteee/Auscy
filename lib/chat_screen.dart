@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget buildReplyHoverBubble() {
-    return Consumer<ChatMessageData>
+    return Consumer<ChatMessageData>(builder: (context, data, child) {}
     return isResponse
         ? ReplyHoverBubble(
             sender: replyMessage!.sender,
