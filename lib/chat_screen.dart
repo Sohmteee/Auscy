@@ -1,8 +1,7 @@
-import 'package:chat_gpt_02/reply_preview.dart';
+import 'package:chat_gpt_02/reply_hover_bubble.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:provider/provider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
@@ -60,12 +59,17 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
-    /* String prmpt = "";
+    String prmpt = "";
 
     List<String> promptList =
         _messages.take(20).map((msg) => msg.text.trim()).toList();
 
-    prmpt = promptList.join('\n'); */
+
+
+
+    String prmpt = _messages.length > 20
+        ? _messages.take(20).join('\n')
+        : _messages.join('\n'); 
 
     final request =
         CompleteText(prompt: message.text, model: "text-davinci-003");
@@ -123,16 +127,14 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget buildReplyHoverBubble() {
-    return Consumer<ChatMessageData>(builder: (context, data, child) {
-      return data.isReply(chatMessage)
-          ? ReplyPreview(
-              sender: replyMessage!.sender,
-              text: replyMessage!.text,
-              setResponse: setResponse,
-              setReplyMessage: setReplyMessage,
-            )
-          : const SizedBox();
-    });
+    return isResponse
+        ? ReplyHoverBubble(
+            sender: replyMessage!.sender,
+            text: replyMessage!.text,
+            setResponse: setResponse,
+            setReplyMessage: setReplyMessage,
+          )
+        : const SizedBox();
   }
 
   @override
