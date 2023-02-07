@@ -2,8 +2,8 @@ import 'package:chat_gpt_02/chatmessage.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class ReplyHoverBubble extends StatefulWidget {
-  const ReplyHoverBubble({
+class ReplyPreview extends StatefulWidget {
+  const ReplyPreview({
     super.key,
     required this.sender,
     required this.text,
@@ -17,10 +17,10 @@ class ReplyHoverBubble extends StatefulWidget {
   final void Function(ChatMessage message) setReplyMessage;
 
   @override
-  State<ReplyHoverBubble> createState() => _ReplyHoverBubbleState();
+  State<ReplyPreview> createState() => _ReplyPreviewState();
 }
 
-class _ReplyHoverBubbleState extends State<ReplyHoverBubble> {
+class _ReplyPreviewState extends State<ReplyPreview> {
   @override
   Widget build(BuildContext context) {
     return Container(
