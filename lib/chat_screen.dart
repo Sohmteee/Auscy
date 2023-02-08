@@ -11,7 +11,6 @@ import 'threedots.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
     super.key,
-    void build,
   });
 
   @override
