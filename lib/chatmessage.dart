@@ -13,7 +13,7 @@ class ChatMessage extends StatefulWidget {
   });
 
   final String text;
-  final String sender;
+  final Cha sender;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
