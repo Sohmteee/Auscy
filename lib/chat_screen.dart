@@ -1,4 +1,4 @@
-import 'package:chat_gpt_02/reply_hover_bubble.dart';
+import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -32,6 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
       baseOption: HttpSetup(receiveTimeout: 60000),
       isLogger: true,
     );
+
     super.initState();
   }
 
@@ -58,8 +59,15 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _controller.clear();
 
+    /* String prmpt = "";
+
+    List<String> promptList =
+        _messages.take(20).map((msg) => msg.text.trim()).toList();
+
+    prmpt = promptList.join('\n'); */
+
     final request =
-        CompleteText(prompt: message.text, model: kTranslateModelV3);
+        CompleteText(prompt: message.text, model: "text-davinci-003");
 
     final response = await chatGPT!.onCompleteText(request: request);
     Vx.log(response!.choices[0].text);
@@ -115,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget buildReplyHoverBubble() {
     return isResponse
-        ? ReplyHoverBubble(
+        ? ReplyPreview(
             sender: replyMessage!.sender,
             text: replyMessage!.text,
             setResponse: setResponse,
