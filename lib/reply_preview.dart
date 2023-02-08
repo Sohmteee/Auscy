@@ -1,5 +1,4 @@
 import 'package:chat_gpt_02/chatmessage.dart';
-import 'package:chat_gpt_02/data.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -12,7 +11,7 @@ class ReplyPreview extends StatefulWidget {
     required this.setReplyMessage,
   });
 
-  final ChatMessageType text;
+  final String text;
   final String sender;
   final void Function(bool val) setResponse;
   final void Function(ChatMessage message) setReplyMessage;
