@@ -90,7 +90,7 @@ class _ChatScreenState extends State<ChatScreen> {
           child: TextField(
             autofocus: true,
             controller: _controller,
-            te
+            textCapitalization: Tex,
             onSubmitted: (value) => _sendMessage(),
             decoration: InputDecoration.collapsed(
               hintText: hintText,
