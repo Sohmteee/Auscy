@@ -46,7 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
     if (_controller.text.isEmpty) return;
     ChatMessage message = ChatMessage(
       text: _controller.text.trim(),
-      sender: ChatMessageType.bot,
+      sender: ChatMessageType.user,
     );
 
     setState(() {
