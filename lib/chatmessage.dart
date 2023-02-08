@@ -1,4 +1,3 @@
-import 'package:chatgpt/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:swipe_to/swipe_to.dart';
