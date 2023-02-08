@@ -46,7 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
     if (_controller.text.isEmpty) return;
     ChatMessage message = ChatMessage(
       text: _controller.text.trim(),
-      sender: ChatMessageType.user,
+      sender: MessageSender.user,
     );
 
     setState(() {
@@ -74,7 +74,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void insertNewData(String response) {
     ChatMessage botMessage = ChatMessage(
       text: response,
-      sender: ChatMessageType.bot,
+      sender: MessageSender.bot,
     );
 
     setState(() {

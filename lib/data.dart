@@ -1,6 +1,6 @@
 import 'package:chat_gpt_02/chatmessage.dart';
 
-enum ChatMessageType {
+enum MessageSender {
   user,
   bot,
 }

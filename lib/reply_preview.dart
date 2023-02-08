@@ -14,7 +14,7 @@ class ReplyPreview extends StatefulWidget {
   });
 
   final String text;
-  final ChatMessageType sender;
+  final MessageSender sender;
   final void Function(bool val) setResponse;
   final void Function(ChatMessage message) setReplyMessage;
 
