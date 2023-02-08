@@ -2,6 +2,8 @@ import 'package:chat_gpt_02/chatmessage.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'data.dart';
+
 class ReplyPreview extends StatefulWidget {
   const ReplyPreview({
     super.key,
