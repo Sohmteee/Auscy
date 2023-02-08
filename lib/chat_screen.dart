@@ -1,4 +1,4 @@
-import 'package:chat_gpt_02/reply_hover_bubble.dart';
+import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -61,7 +61,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     /* String prmpt = "";
 
-    List<String> promptList =hey
+    List<String> promptList =
         _messages.take(20).map((msg) => msg.text.trim()).toList();
 
     prmpt = promptList.join('\n'); */
@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget buildReplyHoverBubble() {
     return isResponse
-        ? ReplyHoverBubble(
+        ? ReplyPreview(
             sender: replyMessage!.sender,
             text: replyMessage!.text,
             setResponse: setResponse,
