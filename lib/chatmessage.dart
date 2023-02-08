@@ -5,8 +5,6 @@ import 'package:velocity_x/velocity_x.dart';
 
 import 'data.dart';
 
-enum ChatMessageType {user, bot}
-
 class ChatMessage extends StatefulWidget {
   const ChatMessage({
     super.key,
