@@ -45,11 +45,11 @@ class _ChatMessageState extends State<ChatMessage> {
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
-                child: CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.zinc200,
-                  backgroundImage: AssetImage("assets/images/chatgpt_icon.png")
-                ),
+                child: const CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Vx.zinc200,
+                    backgroundImage:
+                        AssetImage("assets/images/chatgpt_icon.png")),
               ),
             ),
           ChatBubble(
