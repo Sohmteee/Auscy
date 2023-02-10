@@ -92,7 +92,7 @@ class _ChatScreenState extends State<ChatScreen> {
       children: [
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Vx.zinc200,
               borderRadius: isResponse
