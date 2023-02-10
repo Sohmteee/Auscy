@@ -173,7 +173,11 @@ class _ChatScreenState extends State<ChatScreen> {
                                 bottom: Radius.circular(20))
                             : BorderRadius.circular(20),
                       ),
-                      child: _buildTextComposer(),
+                      child: Row(
+                        children: [
+                          _buildTextComposer(),
+                        ],
+                      ),
                     ),
                   ],
                 ),
