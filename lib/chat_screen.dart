@@ -210,7 +210,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        widget.text.trim(),
+                        text.trim(),
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
