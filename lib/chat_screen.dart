@@ -178,7 +178,6 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
                 child: Column(
                   children: [
-                    buildReplyHoverBubble(),
                     _buildTextComposer(),
                   ],
                 ),
