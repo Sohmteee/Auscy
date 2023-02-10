@@ -93,6 +93,7 @@ class _ChatScreenState extends State<ChatScreen> {
         Expanded(
           child: Column(
             children: [
+              buildReplyHoverBubble(),
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
