@@ -35,13 +35,15 @@ class _ChatMessageState extends State<ChatMessage> {
       },
       child: ChatBubble(
         clipper: ChatBubbleClipper8(
-            type: widget.sender == "user"
+            type: widget.sender == MessageSender.user
                 ? BubbleType.sendBubble
                 : BubbleType.receiverBubble),
-        alignment:
-            widget.sender == "user" ? Alignment.topRight : Alignment.topLeft,
+        alignment: widget.sender == MessageSender.user
+            ? Alignment.topRight
+            : Alignment.topLeft,
         margin: const EdgeInsets.only(top: 20),
-        backGroundColor: widget.sender == "user" ? Vx.green500 : Vx.zinc200,
+        backGroundColor:
+            widget.sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
         child: Container(
           constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width * 0.7,
@@ -49,7 +51,9 @@ class _ChatMessageState extends State<ChatMessage> {
           child: Text(
             widget.text.trim(),
             style: TextStyle(
-              color: widget.sender == "user" ? Colors.white : Colors.black,
+              color: widget.sender == MessageSender.user
+                  ? Colors.white
+                  : Colors.black,
               fontSize: 16,
             ),
           ),
