@@ -105,6 +105,7 @@ class _ChatScreenState extends State<ChatScreen> {
               onSubmitted: (value) => _sendMessage(),
               decoration: InputDecoration.collapsed(
                 hintText: hintText,
+                
               ),
             ),
           ),
