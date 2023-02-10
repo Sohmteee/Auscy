@@ -34,7 +34,9 @@ class _ChatMessageState extends State<ChatMessage> {
         });
       },
       child: Row(
-        mainAxisAlignment: widget.sender == MessageSender.user ? Main,
+        mainAxisAlignment: widget.sender == MessageSender.user
+            ? MainAxisAlignment.end
+            : MainAxisAlignment.start,
         children: [
           ChatBubble(
             clipper: ChatBubbleClipper8(
