@@ -41,7 +41,7 @@ class _ChatMessageState extends State<ChatMessage> {
         children: [
           if (widget.sender == MessageSender.bot)
             const Padding(
-              padding: EdgeInsets.only(8.0),
+              padding: EdgeInsets.only(top: 30),
               child: CircleAvatar(
                 radius: 12,
                 backgroundColor: Vx.green500,
