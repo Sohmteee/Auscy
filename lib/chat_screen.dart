@@ -146,7 +146,9 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           title: const Text(
             "ChatGPT",
-            style: TStyle,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         body: SafeArea(
