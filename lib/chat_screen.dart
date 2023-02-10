@@ -148,6 +148,7 @@ class _ChatScreenState extends State<ChatScreen> {
             "ChatGPT",
             style: TextStyle(
               fontWeight: FontWeight.bold,
+              fontSize: 30,
             ),
           ),
         ),
