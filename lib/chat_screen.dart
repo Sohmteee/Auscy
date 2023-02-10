@@ -139,7 +139,6 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
         appBar: AppBar(
           leading: const CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 16, 16, 27),
             backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
           ),
           title: const Text("ChatGPT"),
