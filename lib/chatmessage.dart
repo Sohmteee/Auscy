@@ -44,7 +44,7 @@ class _ChatMessageState extends State<ChatMessage> {
               padding: EdgeInsets.only(top: 20),
               child: Card(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(15)),
                 child: CircleAvatar(
                   radius: 15,
                   backgroundColor: Vx.zinc200,
