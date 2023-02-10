@@ -85,7 +85,7 @@ class _ChatMessageState extends State<ChatMessage> {
                   radius: 15,
                   backgroundColor: Vx.green500,
                   child: Icon(
-                    
+                    size: 10,
                     color: Colors.white,
                     Icons.person,
                   ),
