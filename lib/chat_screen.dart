@@ -88,16 +88,26 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
-    return Expanded(
-      child: TextField(
-        autofocus: true,
-        controller: _controller,
-        textCapitalization: TextCapitalization.sentences,
-        onSubmitted: (value) => _sendMessage(),
-        decoration: InputDecoration.collapsed(
-          hintText: hintText,
+    return Row(
+      children: [
+        Expanded(
+          child: TextField(
+            autofocus: true,
+            controller: _controller,
+            textCapitalization: TextCapitalization.sentences,
+            onSubmitted: (value) => _sendMessage(),
+            decoration: InputDecoration.collapsed(
+              hintText: hintText,
+            ),
+          ),
         ),
-      ),
+        IconButton(
+          icon: const Icon(Icons.send),
+          onPressed: () {
+            _sendMessage();
+          },
+        ),
+      ],
     ).px16();
   }
 
@@ -168,17 +178,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 bottom: Radius.circular(20))
                             : BorderRadius.circular(20),
                       ),
-                      child: Row(
-                        children: [
-                          _buildTextComposer(),
-                          IconButton(
-                            icon: const Icon(Icons.send),
-                            onPressed: () {
-                              _sendMessage();
-                            },
-                          ),
-                        ],
-                      ),
+                      child: _buildTextComposer(),
                     ),
                   ],
                 ),
