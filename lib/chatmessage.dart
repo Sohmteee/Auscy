@@ -75,6 +75,19 @@ class _ChatMessageState extends State<ChatMessage> {
               ),
             ),
           ),
+          if (widget.sender == MessageSender.user)
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                child: const CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Vx.zinc200,
+                    backgroundImage:
+                        AssetImage("assets/images/chatgpt_icon.png")),
+              ),
+            ),
         ],
       ),
     );
