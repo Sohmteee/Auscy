@@ -40,9 +40,12 @@ class _ChatMessageState extends State<ChatMessage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (widget.sender == MessageSender.bot)
-            const CircleAvatar(
-              radius: 12,
-              backgroundColor: Vx.green500,
+            const Padding(
+              padding: EdgeInsets.only(8.0),
+              child: CircleAvatar(
+                radius: 12,
+                backgroundColor: Vx.green500,
+              ),
             ),
           ChatBubble(
             clipper: ChatBubbleClipper8(
