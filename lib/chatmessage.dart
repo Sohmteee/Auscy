@@ -42,8 +42,9 @@ class _ChatMessageState extends State<ChatMessage> {
           if (widget.sender == MessageSender.bot)
             const Padding(
               padding: EdgeInsets.only(top: 20),
-              child: Card(
-                
+              child: CircleAvatar(
+                radius: 15,
+                backgroundColor: Vx.zinc200,
               ),
             ),
           ChatBubble(
