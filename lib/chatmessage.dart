@@ -43,7 +43,7 @@ class _ChatMessageState extends State<ChatMessage> {
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Card(
-                shape: B,
+                shape: ,
                 child: CircleAvatar(
                   radius: 15,
                   backgroundColor: Vx.zinc200,
