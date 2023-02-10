@@ -166,7 +166,7 @@ class _ChatScreenState extends State<ChatScreen> {
               )),
               if (_isTyping) const ThreeDots(),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15),
                 child: Column(
                   children: [
                     buildReplyHoverBubble(),
