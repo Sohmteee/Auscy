@@ -138,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          
+          leading: Image.asset("assets/images/chatgpt_icon.png"),
           title: const Text("ChatGPT"),
         ),
         body: SafeArea(
