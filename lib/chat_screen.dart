@@ -91,13 +91,21 @@ class _ChatScreenState extends State<ChatScreen> {
     return Row(
       children: [
         Expanded(
-          child: TextField(
-            autofocus: true,
-            controller: _controller,
-            textCapitalization: TextCapitalization.sentences,
-            onSubmitted: (value) => _sendMessage(),
-            decoration: InputDecoration.collapsed(
-              hintText: hintText,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Vx.zinc200,
+              borderRadius: isResponse
+                  ? const BorderRadius.vertical(bottom: Radius.circular(20))
+                  : BorderRadius.circular(20),
+            ),
+            child: TextField(
+              autofocus: true,
+              controller: _controller,
+              textCapitalization: TextCapitalization.sentences,
+              onSubmitted: (value) => _sendMessage(),
+              decoration: InputDecoration.collapsed(
+                hintText: hintText,
+              ),
             ),
           ),
         ),
