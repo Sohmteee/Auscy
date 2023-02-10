@@ -40,7 +40,7 @@ class _ChatMessageState extends State<ChatMessage> {
         children: [
           if (widget.sender == MessageSender.user)
             const CircleAvatar(
-              radius: 20,
+              radius: 12,
               backgroundColor: Vx.green500,
             ),
           ChatBubble(
