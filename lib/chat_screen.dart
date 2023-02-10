@@ -198,7 +198,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                widget.setResponse(false);
+                                isResponse =false;
                               });
                             },
                             child: const Icon(
