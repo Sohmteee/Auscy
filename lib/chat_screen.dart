@@ -149,7 +149,7 @@ class _ChatScreenState extends State<ChatScreen> {
         : const SizedBox();
   }
 
-  Widget replyPreview() {
+  Widget replyPreview(MessageSender sender, ) {
     return Container(
       padding: const EdgeInsets.all(10),
       width: double.maxFinite,
