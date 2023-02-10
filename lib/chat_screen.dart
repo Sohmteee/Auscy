@@ -149,7 +149,7 @@ class _ChatScreenState extends State<ChatScreen> {
         : const SizedBox();
   }
 
-  Widget Reply
+  Widget ReplyPreview() {}
 
   @override
   Widget build(BuildContext context) {
