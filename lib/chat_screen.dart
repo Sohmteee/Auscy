@@ -101,7 +101,6 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
         ),
-        
       ],
     ).px16();
   }
@@ -176,6 +175,12 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: Row(
                         children: [
                           _buildTextComposer(),
+                          IconButton(
+                            icon: const Icon(Icons.send),
+                            onPressed: () {
+                              _sendMessage();
+                            },
+                          ),
                         ],
                       ),
                     ),
