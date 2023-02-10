@@ -48,7 +48,9 @@ class _ChatMessageState extends State<ChatMessage> {
                 child: const CircleAvatar(
                   radius: 15,
                   backgroundColor: Vx.zinc200,
-                  child: Center(child: Text("Bot")),
+                  child: Center(
+                    child: Text("Bot"),
+                  ),
                 ),
               ),
             ),
