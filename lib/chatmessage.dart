@@ -43,9 +43,6 @@ class _ChatMessageState extends State<ChatMessage> {
                 type: widget.sender == MessageSender.user
                     ? BubbleType.sendBubble
                     : BubbleType.receiverBubble),
-            alignment: widget.sender == MessageSender.user
-                ? Alignment.topRight
-                : Alignment.topLeft,
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
                 widget.sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
