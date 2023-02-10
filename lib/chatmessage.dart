@@ -37,7 +37,7 @@ class _ChatMessageState extends State<ChatMessage> {
         mainAxisAlignment: widget.sender == MessageSender.user
             ? MainAxisAlignment.end
             : MainAxisAlignment.start,
-            crossAxisAlignment: ,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (widget.sender == MessageSender.bot)
             const CircleAvatar(
