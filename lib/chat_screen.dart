@@ -139,7 +139,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
         appBar: AppBar(
           leading: const CircleAvatar(
-            radius: 15,
+            radius: 10,
             backgroundColor: Vx.zinc200,
             backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
           ),
