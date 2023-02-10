@@ -44,7 +44,7 @@ class _ChatMessageState extends State<ChatMessage> {
               padding: EdgeInsets.only(top: 20),
               child: CircleAvatar(
                 radius: 15,
-                backgroundColor: Vx.green500,
+                backgroundColor: Vx.zinc100,
               ),
             ),
           ChatBubble(
