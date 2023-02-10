@@ -88,20 +88,16 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
-    return Row(
-      children: [
-        Expanded(
-          child: TextField(
-            autofocus: true,
-            controller: _controller,
-            textCapitalization: TextCapitalization.sentences,
-            onSubmitted: (value) => _sendMessage(),
-            decoration: InputDecoration.collapsed(
-              hintText: hintText,
-            ),
-          ),
+    return Expanded(
+      child: TextField(
+        autofocus: true,
+        controller: _controller,
+        textCapitalization: TextCapitalization.sentences,
+        onSubmitted: (value) => _sendMessage(),
+        decoration: InputDecoration.collapsed(
+          hintText: hintText,
         ),
-      ],
+      ),
     ).px16();
   }
 
