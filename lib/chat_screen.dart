@@ -170,16 +170,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: Column(
                   children: [
                     buildReplyHoverBubble(),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Vx.zinc200,
-                        borderRadius: isResponse
-                            ? const BorderRadius.vertical(
-                                bottom: Radius.circular(20))
-                            : BorderRadius.circular(20),
-                      ),
-                      child: _buildTextComposer(),
-                    ),
+                    _buildTextComposer(),
                   ],
                 ),
               )
