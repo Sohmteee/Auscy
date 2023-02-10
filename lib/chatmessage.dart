@@ -38,9 +38,10 @@ class _ChatMessageState extends State<ChatMessage> {
             ? MainAxisAlignment.end
             : MainAxisAlignment.start,
         children: [
-          if (widget.sender == MessageSender.user) CircleAvatar(
-            backgroundColor: Co,
-          ),
+          if (widget.sender == MessageSender.user)
+            CircleAvatar(
+              backgroundColor: Vx.green500,
+            ),
           ChatBubble(
             clipper: ChatBubbleClipper8(
                 type: widget.sender == MessageSender.user
