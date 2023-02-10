@@ -62,7 +62,7 @@ class _ReplyPreviewState extends State<ReplyPreview> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            widget.sender == "user" ? "Me" : "ChatGPT",
+                            widget.sender == Messa ? "Me" : "ChatGPT",
                             style: const TextStyle(
                               color: Vx.green500,
                               fontWeight: FontWeight.bold,
