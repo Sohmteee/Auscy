@@ -138,8 +138,8 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const CircleAvatar(
-            backgroundImage: Padding(padding: EdgeInsets.all(20)),
+          leading: CircleAvatar(
+            backgroundImage: Padding(padding: EdgeInsets.all(20),),
           ),
           title: const Text("ChatGPT"),
         ),
