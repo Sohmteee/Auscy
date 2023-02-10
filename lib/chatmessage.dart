@@ -39,7 +39,7 @@ class _ChatMessageState extends State<ChatMessage> {
             : MainAxisAlignment.start,
         children: [
           if (widget.sender == MessageSender.user)
-            CircleAvatar(
+            const CircleAvatar(
               radius: 20,
               backgroundColor: Vx.green500,
             ),
