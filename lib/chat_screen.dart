@@ -137,7 +137,11 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title:  Text("ChatGPT")),
+        appBar: AppBar(title: Row(
+          children: [
+            Text("ChatGPT"),
+          ],
+        )),
         body: SafeArea(
           child: Column(
             children: [
