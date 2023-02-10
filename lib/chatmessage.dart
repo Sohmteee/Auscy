@@ -41,11 +41,11 @@ class _ChatMessageState extends State<ChatMessage> {
         children: [
           if (widget.sender == MessageSender.bot)
             Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 15,
                   backgroundColor: Vx.zinc200,
                   child: Center(child: Text("Bot")),
