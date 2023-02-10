@@ -138,10 +138,12 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const CircleAvatar(
-            radius: 10,
-            backgroundColor: Vx.zinc200,
-            backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const CircleAvatar(
+              backgroundColor: Vx.zinc200,
+              backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+            ),
           ),
           title: const Text("ChatGPT"),
         ),
