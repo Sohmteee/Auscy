@@ -38,6 +38,7 @@ class _ChatMessageState extends State<ChatMessage> {
             ? MainAxisAlignment.end
             : MainAxisAlignment.start,
         children: [
+          
           ChatBubble(
             clipper: ChatBubbleClipper8(
                 type: widget.sender == MessageSender.user
