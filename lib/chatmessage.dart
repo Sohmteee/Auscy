@@ -40,12 +40,11 @@ class _ChatMessageState extends State<ChatMessage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (widget.sender == MessageSender.bot)
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(top: 20),
               child: Card(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(radius)
-                ),
+                    borderRadius: BorderRadius.circular(20)),
                 child: CircleAvatar(
                   radius: 15,
                   backgroundColor: Vx.zinc200,
