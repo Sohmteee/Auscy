@@ -100,8 +100,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 decoration: BoxDecoration(
                   color: Vx.zinc200,
                   borderRadius: isResponse
-                      ? const BorderRadius.vertical(bottom: Radius.circular(30))
-                      : BorderRadius.circular(20),
+                      ? const BorderRadius.vertical(bottom: Radius.circular(20))
+                      : BorderRadius.circular(40),
                 ),
                 child: TextField(
                   autofocus: true,
