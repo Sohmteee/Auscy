@@ -117,10 +117,13 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
         Container(
-          
+          padding: const EdgeInsets.all(10),
+          decoration: const BoxDecoration(
+            color: Vx.zinc200,
+            shape: BoxShape.circle,
+          ),
           child: IconButton(
             icon: const Icon(
-              
               Icons.send,
             ),
             onPressed: () {
