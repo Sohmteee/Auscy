@@ -77,7 +77,7 @@ class _ChatMessageState extends State<ChatMessage> {
           ),
           if (widget.sender == MessageSender.user)
             Padding(
-              padding: const EdgeInsets.only(top: 2),
+              padding: const EdgeInsets.only(top: 23),
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
