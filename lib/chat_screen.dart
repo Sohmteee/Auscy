@@ -140,7 +140,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget buildReplyHoverBubble() {
     return isResponse
-        ? reply
+        ? replyPreview(replyMessage!.sender, text)
         ReplyPreview(
             sender: replyMessage!.sender,
             text: replyMessage!.text,
