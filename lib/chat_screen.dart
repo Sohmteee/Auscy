@@ -187,7 +187,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            sender == MessageSender.user ? "Me" : "ChatGPT",
+                            sender == MessageSender.user ? "You" : "ChatGPT",
                             style: const TextStyle(
                               color: Vx.green500,
                               fontWeight: FontWeight.bold,
