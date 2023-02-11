@@ -16,6 +16,8 @@ class ChatScreen extends StatefulWidget {
     this.isResponse,
   });
 
+  bool isResponse = false;
+
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
