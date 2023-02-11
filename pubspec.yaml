@@ -33,6 +33,7 @@ dependencies:
     git:
       url: https://github.com/iampawan/Flutter-ChatGPT.git
   cupertino_icons: ^1.0.2
+  emoji_picker_flutter: ^1.5.2
   flutter:
     sdk: flutter
   flutter_chat_bubble: ^2.0.2
