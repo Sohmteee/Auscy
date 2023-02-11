@@ -118,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         IconButton(
           icon: Container(
-            padding: EdgeInsets.all(value),
+            padding: const EdgeInsets.all(10),
             decoration: const BoxDecoration(
               color: Vx.zinc200,
               shape: BoxShape.circle,
