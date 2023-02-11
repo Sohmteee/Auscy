@@ -11,7 +11,10 @@ import 'data.dart';
 import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+  const ChatScreen({
+    super.key,
+    this.bool isResponse = false;
+  });
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -23,7 +26,6 @@ class _ChatScreenState extends State<ChatScreen> {
   late OpenAI? chatGPT;
 
   bool _isTyping = false;
-  
 
   @override
   void initState() {
