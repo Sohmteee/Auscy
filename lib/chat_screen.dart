@@ -116,19 +116,21 @@ class _ChatScreenState extends State<ChatScreen> {
             ],
           ),
         ),
-        SizedBox(width: 10,)
+        const SizedBox(width: 10),
         Container(
           decoration: const BoxDecoration(
             color: Vx.zinc200,
             shape: BoxShape.circle,
           ),
-          child: IconButton(
-            icon: const Icon(
-              Icons.send,
+          child: Center(
+            child: IconButton(
+              icon: const Icon(
+                Icons.send,
+              ),
+              onPressed: () {
+                _sendMessage();
+              },
             ),
-            onPressed: () {
-              _sendMessage();
-            },
           ),
         ),
       ],
