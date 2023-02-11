@@ -1,9 +1,7 @@
 import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:swipe_to/swipe_to.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
@@ -23,7 +21,6 @@ class _ChatScreenState extends State<ChatScreen> {
   late OpenAI? chatGPT;
 
   bool _isTyping = false;
-  bool isResponse = false;
 
   @override
   void initState() {
@@ -162,78 +159,76 @@ class _ChatScreenState extends State<ChatScreen> {
         : const SizedBox();
   }
 
-  Widget chatMessage(String text, MessageSender sender) {
-    return SwipeTo(
-      onRightSwipe: () {
-        setState(() {
-          isResponse = true;
-          replyMessage = ChatMessage(
-            text: text,
-            sender: sender,
-          );
-          debugPrint("Replying to: ${replyMessage!.text}");
-        });
-      },
-      child: Row(
-        mainAxisAlignment: sender == MessageSender.user
-            ? MainAxisAlignment.end
-            : MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (sender == MessageSender.bot)
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.zinc200,
-                  backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+  Widget replyPreview(MessageSender sender, String text) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      width: double.maxFinite,
+      decoration: const BoxDecoration(
+          color: Vx.zinc200,
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(20),
+          )),
+      child: IntrinsicHeight(
+        child: Row(
+          children: [
+            Container(
+              width: 5,
+              decoration: const BoxDecoration(
+                color: Vx.green500,
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(8),
                 ),
               ),
             ),
-          ChatBubble(
-            clipper: ChatBubbleClipper8(
-                type: sender == MessageSender.user
-                    ? BubbleType.sendBubble
-                    : BubbleType.receiverBubble),
-            margin: const EdgeInsets.only(top: 20),
-            backGroundColor:
-                sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
-            child: Container(
-              constraints: BoxConstraints(
-                maxWidth: MediaQuery.of(context).size.width * 0.7,
-              ),
-              child: Text(
-                text.trim(),
-                style: TextStyle(
-                  color: sender == MessageSender.user
-                      ? Colors.white
-                      : Colors.black,
-                  fontSize: 16,
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Vx.zinc300,
+                  borderRadius: BorderRadius.horizontal(
+                    right: Radius.circular(8),
+                  ),
                 ),
-              ),
-            ),
-          ),
-          if (sender == MessageSender.user)
-            Padding(
-              padding: const EdgeInsets.only(top: 23),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.green500,
-                  child: Icon(
-                    size: 18,
-                    color: Colors.white,
-                    Icons.person,
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            sender == MessageSender.user ? "You" : "ChatGPT",
+                            style: const TextStyle(
+                              color: Vx.green500,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                isResponse = false;
+                              });
+                            },
+                            child: const Icon(
+                              size: 20,
+                              Icons.close,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        text.trim(),
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-        ],
+          ],
+        ),
       ),
     );
   }
