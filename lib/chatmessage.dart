@@ -10,6 +10,7 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
+    required this.
   });
 
   final String text;
