@@ -31,7 +31,7 @@ class _ReplyPreviewState extends State<ReplyPreview> {
       decoration: const BoxDecoration(
           color: Vx.zinc200,
           borderRadius: BorderRadius.vertical(
-            top: Radius.circular(20),
+            top: Radius.circular(30),
           )),
       child: IntrinsicHeight(
         child: Row(
