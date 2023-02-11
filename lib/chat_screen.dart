@@ -11,7 +11,7 @@ import 'data.dart';
 import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({
+   ChatScreen({
     super.key,
     this.isResponse,
   });
