@@ -10,12 +10,10 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
-    required this.context,
   });
 
   final String text;
   final MessageSender sender;
-  final BuildContext context;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
@@ -79,7 +77,7 @@ class _ChatMessageState extends State<ChatMessage> {
           ),
           if (widget.sender == MessageSender.user)
             Padding(
-              padding: const EdgeInsets.only(top: 23),
+              padding: const EdgeInsets.only(top: 2),
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
