@@ -11,7 +11,7 @@ import 'data.dart';
 import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
-   ChatScreen({
+  ChatScreen({
     super.key,
     this.isResponse = false,
   });
@@ -161,7 +161,6 @@ class _ChatScreenState extends State<ChatScreen> {
             sender: replyMessage!.sender,
             text: replyMessage!.text,
             setResponse: setResponse,
-            setReplyMessage: setReplyMessage,
           )
         : const SizedBox();
   }
