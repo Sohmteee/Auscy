@@ -161,7 +161,7 @@ class _ChatScreenState extends State<ChatScreen> {
         : const SizedBox();
   }
 
-  Widget chatMessage() {
+  Widget chatMessage(MessageSender sender, String text) {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
