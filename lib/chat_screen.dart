@@ -144,6 +144,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
+
     Widget replyPreview(MessageSender sender, String text) {
       return Container(
         padding: const EdgeInsets.all(10),
@@ -216,6 +218,14 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
       );
+    }
+    Widget buildReplyPreview() {
+      return isResponse
+          ? replyPreview(
+              replyMessage!.sender,
+              replyMessage!.text,
+            )
+          : const SizedBox();
     }
 
     return Scaffold(
