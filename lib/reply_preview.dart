@@ -63,7 +63,7 @@ class _ReplyPreviewState extends State<ReplyPreview> {
                         children: [
                           Text(
                             widget.sender == MessageSender.user
-                                ? "Me"
+                                ? "You"
                                 : "ChatGPT",
                             style: const TextStyle(
                               color: Vx.green500,
