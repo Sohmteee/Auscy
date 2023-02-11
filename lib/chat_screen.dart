@@ -116,6 +116,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ],
           ),
         ),
+        SizedBox(width: 10,)
         Container(
           decoration: const BoxDecoration(
             color: Vx.zinc200,
