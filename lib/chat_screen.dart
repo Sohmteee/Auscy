@@ -94,7 +94,7 @@ class _ChatScreenState extends State<ChatScreen> {
         Expanded(
           child: Column(
             children: [
-              buildReplyHoverBubble(),
+              buildReplyPreview(),
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
@@ -138,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  Widget buildReplyHoverBubble() {
+  Widget buildReplyPreview() {
     return isResponse
         ? replyPreview(
             replyMessage!.sender,
