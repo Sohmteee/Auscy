@@ -23,6 +23,7 @@ class _ChatScreenState extends State<ChatScreen> {
   late OpenAI? chatGPT;
 
   bool _isTyping = false;
+  bool isResponse = false;
 
   @override
   void initState() {
