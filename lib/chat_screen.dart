@@ -87,44 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  Widget _buildTextComposer() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Expanded(
-          child: Column(
-            children: [
-              buildReplyPreview(),
-              Container(
-                padding: const EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  color: Vx.zinc200,
-                  borderRadius: isResponse
-                      ? const BorderRadius.vertical(bottom: Radius.circular(20))
-                      : BorderRadius.circular(20),
-                ),
-                child: TextField(
-                  autofocus: true,
-                  controller: _controller,
-                  textCapitalization: TextCapitalization.sentences,
-                  onSubmitted: (value) => _sendMessage(),
-                  decoration: InputDecoration.collapsed(
-                    hintText: hintText,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        IconButton(
-          icon: const Icon(Icons.send),
-          onPressed: () {
-            _sendMessage();
-          },
-        ),
-      ],
-    ).px16();
-  }
+  
 
   void setResponse(bool val) {
     setState(() {
