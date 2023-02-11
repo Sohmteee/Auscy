@@ -13,7 +13,7 @@ import 'threedots.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
     super.key,
-    this.bool isResponse = false;
+    this.isResponse,
   });
 
   @override
