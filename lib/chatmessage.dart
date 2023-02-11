@@ -10,11 +10,12 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
-    required this.
+    required this.context,
   });
 
   final String text;
   final MessageSender sender;
+  final BuildContext context;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
