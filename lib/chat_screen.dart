@@ -140,13 +140,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget buildReplyHoverBubble() {
     return isResponse
-        ? replyPreview(replyMessage!.sender, text)
-        ReplyPreview(
-            sender: replyMessage!.sender,
-            text: replyMessage!.text,
-            setResponse: setResponse,
-            setReplyMessage: setReplyMessage,
-          )
+        ? replyPreview(replyMessage!.sender, replyMessage!.text)
         : const SizedBox();
   }
 
@@ -188,9 +182,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            sender == MessageSender.user
-                                ? "Me"
-                                : "ChatGPT",
+                            sender == MessageSender.user ? "Me" : "ChatGPT",
                             style: const TextStyle(
                               color: Vx.green500,
                               fontWeight: FontWeight.bold,
@@ -199,7 +191,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           GestureDetector(
                             onTap: () {
                               setState(() {
-                                isResponse =false;
+                                isResponse = false;
                               });
                             },
                             child: const Icon(
