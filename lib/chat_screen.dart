@@ -106,7 +106,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Vx.zinc200,
-                  borderRadius: isResponse
+                  borderRadius: widget.isResponse
                       ? const BorderRadius.vertical(bottom: Radius.circular(20))
                       : BorderRadius.circular(20),
                 ),
@@ -145,7 +145,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void setResponse(bool val) {
     setState(() {
-      isResponse = val;
+      widget.isResponse = val;
     });
   }
 
@@ -156,7 +156,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget buildReplyHoverBubble() {
-    return isResponse
+    return widget.isResponse
         ? ReplyPreview(
             sender: replyMessage!.sender,
             text: replyMessage!.text,
@@ -170,7 +170,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
-          isResponse = true;
+          widget.isResponse = true;
           replyMessage = ChatMessage(
             text: text,
             sender: sender,
