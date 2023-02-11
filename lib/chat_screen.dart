@@ -118,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         IconButton(
           icon:  Container(
-            decoration: BoxDe,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius)),
             child: Icon(
               Icons.send,
               color: Vx.green500,
