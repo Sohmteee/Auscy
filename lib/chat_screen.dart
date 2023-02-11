@@ -116,15 +116,17 @@ class _ChatScreenState extends State<ChatScreen> {
             ],
           ),
         ),
-        IconButton(
-          icon: const Icon(
-            
-            Icons.send,
-            color: ,
+        Container(
+          
+          child: IconButton(
+            icon: const Icon(
+              
+              Icons.send,
+            ),
+            onPressed: () {
+              _sendMessage();
+            },
           ),
-          onPressed: () {
-            _sendMessage();
-          },
         ),
       ],
     ).px16();
