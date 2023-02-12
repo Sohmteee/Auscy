@@ -6,5 +6,6 @@ class MyProvider extends ChangeNotifier {
 
   void toggleResponse() {
     _isResponse = !_isResponse;
+    notifyListeners();
   }
 }
