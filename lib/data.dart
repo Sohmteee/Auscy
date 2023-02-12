@@ -1,4 +1,5 @@
 import 'package:chat_gpt_02/chatmessage.dart';
+import 'package:flutter/material.dart';
 
 enum MessageSender {
   user,
@@ -11,4 +12,4 @@ ChatMessage? replyMessage;
 
 bool isResponse = false;
 
-TextWEC
+TextEditingController controller = TextEditingController();
