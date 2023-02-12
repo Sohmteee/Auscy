@@ -7,7 +7,7 @@ Future main() async {
   await dotenv.load();
   runApp(
     ChangeNotifierProvider(
-      create: (_) => MyVisibilityProvider(),
+      create: (_) => const MyApp(),
       child: MyApp(),
     ),
   );
