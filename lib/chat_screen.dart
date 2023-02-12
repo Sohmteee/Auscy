@@ -18,8 +18,8 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final TextEditingController controller = TextEditingController();
-  final List<ChatMessage> messages = [];
+  // final TextEditingController controller = TextEditingController();
+  // final List<ChatMessage> messages = [];
   late OpenAI? chatGPT;
 
   bool _isTyping = false;
@@ -53,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-     messages.insert(0, message);
+      messages.insert(0, message);
       _isTyping = true;
     });
 
@@ -86,7 +86,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _isTyping = false;
-     messages.insert(0, botMessage);
+      messages.insert(0, botMessage);
     });
   }
 
