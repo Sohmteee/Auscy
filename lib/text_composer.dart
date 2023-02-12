@@ -1,10 +1,9 @@
 import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'data.dart';
+import 'functions.dart';
 
 class TextComposer extends StatefulWidget {
   const TextComposer({super.key});
@@ -14,8 +13,6 @@ class TextComposer extends StatefulWidget {
 }
 
 class _TextComposerState extends State<TextComposer> {
-
-  
   void setResponse(bool val) {
     setState(() {
       isResponse = val;
