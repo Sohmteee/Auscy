@@ -8,10 +8,9 @@ void _sendMessage() async {
     sender: MessageSender.user,
   );
 
-  setState(() {
     messages.insert(0, message);
     _isTyping = true;
-  });
+
 
   controller.clear();
 
