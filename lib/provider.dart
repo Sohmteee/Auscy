@@ -4,5 +4,7 @@ class MyProvider extends ChangeNotifier {
   bool _isResponse = false;
   bool getIsResponse() => _isResponse;
 
-  void toggleIs
+  void toggleResponse() {
+    
+  }
 }
