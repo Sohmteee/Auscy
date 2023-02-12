@@ -261,18 +261,7 @@ class _ChatScreenState extends State<ChatScreen> {
         body: SafeArea(
           child: Column(
             children: [
-              ChangeNotifierProvider<MyProvider>(
-      create: (_) => MyProvider(),
-      child: Consumer<MyProvider>(
-        builder: (context, model, child) {
-          
-
-          // Here you can use the model variable 
-          // to read and alter the state
-
-        },
-      ),
-    ),
+              
               Flexible(
                   child: ListView.builder(
                 reverse: true,
