@@ -4,8 +4,8 @@ class MyProvider extends ChangeNotifier {
   bool _isResponse = false;
   bool get isResponse => _isResponse;
 
-  set isResponse(bool re) {
-    _isResponse = !_isResponse;
+  set isResponse(bool isResponse) {
+    _isResponse = isResponse;
     notifyListeners();
   }
 }
