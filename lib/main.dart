@@ -9,7 +9,7 @@ Future main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => MyVisibilityProvider()),
+        ChangeNotifierProvider(create: (_) => const MyApp()),
       ],
       child: MyApp(),
     ),
