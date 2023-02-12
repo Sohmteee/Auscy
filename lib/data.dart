@@ -12,4 +12,4 @@ ChatMessage? replyMessage;
 
 bool isResponse = false;
 
-TextEditingController controller = TextEditingController();
+final TextEditingController controller = TextEditingController();
