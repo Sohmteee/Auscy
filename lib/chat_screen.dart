@@ -1,3 +1,4 @@
+import 'package:chat_gpt_02/provider.dart';
 import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:chat_gpt_02/text_composer.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
@@ -261,8 +262,8 @@ class _ChatScreenState extends State<ChatScreen> {
           child: Column(
             children: [
               ChangeNotifierProvider<MainModel>(
-      create: (_) => MainModel(),
-      child: Consumer<MainModel>(
+      create: (_) => MyProvider(),
+      child: Consumer<MyProvider>(
         builder: (context, model, child) {
 
           // Here you can use the model variable 
