@@ -11,12 +11,7 @@ import 'data.dart';
 import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
-  ChatScreen({
-    super.key,
-    this.isResponse = false,
-  });
-
-  bool isResponse;
+  const ChatScreen({super.key});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -54,7 +49,6 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage message = ChatMessage(
       text: _controller.text.trim(),
       sender: MessageSender.user,
-      context: context,
     );
 
     setState(() {
@@ -87,7 +81,6 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage botMessage = ChatMessage(
       text: response,
       sender: MessageSender.bot,
-      context: context,
     );
 
     setState(() {
@@ -108,7 +101,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Vx.zinc200,
-                  borderRadius: widget.isResponse
+                  borderRadius: isResponse
                       ? const BorderRadius.vertical(bottom: Radius.circular(20))
                       : BorderRadius.circular(20),
                 ),
@@ -147,7 +140,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void setResponse(bool val) {
     setState(() {
-      widget.isResponse = val;
+      isResponse = val;
     });
   }
 
@@ -158,11 +151,12 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget buildReplyHoverBubble() {
-    return widget.isResponse
+    return isResponse
         ? ReplyPreview(
             sender: replyMessage!.sender,
             text: replyMessage!.text,
             setResponse: setResponse,
+            setReplyMessage: setReplyMessage,
           )
         : const SizedBox();
   }
@@ -171,22 +165,21 @@ class _ChatScreenState extends State<ChatScreen> {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
-          widget.isResponse = true;
+          isResponse = true;
           replyMessage = ChatMessage(
-            text: text,
-            sender: sender,
-            context: context,
+            text: .text,
+            sender: widget.sender,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
         });
       },
       child: Row(
-        mainAxisAlignment: sender == MessageSender.user
+        mainAxisAlignment: widget.sender == MessageSender.user
             ? MainAxisAlignment.end
             : MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (sender == MessageSender.bot)
+          if (widget.sender == MessageSender.bot)
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Card(
@@ -201,20 +194,20 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ChatBubble(
             clipper: ChatBubbleClipper8(
-                type: sender == MessageSender.user
+                type: widget.sender == MessageSender.user
                     ? BubbleType.sendBubble
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
-                sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
+                widget.sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
             child: Container(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
               child: Text(
-                text.trim(),
+                widget.text.trim(),
                 style: TextStyle(
-                  color: sender == MessageSender.user
+                  color: widget.sender == MessageSender.user
                       ? Colors.white
                       : Colors.black,
                   fontSize: 16,
@@ -222,7 +215,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
           ),
-          if (sender == MessageSender.user)
+          if (widget.sender == MessageSender.user)
             Padding(
               padding: const EdgeInsets.only(top: 23),
               child: Card(
