@@ -13,6 +13,7 @@ ChatMessage? replyMessage;
 bool isTyping = false;
 bool isResponse = false;
 
+
 final TextEditingController controller = TextEditingController();
 final List<ChatMessage> messages = [];
-
+late OpenAI? chatGPT;
