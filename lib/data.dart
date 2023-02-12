@@ -13,3 +13,5 @@ ChatMessage? replyMessage;
 bool isResponse = false;
 
 final TextEditingController controller = TextEditingController();
+final List<ChatMessage> messages = [];
+
