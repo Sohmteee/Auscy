@@ -4,6 +4,16 @@ import 'package:velocity_x/velocity_x.dart';
 import 'chatmessage.dart';
 import 'data.dart';
 
+void insertNewData(String response) {
+  ChatMessage botMessage = ChatMessage(
+    text: response,
+    sender: MessageSender.bot,
+  );
+
+  isTyping = false;
+  messages.insert(0, botMessage);
+}
+
 void _sendMessage() async {
   if (controller.text.isEmpty) return;
   ChatMessage message = ChatMessage(
@@ -11,9 +21,8 @@ void _sendMessage() async {
     sender: MessageSender.user,
   );
 
-    messages.insert(0, message);
-    isTyping = true;
-
+  messages.insert(0, message);
+  isTyping = true;
 
   controller.clear();
 
