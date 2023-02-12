@@ -167,7 +167,7 @@ class _ChatScreenState extends State<ChatScreen> {
         setState(() {
           isResponse = true;
           replyMessage = ChatMessage(
-            text: .text,
+            text: widget.text,
             sender: widget.sender,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
