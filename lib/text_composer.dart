@@ -1,3 +1,4 @@
+import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -13,6 +14,16 @@ class TextComposer extends StatefulWidget {
 }
 
 class _TextComposerState extends State<TextComposer> {
+  Widget buildReplyHoverBubble() {
+    return isResponse
+        ? ReplyPreview(
+            sender: replyMessage!.sender,
+            text: replyMessage!.text,
+            setResponse: setResponse,
+          )
+        : const SizedBox();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Row(
