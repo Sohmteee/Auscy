@@ -14,6 +14,12 @@ class TextComposer extends StatefulWidget {
 }
 
 class _TextComposerState extends State<TextComposer> {
+  void setResponse(bool val) {
+    setState(() {
+      isResponse = val;
+    });
+  }
+
   Widget buildReplyHoverBubble() {
     return isResponse
         ? ReplyPreview(
@@ -23,7 +29,7 @@ class _TextComposerState extends State<TextComposer> {
           )
         : const SizedBox();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Row(
