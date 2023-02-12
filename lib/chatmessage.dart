@@ -31,7 +31,7 @@ class _ChatMessageState extends State<ChatMessage> {
           replyMessage = ChatMessage(
             text: widget.text,
             sender: widget.sender,
-            context: _ChatMessageState.c,
+            context: _ChatMessageState().context,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
         });
