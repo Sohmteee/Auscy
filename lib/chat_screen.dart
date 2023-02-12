@@ -18,7 +18,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController controller = TextEditingController();
   final List<ChatMessage> _messages = [];
   late OpenAI? chatGPT;
 
@@ -46,9 +46,9 @@ class _ChatScreenState extends State<ChatScreen> {
   // Link for api - https://beta.openai.com/account/api-keys
 
   void _sendMessage() async {
-    if (_controller.text.isEmpty) return;
+    if (controller.text.isEmpty) return;
     ChatMessage message = ChatMessage(
-      text: _controller.text.trim(),
+      text: controller.text.trim(),
       sender: MessageSender.user,
     );
 
@@ -57,7 +57,7 @@ class _ChatScreenState extends State<ChatScreen> {
       _isTyping = true;
     });
 
-    _controller.clear();
+    controller.clear();
 
     /* String prmpt = "";
 
@@ -108,7 +108,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 child: TextField(
                   autofocus: true,
-                  controller: _controller,
+                  controller: controller,
                   textCapitalization: TextCapitalization.sentences,
                   onSubmitted: (value) => _sendMessage(),
                   decoration: InputDecoration.collapsed(
