@@ -54,6 +54,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage message = ChatMessage(
       text: _controller.text.trim(),
       sender: MessageSender.user,
+      context: context,
     );
 
     setState(() {
@@ -86,6 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage botMessage = ChatMessage(
       text: response,
       sender: MessageSender.bot,
+      context: context,
     );
 
     setState(() {
