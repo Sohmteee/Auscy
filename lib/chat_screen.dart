@@ -4,6 +4,7 @@ import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -259,6 +260,17 @@ class _ChatScreenState extends State<ChatScreen> {
         body: SafeArea(
           child: Column(
             children: [
+              ChangeNotifierProvider<MainModel>(
+      create: (_) => MainModel(),
+      child: Consumer<MainModel>(
+        builder: (context, model, child) {
+
+          // Here you can use the model variable 
+          // to read and alter the state
+
+        },
+      ),
+    )
               Flexible(
                   child: ListView.builder(
                 reverse: true,
