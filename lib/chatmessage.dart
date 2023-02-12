@@ -10,12 +10,10 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
-    required this.context,
   });
 
   final String text;
   final MessageSender sender;
-  final BuildContext context;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
@@ -31,7 +29,6 @@ class _ChatMessageState extends State<ChatMessage> {
           replyMessage = ChatMessage(
             text: widget.text,
             sender: widget.sender,
-            context: context,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
         });
