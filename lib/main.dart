@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
-        fo
+        fontFamily: "Poppins",
         useMaterial3: true,
       ),
       home: const ChatScreen(),
