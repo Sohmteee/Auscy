@@ -7,8 +7,10 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => const MyApp(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MyVisibilityProvider()),
+      ],
       child: MyApp(),
     ),
   );
