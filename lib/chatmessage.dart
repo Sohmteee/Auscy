@@ -27,7 +27,7 @@ class _ChatMessageState extends State<ChatMessage> {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
-          context.findAncestorWidgetOfExactType();
+          context.find;
           isResponse = true;
           replyMessage = ChatMessage(
             text: widget.text,
