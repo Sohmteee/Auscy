@@ -1,4 +1,5 @@
 import 'package:chat_gpt_02/reply_preview.dart';
+import 'package:chat_gpt_02/text_composer.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
@@ -272,7 +273,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
                 child: Column(
                   children: [
-                    _buildTextComposer(),
+                    TextComposer(),
                   ],
                 ),
               )
