@@ -20,7 +20,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   // final TextEditingController controller = TextEditingController();
   // final List<ChatMessage> messages = [];
-  late OpenAI? chatGPT;
+  // late OpenAI? chatGPT;
 
   bool _isTyping = false;
   bool isResponse = false;
