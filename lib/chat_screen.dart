@@ -265,13 +265,14 @@ class _ChatScreenState extends State<ChatScreen> {
       create: (_) => MyProvider(),
       child: Consumer<MyProvider>(
         builder: (context, model, child) {
+          return
 
           // Here you can use the model variable 
           // to read and alter the state
 
         },
       ),
-    )
+    ),
               Flexible(
                   child: ListView.builder(
                 reverse: true,
