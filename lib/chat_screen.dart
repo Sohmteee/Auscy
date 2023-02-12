@@ -242,18 +242,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<MyProvider>(
-      create: (_) => MyProvider(),
-      child: Consumer<MyProvider>(
-        builder: (context, model, child) {
-          
-
-          // Here you can use the model variable 
-          // to read and alter the state
-
-        },
-      ),
-    ),(
+    return widget(
       child: Scaffold(
           appBar: AppBar(
             leading: const Padding(
