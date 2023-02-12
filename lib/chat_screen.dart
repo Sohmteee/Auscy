@@ -175,6 +175,7 @@ class _ChatScreenState extends State<ChatScreen> {
           replyMessage = ChatMessage(
             text: text,
             sender: sender,
+            context: context,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
         });
