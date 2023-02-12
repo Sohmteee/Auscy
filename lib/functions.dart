@@ -14,7 +14,7 @@ void insertNewData(String response) {
   messages.insert(0, botMessage);
 }
 
-void _sendMessage() async {
+void sendMessage() async {
   if (controller.text.isEmpty) return;
   ChatMessage message = ChatMessage(
     text: controller.text.trim(),
