@@ -157,7 +157,6 @@ class _ChatScreenState extends State<ChatScreen> {
             sender: replyMessage!.sender,
             text: replyMessage!.text,
             setResponse: setResponse,
-            setReplyMessage: setReplyMessage,
           )
         : const SizedBox();
   }
