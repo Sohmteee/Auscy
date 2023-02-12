@@ -23,6 +23,7 @@ class _ChatScreenState extends State<ChatScreen> {
   late OpenAI? chatGPT;
 
   bool _isTyping = false;
+  bool isResponse = false;
 
   @override
   void initState() {
@@ -167,19 +168,19 @@ class _ChatScreenState extends State<ChatScreen> {
         setState(() {
           isResponse = true;
           replyMessage = ChatMessage(
-            text: widget.text,
-            sender: widget.sender,
+            text: text,
+            sender: sender,
           );
           debugPrint("Replying to: ${replyMessage!.text}");
         });
       },
       child: Row(
-        mainAxisAlignment: widget.sender == MessageSender.user
+        mainAxisAlignment: sender == MessageSender.user
             ? MainAxisAlignment.end
             : MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (widget.sender == MessageSender.bot)
+          if (sender == MessageSender.bot)
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Card(
@@ -194,20 +195,20 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ChatBubble(
             clipper: ChatBubbleClipper8(
-                type: widget.sender == MessageSender.user
+                type: sender == MessageSender.user
                     ? BubbleType.sendBubble
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
-                widget.sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
+                sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
             child: Container(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
               child: Text(
-                widget.text.trim(),
+                text.trim(),
                 style: TextStyle(
-                  color: widget.sender == MessageSender.user
+                  color: sender == MessageSender.user
                       ? Colors.white
                       : Colors.black,
                   fontSize: 16,
@@ -215,7 +216,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
           ),
-          if (widget.sender == MessageSender.user)
+          if (sender == MessageSender.user)
             Padding(
               padding: const EdgeInsets.only(top: 23),
               child: Card(
