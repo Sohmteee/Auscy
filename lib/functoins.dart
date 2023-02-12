@@ -9,7 +9,7 @@ void _sendMessage() async {
   );
 
     messages.insert(0, message);
-    _isTyping = true;
+    isTyping = true;
 
 
   controller.clear();
