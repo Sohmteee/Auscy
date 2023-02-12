@@ -261,7 +261,7 @@ class _ChatScreenState extends State<ChatScreen> {
         body: SafeArea(
           child: Column(
             children: [
-              ChangeNotifierProvider<MainModel>(
+              ChangeNotifierProvider<MyProvider>(
       create: (_) => MyProvider(),
       child: Consumer<MyProvider>(
         builder: (context, model, child) {
