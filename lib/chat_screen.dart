@@ -19,7 +19,7 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController controller = TextEditingController();
-  final List<ChatMessage> _messages = [];
+  final List<ChatMessage> messages = [];
   late OpenAI? chatGPT;
 
   bool _isTyping = false;
@@ -53,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      _messages.insert(0, message);
+     messages.insert(0, message);
       _isTyping = true;
     });
 
@@ -62,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
     /* String prmpt = "";
 
     List<String> promptList =
-        _messages.take(20).map((msg) => msg.text.trim()).toList();
+       messages.take(20).map((msg) => msg.text.trim()).toList();
 
     prmpt = promptList.join('\n'); */
 
@@ -86,7 +86,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _isTyping = false;
-      _messages.insert(0, botMessage);
+     messages.insert(0, botMessage);
     });
   }
 
@@ -262,9 +262,9 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: ListView.builder(
                 reverse: true,
                 padding: Vx.m8,
-                itemCount: _messages.length,
+                itemCount: messages.length,
                 itemBuilder: (context, index) {
-                  return _messages[index];
+                  return messages[index];
                 },
               )),
               if (_isTyping) const ThreeDots(),
