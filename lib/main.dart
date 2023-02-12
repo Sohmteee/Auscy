@@ -1,3 +1,4 @@
+import 'package:chat_gpt_02/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -9,7 +10,7 @@ Future main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => const MyApp()),
+        ChangeNotifierProvider<MyProvider>(create: (_) => const MyApp()),
       ],
       child: MyApp(),
     ),
