@@ -242,9 +242,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ChatMessage>(
-      create: (_) => ChatMessage(),
-      child: Consumer<ChatMessage>(
+    return ChangeNotifierProvider<ChatMes>(
+      create: (_) => ChatMes(),
+      child: Consumer<ChatMes>(
         builder: (context, model, child) {
           return Scaffold(
             appBar: AppBar(
