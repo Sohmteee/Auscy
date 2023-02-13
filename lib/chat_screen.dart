@@ -288,7 +288,14 @@ class _ChatScreenState extends State<ChatScreen> {
                             Expanded(
                               child: Column(
                                 children: [
-                                  buildReplyHoverBubble(),
+                                  // reply preview
+                                  isResponse
+        ? ReplyPreview(
+            sender: replyMessage!.sender,
+            text: replyMessage!.text,
+            setResponse: setResponse,
+          )
+        : const SizedBox();
                                   Container(
                                     padding: const EdgeInsets.all(15),
                                     decoration: BoxDecoration(
