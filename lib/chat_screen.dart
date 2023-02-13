@@ -344,7 +344,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                                                     .spaceBetween,
                                                             children: [
                                                               Text(
-                                                                widget.sender ==
+                                                                replyMessage!
+                                                                            .sender ==
                                                                         MessageSender
                                                                             .user
                                                                     ? "You"
