@@ -23,6 +23,11 @@ class _ChatMessageState extends State<ChatMessage> {
   bool _isResponse = false;
   bool get isResponse => _isResponse;
 
+  set isResponse(bool value) {
+    _isResponse = value;
+    notifyListeners();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SwipeTo(
