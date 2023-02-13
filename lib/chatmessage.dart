@@ -5,7 +5,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 import 'data.dart';
 
-class ChatMessage extends StatefulWidget{
+class ChatMessage extends StatefulWidget {
   const ChatMessage({
     super.key,
     required this.text,
@@ -19,7 +19,7 @@ class ChatMessage extends StatefulWidget{
   State<ChatMessage> createState() => _ChatMessageState();
 }
 
-class _ChatMessageState extends State<ChatMessage> {
+class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
   bool _isResponse = false;
   bool get isResponse => _isResponse;
 
