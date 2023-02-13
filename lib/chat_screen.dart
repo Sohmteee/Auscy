@@ -280,6 +280,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Column(
                       children: const [
                         // TextComposer(),
+
+                        // text composer
+                        
                       ],
                     ),
                   )
