@@ -293,7 +293,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                     padding: const EdgeInsets.all(15),
                                     decoration: BoxDecoration(
                                       color: Vx.zinc200,
-                                      borderRadius: model.isResponse
+                                      borderRadius: isResponse
                                           ? const BorderRadius.vertical(
                                               bottom: Radius.circular(20))
                                           : BorderRadius.circular(20),
