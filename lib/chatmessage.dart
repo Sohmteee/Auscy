@@ -1,3 +1,4 @@
+import 'package:chat_gpt_02/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:provider/provider.dart';
@@ -31,9 +32,9 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<MainModel>(
-      create: (_) => MainModel(),
-      child: Consumer<MainModel>(
+    return ChangeNotifierProvider<MyProvider>(
+      create: (_) => MyProvider(),
+      child: Consumer<MyProvider>(
         builder: (context, model, child) {
           // Here you can use the model variable
           // to read and alter the state
