@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyProvider extends ChangeNotifier {
-  bool _isResponse = false;
+  bool isResponse = false;
 
   void setResponse(bool value) {
-    _isResponse = value;
+    isResponse = value;
     notifyListeners();
   }
 }
-
-
