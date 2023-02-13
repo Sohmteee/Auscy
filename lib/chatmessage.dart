@@ -6,7 +6,7 @@ import 'package:velocity_x/velocity_x.dart';
 import 'data.dart';
 
 class ChatMessage extends StatefulWidget with ChangeNotifier {
-   ChatMessage({
+  ChatMessage({
     super.key,
     required this.text,
     required this.sender,
@@ -22,13 +22,13 @@ class ChatMessage extends StatefulWidget with ChangeNotifier {
 class _ChatMessageState extends State<ChatMessage> {
   bool _isResponse = false;
   bool get isResponse => _isResponse;
-  
+
   @override
   Widget build(BuildContext context) {
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
-          isResponse = true;
+          _isResponse = true;
           replyMessage = ChatMessage(
             text: widget.text,
             sender: widget.sender,
