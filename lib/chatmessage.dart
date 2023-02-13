@@ -25,7 +25,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
   bool _isResponse = false;
   bool get isResponse => _isResponse;
 
-  set isResponse(bool value) {
+  set setResponse(bool value) {
     _isResponse = value;
     notifyListeners();
   }
