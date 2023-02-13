@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -30,17 +31,15 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
 
   @override
   Widget build(BuildContext context) {
-    ChangeNotifierProvider<MainModel>(
+    return ChangeNotifierProvider<MainModel>(
       create: (_) => MainModel(),
       child: Consumer<MainModel>(
         builder: (context, model, child) {
-
-          // Here you can use the model variable 
+          // Here you can use the model variable
           // to read and alter the state
-
         },
       ),
-    )
+    );
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
