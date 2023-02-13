@@ -5,8 +5,8 @@ import 'package:velocity_x/velocity_x.dart';
 
 import 'data.dart';
 
-class ChatMessage extends StatefulWidget with ChangeNotifier {
-  ChatMessage({
+class ChatMessage extends StatefulWidget{
+  const ChatMessage({
     super.key,
     required this.text,
     required this.sender,
