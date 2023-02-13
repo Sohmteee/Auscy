@@ -282,7 +282,52 @@ class _ChatScreenState extends State<ChatScreen> {
                         // TextComposer(),
 
                         // text composer
-                        
+                        Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Expanded(
+          child: Column(
+            children: [
+              buildReplyHoverBubble(),
+              Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Vx.zinc200,
+                  borderRadius: isResponse
+                      ? const BorderRadius.vertical(bottom: Radius.circular(20))
+                      : BorderRadius.circular(20),
+                ),
+                child: TextField(
+                  autofocus: true,
+                  controller: controller,
+                  textCapitalization: TextCapitalization.sentences,
+                  onSubmitted: (value) => _sendMessage(),
+                  decoration: InputDecoration.collapsed(
+                    hintText: hintText,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 10),
+        Container(
+          decoration: const BoxDecoration(
+            color: Vx.green500,
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            icon: const Icon(
+              color: Vx.white,
+              Icons.send,
+            ),
+            onPressed: () {
+              _sendMessage();
+            },
+          ),
+        ),
+      ],
+    ).px16();]
                       ],
                     ),
                   )
