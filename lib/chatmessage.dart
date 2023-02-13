@@ -20,6 +20,9 @@ class ChatMessage extends StatefulWidget with ChangeNotifier {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
+  bool _isResponse = false;
+  bool get isResponse => _isResponse;
+  
   @override
   Widget build(BuildContext context) {
     return SwipeTo(
