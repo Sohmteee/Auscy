@@ -39,7 +39,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
           return SwipeTo(
             onRightSwipe: () {
               setState(() {
-                mode
+                model.isResponse = true;
                 _isResponse = true;
                 replyMessage = ChatMessage(
                   text: widget.text,
@@ -115,6 +115,5 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
         },
       ),
     );
-    
   }
 }
