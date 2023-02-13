@@ -289,13 +289,13 @@ class _ChatScreenState extends State<ChatScreen> {
                               child: Column(
                                 children: [
                                   // reply preview
-                                  isResponse
-        ? ReplyPreview(
-            sender: replyMessage!.sender,
-            text: replyMessage!.text,
-            setResponse: setResponse,
-          )
-        : const SizedBox();
+                                  model.isResponse
+                                      ? ReplyPreview(
+                                          sender: replyMessage!.sender,
+                                          text: replyMessage!.text,
+                                          setResponse: setResponse,
+                                        )
+                                      : const SizedBox(),
                                   Container(
                                     padding: const EdgeInsets.all(15),
                                     decoration: BoxDecoration(
