@@ -30,6 +30,17 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
 
   @override
   Widget build(BuildContext context) {
+    ChangeNotifierProvider<MainModel>(
+      create: (_) => MainModel(),
+      child: Consumer<MainModel>(
+        builder: (context, model, child) {
+
+          // Here you can use the model variable 
+          // to read and alter the state
+
+        },
+      ),
+    )
     return SwipeTo(
       onRightSwipe: () {
         setState(() {
