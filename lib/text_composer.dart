@@ -50,6 +50,7 @@ class _TextComposerState extends State<TextComposer> {
                   autofocus: true,
                   controller: controller,
                   textCapitalization: TextCapitalization.sentences,
+                  
                   onSubmitted: (value) => sendMessage(),
                   decoration: InputDecoration.collapsed(
                     hintText: hintText,
