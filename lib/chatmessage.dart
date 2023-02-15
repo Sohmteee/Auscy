@@ -75,7 +75,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                         text: widget.text.trim(),
                       ),
                     );
-                    Scaffold.
+                    
                   },
                   child: ChatBubble(
                     clipper: ChatBubbleClipper8(
