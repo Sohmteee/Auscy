@@ -73,6 +73,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                     PopupMenuButton<int>(
                       itemBuilder: (context) => [
                         PopupMenuItem(
+                          value: 1,
                           child: Text("Copy"),
                         ),
                       ],
