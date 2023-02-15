@@ -247,48 +247,46 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Consumer<MyProvider>(
         builder: (context, model, child) {
           return Scaffold(
-            appBar: AppBar(
-              leading: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+              appBar: AppBar(
+                leading: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    backgroundImage:
+                        AssetImage("assets/images/chatgpt_icon.png"),
+                  ),
+                ),
+                title: const Text(
+                  "ChatGPT",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
                 ),
               ),
-              title: const Text(
-                "ChatGPT",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
+              body: SafeArea(
+                child: Column(
+                  children: [
+                    Flexible(
+                        child: ListView.builder(
+                      reverse: true,
+                      padding: Vx.m8,
+                      itemCount: messages.length,
+                      itemBuilder: (context, index) {
+                        return messages[index];
+                      },
+                    )),
+                    if (_isTyping) const ThreeDots(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      child: Column(
+                        children: const [
+                          TextComposer(),
+                        ],
+                      ),
+                    )
+                  ],
                 ),
-              ),
-            ),
-            body: SafeArea(
-              child: Column(
-                children: [
-                  Flexible(
-                      child: ListView.builder(
-                    reverse: true,
-                    padding: Vx.m8,
-                    itemCount: messages.length,
-                    itemBuilder: (context, index) {
-                      return messages[index];
-                    },
-                  )),
-                  if (_isTyping) const ThreeDots(),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
-                    child: Column(
-                      children: const [
-                        // TextComposer(),
-
-                        // text composer
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          );
+              ),);
         },
       ),
     );
