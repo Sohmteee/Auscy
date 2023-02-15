@@ -107,8 +107,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 ),
                 if (widget.sender == MessageSender.user &&
                     (messages[messages.indexOf(ChatMessage(
-                                    text: widget.text, sender: widget.sender)) -
-                                1]
+                                text: widget.text, sender: widget.sender))]
                             .sender !=
                         MessageSender.user))
                   Padding(
