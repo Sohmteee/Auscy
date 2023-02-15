@@ -71,8 +71,10 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 GestureDetector(
                   onLongPress: () async {
                     PopupMenuButton<int>(
-                      itemBuilder: (context) => ,
-                    ),
+                      itemBuilder: (context) => [
+                        Pop
+                      ],
+                    );
                     await Clipboard.setData(
                       ClipboardData(
                         text: widget.text.trim(),
