@@ -51,6 +51,7 @@ class _TextComposerState extends State<TextComposer> {
                   controller: controller,
                   textCapitalization: TextCapitalization.sentences,
                   keyboardType: TextInputType.multiline,
+                  minLines: 1,
                   maxLines: 5,
                   onSubmitted: (value) => sendMessage(),
                   decoration: InputDecoration.collapsed(
