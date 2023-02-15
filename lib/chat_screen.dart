@@ -280,7 +280,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
                       child: Column(
                         children: const [
-                          TextComposer(),
+                          _buildTextComposer(),
                         ],
                       ),
                     )
