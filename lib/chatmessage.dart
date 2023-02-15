@@ -76,7 +76,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                         text: widget.text.trim(),
                       ),
                     );
-                    Toast.show("Copied text to clipbord",
+                    Toast.show("Copied Text to Clipbord",
                         duration: Toast.lengthShort, gravity: Toast.bottom);
                   },
                   child: ChatBubble(
