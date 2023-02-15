@@ -52,7 +52,7 @@ class _TextComposerState extends State<TextComposer> {
                   textCapitalization: TextCapitalization.sentences,
                   keyboardType: TextInputType.multiline,
                   minLines: 1,
-                  maxLines: 5,
+                  maxLines: 6,
                   textInputAction: TextInputAction.newline,
                   onSubmitted: (value) => sendMessage(),
                   decoration: InputDecoration.collapsed(
