@@ -75,7 +75,8 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                         text: widget.text.trim(),
                       ),
                     );
-                    
+                    Toast.show("Toast plugin app",
+                        duration: Toast.lengthShort, gravity: Toast.bottom);
                   },
                   child: ChatBubble(
                     clipper: ChatBubbleClipper8(
