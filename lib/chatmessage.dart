@@ -72,7 +72,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                   onLongPress: () async {
                     PopupMenuButton<int>(
                       itemBuilder: (context) => [
-                        Pop
+                        PopupMenuItem(child: child)
                       ],
                     );
                     await Clipboard.setData(
