@@ -1,5 +1,6 @@
 import 'package:chat_gpt_02/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
@@ -68,9 +69,13 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                     ),
                   ),
                 GestureDetector(
-                  
+                  onTap: () async {
+                    await Clipboard.setData(
+                      ClipboardData(text: "your text"),
+                    );
+                    // copied successfully
+                  },
                   child: ChatBubble(
-                    
                     clipper: ChatBubbleClipper8(
                         type: widget.sender == MessageSender.user
                             ? BubbleType.sendBubble
