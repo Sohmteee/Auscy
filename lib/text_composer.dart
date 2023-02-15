@@ -19,7 +19,7 @@ class _TextComposerState extends State<TextComposer> {
     });
   }
 
-  Widget buildReplyHoverBubble() {
+  Widget buildReplyPreview() {
     return isResponse
         ? ReplyPreview(
             sender: replyMessage!.sender,
@@ -37,7 +37,7 @@ class _TextComposerState extends State<TextComposer> {
         Expanded(
           child: Column(
             children: [
-              buildReplyHoverBubble(),
+              buildReplyPreview(),
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
