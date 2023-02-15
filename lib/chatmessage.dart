@@ -81,7 +81,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                         duration: Toast.lengthShort, gravity: Toast.bottom);
                   },
                   child: ChatBubble(
-                    clipper: ChatBubbleClipper5(
+                    clipper: ChatBubbleClipper8(
                         type: widget.sender == MessageSender.user
                             ? BubbleType.sendBubble
                             : BubbleType.receiverBubble),
