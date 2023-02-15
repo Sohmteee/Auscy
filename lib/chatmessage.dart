@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
+import 'package:toast/toast.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'data.dart';
@@ -75,7 +76,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                         text: widget.text.trim(),
                       ),
                     );
-                    Toast.show("Toast plugin app",
+                    Toast.show("Text",
                         duration: Toast.lengthShort, gravity: Toast.bottom);
                   },
                   child: ChatBubble(
