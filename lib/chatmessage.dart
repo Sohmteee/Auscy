@@ -71,7 +71,9 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 GestureDetector(
                   onTap: () async {
                     await Clipboard.setData(
-                      ClipboardData(text: "your text"),
+                      ClipboardData(
+                        text: widget.text.trim(),
+                      ),
                     );
                     // copied successfully
                   },
