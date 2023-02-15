@@ -68,6 +68,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                     ),
                   ),
                 ChatBubble(
+                  
                   clipper: ChatBubbleClipper8(
                       type: widget.sender == MessageSender.user
                           ? BubbleType.sendBubble
