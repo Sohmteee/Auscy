@@ -34,6 +34,8 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
 
   @override
   Widget build(BuildContext context) {
+    
+    ToastContext().init(context);
     return ChangeNotifierProvider<MyProvider>(
       create: (_) => MyProvider(),
       child: Consumer<MyProvider>(
