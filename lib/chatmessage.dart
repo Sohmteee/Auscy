@@ -106,7 +106,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                   ),
                 ),
                 if (widget.sender == MessageSender.user &&
-                    (messages[messages.length - 2].sender !=
+                    (messages[messages.inde - 2].sender !=
                         MessageSender.user))
                   Padding(
                     padding: const EdgeInsets.only(top: 23),
