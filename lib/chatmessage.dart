@@ -67,27 +67,30 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                       ),
                     ),
                   ),
-                ChatBubble(
+                GestureDetector(
                   
-                  clipper: ChatBubbleClipper8(
-                      type: widget.sender == MessageSender.user
-                          ? BubbleType.sendBubble
-                          : BubbleType.receiverBubble),
-                  margin: const EdgeInsets.only(top: 20),
-                  backGroundColor: widget.sender == MessageSender.user
-                      ? Vx.green500
-                      : Vx.zinc200,
-                  child: Container(
-                    constraints: BoxConstraints(
-                      maxWidth: MediaQuery.of(context).size.width * 0.7,
-                    ),
-                    child: SelectableText(
-                      widget.text.trim(),
-                      style: TextStyle(
-                        color: widget.sender == MessageSender.user
-                            ? Colors.white
-                            : Colors.black,
-                        fontSize: 16,
+                  child: ChatBubble(
+                    
+                    clipper: ChatBubbleClipper8(
+                        type: widget.sender == MessageSender.user
+                            ? BubbleType.sendBubble
+                            : BubbleType.receiverBubble),
+                    margin: const EdgeInsets.only(top: 20),
+                    backGroundColor: widget.sender == MessageSender.user
+                        ? Vx.green500
+                        : Vx.zinc200,
+                    child: Container(
+                      constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width * 0.7,
+                      ),
+                      child: SelectableText(
+                        widget.text.trim(),
+                        style: TextStyle(
+                          color: widget.sender == MessageSender.user
+                              ? Colors.white
+                              : Colors.black,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                   ),
