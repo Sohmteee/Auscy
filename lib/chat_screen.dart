@@ -1,5 +1,4 @@
 import 'package:chat_gpt_02/provider.dart';
-import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:chat_gpt_02/text_composer.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +107,6 @@ class _ChatScreenState extends State<ChatScreen> {
         Expanded(
           child: Column(
             children: [
-              buildReplyPreview(),
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
