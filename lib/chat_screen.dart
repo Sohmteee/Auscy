@@ -79,7 +79,7 @@ class _ChatScreenState extends State<ChatScreen> {
       prompt: prompt,
       model: kTranslateModelV3,
       maxTokens: 200,
-      sto
+      stop: ["\n"]
     );
 
     final response = await chatGPT!.onCompleteText(
