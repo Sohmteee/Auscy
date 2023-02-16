@@ -113,6 +113,10 @@ class _ChatScreenState extends State<ChatScreen> {
                   autofocus: true,
                   controller: controller,
                   textCapitalization: TextCapitalization.sentences,
+                  keyboardType: TextInputType.multiline,
+                  minLines: 1,
+                  maxLines: 6,
+                  textInputAction: TextInputAction.newline,
                   onSubmitted: (value) => _sendMessage(),
                   decoration: InputDecoration.collapsed(
                     hintText: hintText,
