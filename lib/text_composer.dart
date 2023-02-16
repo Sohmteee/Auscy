@@ -19,15 +19,7 @@ class _TextComposerState extends State<TextComposer> {
     });
   }
 
-  Widget buildReplyPreview() {
-    return isResponse
-        ? ReplyPreview(
-            sender: replyMessage!.sender,
-            text: replyMessage!.text,
-            setResponse: setResponse,
-          )
-        : const SizedBox();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
