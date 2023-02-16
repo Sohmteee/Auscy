@@ -64,6 +64,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     String prompt = "";
     int start = messages.length - 20;
+    if (start < 0) {
+      start = 0;
+    }
 
     List<String> promptList =
         messages.take(20).map((msg) => msg.text.trim()).toList();
