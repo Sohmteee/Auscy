@@ -69,7 +69,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
 
     List<String> last20Texts = messages
-        .sublist(messages.length - 20)
+        .sublist(start)
         .map((message) => message.text)
         .toList();
 
