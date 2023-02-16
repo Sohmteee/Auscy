@@ -34,7 +34,6 @@ class _ChatScreenState extends State<ChatScreen> {
       token: dotenv.env['OPENAI_API_KEY'],
       baseOption: HttpSetup(receiveTimeout: 5000),
       isLogger: true,
-      
     );
 
     super.initState();
@@ -77,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final request = CompleteText(
       prompt: prompt,
       model: kTranslateModelV3,
-      maxTokens: 
+      maxTokens: 200,
     );
 
     final response = await chatGPT!.onCompleteText(
