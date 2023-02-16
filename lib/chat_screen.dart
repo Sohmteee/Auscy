@@ -68,15 +68,13 @@ class _ChatScreenState extends State<ChatScreen> {
       start = 0;
     }
 
-    List<String> last20Texts = messages
-        .sublist(start)
-        .map((message) => message.text)
-        .toList();
+    List<String> last20Texts =
+        messages.sublist(start).map((message) => message.text).toList();
 
     prompt = last20Texts.join('\n');
 
     final request = CompleteText(
-      prompt: message.text,
+      prompt: prompt,
       model: kTranslateModelV3,
     );
 
