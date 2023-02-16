@@ -1,4 +1,3 @@
-import 'package:chat_gpt_02/reply_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -29,7 +28,6 @@ class _TextComposerState extends State<TextComposer> {
         Expanded(
           child: Column(
             children: [
-              buildReplyPreview(),
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(

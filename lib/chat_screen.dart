@@ -166,15 +166,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  Widget buildReplyPreview() {
-    return isResponse
-        ? ReplyPreview(
-            sender: replyMessage!.sender,
-            text: replyMessage!.text,
-            setResponse: setResponse,
-          )
-        : const SizedBox();
-  }
+ 
 
   Widget chatMessage(String text, MessageSender sender) {
     return SwipeTo(
