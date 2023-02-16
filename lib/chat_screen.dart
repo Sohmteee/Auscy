@@ -73,9 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
         .map((message) => message.text)
         .toList();
 
-    List<String> promptList = last20Texts.join("\n");
-
-    prompt = promptList.join('\n');
+    prompt = last20Texts.join('\n');
 
     final request = CompleteText(
       prompt: message.text,
