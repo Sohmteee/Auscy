@@ -63,6 +63,7 @@ class _ChatScreenState extends State<ChatScreen> {
     controller.clear();
 
     String prompt = "";
+    int start = message.len
 
     List<String> promptList =
        messages.take(20).map((msg) => msg.text.trim()).toList();
