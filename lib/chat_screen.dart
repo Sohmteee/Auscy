@@ -269,6 +269,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: ListView.builder(
                     padding: Vx.m8,
                     itemCount: messages.length,
+                    controller: scrollController,
                     itemBuilder: (context, index) {
                       return messages[index];
                     },
