@@ -282,7 +282,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   )),
                   if (_isTyping)
                     Container(
-                      
+                      color: Colors.transparent,
                       child: const ThreeDots(),
                     ),
                   Padding(
