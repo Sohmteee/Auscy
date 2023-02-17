@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void insertNewData(String response) {
     ChatMessage botMessage = ChatMessage(
-      text: response,
+      text: response.trim() != "",
       sender: MessageSender.bot,
     );
 
