@@ -70,6 +70,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last10Texts.join('\n')}.";
 
+    debugPrint(Promptprompt);
+
     final request = CompleteText(
       prompt: prompt,
       model: kTranslateModelV3,
