@@ -77,6 +77,15 @@ class _ChatScreenState extends State<ChatScreen> {
       stop: ["\"\""],
     );
 
+    try {
+      final response = await chatGPT!.onCompleteText(
+        request: request,
+      );
+      // Handle the response here
+    } catch (e) {
+      // Handle the exception here
+    }
+
     final response = await chatGPT!.onCompleteText(
       request: request,
     );
