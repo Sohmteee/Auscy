@@ -98,7 +98,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _isTyping = false;
-      messages.insert(botMessage);
+      messages.add(botMessage);
     });
   }
 
