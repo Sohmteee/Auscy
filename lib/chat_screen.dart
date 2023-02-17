@@ -70,7 +70,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last10Texts.join('\n')}.";
 
-    debugPrint("Prompt:$prompt" + "\n");
+    debugPrint("Prompt:$prompt" "\n");
 
     final request = CompleteText(
       prompt: prompt,
