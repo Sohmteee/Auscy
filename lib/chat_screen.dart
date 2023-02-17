@@ -73,8 +73,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = last20Texts.join('\n');
 
-    if ((prompt[prompt.length] != ".") || (prompt[prompt.length] != "?") || prompt[prompt.length] != "!") {
-      prompt = pro
+    if ((prompt[prompt.length] != ".") ||
+        (prompt[prompt.length] != "?") ||
+        prompt[prompt.length] != "!") {
+      prompt = "$prompt.";
     }
 
     final request = CompleteText(
@@ -166,8 +168,6 @@ class _ChatScreenState extends State<ChatScreen> {
       replyMessage = message;
     });
   }
-
- 
 
   Widget chatMessage(String text, MessageSender sender) {
     return SwipeTo(
