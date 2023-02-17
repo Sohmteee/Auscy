@@ -9,6 +9,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
 import 'data.dart';
+import 'functions.dart';
 import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -99,7 +100,7 @@ class _ChatScreenState extends State<ChatScreen> {
       messages.add(botMessage);
     });
 
-    
+    scrollToBottom();
   }
 
   Widget _buildTextComposer() {
