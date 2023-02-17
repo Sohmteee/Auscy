@@ -85,7 +85,7 @@ class _ChatScreenState extends State<ChatScreen> {
       insertNewData(response.choices[0].text.trim());
     } catch (e) {
       insertNewData(
-          "An error occured.\nCouldn't get response.\nPlease try again");
+          e);
     }
   }
 
