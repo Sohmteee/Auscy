@@ -84,8 +84,7 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response!.choices[0].text);
       insertNewData(response.choices[0].text.trim());
     } catch (e) {
-      insertNewData(
-          e);
+      insertNewData(e.toString());
     }
   }
 
