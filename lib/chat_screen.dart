@@ -269,6 +269,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             body: SafeArea(
+              
               child: Column(
                 children: [
                   Flexible(
