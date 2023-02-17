@@ -14,7 +14,8 @@ ChatMessage? replyMessage;
 bool isTyping = false;
 bool isResponse = false;
 
-
 final TextEditingController controller = TextEditingController();
+ScrollController _scrollController = ScrollController();
+
 final List<ChatMessage> messages = [];
 late OpenAI? chatGPT;
