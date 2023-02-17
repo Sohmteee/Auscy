@@ -71,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     last20Texts = last20Texts.reversed.toList();
 
-    prompt = last20Texts.join('\n');
+    prompt = "${last20Texts.join('\n')}.";
 
     if ((prompt[prompt.length] != ".") ||
         (prompt[prompt.length] != "?") ||
