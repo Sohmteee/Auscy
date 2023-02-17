@@ -84,12 +84,13 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response!.choices[0].text);
       insertNewData(response.choices[0].text.trim());
     } catch (e) {
-      _sendMessage();
-      // insertNewData(e.toString());
+      
+      insertNewData(e.toString());
     }
   }
 
   void insertNewData(String response) {
+    if (response)
     ChatMessage botMessage = ChatMessage(
       text: response.trim() != ""
           ? response
