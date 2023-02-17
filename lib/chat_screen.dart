@@ -92,8 +92,7 @@ class _ChatScreenState extends State<ChatScreen> {
     if (response.trim() == "") _sendMessage();
 
     ChatMessage botMessage = ChatMessage(
-      text: response.trim() != ""
-          ? response
+      text: response
           : "An error occured.\nCouldn't get response.\nPlease try again",
       sender: MessageSender.bot,
     );
