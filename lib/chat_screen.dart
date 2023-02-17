@@ -253,6 +253,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Consumer<MyProvider>(
         builder: (context, model, child) {
           return Scaffold(
+            backgroundColor: Colors.transparent,
             appBar: AppBar(
               leading: const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -269,7 +270,6 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             body: SafeArea(
-              
               child: Column(
                 children: [
                   Flexible(
