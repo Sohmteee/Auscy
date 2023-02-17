@@ -70,8 +70,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last10Texts.join('\n')}.";
 
-    debugPrint("Prompt:$prompt" "\n");
-
     final request = CompleteText(
       prompt: prompt,
       model: kTranslateModelV3,
@@ -83,8 +81,8 @@ class _ChatScreenState extends State<ChatScreen> {
       final response = await chatGPT!.onCompleteText(
         request: request,
       );
-      // Vx.log(response!.choices[0].text);
-      insertNewData(response!.choices[0].text.trim());
+      Vx.log(response!.choices[0].text);
+      insertNewData(response.choices[0].text.trim());
     } catch (e) {
       insertNewData(e.toString());
     }
@@ -94,7 +92,8 @@ class _ChatScreenState extends State<ChatScreen> {
     if (response.trim() == "") _sendMessage();
 
     ChatMessage botMessage = ChatMessage(
-      text: response,
+      text: response
+          : "An error occured.\nCouldn't get response.\nPlease try again",
       sender: MessageSender.bot,
     );
 
