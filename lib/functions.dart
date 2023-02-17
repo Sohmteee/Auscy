@@ -1,10 +1,17 @@
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
+import 'package:flutter/animation.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
 import 'data.dart';
 
-
+void scrollToBottom() {
+  scrollController.animateTo(
+    scrollController.position.maxScrollExtent,
+    duration: const Duration(milliseconds: 500),
+    curve: Curves.easeOut,
+  );
+}
 
 void insertNewData(String response) {
   ChatMessage botMessage = ChatMessage(
