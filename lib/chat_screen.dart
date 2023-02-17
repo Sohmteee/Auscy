@@ -61,7 +61,7 @@ class _ChatScreenState extends State<ChatScreen> {
     controller.clear();
 
     String prompt = "";
-    int start = (messages.length < 10) ? 0 : (messages.length - 10);
+    int start = (messages.length <= 10) ? 0 : (messages.length - 10);
 
     List<String> last10Texts =
         messages.sublist(start).map((message) => message.text).toList();
