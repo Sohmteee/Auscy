@@ -73,7 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = last20Texts.join('\n');
 
-    if (prompt[prompt.length] != ".") {}
+    if ((prompt[prompt.length] != ".") || ) {}
 
     final request = CompleteText(
       prompt: prompt,
