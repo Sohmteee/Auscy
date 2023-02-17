@@ -1,5 +1,4 @@
 import 'package:chat_gpt_02/provider.dart';
-import 'package:chat_gpt_02/text_composer.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
