@@ -77,13 +77,12 @@ class _ChatScreenState extends State<ChatScreen> {
       stop: ["\"\""],
     );
 
-    late 
-
     try {
       final response = await chatGPT!.onCompleteText(
         request: request,
       );
-      // Handle the response here
+      Vx.log(response!.choices[0].text);
+    insertNewData(response.choices[0].text.trim());
     } catch (e) {
       // Handle the exception here
     }
