@@ -98,6 +98,12 @@ class _ChatScreenState extends State<ChatScreen> {
       _isTyping = false;
       messages.add(botMessage);
     });
+
+    scrollController.animateTo(
+      scrollController.position.maxScrollExtent,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeOut,
+    );
   }
 
   Widget _buildTextComposer() {
