@@ -54,7 +54,7 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      messages.insert(0, message);
+      messages.add(message);
       _isTyping = true;
     });
 
