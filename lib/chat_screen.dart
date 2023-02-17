@@ -61,17 +61,17 @@ class _ChatScreenState extends State<ChatScreen> {
     controller.clear();
 
     String prompt = "";
-    int start = messages.length - 20;
+    int start = messages.length - 50;
     if (start < 0) {
       start = 0;
     }
 
-    List<String> last20Texts =
+    List<String> last50Texts =
         messages.sublist(start).map((message) => message.text).toList();
 
-    last20Texts = last20Texts.reversed.toList();
+    last50Texts = last50Texts.reversed.toList();
 
-    prompt = "${last20Texts.join('\n')}.";
+    prompt = "${last50Texts.join('\n')}.";
 
     final request = CompleteText(
       prompt: prompt,
