@@ -89,7 +89,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void insertNewData(String response) {
     ChatMessage botMessage = ChatMessage(
-      text: response.trim() != "" ? response : "An error occured.\nCouldn't get response",
+      text: response.trim() != ""
+          ? response
+          : "An error occured.\nCouldn't get response.\nPlease try again",
       sender: MessageSender.bot,
     );
 
