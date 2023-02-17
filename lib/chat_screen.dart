@@ -280,7 +280,11 @@ class _ChatScreenState extends State<ChatScreen> {
                       return messages[index];
                     },
                   )),
-                  if (_isTyping) Container(child: const ThreeDots()),
+                  if (_isTyping)
+                    Container(
+                      
+                      child: const ThreeDots(),
+                    ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
                     child: Column(
