@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage botMessage = ChatMessage(
       text: response,
       sender: MessageSender.bot,
-      
+      isErroMessage: ,
     );
 
     scrollToBottom();
