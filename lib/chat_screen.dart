@@ -166,13 +166,11 @@ class _ChatScreenState extends State<ChatScreen> {
             backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
           ),
         ),
-        title: Center(
-          child: const Text(
-            "ChatGPT",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-            ),
+        title: const Text(
+          "ChatGPT",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
           ),
         ),
       ),
