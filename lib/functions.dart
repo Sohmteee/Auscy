@@ -7,7 +7,7 @@ import 'data.dart';
 
 void scrollToBottom() {
   scrollController.animateTo(
-    scrollController.position.maxScrollExtent + 100,
+    scrollController.position.maxScrollExtent + 1000,
     duration: const Duration(milliseconds: 500),
     curve: Curves.easeOut,
   );
