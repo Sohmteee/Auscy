@@ -35,81 +35,79 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
-    return SwipeTo(
-      child: Row(
-        mainAxisAlignment: widget.sender == MessageSender.user
-            ? MainAxisAlignment.end
-            : MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (widget.sender == MessageSender.bot)
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.zinc200,
-                  backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
-                ),
+    return Row(
+      mainAxisAlignment: widget.sender == MessageSender.user
+          ? MainAxisAlignment.end
+          : MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (widget.sender == MessageSender.bot)
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: const CircleAvatar(
+                radius: 15,
+                backgroundColor: Vx.zinc200,
+                backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
               ),
             ),
-          GestureDetector(
-            onLongPress: () async {
-              await Clipboard.setData(
-                ClipboardData(
-                  text: widget.text.trim(),
-                ),
-              );
-              Toast.show("Copied Text to Clipbord",
-                  duration: Toast.lengthShort, gravity: Toast.bottom);
-            },
-            child: ChatBubble(
-              clipper: ChatBubbleClipper8(
-                  type: widget.sender == MessageSender.user
-                      ? BubbleType.sendBubble
-                      : BubbleType.receiverBubble),
-              margin: const EdgeInsets.only(top: 20),
-              backGroundColor: widget.sender == MessageSender.user
-                  ? Vx.green500
-                  : Vx.zinc200,
-              child: Container(
-                constraints: BoxConstraints(
-                  maxWidth: MediaQuery.of(context).size.width * 0.7,
-                ),
-                child: Text(
-                  widget.text.trim(),
-                  style: TextStyle(
-                    color: widget.sender == MessageSender.user
-                        ? Colors.white
-                        : Colors.black,
-                    fontSize: 16,
-                  ),
+          ),
+        GestureDetector(
+          onLongPress: () async {
+            await Clipboard.setData(
+              ClipboardData(
+                text: widget.text.trim(),
+              ),
+            );
+            Toast.show("Copied Text to Clipbord",
+                duration: Toast.lengthShort, gravity: Toast.bottom);
+          },
+          child: ChatBubble(
+            clipper: ChatBubbleClipper8(
+                type: widget.sender == MessageSender.user
+                    ? BubbleType.sendBubble
+                    : BubbleType.receiverBubble),
+            margin: const EdgeInsets.only(top: 20),
+            backGroundColor: widget.sender == MessageSender.user
+                ? Vx.green500
+                : Vx.zinc200,
+            child: Container(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.7,
+              ),
+              child: Text(
+                widget.text.trim(),
+                style: TextStyle(
+                  color: widget.sender == MessageSender.user
+                      ? Colors.white
+                      : Colors.black,
+                  fontSize: 16,
                 ),
               ),
             ),
           ),
-          if (widget.sender == MessageSender.user &&
-              (messages[messages.length - 1].sender != MessageSender.user))
-            Padding(
-              padding: const EdgeInsets.only(top: 23),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.green500,
-                  child: Icon(
-                    size: 18,
-                    color: Colors.white,
-                    Icons.person,
-                  ),
+        ),
+        if (widget.sender == MessageSender.user &&
+            (messages[messages.length - 1].sender != MessageSender.user))
+          Padding(
+            padding: const EdgeInsets.only(top: 23),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: const CircleAvatar(
+                radius: 15,
+                backgroundColor: Vx.green500,
+                child: Icon(
+                  size: 18,
+                  color: Colors.white,
+                  Icons.person,
                 ),
               ),
             ),
-        ],
-      ),
+          ),
+      ],
     );
   }
 }
