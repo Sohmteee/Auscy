@@ -71,7 +71,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
                 widget.sender == MessageSender.user ? Vx.green500 : widget.isErroMessage ?? false
-                          ? Vx.red500
+                          ? Colors.red
                           : Vx.zinc200,
             child: Container(
               constraints: BoxConstraints(
