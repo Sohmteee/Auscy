@@ -74,11 +74,11 @@ class _ChatScreenState extends State<ChatScreen> {
         request: request,
       );
       Vx.log(response!.choices[0].text);
-      insertNewData(response.choices[0].text.trim());
+      insertNewData(response.choices[0].text.trim(), false);
     } catch (e) {
       insertNewData("Sorry, an error occured while trying to respond"
           "\nCould you please resend your last message?"
-          "\nYou can simply copy your message by long-pressing it");
+          "\nYou can simply copy your message by long-pressing it", true);
     }
     scrollToBottom();
   }
