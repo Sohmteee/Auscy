@@ -83,7 +83,7 @@ class _ChatScreenState extends State<ChatScreen> {
     scrollToBottom();
   }
 
-  void insertNewData(String response) {
+  void insertNewData(String response, ) {
     if (response.trim() == "") _sendMessage();
 
     ChatMessage botMessage = ChatMessage(
