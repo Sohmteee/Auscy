@@ -23,7 +23,7 @@ class ThreeDotsState extends State<ThreeDots>
           if (_currentIndex == 3) {
             _currentIndex = 0;
           }
-          _animationController!.reverse();
+          _animationController!.reset();
           _animationController!.forward();
         }
       });
