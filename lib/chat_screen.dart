@@ -95,6 +95,8 @@ class _ChatScreenState extends State<ChatScreen> {
       sender: MessageSender.bot,
     );
 
+    scrollToBottom();
+
     setState(() {
       _isTyping = false;
       messages.add(botMessage);
