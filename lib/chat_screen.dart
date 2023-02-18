@@ -60,6 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     controller.clear();
+    scrollToBottom();
 
     String prompt = "";
     int start = (messages.length < 20) ? 0 : (messages.length - 20);
@@ -85,6 +86,7 @@ class _ChatScreenState extends State<ChatScreen> {
     } catch (e) {
       insertNewData(e.toString());
     }
+    scrollToBottom();
   }
 
   void insertNewData(String response) {
