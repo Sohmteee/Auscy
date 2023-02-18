@@ -160,7 +160,6 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60,
         leading: const Padding(
           padding: EdgeInsets.all(8.0),
           child: CircleAvatar(
