@@ -72,7 +72,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
             backGroundColor:
                 widget.sender == MessageSender.user ? Vx.green500 : widget.isErroMessage ?? false
                           ? Colors.red
-                          : Vx.zinc200,
+                          : Vx.zinc,
             child: Container(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
