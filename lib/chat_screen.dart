@@ -79,7 +79,7 @@ class _ChatScreenState extends State<ChatScreen> {
     } catch (e) {
       insertNewData("Sorry, an error occured while trying to respond" 
       "\nCould you please resend your last message?"
-      "\nYou can simply ");
+      "\nYou can simply copy your message ");
     }
     scrollToBottom();
   }
