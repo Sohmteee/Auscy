@@ -76,9 +76,11 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response!.choices[0].text);
       insertNewData(response.choices[0].text.trim(), false);
     } catch (e) {
-      insertNewData("Sorry, an error occured while trying to respond"
+      insertNewData(
+          "Sorry, an error occured while trying to respond"
           "\nCould you please resend your last message?"
-          "\nYou can simply copy your message by long-pressing it", true);
+          "\nYou can simply copy your message by long-pressing it",
+          true);
     }
     scrollToBottom();
   }
@@ -89,7 +91,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage botMessage = ChatMessage(
       text: response,
       sender: MessageSender.bot,
-      isErroMessage: ,
+      isErroMessage: isErrorMessage,
     );
 
     scrollToBottom();
