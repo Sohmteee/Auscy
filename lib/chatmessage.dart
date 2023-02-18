@@ -80,7 +80,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 style: TextStyle(
                   color: widget.sender == MessageSender.user
                       ? Colors.white
-                      : widget.isErroMessage ?? false
+                      : widget.isErroMessage ??
                           ? Colors.red
                           : Colors.black,
                   fontSize: 16,
