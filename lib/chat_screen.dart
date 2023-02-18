@@ -166,7 +166,7 @@ class _ChatScreenState extends State<ChatScreen> {
             backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
           ),
         ),
-        title: const Text(
+        title:  Text(
           "ChatGPT",
           style: TextStyle(
             fontWeight: FontWeight.bold,
