@@ -165,87 +165,9 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  void setReplyMessage(ChatMessage message) {
-    setState(() {
-      replyMessage = message;
-    });
-  }
+  
 
-  Widget chatMessage(String text, MessageSender sender) {
-    return SwipeTo(
-      onRightSwipe: () {
-        setState(() {
-          isResponse = true;
-          replyMessage = ChatMessage(
-            text: text,
-            sender: sender,
-          );
-          debugPrint("Replying to: ${replyMessage!.text}");
-        });
-      },
-      child: Row(
-        mainAxisAlignment: sender == MessageSender.user
-            ? MainAxisAlignment.end
-            : MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (sender == MessageSender.bot)
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.zinc200,
-                  backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
-                ),
-              ),
-            ),
-          ChatBubble(
-            clipper: ChatBubbleClipper8(
-                type: sender == MessageSender.user
-                    ? BubbleType.sendBubble
-                    : BubbleType.receiverBubble),
-            margin: const EdgeInsets.only(top: 20),
-            backGroundColor:
-                sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
-            child: Container(
-              constraints: BoxConstraints(
-                maxWidth: MediaQuery.of(context).size.width * 0.7,
-              ),
-              child: Text(
-                text.trim(),
-                style: TextStyle(
-                  color: sender == MessageSender.user
-                      ? Colors.white
-                      : Colors.black,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
-          if (sender == MessageSender.user)
-            Padding(
-              padding: const EdgeInsets.only(top: 23),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: const CircleAvatar(
-                  radius: 15,
-                  backgroundColor: Vx.green500,
-                  child: Icon(
-                    size: 18,
-                    color: Colors.white,
-                    Icons.person,
-                  ),
-                ),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
+  
 
   @override
   Widget build(BuildContext context) {
