@@ -11,7 +11,7 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
-    this.isErroMessage = false,
+    this.isErroMessage,
   });
 
   final String text;
@@ -80,7 +80,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 style: TextStyle(
                   color: widget.sender == MessageSender.user
                       ? Colors.white
-                      : widget.isErroMessage
+                      : widget.isErroMessage ?? false
                           ? Colors.red
                           : Colors.black,
                   fontSize: 16,
