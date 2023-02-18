@@ -1,9 +1,6 @@
-import 'package:chat_gpt_02/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:provider/provider.dart';
-import 'package:swipe_to/swipe_to.dart';
 import 'package:toast/toast.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -70,9 +67,8 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                     ? BubbleType.sendBubble
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
-            backGroundColor: widget.sender == MessageSender.user
-                ? Vx.green500
-                : Vx.zinc200,
+            backGroundColor:
+                widget.sender == MessageSender.user ? Vx.green500 : Vx.zinc200,
             child: Container(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
