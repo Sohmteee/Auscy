@@ -1,10 +1,8 @@
 import 'package:chat_gpt_02/provider.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
-import 'package:swipe_to/swipe_to.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
@@ -20,9 +18,6 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  // final TextEditingController controller = TextEditingController();
-  // final List<ChatMessage> messages = [];
-  // late OpenAI? chatGPT;
 
   bool _isTyping = false;
   bool isResponse = false;
@@ -158,10 +153,6 @@ class _ChatScreenState extends State<ChatScreen> {
       ],
     ).px16();
   }
-
-  
-
-  
 
   @override
   Widget build(BuildContext context) {
