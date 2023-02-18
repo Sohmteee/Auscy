@@ -156,12 +156,49 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<MyProvider>(
-      create: (_) => MyProvider(),
-      child: Consumer<MyProvider>(
-        builder: (context, model, child) {
-          return 
-        },
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+          ),
+        ),
+        title: const Text(
+          "ChatGPT",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Flexible(
+                child: ListView.builder(
+              padding: Vx.m8,
+              itemCount: messages.length,
+              controller: scrollController,
+              itemBuilder: (context, index) {
+                return messages[index];
+              },
+            )),
+            if (_isTyping)
+              Container(
+                color: Colors.transparent,
+                child: const ThreeDots(),
+              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+              child: Column(
+                children: [
+                  _buildTextComposer(),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
