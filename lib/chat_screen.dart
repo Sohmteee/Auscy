@@ -159,12 +159,6 @@ class _ChatScreenState extends State<ChatScreen> {
     ).px16();
   }
 
-  void setResponse(bool val) {
-    setState(() {
-      isResponse = val;
-    });
-  }
-
   
 
   
