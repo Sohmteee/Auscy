@@ -16,7 +16,6 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-
   bool _isTyping = false;
   bool isResponse = false;
 
@@ -77,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response!.choices[0].text);
       insertNewData(response.choices[0].text.trim());
     } catch (e) {
-      insertNewData("Sorry, an error occured while trying to respond");
+      _sendMessage();
     }
     scrollToBottom();
   }
