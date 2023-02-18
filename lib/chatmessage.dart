@@ -36,16 +36,6 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
   Widget build(BuildContext context) {
     ToastContext().init(context);
     return SwipeTo(
-      onRightSwipe: () {
-        setState(() {
-          model.setResponse(true);
-          replyMessage = ChatMessage(
-            text: widget.text,
-            sender: widget.sender,
-          );
-          debugPrint("Replying to: ${replyMessage!.text}");
-        });
-      },
       child: Row(
         mainAxisAlignment: widget.sender == MessageSender.user
             ? MainAxisAlignment.end
