@@ -72,8 +72,11 @@ class _ChatScreenState extends State<ChatScreen> {
       final response = await chatGPT!.onCompleteText(
         request: request,
       );
-      Vx.log(response!.choices[0].text);
-      insertNewData(response.choices[0].text.trim(), false);
+      // Vx.log(response!.choices[0].text);
+
+      if (response.trim() == "") _sendMessage();
+
+      insertNewData(response!.choices[0].text.trim(), false);
     } catch (e) {
       insertNewData(
           "Sorry, an error occured while trying to respond"
