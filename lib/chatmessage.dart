@@ -92,24 +92,6 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
             ),
           ),
         ),
-        if (widget.sender == MessageSender.user &&
-            (messages[messages.length - 1].sender != MessageSender.user))
-          Padding(
-            padding: const EdgeInsets.only(top: 23),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              child: const CircleAvatar(
-                radius: 15,
-                backgroundColor: Vx.green500,
-                child: Icon(
-                  size: 18,
-                  color: Colors.white,
-                  Icons.person,
-                ),
-              ),
-            ),
-          ),
       ],
     );
   }
