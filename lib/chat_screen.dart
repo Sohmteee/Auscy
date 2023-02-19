@@ -173,9 +173,7 @@ class _ChatScreenState extends State<ChatScreen> {
             fontSize: 25,
           ),
         ),
-        actions: [
-          
-        ],
+        actions: [Text("Reset")],
       ),
       body: SafeArea(
         child: Column(
