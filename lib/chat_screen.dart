@@ -177,12 +177,12 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.yellow,
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text("Reset"),
+              child: const Text("Reset"),
             )
           ],
         ),
