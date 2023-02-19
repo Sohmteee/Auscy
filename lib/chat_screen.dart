@@ -177,7 +177,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () =>messages,
+              onTap: () => messages.clear(),
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
