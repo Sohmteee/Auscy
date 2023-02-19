@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final request = CompleteText(
       prompt: prompt,
       model: kTranslateModelV3,
-      maxTokens: 2000,
+      maxTokens: 4000,
     );
 
     try {
