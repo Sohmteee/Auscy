@@ -76,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
       if (response!.choices[0].text.trim() == "") _sendMessage();
 
-      insertNewData(response!.choices[0].text.trim(), false);
+      insertNewData(response.choices[0].text.trim(), false);
     } catch (e) {
       insertNewData(
           "Sorry, an error occured while trying to respond"
@@ -88,7 +88,6 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   void insertNewData(String response, bool isErrorMessage) {
-
     ChatMessage botMessage = ChatMessage(
       text: response,
       sender: MessageSender.bot,
