@@ -177,6 +177,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             Container(
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.yellow,
               ),
