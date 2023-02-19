@@ -180,6 +180,7 @@ class _ChatScreenState extends State<ChatScreen> {
             decoration: BoxDecoration(
               color: Colors.yellow,
             ),
+            child: Text("Reset"),
           )
         ],
       ),
