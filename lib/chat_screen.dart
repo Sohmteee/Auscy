@@ -176,13 +176,15 @@ class _ChatScreenState extends State<ChatScreen> {
                 fontSize: 25,
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.yellow,
-                borderRadius: BorderRadius.circular(20),
+            GD(
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Text("Reset"),
               ),
-              child: const Text("Reset"),
             )
           ],
         ),
