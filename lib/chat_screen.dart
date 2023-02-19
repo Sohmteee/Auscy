@@ -176,7 +176,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 fontSize: 25,
               ),
             ),
-            GD(
+            GestureDetector(
+              onTap: () =>messages,
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
