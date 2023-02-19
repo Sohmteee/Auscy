@@ -175,18 +175,16 @@ class _ChatScreenState extends State<ChatScreen> {
                 fontSize: 25,
               ),
             ),
+            Container(
+              height: 20,
+              width: 20,
+              decoration: BoxDecoration(
+                color: Colors.yellow,
+              ),
+              child: Text("Reset"),
+            )
           ],
         ),
-        actions: [
-          Container(
-            height: 20,
-            width: 20,
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-            ),
-            child: Text("Reset"),
-          )
-        ],
       ),
       body: SafeArea(
         child: Column(
