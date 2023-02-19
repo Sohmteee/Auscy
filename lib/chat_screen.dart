@@ -175,7 +175,8 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         actions: [
           Container(
-            height: 20key: ,
+            height: 20,
+            width: 20,
             decoration: BoxDecoration(
               color: Colors.yellow,
             ),
