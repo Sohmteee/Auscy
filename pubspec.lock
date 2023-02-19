@@ -193,14 +193,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.0"
-  nested:
-    dependency: transitive
-    description:
-      name: nested
-      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -257,14 +249,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.2.4"
-  provider:
-    dependency: "direct main"
-    description:
-      name: provider
-      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "6.0.5"
   shared_preferences:
     dependency: transitive
     description:
@@ -358,14 +342,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
-  swipe_to:
-    dependency: "direct main"
-    description:
-      name: swipe_to
-      sha256: "6274e148a02b32dfa8ae8634c9aa6196bf5bc2d88653650abd11d2eb52fc5e29"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.0.2"
   term_glyph:
     dependency: transitive
     description:
