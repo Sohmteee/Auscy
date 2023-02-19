@@ -173,7 +173,9 @@ class _ChatScreenState extends State<ChatScreen> {
             fontSize: 25,
           ),
         ),
-        
+        actions: [
+          
+        ],
       ),
       body: SafeArea(
         child: Column(
