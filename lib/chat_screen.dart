@@ -108,7 +108,8 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
-    final Icons icon = Icons.mic;
+    final IconData icon = Icons.mic;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
