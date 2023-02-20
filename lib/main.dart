@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:toast/toast.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'chat_screen.dart';
 
 Future main() async {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'ChatGPT',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Vx.black,
+        primarySwatch: Colors.grey,
         fontFamily: "Poppins",
       ),
       home: const ChatScreen(),
