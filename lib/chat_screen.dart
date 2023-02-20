@@ -146,9 +146,9 @@ class _ChatScreenState extends State<ChatScreen> {
             shape: BoxShape.circle,
           ),
           child: IconButton(
-            icon:  Icon(
+            icon: Icon(
               color: Vx.white,
-              controller.text.trim() == "" ? Icons.mic :Icons.send,
+              controller.text.trim() == "" ? Icons.mic : Icons.send,
             ),
             onPressed: () {
               _sendMessage();
