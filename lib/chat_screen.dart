@@ -82,7 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
     } catch (e) {
       debugPrint(e.toString());
       insertNewData(
-          "This n error occured while trying to respond"
+          "This error occured while trying to respond:"
           "\nCould you please resend your last message?"
           "\nYou can simply copy your message by long-pressing it",
           true);
