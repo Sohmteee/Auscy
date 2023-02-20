@@ -74,9 +74,11 @@ class _ChatScreenState extends State<ChatScreen> {
       );
       // Vx.log(response!.choices[0].text);
 
-      if (response!.choices[0].text.trim() == "") _sendMessage();
-
-      insertNewData(response.choices[0].text.trim(), false);
+      if (response!.choices[0].text.trim() == "") {
+        _sendMessage();
+      } else {
+        insertNewData(response.choices[0].text.trim(), false);
+      }
     } catch (e) {
       insertNewData(
           "Sorry, an error occured while trying to respond"
