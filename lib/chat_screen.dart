@@ -143,7 +143,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     hintText: hintText,
                   ),
                   onChanged: (value) {
-                    icon = value.text.trim() == "" ? Icons.send : Icons.mic;
+                    icon =
+                        controller.text.trim() == "" ? Icons.send : Icons.mic;
                   },
                 ),
               ),
