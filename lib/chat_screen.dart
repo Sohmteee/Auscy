@@ -148,7 +148,7 @@ class _ChatScreenState extends State<ChatScreen> {
           child: IconButton(
             icon: const Icon(
               color: Vx.white,
-              Icons.send,
+              controller.text.trim().send,
             ),
             onPressed: () {
               _sendMessage();
