@@ -111,7 +111,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final IconData icon = Icons.mic;
 
     toggleSend() {
-      icon = icon
+      icon = icon == Icon
     }
 
     return Row(
