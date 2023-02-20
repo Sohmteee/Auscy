@@ -80,7 +80,7 @@ class _ChatScreenState extends State<ChatScreen> {
         insertNewData(response.choices[0].text.trim(), false);
       }
     } catch (e) {
-      debugPrint(statement);
+      debugPrint(e.toString());
       insertNewData(
           "Sorry, an error occured while trying to respond"
           "\nCould you please resend your last message?"
