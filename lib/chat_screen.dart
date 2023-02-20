@@ -112,7 +112,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     toggleSend() {
       setState(() {
-        icon = icon == Icons.mic ? Icons.send : Icons.mic;
+        icon = controller.tet.trim() ? Icons.send : Icons.mic;
       });
     }
 
