@@ -17,5 +17,8 @@ bool isResponse = false;
 final TextEditingController controller = TextEditingController();
 ScrollController scrollController = ScrollController();
 
+
+IconData icon = Icons.mic;
+
 final List<ChatMessage> messages = [];
 late OpenAI? chatGPT;

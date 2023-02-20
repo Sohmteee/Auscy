@@ -108,7 +108,6 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
-    IconData icon = Icons.mic;
 
     toggleSend() {
       setState(() {
