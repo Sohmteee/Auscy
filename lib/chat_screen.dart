@@ -112,7 +112,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     toggleSend() {
       setState(() {
-        
+        icon = icon == Icons.mic ? Icons.send : Icons.mic;
       });
     }
 
@@ -156,7 +156,7 @@ class _ChatScreenState extends State<ChatScreen> {
           child: IconButton(
             icon: Icon(
               color: Vx.white,
-              controller.text.trim() == "" ? Icons.mic : Icons.send,
+              icon,
             ),
             onPressed: () {
               _sendMessage();
