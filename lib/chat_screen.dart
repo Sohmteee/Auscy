@@ -143,7 +143,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     hintText: hintText,
                   ),
                   onChanged: (value) {
-value.trim() == ""
+icon = value.trim() == "" ? 
                   },
                 ),
               ),
