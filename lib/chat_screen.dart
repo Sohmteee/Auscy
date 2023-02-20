@@ -144,7 +144,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   onChanged: (value) {
                     setState(() {
-                      toggleSend();
+                      
                     });
                   },
                 ),
