@@ -142,6 +142,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   decoration: InputDecoration.collapsed(
                     hintText: hintText,
                   ),
+                  onChanged: () {},
                 ),
               ),
             ],
