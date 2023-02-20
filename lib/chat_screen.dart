@@ -108,10 +108,10 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
-    final IconData icon = Icons.mic;
+     IconData icon = Icons.mic;
 
     toggleSend() {
-      icon = icon == Icons.mic ? Icons.send
+      icon = icon == Icons.mic ? Icons.send : Icons.mic;
     }
 
     return Row(
