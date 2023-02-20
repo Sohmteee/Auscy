@@ -108,6 +108,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
+    
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
