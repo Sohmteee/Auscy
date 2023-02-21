@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'ChatGPT',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.white,
         fontFamily: "Poppins",
         useMaterial3: true,
       ),
