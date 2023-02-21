@@ -108,7 +108,6 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Widget _buildTextComposer() {
-
     toggleSend() {
       setState(() {
         icon = controller.text.trim().isNotEmpty ? Icons.send : Icons.mic;
@@ -201,7 +200,10 @@ class _ChatScreenState extends State<ChatScreen> {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text("Reset",),
+                child: const Text(
+                  "Reset",
+                  style: TextStyle(color: Colors.white,),
+                ),
               ),
             )
           ],
