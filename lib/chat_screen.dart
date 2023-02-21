@@ -226,10 +226,10 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             if (_isTyping)
-              Container(
-                color: Colors.transparent,
-                child: const ThreeDots(),
-              ),
+              SpinKitRotatingCircle(
+  color: Colors.white,
+  size: 50.0,
+);
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
               child: Column(
