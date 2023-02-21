@@ -221,6 +221,7 @@ class _ChatScreenState extends State<ChatScreen> {
             Flexible(
               child: ListView.builder(
                 padding: Vx.m8,
+                reverse: true,
                 itemCount: messages.length,
                 controller: scrollController,
                 itemBuilder: (context, index) {
