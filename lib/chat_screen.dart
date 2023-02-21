@@ -202,7 +202,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 child: const Text(
                   "Reset",
-                  style: TextStyle(color: Colors.white,),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             )
