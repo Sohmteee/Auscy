@@ -187,7 +187,7 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
+             Text(
               "ChatGPT",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
