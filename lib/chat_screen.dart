@@ -213,18 +213,18 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
       ),
       body: SafeArea(
-        
         child: Column(
           children: [
             Flexible(
-                child: ListView.builder(
-              padding: Vx.m8,
-              itemCount: messages.length,
-              controller: scrollController,
-              itemBuilder: (context, index) {
-                return messages[index];
-              },
-            )),
+              child: ListView.builder(
+                padding: Vx.m8,
+                itemCount: messages.length,
+                controller: scrollController,
+                itemBuilder: (context, index) {
+                  return messages[index];
+                },
+              ),
+            ),
             if (_isTyping)
               Container(
                 color: Colors.transparent,
