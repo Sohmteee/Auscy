@@ -6,8 +6,9 @@ import 'chat_screen.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
-SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-      overlays: [SystemUiOverlay.bottom]);  
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  )); 
   runApp(const MyApp());
 }
 
