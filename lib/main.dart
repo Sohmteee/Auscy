@@ -7,7 +7,7 @@ import 'chat_screen.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
-  SystemChrome.setEnabledSystemUIMode([SystemUiOverlay.bottom]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
 
   runApp(const MyApp());
 }
