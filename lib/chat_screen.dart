@@ -227,8 +227,8 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             if (_isTyping)
-              const SpinKitRotatingCircle(
-                color: Colors.white,
+              const Sp(
+                color: Colors.black,
                 size: 50.0,
               ),
             Padding(
