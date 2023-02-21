@@ -229,7 +229,7 @@ class _ChatScreenState extends State<ChatScreen> {
             if (_isTyping)
               const SpinKitThreeBounce(
                 color: Colors.black,
-                size: 50.0,
+                size: 20.0,
               ),
             Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
