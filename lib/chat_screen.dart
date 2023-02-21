@@ -187,11 +187,14 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-             Text(
-              "ChatGPT",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
+            const SizedBox(
+              height: 100,
+              child: Text(
+                "ChatGPT",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
               ),
             ),
             GestureDetector(
