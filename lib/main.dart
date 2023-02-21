@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.white,
         fontFamily: "Poppins",
-        useMaterial3: true,
       ),
       home: const ChatScreen(),
     );
