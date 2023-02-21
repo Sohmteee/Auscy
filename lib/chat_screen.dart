@@ -225,7 +225,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 itemCount: messages.length,
                 controller: scrollController,
                 itemBuilder: (context, index) {
-                  return messages[index];
+                  return messages.reversed.toList()[index];
                 },
               ),
             ),
