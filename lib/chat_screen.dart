@@ -227,7 +227,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             if (_isTyping)
-              const Sp(
+              const SpinKitThreeBounce(
                 color: Colors.black,
                 size: 50.0,
               ),
