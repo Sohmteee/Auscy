@@ -53,7 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     controller.clear();
-    scrollToBottom();
+    // scrollToBottom();
 
     String prompt = "";
     int start = (messages.length < 20) ? 0 : (messages.length - 20);
@@ -88,7 +88,7 @@ class _ChatScreenState extends State<ChatScreen> {
           "\nYou can simply copy your message by long-pressing it",
           true);
     }
-    scrollToBottom();
+    // scrollToBottom();
   }
 
   void insertNewData(String response, bool isErrorMessage) {
@@ -98,14 +98,14 @@ class _ChatScreenState extends State<ChatScreen> {
       isErroMessage: isErrorMessage,
     );
 
-    scrollToBottom();
+    // scrollToBottom();
 
     setState(() {
       _isTyping = false;
       messages.add(botMessage);
     });
 
-    scrollToBottom();
+    // scrollToBottom();
   }
 
   Widget _buildTextComposer() {

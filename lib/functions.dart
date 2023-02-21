@@ -5,13 +5,13 @@ import 'package:velocity_x/velocity_x.dart';
 import 'chatmessage.dart';
 import 'data.dart';
 
-void scrollToBottom() {
+/* void scrollToBottom() {
   scrollController.animateTo(
     scrollController.position.maxScrollExtent + 1000,
     duration: const Duration(milliseconds: 500),
     curve: Curves.easeOut,
   );
-}
+} */
 
 void insertNewData(String response) {
   ChatMessage botMessage = ChatMessage(
