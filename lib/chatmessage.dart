@@ -92,7 +92,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                                     : Colors.black,
                             fontSize: 16,
                           ),
-                          speed: const Duration(milliseconds: 200),
+                          speed: const Duration(milliseconds: 10),
                         ),
                       ],
                       totalRepeatCount: 4,
