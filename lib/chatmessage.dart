@@ -80,28 +80,21 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
               child: widget.sender == MessageSender.bot
-                  ? 
-                  AnimatedTextKit(
-  animatedTexts: [
-    TypewriterAnimatedText(
-      'Hello world!',
-      textStyle: const TextStyle(
-        fontSize: 32.0,
-        fontWeight: FontWeight.bold,
-      ),
-      speed: const Duration(milliseconds: 2000),
-    ),
-  ],
-  
-  totalRepeatCount: 4,
-  pause: const Duration(milliseconds: 1000),
-  displayFullTextOnTap: true,
-  stopPauseOnTap: true,
-)
-                  TypewriterAnimatedText(
-                    widget.text.trim(),
-                      
-                      
+                  ? AnimatedTextKit(
+                      animatedTexts: [
+                        TypewriterAnimatedText(
+                          'Hello world!',
+                          textStyle: const TextStyle(
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          speed: const Duration(milliseconds: 2000),
+                        ),
+                      ],
+                      totalRepeatCount: 4,
+                      pause: const Duration(milliseconds: 1000),
+                      displayFullTextOnTap: true,
+                      stopPauseOnTap: true,
                     )
                   : Text(
                       widget.text.trim(),
