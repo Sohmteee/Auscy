@@ -93,10 +93,9 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                             fontSize: 16,
                           ),
                           speed: const Duration(milliseconds: 10),
-                          stop
                         ),
                       ],
-                      totalRepeatCount: 4,
+                      totalRepeatCount: 1,
                       displayFullTextOnTap: true,
                     )
                   : Text(
