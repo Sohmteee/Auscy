@@ -83,7 +83,15 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                   ? AnimatedTextKit(
                       animatedTexts: [
                         TypewriterAnimatedText(
-                          'Hello world!',
+                          widget.text.trim(),
+                      style: TextStyle(
+                        color: widget.sender == MessageSender.user
+                            ? Colors.white
+                            : widget.isErroMessage ?? false
+                                ? Colors.white
+                                : Colors.black,
+                        fontSize: 16,
+                      ),,
                           textStyle: const TextStyle(
                             fontSize: 32.0,
                             fontWeight: FontWeight.bold,
