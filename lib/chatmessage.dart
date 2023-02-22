@@ -81,8 +81,6 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
               ),
               child: widget.sender == MessageSender.bot
                   ? TypewriterAnimatedText(
-                    
-                      widget.text.trim(),
                       
                     )
                   : Text(
