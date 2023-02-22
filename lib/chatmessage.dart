@@ -79,7 +79,7 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
               child: widget.sender == MessageSender.bot
-                  ? typeWrit(
+                  ? TypewriterAnimatedText(
                       widget.text.trim(),
                       style: TextStyle(
                         color: widget.sender == MessageSender.user
