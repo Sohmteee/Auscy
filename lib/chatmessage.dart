@@ -78,17 +78,29 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
-              child: widget.sender == MessageSender.bot ? : Text(
-                widget.text.trim(),
-                style: TextStyle(
-                  color: widget.sender == MessageSender.user
-                      ? Colors.white
-                      : widget.isErroMessage ?? false
-                          ? Colors.white
-                          : Colors.black,
-                  fontSize: 16,
-                ),
-              ),
+              child: widget.sender == MessageSender.bot
+                  ? Text(
+                      widget.text.trim(),
+                      style: TextStyle(
+                        color: widget.sender == MessageSender.user
+                            ? Colors.white
+                            : widget.isErroMessage ?? false
+                                ? Colors.white
+                                : Colors.black,
+                        fontSize: 16,
+                      ),
+                    )
+                  : Text(
+                      widget.text.trim(),
+                      style: TextStyle(
+                        color: widget.sender == MessageSender.user
+                            ? Colors.white
+                            : widget.isErroMessage ?? false
+                                ? Colors.white
+                                : Colors.black,
+                        fontSize: 16,
+                      ),
+                    ),
             ),
           ),
         ),
