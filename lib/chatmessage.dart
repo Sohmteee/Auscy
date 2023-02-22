@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
@@ -79,36 +78,17 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
-              child: widget.sender == MessageSender.bot
-                  ? AnimatedTextKit(
-                      animatedTexts: [
-                        TypewriterAnimatedText(
-                          widget.text.trim(),
-                          textStyle: TextStyle(
-                            color: widget.sender == MessageSender.user
-                                ? Colors.white
-                                : widget.isErroMessage ?? false
-                                    ? Colors.white
-                                    : Colors.black,
-                            fontSize: 16,
-                          ),
-                          speed: const Duration(milliseconds: 10),
-                        ),
-                      ],
-                      displayFullTextOnTap: true,
-                      isRepeatingAnimation: false,
-                    )
-                  : Text(
-                      widget.text.trim(),
-                      style: TextStyle(
-                        color: widget.sender == MessageSender.user
-                            ? Colors.white
-                            : widget.isErroMessage ?? false
-                                ? Colors.white
-                                : Colors.black,
-                        fontSize: 16,
-                      ),
-                    ),
+              child: Text(
+                widget.text.trim(),
+                style: TextStyle(
+                  color: widget.sender == MessageSender.user
+                      ? Colors.white
+                      : widget.isErroMessage ?? false
+                          ? Colors.white
+                          : Colors.black,
+                  fontSize: 16,
+                ),
+              ),
             ),
           ),
         ),
