@@ -97,7 +97,6 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
                       ],
                       totalRepeatCount: 4,
                       displayFullTextOnTap: true,
-                      stopPauseOnTap: true,
                     )
                   : Text(
                       widget.text.trim(),
