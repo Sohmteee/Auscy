@@ -46,6 +46,9 @@ class _ChatScreenState extends State<ChatScreen> {
     var url = Url.https("api.openai.com", "/v1/completions");
     final response = await http.post(
       url,
+      headers: {
+        
+      }
     );
   }
 
