@@ -56,7 +56,6 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       icon = controller.text.trim().isNotEmpty ? Icons.send : Icons.mic;
     });
-    // scrollToBottom();
 
     String prompt = "";
     int start = (messages.length < 20) ? 0 : (messages.length - 20);
@@ -91,7 +90,6 @@ class _ChatScreenState extends State<ChatScreen> {
           "\nYou can simply copy your message by long-pressing it",
           true);
     }
-    // scrollToBottom();
   }
 
   void insertNewData(String response, bool isErrorMessage) {
@@ -101,14 +99,10 @@ class _ChatScreenState extends State<ChatScreen> {
       isErroMessage: isErrorMessage,
     );
 
-    // scrollToBottom();
-
     setState(() {
       _isTyping = false;
       messages.add(botMessage);
     });
-
-    // scrollToBottom();
   }
 
   Widget _buildTextComposer() {
