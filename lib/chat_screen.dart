@@ -38,7 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   // Link for api - https://beta.openai.com/account/api-keys
 
-  Fut
+  Future<String> generateRe
 
   void _sendMessage() async {
     if (controller.text.isEmpty) return;
