@@ -59,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
           'presence_penalty': 0.0,
         }));
 
-        Map<String, dynamic>
+        Map<String, dynamic> newResponse = jsonDecode(source)
   }
 
   void _sendMessage() async {
