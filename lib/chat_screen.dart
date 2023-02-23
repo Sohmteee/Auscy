@@ -89,9 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
     prompt = "${last20Texts.join('\n')}.";
 
     try {
-      final response = await chatGPT!.onCompleteText(
-        request: request,
-      );
+      final res
       Vx.log(response!.choices[0].text);
 
       if (response.choices[0].text.trim() == "") {
