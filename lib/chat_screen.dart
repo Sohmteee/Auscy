@@ -197,6 +197,7 @@ class _ChatScreenState extends State<ChatScreen> {
             GestureDetector(
               onTap: () => setState(() {
                 messages.clear();
+                
                 _isTyping = false;
               }),
               child: Container(
