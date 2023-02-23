@@ -53,7 +53,9 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     controller.clear();
-    toggleSend();
+    setState(() {
+      icon = controller.text.trim().isNotEmpty ? Icons.send : Icons.mic;
+    });
     // scrollToBottom();
 
     String prompt = "";
@@ -164,7 +166,6 @@ class _ChatScreenState extends State<ChatScreen> {
               icon,
             ),
             onPressed: () {
-              
               _sendMessage();
             },
           ),
