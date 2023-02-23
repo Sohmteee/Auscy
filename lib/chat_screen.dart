@@ -163,6 +163,7 @@ class _ChatScreenState extends State<ChatScreen> {
               icon,
             ),
             onPressed: () {
+              
               _sendMessage();
             },
           ),
