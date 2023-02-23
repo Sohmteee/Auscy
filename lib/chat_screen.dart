@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
     prompt = "${last20Texts.join('\n')}.";
 
     try {
-      final res
+      final rep
       Vx.log(response!.choices[0].text);
 
       if (response.choices[0].text.trim() == "") {
