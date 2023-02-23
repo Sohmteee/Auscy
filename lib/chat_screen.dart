@@ -94,7 +94,7 @@ class _ChatScreenState extends State<ChatScreen> {
       if (response.toString().trim() == "") {
         _sendMessage();
       } else {
-        insertNewData(response.choices[0].text.trim(), false);
+        insertNewData(response.toString().trim(), false);
       }
     } catch (e) {
       debugPrint(e.toString());
