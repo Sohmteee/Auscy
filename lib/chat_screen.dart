@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:velocity_x/velocity_x.dart';
-import
+import 'package:http/http.dart';
 
 import 'chatmessage.dart';
 import 'data.dart';
