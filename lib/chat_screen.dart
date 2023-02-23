@@ -48,7 +48,8 @@ class _ChatScreenState extends State<ChatScreen> {
       url,
       headers: {
         'Content-Type': 'application.json',
-        'Authorization': 'Bearer '
+        'Authorization': 'Bearer $apiKey',
+        
       }
     );
   }
