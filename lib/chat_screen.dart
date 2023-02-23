@@ -57,10 +57,10 @@ class _ChatScreenState extends State<ChatScreen> {
           'model': 'text-davinci-003',
           'prompt' : prompt.trim(),
           'temperature' : '0.3',
-   maxTokens : 100,
-   topP : 1.0,
-   frequencyPenalty : 0.0,
-   presencePenalty : 0.0,
+   'maxTokens' : '100',
+   'topP' : 1.0,
+   'frequencyPenalty' : 0.0,
+   'presencePenalty' : 0.0,
         }
       )
     );
