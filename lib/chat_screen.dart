@@ -60,7 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
         }));
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
-    debugPrint(statement);
+    debugPrint(newResponse['choices'][0]['text']);
     return newResponse['choices'][0]['text'];
   }
 
