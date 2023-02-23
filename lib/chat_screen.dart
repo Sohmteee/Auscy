@@ -6,8 +6,6 @@ import 'package:velocity_x/velocity_x.dart';
 
 import 'chatmessage.dart';
 import 'data.dart';
-import 'functions.dart';
-import 'threedots.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
