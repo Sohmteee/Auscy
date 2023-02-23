@@ -54,7 +54,7 @@ class _ChatScreenState extends State<ChatScreen> {
           'prompt': prompt.trim(),
           'temperature': 0.3,
           'max_token': 4000,
-          'top_p': 1.0,
+          'top_p': 1,
           'frequency_penalty': 0.0,
           'presence_penalty': 0.0,
         }));
