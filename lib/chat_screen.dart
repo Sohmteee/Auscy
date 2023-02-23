@@ -46,7 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
     var url = Uri.https("api.openai.com", "/v1/completions");
     final response = await http.post(url,
         headers: {
-          'Content-Type': 'application.json',
+          'Content-Type': 'application/json',
           'Authorization': 'Bearer $apiKey',
         },
         body: jsonEncode({
