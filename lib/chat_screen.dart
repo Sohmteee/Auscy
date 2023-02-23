@@ -91,7 +91,7 @@ class _ChatScreenState extends State<ChatScreen> {
     try {
       final response = generateRequest(prompt);
 
-      if (response.choices[0].text.trim() == "") {
+      if (response == "") {
         _sendMessage();
       } else {
         insertNewData(response.choices[0].text.trim(), false);
