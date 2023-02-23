@@ -90,7 +90,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
     try {
       final response = generateRequest(prompt);
-      String rsp = 
 
       if (response == "") {
         _sendMessage();
