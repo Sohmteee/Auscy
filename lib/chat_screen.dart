@@ -53,6 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     controller.clear();
+    toggleSend();
     // scrollToBottom();
 
     String prompt = "";
