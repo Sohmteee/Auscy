@@ -53,7 +53,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
       },
       body: jsonEncode(
-        'model': 'text-davinci-003',
+        {
+          'model': 'text-davinci-003',
+        }
       )
     );
   }
