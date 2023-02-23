@@ -88,11 +88,13 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last20Texts.join('\n')}.";
 
-    final request = CompleteText(
+    /* final request = CompleteText(
       prompt: prompt,
       model: kTranslateModelV3,
       maxTokens: 4000,
-    );
+    ); */
+
+    final
 
     try {
       final response = await chatGPT!.onCompleteText(
