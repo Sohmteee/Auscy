@@ -44,7 +44,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Future<String> generateRequest(String prompt) async {
     final apiKey = dotenv.env['OPENAI_API_KEY'];
     var url = Url.https("api.openai.com", "/v1/completions");
-    final response = await http.post
+    final response = await http.post();
   }
 
   void _sendMessage() async {
