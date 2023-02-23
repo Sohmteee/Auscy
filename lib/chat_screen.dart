@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:html';
 
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
@@ -51,7 +52,9 @@ class _ChatScreenState extends State<ChatScreen> {
         'Authorization': 'Bearer $apiKey',
 
       },
-      body: jso
+      body: jsonEncode(
+        'model'
+      )
     );
   }
 
