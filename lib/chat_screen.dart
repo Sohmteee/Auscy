@@ -60,7 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
         }));
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
-    return newResponse['choices'];
+    return newResponse['choices'][0];
   }
 
   void _sendMessage() async {
