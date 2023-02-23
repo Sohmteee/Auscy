@@ -55,7 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
       body: jsonEncode(
         {
           'model': 'text-davinci-003',
-          'prompt' : prompt
+          'prompt' : prompt.trim(),
         }
       )
     );
