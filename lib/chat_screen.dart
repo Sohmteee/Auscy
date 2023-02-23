@@ -52,12 +52,12 @@ class _ChatScreenState extends State<ChatScreen> {
         },
         body: jsonEncode({
           'model': 'text-davinci-003',
-          'prompt': prompt.trim(),
+          'prompt': prompt,
           'temperature': 0.3,
           'maxTokens': 4000,
           'topP': 1.0,
           'frequencyPenalty': 0.0,
-          'presencePenalty': '0.0,
+          'presencePenalty': 0.0,
         }));
   }
 
