@@ -39,7 +39,7 @@ class _ChatScreenState extends State<ChatScreen> {
   // Link for api - https://beta.openai.com/account/api-keys
 
   Future<String> generateRequest(String prompt) {
-    
+    final api
   }
 
   void _sendMessage() async {
