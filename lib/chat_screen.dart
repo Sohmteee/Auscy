@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -40,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<String> generateRequest(String prompt) {
     final apiKey = dotenv.env['OPENAI_API_KEY'];
-    var url = Url.https("api.openai.com", "/v1/completions")
+    var url = Url.https("api.openai.com", "/v1/completions");
   }
 
   void _sendMessage() async {
