@@ -93,8 +93,7 @@ class _ChatScreenState extends State<ChatScreen> {
       model: kTranslateModelV3,
       maxTokens: 4000,
     ); */
-
-    final
+    
 
     try {
       final response = await chatGPT!.onCompleteText(
