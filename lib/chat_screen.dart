@@ -90,7 +90,7 @@ class _ChatScreenState extends State<ChatScreen> {
       icon = controller.text.trim().isNotEmpty ? Icons.send : Icons.mic;
     });
 
-    String prompt = "";
+    String prompt = getLast20Texts();
     
 
     /* try {
