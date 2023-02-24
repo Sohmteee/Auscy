@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last20Texts.join('\n')}.";
 
-    try {
+    /* try {
       final response = generateRequest(prompt);
 
       if (response.toString().trim() == "") {
@@ -104,7 +104,7 @@ class _ChatScreenState extends State<ChatScreen> {
           "\nCould you please resend your last message?"
           "\nYou can simply copy your message by long-pressing it",
           true);
-    }
+    } */
 
     /* final request = CompleteText(
       prompt: prompt,
