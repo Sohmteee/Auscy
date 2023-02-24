@@ -64,7 +64,14 @@ class _ChatScreenState extends State<ChatScreen> {
     return newResponse['choices'][0]['text'];
   } */
 
-  String getLast20Texts(String promp)
+  String getLast20Texts(String prompt) {
+    int start = (messages.length < 20) ? 0 : (messages.length - 20);
+
+    List<String> last20Texts =
+        messages.sublist(start).map((message) => message.text).toList();
+
+    prompt = "${last20Texts.join('\n')}.";
+  }
 
   void _sendMessage() async {
     if (controller.text.isEmpty) return;
