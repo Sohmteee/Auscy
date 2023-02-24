@@ -25,7 +25,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     chatGPT = OpenAI.instance.build(
       token: dotenv.env['OPENAI_API_KEY'],
-      baseOption: HttpSetup(receiveTimeout: 5000),
+      baseOption: HttpSetup(receiveTimeout: 10000),
       isLogger: true,
     );
 
