@@ -91,7 +91,6 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     String prompt = getLast20Texts();
-    
 
     /* try {
       final response = generateRequest(prompt);
@@ -119,7 +118,6 @@ class _ChatScreenState extends State<ChatScreen> {
     try {
       final response = await chatGPT!.onCompleteText(
         request: request,
-        
       );
       Vx.log(response!.choices[0].text);
 
