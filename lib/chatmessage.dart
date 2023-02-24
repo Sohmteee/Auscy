@@ -14,7 +14,7 @@ class ChatMessage extends StatefulWidget {
     this.isErroMessage,
   });
 
-  final String? text;
+  final String text;
   final MessageSender sender;
   final bool? isErroMessage;
 
