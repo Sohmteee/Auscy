@@ -64,7 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return newResponse['choices'][0]['text'];
   } */
 
-  String getLast20Texts(String prompt) {
+  String getLast20Texts() {
     int start = (messages.length < 20) ? 0 : (messages.length - 20);
 
     List<String> last20Texts =
