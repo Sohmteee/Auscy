@@ -89,11 +89,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last20Texts.join('\n')}.";
 
-    
-
     try {
-      
-      final response = await chatGPT!.onCompleteText(request: request);
+      final response = generateRequest(prompt);
 
       if (response.toString().trim() == "") {
         _sendMessage();
