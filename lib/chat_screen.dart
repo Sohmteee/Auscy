@@ -89,6 +89,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     prompt = "${last20Texts.join('\n')}.";
 
+    final request =
+          CompleteText(prompt: message.text, model: kTranslateModelV3);
+
     try {
       final response = await chatGPT!.onCompleteText(request: request);
 
