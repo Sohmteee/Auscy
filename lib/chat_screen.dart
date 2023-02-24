@@ -81,7 +81,13 @@ class _ChatScreenState extends State<ChatScreen> {
       icon = controller.text.trim().isNotEmpty ? Icons.send : Icons.mic;
     });
 
-    
+    String prompt = "";
+    int start = (messages.length < 20) ? 0 : (messages.length - 20);
+
+    List<String> last20Texts =
+        messages.sublist(start).map((message) => message.text).toList();
+
+    prompt = "${last20Texts.join('\n')}.";
 
     /* try {
       final response = generateRequest(prompt);
