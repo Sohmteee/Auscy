@@ -121,7 +121,7 @@ class _ChatScreenState extends State<ChatScreen> {
       );
       Vx.log(response!.choices[0].text);
 
-      if (response.choices[0].text.trim() == "") {
+      if (response.choices[0].text.trim() == "" || response.choices[0].text.trim() == null) {
         _sendMessage();
       } else {
         insertNewData(response.choices[0].text.trim(), false);
