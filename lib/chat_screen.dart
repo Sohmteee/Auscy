@@ -76,9 +76,9 @@ class _ChatScreenState extends State<ChatScreen> {
   void _sendMessage() async {
     String text = controller.text;
 
-    if (controller.text.isEmpty) return;
+    if (text.isEmpty) return;
     ChatMessage message = ChatMessage(
-      text: controller.text.trim(),
+      text: text.trim(),
       sender: MessageSender.user,
     );
 
@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     controller.clear();
     setState(() {
-      icon = controller.text.trim().isNotEmpty ? Icons.send : Icons.mic;
+      icon = text.trim().isNotEmpty ? Icons.send : Icons.mic;
     });
 
     String prompt = getLast20Texts();
