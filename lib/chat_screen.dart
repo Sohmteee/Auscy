@@ -76,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void _sendMessage() async {
     String text = controller.text;
 
-    if (text.isEmpty) return;
+    if (text.trim().isEmpty) return;
     ChatMessage message = ChatMessage(
       text: text.trim(),
       sender: MessageSender.user,
