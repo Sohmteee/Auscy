@@ -71,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final response = await api.completion(prompt);
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
-    debugPrint(newResponse['choices'][0]['text']);
+    debugPrint(response.toString());
     return newResponse['choices'][0]['text'];
   }
 
