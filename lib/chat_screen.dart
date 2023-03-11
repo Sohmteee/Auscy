@@ -66,7 +66,7 @@ class _ChatScreenState extends State<ChatScreen> {
   } */
 
   Future<String> generateRequest(String prompt) async {
-    final apiKey = GPT3(dotenv.env['OPENAI_API_KEY']);
+    final apiKey = GPT3(dotenv.env['OPENAI_API_KEY']!);
     var url = Uri.https("api.openai.com", "/v1/completions");
     final response = await http.post(url,
         headers: {
