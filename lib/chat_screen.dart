@@ -21,6 +21,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
+  GPT3 api = "";
 
   @override
   void initState() {
@@ -29,7 +30,7 @@ class _ChatScreenState extends State<ChatScreen> {
       baseOption: HttpSetup(receiveTimeout: 10000),
       isLogger: true,
     );
-    
+
     final api = GPT3(dotenv.env['OPENAI_API_KEY']!);
 
     super.initState();
@@ -68,14 +69,12 @@ class _ChatScreenState extends State<ChatScreen> {
   } */
 
   Future<String> generateRequest(String prompt) async {
-    final response = await api.completion(
-      prompt,
-      temperature: 0.3,
-      maxTokens: 4000,
-      topP: 1,
-      frequencyPenalty: 0.0,
-      presencePenalty: 0.0
-    );
+    final response = await api.completion(prompt,
+        temperature: 0.3,
+        maxTokens: 4000,
+        topP: 1,
+        frequencyPenalty: 0.0,
+        presencePenalty: 0.0);
 
     debugPrint(response.toString());
     return response.choices[0].text;
