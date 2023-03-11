@@ -89,6 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
     if (text.trim().isEmpty) return;
     
     String? punctuation = endsWithPunctuation(text.trim());
+    
     ChatMessage message = ChatMessage(
       text: text.trim(),
       sender: MessageSender.user,
