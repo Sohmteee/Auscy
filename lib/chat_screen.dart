@@ -72,7 +72,8 @@ class _ChatScreenState extends State<ChatScreen> {
       temperature: 0.3,
       maxTokens: 4000,
       topP: 1,
-      
+      frequencyPenalty: 0.0,
+      presencePenalty: 0
     );
 
     debugPrint(response.toString());
