@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
     debugPrint(response.toString());
-    return respo
+    return response.toString();
   }
 
   String? endsWithPunctuation(String inputString) {
