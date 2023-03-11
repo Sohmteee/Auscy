@@ -29,6 +29,8 @@ class _ChatScreenState extends State<ChatScreen> {
       baseOption: HttpSetup(receiveTimeout: 10000),
       isLogger: true,
     );
+    
+    final api = GPT3(dotenv.env['OPENAI_API_KEY']!);
 
     super.initState();
   }
@@ -66,7 +68,6 @@ class _ChatScreenState extends State<ChatScreen> {
   } */
 
   Future<String> generateRequest(String prompt) async {
-    final api = GPT3(dotenv.env['OPENAI_API_KEY']!);
     final response = await api.completion(
       prompt,
       temperature: 0.3,
