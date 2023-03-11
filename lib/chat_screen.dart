@@ -153,7 +153,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     try {
       final response = await generateRequest(prompt);
-      Vx.log(response!.choices[0].text);
+      Vx.log(response);
 
       if (response.choices[0].text.trim() == "") {
         _sendMessage();
