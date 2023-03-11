@@ -70,6 +70,8 @@ class _ChatScreenState extends State<ChatScreen> {
     final response = await api.completion(
       prompt,
       temperature: 0.3,
+      maxTokens: 4000,
+      topP: 1,
       
     );
 
