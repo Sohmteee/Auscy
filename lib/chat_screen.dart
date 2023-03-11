@@ -74,21 +74,18 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-
   String getLast20Texts() {
     int start = (messages.length < 20) ? 0 : (messages.length - 19);
 
     List<String> last20Texts =
         messages.sublist(start).map((message) => message.text).toList();
 
-
-
     return last20Texts.join('\n');
   }
 
   void _sendMessage() async {
-    String punctuation = endsWithPunctuation(text)
     String text = controller.text;
+    String punctuation = endsWithPunctuation(text);
 
     if (text.trim().isEmpty) return;
     ChatMessage message = ChatMessage(
