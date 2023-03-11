@@ -21,7 +21,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
-  GPT3 api;
+  late GPT3 api;
 
   @override
   void initState() {
@@ -31,7 +31,7 @@ class _ChatScreenState extends State<ChatScreen> {
       isLogger: true,
     );
 
-    final api = GPT3(dotenv.env['OPENAI_API_KEY']!);
+    api = GPT3(dotenv.env['OPENAI_API_KEY']!);
 
     super.initState();
   }
