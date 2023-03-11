@@ -151,16 +151,9 @@ class _ChatScreenState extends State<ChatScreen> {
           true);
     } */
 
-    final request = CompleteText(
-      prompt: prompt,
-      model: kTranslateModelV3,
-      maxTokens: 4000,
-    );
 
     try {
-      final response = await chatGPT!.onCompleteText(
-        request: request,
-      );
+      final response = await generateRequest(prompt)
       Vx.log(response!.choices[0].text);
 
       if (response.choices[0].text.trim() == "") {
