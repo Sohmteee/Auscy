@@ -64,13 +64,24 @@ class _ChatScreenState extends State<ChatScreen> {
     return newResponse['choices'][0]['text'];
   } */
 
+  String? checkStringEndsWithPunctuation(String inputString) {
+    if (inputString.endsWith('.') ||
+        inputString.endsWith('?') ||
+        inputString.endsWith('!')) {
+      return null;
+    } else {
+      return '.';
+    }
+  }
+
+
   String getLast20Texts() {
     int start = (messages.length < 20) ? 0 : (messages.length - 19);
 
     List<String> last20Texts =
         messages.sublist(start).map((message) => message.text).toList();
 
-        
+
 
     return last20Texts.join('\n');
   }
