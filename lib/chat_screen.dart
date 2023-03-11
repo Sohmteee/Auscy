@@ -21,7 +21,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
-  GPT3 api = "";
+  GPT3 api;
 
   @override
   void initState() {
