@@ -125,7 +125,7 @@ class _ChatScreenState extends State<ChatScreen> {
           true);
     } */
 
-    final request = CompleteText(
+    /* final request = CompleteText(
       prompt: prompt,
       model: kTranslateModelV3,
       maxTokens: 4000,
@@ -149,7 +149,7 @@ class _ChatScreenState extends State<ChatScreen> {
           "\nCould you please resend your last message?"
           "\nYou can simply copy your message by long-pressing it",
           true);
-    }
+    } */
   }
 
   void insertNewData(String response, bool isErrorMessage) {
