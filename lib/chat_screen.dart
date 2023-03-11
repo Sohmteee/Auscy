@@ -42,8 +42,31 @@ class _ChatScreenState extends State<ChatScreen> {
 
   // Link for api - https://beta.openai.com/account/api-keys
 
-  Future<String> generateRequest(String prompt) async {
+  /* Future<String> generateRequest(String prompt) async {
     final apiKey = dotenv.env['OPENAI_API_KEY'];
+    var url = Uri.https("api.openai.com", "/v1/completions");
+    final response = await http.post(url,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $apiKey',
+        },
+        body: jsonEncode({
+          'model': 'text-davinci-003',
+          'prompt': prompt.trim(),
+          'temperature': 0.3,
+          'max_token': 4000,
+          'top_p': 1,
+          'frequency_penalty': 0.0,
+          'presence_penalty': 0.0,
+        }));
+
+    Map<String, dynamic> newResponse = jsonDecode(response.body);
+    debugPrint(newResponse['choices'][0]['text']);
+    return newResponse['choices'][0]['text'];
+  } */
+
+  Future<String> generateRequest(String prompt) async {
+    final apiKey = GPT3(apiKey);
     var url = Uri.https("api.openai.com", "/v1/completions");
     final response = await http.post(url,
         headers: {
