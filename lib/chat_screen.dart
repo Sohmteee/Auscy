@@ -67,7 +67,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<String> generateRequest(String prompt) async {
     final api = GPT3(dotenv.env['OPENAI_API_KEY']!);
-    final response = await api.completion(prompt);
+    final response = await api.completion(
+      prompt,
+      
+    );
 
     debugPrint(response.toString());
     return response.choices[0].text;
