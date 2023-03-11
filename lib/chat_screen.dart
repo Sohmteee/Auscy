@@ -64,7 +64,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return newResponse['choices'][0]['text'];
   } */
 
-  String? checkStringEndsWithPunctuation(String inputString) {
+  String? endsWithPunctuation(String inputString) {
     if (inputString.endsWith('.') ||
         inputString.endsWith('?') ||
         inputString.endsWith('!')) {
