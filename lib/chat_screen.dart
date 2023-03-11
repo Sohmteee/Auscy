@@ -69,11 +69,12 @@ class _ChatScreenState extends State<ChatScreen> {
     final api = GPT3(dotenv.env['OPENAI_API_KEY']!);
     final response = await api.completion(
       prompt,
+      bestOf: ,
       temperature: 0.3,
       maxTokens: 4000,
       topP: 1,
       frequencyPenalty: 0.0,
-      presencePenalty: 0
+      presencePenalty: 0.0
     );
 
     debugPrint(response.toString());
