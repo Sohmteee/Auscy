@@ -71,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final response = await api.completion(prompt);
 
     debugPrint(response.toString());
-    return response.choices[0];
+    return response.choices[0].text;
   }
 
   String? endsWithPunctuation(String inputString) {
