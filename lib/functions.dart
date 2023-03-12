@@ -1,3 +1,3 @@
-JSONtoChatMessage() {
+JSONtoChatMessage(Map<String, dynamic) {
 
 }
