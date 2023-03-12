@@ -23,6 +23,8 @@ class ChatMessage extends StatefulWidget {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
+
+  
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
