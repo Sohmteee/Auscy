@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
             
 
 
-    String newResponse = response.body['choices'][0]['text'];
+    String newResponse = response.body
     debugPrint(newResponse.toString());
     return newResponse['choices'][0]['text'];
   }
