@@ -23,9 +23,8 @@ class ChatMessage extends StatefulWidget {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-
   toJSON() {
-    
+    return {};
   }
 
   @override
