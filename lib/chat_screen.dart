@@ -54,13 +54,13 @@ class _ChatScreenState extends State<ChatScreen> {
               'Authorization': 'Bearer $apiKey',
             },
             body: jsonEncode({
-              'model': 'text-davinci-003',
-              'prompt': prompt.trim(),
-              'temperature': 0.3,
-              'max_token': 4000,
-              'top_p': 1,
-              'frequency_penalty': 0.0,
-              'presence_penalty': 0.0,
+              "model": "text-davinci-003",
+              "prompt": prompt.trim(),
+              "temperature": 0.3,
+              "max_token": 4000,
+              "top_p": 1,
+              "frequency_penalty": 0.0,
+              "presence_penalty': 0.0,
             }));
             
             
