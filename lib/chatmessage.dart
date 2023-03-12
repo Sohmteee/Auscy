@@ -27,9 +27,6 @@ class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
   bool get isResponse => _isResponse;
 
 
-
-  
-
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
