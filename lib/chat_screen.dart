@@ -56,6 +56,7 @@ class _ChatScreenState extends State<ChatScreen> {
             body: jsonEncode({
               'model': 'text-davinci-003',
               'prompt': prompt.trim(),
+              'completion_length'
               'temperature': 0.3,
               'max_tokens': 4000,
               'top_p': 1,
