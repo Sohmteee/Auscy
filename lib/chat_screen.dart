@@ -45,7 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   // Link for api - https://beta.openai.com/account/api-keys
 
-  Future<String> generateRequest(String prompt) async {
+  Future<String> generateResponse(String prompt) async {
     final apiKey = dotenv.env['OPENAI_API_KEY']!;
     var url = Uri.https("api.openai.com", "/v1/completions");
     final response = await http.post(url,
@@ -168,7 +168,7 @@ class _ChatScreenState extends State<ChatScreen> {
     } */
 
     try {
-      final response = await generateRequest(prompt);
+      final response = await generateResponse(prompt);
       Vx.log(response);
 
       if (response.trim() == "") {
