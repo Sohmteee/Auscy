@@ -45,7 +45,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   // Link for api - https://beta.openai.com/account/api-keys
 
-  /* Future<String> generateRequest(String prompt) async {
+  Future<String> generateRequest(String prompt) async {
     final apiKey = dotenv.env['OPENAI_API_KEY'];
     var url = Uri.https("api.openai.com", "/v1/completions");
     final response = await http.post(url,
@@ -66,7 +66,7 @@ class _ChatScreenState extends State<ChatScreen> {
     Map<String, dynamic> newResponse = jsonDecode(response.body);
     debugPrint(newResponse['choices'][0]['text']);
     return newResponse['choices'][0]['text'];
-  } */
+  }
 
   /* Future<String> generateRequest(String prompt) async {
     final response = await api.completion(prompt,
