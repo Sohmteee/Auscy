@@ -62,6 +62,8 @@ class _ChatScreenState extends State<ChatScreen> {
               'frequency_penalty': 0.0,
               'presence_penalty': 0.0,
             }));
+            
+            
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
     debugPrint(newResponse.toString());
