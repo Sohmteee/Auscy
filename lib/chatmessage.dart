@@ -23,7 +23,7 @@ class ChatMessage extends StatefulWidget {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-  Map<> toJSON() {
+  Map<> toJSON(){
     return {
       'text' : widget.text,
       'sender' : widget.sender == MessageSender.user ? "user" : "bot",
