@@ -22,11 +22,7 @@ class ChatMessage extends StatefulWidget {
   State<ChatMessage> createState() => _ChatMessageState();
 }
 
-class _ChatMessageState extends State<ChatMessage> with ChangeNotifier {
-  bool _isResponse = false;
-  bool get isResponse => _isResponse;
-
-
+class _ChatMessageState extends State<ChatMessage> {
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
