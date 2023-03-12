@@ -4,6 +4,6 @@ JSONtoChatMessage(Map<String, dynamic> json) {
   return ChatMessage(
     text: json['text'],
     sender: json['sender'],
-    isErroMessage: json[],
+    isErroMessage: json['isErroMessage'],
   );
 }
