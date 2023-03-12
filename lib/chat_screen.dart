@@ -125,49 +125,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
     String prompt = getLast20Texts();
 
-    /* try {
-      final response = generateRequest(prompt);
-
-      if (response.toString().trim() == "") {
-        _sendMessage();
-      } else {
-        insertNewData(response.toString().trim(), false);
-      }
-    } catch (e) {
-      debugPrint(e.toString());
-      insertNewData(
-          "This error occured while trying to respond: \n$e"
-          "\nCould you please resend your last message?"
-          "\nYou can simply copy your message by long-pressing it",
-          true);
-    } */
-
-    /* final request = CompleteText(
-      prompt: prompt,
-      model: kTranslateModelV3,
-      maxTokens: 4000,
-    );
-
-    try {
-      final response = await chatGPT!.onCompleteText(
-        request: request,
-      );
-      Vx.log(response!.choices[0].text);
-
-      if (response.choices[0].text.trim() == "") {
-        _sendMessage();
-      } else {
-        insertNewData(response.choices[0].text.trim(), false);
-      }
-    } catch (e) {
-      debugPrint(e.toString());
-      insertNewData(
-          "This error occured while trying to respond: \n$e"
-          "\nCould you please resend your last message?"
-          "\nYou can simply copy your message by long-pressing it",
-          true);
-    } */
-
     try {
       final response = await generateResponse(prompt);
       Vx.log(response);
