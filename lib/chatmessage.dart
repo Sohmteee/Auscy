@@ -25,7 +25,7 @@ class ChatMessage extends StatefulWidget {
 class _ChatMessageState extends State<ChatMessage> {
   toJSON() {
     return {
-      'text' : text,
+      'text' : widget.text,
     };
   }
 
