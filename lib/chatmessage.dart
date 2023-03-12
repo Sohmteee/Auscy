@@ -26,7 +26,7 @@ class _ChatMessageState extends State<ChatMessage> {
   toJSON() {
     return {
       'text' : widget.text,
-      'sender' : widget.sender
+      'sender' : widget.sender == M
     };
   }
 
