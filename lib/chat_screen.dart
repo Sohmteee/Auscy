@@ -69,18 +69,6 @@ class _ChatScreenState extends State<ChatScreen> {
     return newResponse['choices'][0]['text'];
   }
 
-  /* Future<String> generateRequest(String prompt) async {
-    final response = await api.completion(prompt,
-        temperature: 0.3,
-        maxTokens: 4000,
-        topP: 1,
-        frequencyPenalty: 0.0,
-        presencePenalty: 0.0);
-
-    debugPrint(response.toString());
-    return response.choices[0].text;
-  } */
-
   String? endsWithPunctuation(String inputString) {
     if (inputString.endsWith('.') ||
         inputString.endsWith('?') ||

@@ -30,9 +30,6 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_text_kit: ^4.2.2
-  openai_gpt3_api:
-    git:
-      url: https://github.com/morriskurz/openai_gpt3_dart_api
   chat_gpt_sdk:
     git:
       url: https://github.com/iampawan/Flutter-ChatGPT.git
