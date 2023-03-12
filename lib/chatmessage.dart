@@ -27,7 +27,7 @@ class _ChatMessageState extends State<ChatMessage> {
     return {
       'text' : widget.text,
       'sender' : widget.sender == MessageSender.user ? "user" : "bot",
-      
+      'isErroMessage' : widget.isErroMessage,
     };
   }
 
