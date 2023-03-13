@@ -24,6 +24,6 @@ final msg = {'messages': [
   {
     'text' : 'Hello',
     'sender' : 'user',
-    
+    'isErroMessage': false,
   }
 ]};
