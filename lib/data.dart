@@ -14,7 +14,6 @@ bool isTyping = false;
 bool isResponse = false;
 
 final TextEditingController controller = TextEditingController();
-final ScrollController scrollController = ScrollController();
 
 IconData icon = Icons.mic;
 
