@@ -20,4 +20,6 @@ IconData icon = Icons.mic;
 
 final List<ChatMessage> messages = [];
 
-
+msg = {
+  
+}
