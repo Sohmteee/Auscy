@@ -27,12 +27,12 @@ final msg = {'messages': [
       'isErroMessage': false,
     },
     {
-      'text': 'How are you?',
+      'text': "How are you?",
       'sender': 'bot',
       'isErroMessage': false,
     },
     {
-      'text': 'I'm good, you?',
+      'text': "I'm good, you?',
       'sender': 'user',
       'isErroMessage': false,
     },
