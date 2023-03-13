@@ -32,13 +32,13 @@ final msg = {'messages': [
       'isErroMessage': false,
     },
     {
-      'text': "I'm good, you?',
+      'text': "I'm good, you?",
       'sender': 'user',
       'isErroMessage': false,
     },
     {
-      'text': 'Hello',
-      'sender': 'user',
+      'text': "Hello",
+      'sender': "user',
       'isErroMessage': false,
     },
 ]};
