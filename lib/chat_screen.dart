@@ -247,7 +247,9 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Flexible(
               child: StreamBuilder(
-                
+                builder: (context, snapshot) {
+                  return 
+                },
               ),            ),
             if (_isTyping)
               const SpinKitThreeBounce(
