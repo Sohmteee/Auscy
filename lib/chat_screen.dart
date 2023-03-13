@@ -103,7 +103,7 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response);
 
       if (response.trim() == "") {
-        _sendMessage();
+        isTyping
       } else {
         insertNewData(response.trim(), false);
       }
