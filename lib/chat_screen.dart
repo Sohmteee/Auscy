@@ -261,6 +261,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     reverse: true,
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
+                      
                       return user.reversed.toList()[index];
                     },
                   );
