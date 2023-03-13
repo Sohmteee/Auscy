@@ -250,7 +250,6 @@ class _ChatScreenState extends State<ChatScreen> {
                 padding: Vx.m8,
                 reverse: true,
                 itemCount: messages.length,
-                controller: scrollController,
                 itemBuilder: (context, index) {
                   return messages.reversed.toList()[index];
                 },
