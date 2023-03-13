@@ -191,9 +191,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-  final _future = Supabase.instance.client
-      .from('Users')
-      .select<List<Map<String, dynamic>>>();
+    final _future = Supabase.instance.client
+        .from('Users')
+        .select<List<Map<String, dynamic>>>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -250,10 +250,10 @@ class _ChatScreenState extends State<ChatScreen> {
               child: FutureBuilder(
                 future: _future,
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData)
-                  return 
+                  if (!snapshot.hasData) return ;
                 },
-              ),            ),
+              ),
+            ),
             if (_isTyping)
               const SpinKitThreeBounce(
                 color: Colors.black,
