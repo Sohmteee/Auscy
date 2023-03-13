@@ -250,7 +250,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: FutureBuilder(
                 future: _future,
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData) return ;
+                  if (!snapshot.hasData) return const Center(child: ,);
                 },
               ),
             ),
