@@ -47,7 +47,6 @@ class _ChatScreenState extends State<ChatScreen> {
               'frequency_penalty': 0.0,
               'presence_penalty': 0.0,
             }));
-            
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
     debugPrint(newResponse.toString());
@@ -103,7 +102,7 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response);
 
       if (response.trim() == "") {
-        isTyping
+        _isTyping = false;
       } else {
         insertNewData(response.trim(), false);
       }
