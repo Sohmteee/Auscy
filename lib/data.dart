@@ -1,5 +1,4 @@
 import 'package:chat_gpt_02/chatmessage.dart';
-import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 
 enum MessageSender {
@@ -21,4 +20,3 @@ ScrollController scrollController = ScrollController();
 IconData icon = Icons.mic;
 
 final List<ChatMessage> messages = [];
-late OpenAI? chatGPT;
