@@ -9,11 +9,12 @@ Future main() async {
   await dotenv.load();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
-  )); 
+  ));
 
   await Supabase.initialize(
     url: 'https://bcmyfqnqvdcutsxgcuoa.supabase.co',
-    anonKey: 'YOUR_SUPABASE_ANON_KEY',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjbXlmcW5xdmRjdXRzeGdjdW9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkxNTI2NDYsImV4cCI6MTk5NDcyODY0Nn0.ljaHIp1qeLRZUNCkLHFBVbSqO20fLktvA-AyQ2d8l14',
   );
   runApp(const MyApp());
 }
