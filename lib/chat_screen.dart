@@ -256,6 +256,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     );
                   }
                   final user = snapshot.data!;
+                  return 
                 },
               ),
             ),
