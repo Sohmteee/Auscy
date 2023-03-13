@@ -9,7 +9,6 @@ import 'package:http/http.dart' as http;
 
 import 'chatmessage.dart';
 import 'data.dart';
-import 'package:openai_gpt3_api/openai_gpt3_api.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
