@@ -247,6 +247,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Flexible(
               child: StreamBuilder(
+                sn
                 builder: (context, snapshot) {
                   return 
                 },
