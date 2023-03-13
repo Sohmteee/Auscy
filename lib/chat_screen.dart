@@ -20,7 +20,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
-  final _future = Supabase.instance.client
+  final _stream = Supabase.instance.client
       .from('Users')
       .select<List<Map<String, dynamic>>>();
 
