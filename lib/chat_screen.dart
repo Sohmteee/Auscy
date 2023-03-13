@@ -191,10 +191,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
   final _stream = Supabase.instance.client
       .from('Users')
       .select<List<Map<String, dynamic>>>();
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
