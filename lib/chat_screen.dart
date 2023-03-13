@@ -246,7 +246,7 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: [
             Flexible(
-              child: SnapshotBuil
+              child: St
             ),
             if (_isTyping)
               const SpinKitThreeBounce(
