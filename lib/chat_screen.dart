@@ -246,14 +246,7 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: [
             Flexible(
-              child: ListView.builder(
-                padding: Vx.m8,
-                reverse: true,
-                itemCount: messages.length,
-                itemBuilder: (context, index) {
-                  return messages.reversed.toList()[index];
-                },
-              ),
+              child: Snap
             ),
             if (_isTyping)
               const SpinKitThreeBounce(
