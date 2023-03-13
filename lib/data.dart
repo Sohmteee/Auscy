@@ -20,7 +20,8 @@ IconData icon = Icons.mic;
 
 final List<ChatMessage> messages = [];
 
-final msg = {'messages': [
+final msg = {
+  'messages': [
     {
       'text': "Hello",
       'sender': 'user',
@@ -37,8 +38,9 @@ final msg = {'messages': [
       'isErroMessage': false,
     },
     {
-      'text': "Hello",
-      'sender': "user',
+      'text': "I'm good too",
+      'sender': "bot",
       'isErroMessage': false,
     },
-]};
+  ]
+};
