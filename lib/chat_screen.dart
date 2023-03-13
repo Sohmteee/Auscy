@@ -191,7 +191,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-  final _stream = Supabase.instance.client
+  final _future = Supabase.instance.client
       .from('Users')
       .select<List<Map<String, dynamic>>>();
 
@@ -248,7 +248,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Flexible(
               child: FutureBuilder(
-                future: _stream,
+                future: _future,
                 builder: (context, snapshot) {
                   return 
                 },
