@@ -255,7 +255,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: CircularProgressIndicator(),
                     );
                   }
-                  final 
+                  final user = snapshot.data!;
                 },
               ),
             ),
