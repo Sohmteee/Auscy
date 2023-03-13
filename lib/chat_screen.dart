@@ -21,19 +21,6 @@ class _ChatScreenState extends State<ChatScreen> {
   bool isResponse = false;
 
   @override
-  void initState() {
-    chatGPT = OpenAI.instance.build(
-      token: dotenv.env['OPENAI_API_KEY'],
-      baseOption: HttpSetup(receiveTimeout: 10000),
-      isLogger: true,
-    );
-
-    api = GPT3(dotenv.env['OPENAI_API_KEY']!);
-
-    super.initState();
-  }
-
-  @override
   void dispose() {
     chatGPT?.close();
     chatGPT?.genImgClose();
