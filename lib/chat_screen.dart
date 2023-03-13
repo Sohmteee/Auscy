@@ -21,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
   final _future = Supabase.instance.client
-      .from('countries')
+      .from('Users')
       .select<List<Map<String, dynamic>>>();
 
   @override
