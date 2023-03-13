@@ -22,7 +22,8 @@ final List<ChatMessage> messages = [];
 
 final msg = {'messages': [
   {
-    'text' : "Hello",
-    'sender' : 'user'
+    'text' : 'Hello',
+    'sender' : 'user',
+    
   }
 ]};
