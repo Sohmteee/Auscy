@@ -12,7 +12,7 @@ Future main() async {
   )); 
 
   await Supabase.initialize(
-    url: 'YOUR_SUPABASE_URL',
+    url: 'https://bcmyfqnqvdcutsxgcuoa.supabase.co',
     anonKey: 'YOUR_SUPABASE_ANON_KEY',
   );
   runApp(const MyApp());
