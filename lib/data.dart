@@ -21,9 +21,24 @@ IconData icon = Icons.mic;
 final List<ChatMessage> messages = [];
 
 final msg = {'messages': [
-  {
-    'text' : 'Hello',
-    'sender' : 'user',
-    'isErroMessage': false,
-  }
+    {
+      'text': 'Hello',
+      'sender': 'user',
+      'isErroMessage': false,
+    },
+    {
+      'text': 'Hello',
+      'sender': 'user',
+      'isErroMessage': false,
+    },
+    {
+      'text': 'Hello',
+      'sender': 'user',
+      'isErroMessage': false,
+    },
+    {
+      'text': 'Hello',
+      'sender': 'user',
+      'isErroMessage': false,
+    },
 ]};
