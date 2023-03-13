@@ -22,6 +22,6 @@ final List<ChatMessage> messages = [];
 
 final msg = {'messages': [
   {
-    
+    ''
   }
 ]};
