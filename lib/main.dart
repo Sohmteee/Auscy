@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'chat_screen.dart';
 
 Future main() async {
@@ -9,7 +10,6 @@ Future main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   )); 
-  WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
     url: 'YOUR_SUPABASE_URL',
