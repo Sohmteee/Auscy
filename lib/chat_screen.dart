@@ -76,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
     List<String> statements = string.split(RegExp(r"[\s.?!]"));
 
     if (questionWords.any((questionWord) {
-      return statements[statements.length - 1]
+      if( statements[statements.length - 1]
             .toLowerCase()
             .startsWith(questionWord);
     }) &&
