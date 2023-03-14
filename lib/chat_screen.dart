@@ -77,7 +77,7 @@ class _ChatScreenState extends State<ChatScreen> {
       "what",
       "when",
       "where",
-      "why", "how", "who", "which", 
+      "why", "how", "who", "which", "whose"
     ];
   }
 
