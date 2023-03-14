@@ -263,6 +263,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     itemBuilder: (context, index) {
                       final user = users[index];
                       return ListTile(
+                        col
                         title: Text(user["id"]),
                       );
                     },
