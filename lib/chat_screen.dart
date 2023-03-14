@@ -59,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
         inputString.endsWith('!')) {
       return null;
     } else {
-      return shouldAddQuestionMark(inputString)'.';
+      return shouldAddQuestionMark(inputString) ? '?' : '.';
     }
   }
 
