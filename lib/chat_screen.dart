@@ -74,11 +74,14 @@ class _ChatScreenState extends State<ChatScreen> {
 
   bool isQuestion(String string) {
     List<String> statements = string.split(RegExp(r"[\s.?!]"));
-    for(String statement in statements) {
-      if (questionWords.any((word) => statement.toLowerCase().startsWith(word)) && !statement.endsWith("other"))
+    for (String statement in statements) {
+      if (questionWords
+              .any((word) => statement.toLowerCase().startsWith(word)) &&
+          !statement.endsWith("?")) {}
     }
-    
-    return questionWords.any((word) => string.startsWith(word) && string.contains("?"));
+
+    return questionWords
+        .any((word) => string.startsWith(word) && string.contains("?"));
   }
 
   void _sendMessage() async {
