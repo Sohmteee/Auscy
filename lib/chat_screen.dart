@@ -92,7 +92,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     String? punctuation = endsWithPunctuation(text);
     if (punctuation != null) {
-      if
+      if (punctuation) {
+        
+      }
       text = shouldAddQuestionMark(text)
           ? "$text?"
           : text + punctuation;
