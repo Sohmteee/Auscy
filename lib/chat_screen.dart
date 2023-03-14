@@ -88,7 +88,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void _sendMessage() async {
     String text = controller.text.trim();
 
-    if (text.trim().isEmpty) return;
+    if (text.isEmpty) return;
 
     String? punctuation = endsWithPunctuation(text.trim());
     if (punctuation != null) {
