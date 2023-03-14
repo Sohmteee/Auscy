@@ -262,7 +262,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
                       final user = users[index];
-                      return ListTile(title: ,)
+                      return ListTile(
+                        title: Text(user["id"]),
+                      );
                     },
                   );
                 },
