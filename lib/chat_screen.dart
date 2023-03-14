@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return last20Texts.join('\n');
   }
 
-  bool isQuestion(String string) => words.any((str) => str.startsWith(word)
+  bool isQuestion(String string) => words.any((word) => str.startsWith(word)
 
   void _sendMessage() async {
     String text = controller.text;
