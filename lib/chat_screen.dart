@@ -20,6 +20,9 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
+  final _future = Supabase.instance.client
+      .from('Users')
+      .select<List<Map<String, dynamic>>>();
 
   @override
   void dispose() {
@@ -191,10 +194,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final _future = Supabase.instance.client
-        .from('Users')
-        .select<List<Map<String, dynamic>>>();
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -247,27 +246,12 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: [
             Flexible(
-              child: FutureBuilder(
-                future: _future,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                  final users = snapshot.data!;
-                  return ListView.builder(
-                    padding: Vx.m8,
-                    reverse: true,
-                    itemCount: messages.length,
-                    itemBuilder: (context, index) {
-                      final user = users[index];
-                      return ListTile(
-                        textColor: Colors.black,
-                        title: Text(user["id"]),
-                      );
-                    },
-                  );
+              child: ListView.builder(
+                padding: Vx.m8,
+                reverse: true,
+                itemCount: messages.length,
+                itemBuilder: (context, index) {
+                  return messages.reversed.toList()[index];
                 },
               ),
             ),
