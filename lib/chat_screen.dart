@@ -72,6 +72,8 @@ class _ChatScreenState extends State<ChatScreen> {
     return last20Texts.join('\n');
   }
 
+  
+
   void _sendMessage() async {
     String text = controller.text;
 
