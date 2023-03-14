@@ -73,7 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   bool isQuestion(String string) {
-    Lwords = [
+    List words = [
       "what",
     ];
   }
