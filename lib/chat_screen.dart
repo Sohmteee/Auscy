@@ -75,7 +75,7 @@ class _ChatScreenState extends State<ChatScreen> {
   bool isQuestion(String string) {
     List<String> statements = string.split(RegExp(r"[\s.?!]"));
     for(String statement in statements) {
-      if (statement.startsWith(ques))
+      if (statement.startsWith(questionWords))
     }
     
     return questionWords.any((word) => string.startsWith(word) && string.contains("?"));
