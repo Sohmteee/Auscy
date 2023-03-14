@@ -87,7 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
       "does",
       "will",
       "would",
-      "should",  "could", "is", "are", "have", "had", "did", "was", ""
+      "should",  "could", "is", "are", "have", "had", "did", "was", "were", "am"
     ];
   }
 
