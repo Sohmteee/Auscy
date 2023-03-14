@@ -73,7 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   bool isQuestion(String string) {
-    words
+    words = ["what"]
   }
 
   void _sendMessage() async {
