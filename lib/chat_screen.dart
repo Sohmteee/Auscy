@@ -73,37 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   bool isQuestion(String string) {
-    List words = [
-      "what",
-      "when",
-      "where",
-      "why",
-      "how",
-      "who",
-      "which",
-      "whose",
-      "can",
-      "do",
-      "does",
-      "will",
-      "would",
-      "should",
-      "could",
-      "is",
-      "are",
-      "have",
-      "had",
-      "did",
-      "was",
-      "were",
-      "am",
-      "shall",
-      "may",
-      "might",
-      "must",
-      "ought",
-      "would",
-    ];
+    
   }
 
   void _sendMessage() async {
