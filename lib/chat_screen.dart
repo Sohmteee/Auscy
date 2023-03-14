@@ -72,8 +72,8 @@ class _ChatScreenState extends State<ChatScreen> {
     return last20Texts.join('\n');
   }
 
-  bool isQuestion() {
-    
+  bool isQuestion(String s) {
+
   }
 
   void _sendMessage() async {
