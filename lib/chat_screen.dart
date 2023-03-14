@@ -88,14 +88,15 @@ class _ChatScreenState extends State<ChatScreen> {
       }
     }
 
-    if (questionWords.any((questionWord) => statements[statements.length - 1]
+    List<String> words = statements[statements.length - 1].split(" ");
+    if (questionWords.any((questionWord) => words[0]
         .toLowerCase()
         .startsWith(questionWord))) {
       return !statements[statements.length - 1].endsWith("?") ? false : true;
     }
 
     return false;
-  }
+}
 
   void _sendMessage() async {
     String text = controller.text.trim();
