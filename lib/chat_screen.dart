@@ -75,9 +75,11 @@ class _ChatScreenState extends State<ChatScreen> {
   bool shouldAddQuestionMark(String string) {
     List<String> statements = string.split(RegExp(r"[\s.?!]"));
 
-    if (questionWords.any((questionWord) => statements[statements.length - 1]
+    if (questionWords.any((questionWord) {
+      return statements[statements.length - 1]
             .toLowerCase()
-            .startsWith(questionWord)) &&
+            .startsWith(questionWord);
+    }) &&
         !statements[statements.length - 1].endsWith("?")) {
       return true;
     }
