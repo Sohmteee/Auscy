@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return last20Texts.join('\n');
   }
 
-  bool isQuestion(String string) {
+  bool shouldAdd(String string) {
     List<String> statements = string.split(RegExp(r"[\s.?!]"));
     for (String statement in statements) {
       if (questionWords
