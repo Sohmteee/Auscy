@@ -72,7 +72,8 @@ class _ChatScreenState extends State<ChatScreen> {
     return last20Texts.join('\n');
   }
 
-  bool isQuestion(String string) => words.any((word) => string.startsWith(word) && string.contains("?"));
+  bool isQuestion(String string) =>
+      words.any((word) => string.startsWith(word) && string.contains("?"));
 
   void _sendMessage() async {
     String text = controller.text;
