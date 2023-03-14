@@ -255,14 +255,13 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: CircularProgressIndicator(),
                     );
                   }
-                  final users = snapshot.data!;
+                  final user = snapshot.data!;
                   return ListView.builder(
                     padding: Vx.m8,
                     reverse: true,
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
-                      final id = users[index];
-                      return user.reversed.toList()[index];
+                      return messages.reversed.toList()[index];
                     },
                   );
                 },
