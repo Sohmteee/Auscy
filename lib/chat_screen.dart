@@ -82,8 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
       }
     }
 
-    return questionWords
-        .any((word) => string.startsWith(word) && string.contains("?"));
+    return true;
   }
 
   void _sendMessage() async {
