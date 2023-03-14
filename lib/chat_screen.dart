@@ -73,7 +73,9 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   bool isQuestion(String string) {
-    words = ["what"]
+    Lwords = [
+      "what",
+    ];
   }
 
   void _sendMessage() async {
