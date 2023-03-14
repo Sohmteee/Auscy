@@ -72,9 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return last20Texts.join('\n');
   }
 
-  bool isQuestion(String string) {
-    return words.som
-  }
+  bool isQuestion(String string) => 
 
   void _sendMessage() async {
     String text = controller.text;
