@@ -78,8 +78,8 @@ class _ChatScreenState extends State<ChatScreen> {
       if (questionWords
               .any((word) => statement.toLowerCase().startsWith(word)) &&
           !statement.endsWith("?")) {
-            
-          }
+        return false;
+      }
     }
 
     return questionWords
