@@ -98,7 +98,11 @@ class _ChatScreenState extends State<ChatScreen> {
       "were",
       "am",
       "shall",
-      "may", "might", "must", "ought", "would"
+      "may",
+      "might",
+      "must",
+      "ought",
+      "would",
     ];
   }
 
