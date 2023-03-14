@@ -77,12 +77,9 @@ class _ChatScreenState extends State<ChatScreen> {
     for (String line in lines) {
       List<String> lineStatements = line.split(RegExp('[.?!]'));
 
-      // Loop through each statement
       for (String statement in lineStatements) {
-        // Trim leading and trailing whitespace from the statement
         statement = statement.trim();
 
-        // If the statement is not empty, add it to the list of statements
         if (statement.isNotEmpty) {
           statements.add(statement);
         }
