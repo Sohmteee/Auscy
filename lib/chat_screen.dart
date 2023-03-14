@@ -73,6 +73,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   bool shouldAddQuestionMark(String string) {
+    List
     List<String> statements = string.split(RegExp(r"[\s.?!]"));
 
     if (questionWords.any((questionWord) => statements[statements.length - 1]
