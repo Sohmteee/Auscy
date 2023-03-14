@@ -80,6 +80,8 @@ class _ChatScreenState extends State<ChatScreen> {
         .startsWith(questionWord))) {
       if (!statements[statements.length - 1].endsWith("?")) {
         return false;
+      } else {
+        return true;
       }
     }
 
