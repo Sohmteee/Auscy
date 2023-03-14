@@ -44,7 +44,7 @@ final messagesInJSON = {
   ]
 };
 
-List words = [
+List questionWords = [
   "what",
   "when",
   "where",
