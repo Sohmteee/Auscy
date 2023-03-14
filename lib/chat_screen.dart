@@ -262,7 +262,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     itemCount: messages.length,
                     itemBuilder: (context, index) {
                       final user = users[index];
-                      return user["id"];
+                      return Text(child);
                     },
                   );
                 },
