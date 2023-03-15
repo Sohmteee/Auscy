@@ -78,7 +78,7 @@ class _ChatMessageState extends State<ChatMessage> {
                     ? Vx.red500
                     : Vx.zinc200,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 2),
+              padding: const EdgeInsets.all(2),
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
