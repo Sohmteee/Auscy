@@ -97,7 +97,7 @@ class _ChatMessageState extends State<ChatMessage> {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    DateFormat("h:mma").format(widget.time),
+                    DateFormat("h:mm a").format(widget.time),
                     style: TextStyle(
                       color: widget.sender == MessageSender.user
                           ? Colors.grey.shade100
