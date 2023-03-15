@@ -75,9 +75,10 @@ class _ChatScreenState extends State<ChatScreen> {
   bool shouldAddQuestionMark(String string) {
     List<String> statements = [];
     List<String> lines = string.split("\n");
-    
+
     for (String line in lines) {
       List<String> lineStatements = line.split(RegExp('[.?!]'));
+      debugPrint(statement);
 
       for (String statement in lineStatements) {
         statement = statement.trim();
