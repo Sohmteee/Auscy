@@ -99,16 +99,13 @@ class _ChatMessageState extends State<ChatMessage> {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Text(
-                      DateFormat("h:mm a").format(widget.time),
-                      style: TextStyle(
-                        color: widget.sender == MessageSender.user
-                            ? Colors.grey.shade100
-                            : Colors.grey.shade200,
-                        fontSize: 10,
-                      ),
+                  Text(
+                    DateFormat("h:mm a").format(widget.time),
+                    style: TextStyle(
+                      color: widget.sender == MessageSender.user
+                          ? Colors.grey.shade100
+                          : Colors.grey.shade200,
+                      fontSize: 10,
                     ),
                   )
                 ],
