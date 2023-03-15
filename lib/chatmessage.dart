@@ -99,8 +99,8 @@ class _ChatMessageState extends State<ChatMessage> {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Alignment(
-                    alignment: 
+                  Align(
+                    alignment: Alignment.bottomRight,
                     child: Text(
                       DateFormat("h:mm a").format(widget.time),
                       style: TextStyle(
