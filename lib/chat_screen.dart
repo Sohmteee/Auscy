@@ -78,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     for (String line in lines) {
       List<String> lineStatements = line.split(RegExp('[.?!]'));
-      debugPrint(statement);
+      debugPrint(lineStatements.length.toString());
 
       for (String statement in lineStatements) {
         statement = statement.trim();
