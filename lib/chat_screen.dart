@@ -89,7 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
 
     List<String> words = statements.last.split(" ");
-    if (questionWords.contains(words[0].toLowerCase())) {
+    if (questionWords.contains(words[0].toLowerCase().trim())) {
       return !statements.last.endsWith("?") ? false : true;
     }
 
