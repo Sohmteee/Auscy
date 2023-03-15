@@ -100,11 +100,9 @@ class _ChatMessageState extends State<ChatMessage> {
                     DateFormat("h:mma").format(widget.time),
                     style: TextStyle(
                       color: widget.sender == MessageSender.user
-                          ? Colors.white
-                          : widget.isErroMessage ?? false
-                              ? Colors.grey.shade100
-                              : Colors.black,
-                      fontSize: 16,
+                          ? Colors.grey.shade100
+                          : Colors.grey.shade200,
+                      fontSize: 10,
                     ),
                   )
                 ],
