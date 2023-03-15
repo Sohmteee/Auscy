@@ -109,7 +109,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage message = ChatMessage(
       text: text,
       sender: MessageSender.user,
-      time: D,
+      time: DateTime.now(),
     );
 
     setState(() {
@@ -147,6 +147,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage botMessage = ChatMessage(
       text: response,
       sender: MessageSender.bot,
+      time: DateTime.now(),
       isErroMessage: isErrorMessage,
     );
 
