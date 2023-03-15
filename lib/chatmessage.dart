@@ -85,7 +85,7 @@ class _ChatMessageState extends State<ChatMessage> {
               child: Column(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(right: 50),
+                    margin: const EdgeInsets.only(right: 10),
                     child: Text(
                       widget.text.trim(),
                       style: TextStyle(
@@ -99,13 +99,16 @@ class _ChatMessageState extends State<ChatMessage> {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Text(
-                    DateFormat("h:mm a").format(widget.time),
-                    style: TextStyle(
-                      color: widget.sender == MessageSender.user
-                          ? Colors.grey.shade100
-                          : Colors.grey.shade200,
-                      fontSize: 10,
+                  Alignment(
+                    alignment: 
+                    child: Text(
+                      DateFormat("h:mm a").format(widget.time),
+                      style: TextStyle(
+                        color: widget.sender == MessageSender.user
+                            ? Colors.grey.shade100
+                            : Colors.grey.shade200,
+                        fontSize: 10,
+                      ),
                     ),
                   )
                 ],
