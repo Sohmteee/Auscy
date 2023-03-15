@@ -85,7 +85,7 @@ class _ChatMessageState extends State<ChatMessage> {
               child: Column(
                 children: [
                   Container(
-                    margin: const ei,
+                    margin: const EdgeInsets.only(right: 50),
                     child: Text(
                       widget.text.trim(),
                       style: TextStyle(
