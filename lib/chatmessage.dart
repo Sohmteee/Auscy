@@ -95,7 +95,7 @@ class _ChatMessageState extends State<ChatMessage> {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Text(DateFormat("h:mma").format(date);)
+                  Text(DateFormat("h:mma").format(date))
                 ],
               ),
             ),
