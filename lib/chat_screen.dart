@@ -109,6 +109,7 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatMessage message = ChatMessage(
       text: text,
       sender: MessageSender.user,
+      time: D,
     );
 
     setState(() {
