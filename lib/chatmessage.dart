@@ -83,6 +83,7 @@ class _ChatMessageState extends State<ChatMessage> {
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
                     margin: const EdgeInsets.only(right: 10),
@@ -99,16 +100,13 @@ class _ChatMessageState extends State<ChatMessage> {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Container(
-                    color: Colors.white,
-                    child: Text(
-                      DateFormat("h:mm a").format(widget.time),
-                      style: TextStyle(
-                        color: widget.sender == MessageSender.user
-                            ? Colors.grey.shade100
-                            : Colors.grey.shade200,
-                        fontSize: 10,
-                      ),
+                  Text(
+                    DateFormat("h:mm a").format(widget.time),
+                    style: TextStyle(
+                      color: widget.sender == MessageSender.user
+                          ? Colors.grey.shade100
+                          : Colors.grey.shade200,
+                      fontSize: 10,
                     ),
                   )
                 ],
