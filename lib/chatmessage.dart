@@ -81,16 +81,21 @@ class _ChatMessageState extends State<ChatMessage> {
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.7,
               ),
-              child: Text(
-                widget.text.trim(),
-                style: TextStyle(
-                  color: widget.sender == MessageSender.user
-                      ? Colors.white
-                      : widget.isErroMessage ?? false
+              child: Column(
+                children: [
+                  Text(
+                    widget.text.trim(),
+                    style: TextStyle(
+                      color: widget.sender == MessageSender.user
                           ? Colors.white
-                          : Colors.black,
-                  fontSize: 16,
-                ),
+                          : widget.isErroMessage ?? false
+                              ? Colors.white
+                              : Colors.black,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Sized
+                ],
               ),
             ),
           ),
