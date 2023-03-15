@@ -105,13 +105,16 @@ class _ChatMessageState extends State<ChatMessage> {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          DateFormat("h:mm a").format(widget.time),
-                          style: TextStyle(
-                            color: widget.sender == MessageSender.user
-                                ? Colors.grey.shade100
-                                : Colors.grey.shade200,
-                            fontSize: 10,
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Text(
+                            DateFormat("h:mm a").format(widget.time),
+                            style: TextStyle(
+                              color: widget.sender == MessageSender.user
+                                  ? Colors.grey.shade100
+                                  : Colors.grey.shade200,
+                              fontSize: 10,
+                            ),
                           ),
                         ),
                       ],
