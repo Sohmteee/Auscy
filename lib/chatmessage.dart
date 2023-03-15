@@ -23,11 +23,11 @@ class ChatMessage extends StatefulWidget {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-  Map<String, dynamic> toJSON(){
+  Map<String, dynamic> toJSON() {
     return {
-      'text' : widget.text,
-      'sender' : widget.sender == MessageSender.user ? "user" : "bot",
-      'isErroMessage' : widget.isErroMessage,
+      'text': widget.text,
+      'sender': widget.sender == MessageSender.user ? "user" : "bot",
+      'isErroMessage': widget.isErroMessage,
     };
   }
 
@@ -64,7 +64,7 @@ class _ChatMessageState extends State<ChatMessage> {
                 duration: Toast.lengthShort, gravity: Toast.bottom);
           },
           child: ChatBubble(
-            padding: EdgeInsets.symmetric(8),
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             clipper: ChatBubbleClipper8(
                 type: widget.sender == MessageSender.user
                     ? BubbleType.sendBubble
