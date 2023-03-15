@@ -95,7 +95,7 @@ class _ChatMessageState extends State<ChatMessage> {
                     ),
                   ),
                   const SizedBox(height: 2),
-                  Text(${widget.time.hour})
+                  Text(${widget.time.hour});
                 ],
               ),
             ),
