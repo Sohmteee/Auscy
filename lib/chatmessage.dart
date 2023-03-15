@@ -101,6 +101,7 @@ class _ChatMessageState extends State<ChatMessage> {
                   const SizedBox(height: 2),
                   Row(
                     mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
                         DateFormat("h:mm a").format(widget.time),
