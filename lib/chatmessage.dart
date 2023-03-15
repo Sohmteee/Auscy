@@ -17,7 +17,7 @@ class ChatMessage extends StatefulWidget {
 
   final String text;
   final MessageSender sender;
-  final Date
+  final DateTime time;
   final bool? isErroMessage;
 
   @override
