@@ -64,7 +64,6 @@ class _ChatMessageState extends State<ChatMessage> {
                 duration: Toast.lengthShort, gravity: Toast.bottom);
           },
           child: ChatBubble(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
             clipper: ChatBubbleClipper8(
                 type: widget.sender == MessageSender.user
                     ? BubbleType.sendBubble
