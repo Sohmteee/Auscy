@@ -94,7 +94,8 @@ class _ChatMessageState extends State<ChatMessage> {
                       fontSize: 16,
                     ),
                   ),
-                  Sized
+                  const SizedBox(height: 2),
+                  
                 ],
               ),
             ),
