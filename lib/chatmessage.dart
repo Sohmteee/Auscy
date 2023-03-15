@@ -102,7 +102,7 @@ class _ChatMessageState extends State<ChatMessage> {
                       color: widget.sender == MessageSender.user
                           ? Colors.white
                           : widget.isErroMessage ?? false
-                              ? Cr
+                              ? Colors.grey.shade100
                               : Colors.black,
                       fontSize: 16,
                     ),
