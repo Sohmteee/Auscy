@@ -105,7 +105,7 @@ class _ChatMessageState extends State<ChatMessage> {
                     style: TextStyle(
                       color: widget.sender == MessageSender.user
                           ? Colors.grey.shade100
-                          : Colors.grey.shade200,
+                          : Colors.grey.shade500,
                       fontSize: 10,
                     ),
                   )
