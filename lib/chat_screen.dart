@@ -95,7 +95,6 @@ class _ChatScreenState extends State<ChatScreen> {
           : "false");
       return !statements.last.endsWith("?") ? false : true;
     }
-    debugPrint("false");
 
     return false;
   }
