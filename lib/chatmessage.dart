@@ -11,11 +11,13 @@ class ChatMessage extends StatefulWidget {
     super.key,
     required this.text,
     required this.sender,
+    required this.time,
     this.isErroMessage,
   });
 
   final String text;
   final MessageSender sender;
+  final Date
   final bool? isErroMessage;
 
   @override
