@@ -1,4 +1,4 @@
-# chatgpt
+# auscy
 
 A new Flutter project.
 

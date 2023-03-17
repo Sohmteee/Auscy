@@ -226,14 +226,14 @@ class _ChatScreenState extends State<ChatScreen> {
         leading: const Padding(
           padding: EdgeInsets.all(8.0),
           child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+            backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              "ChatGPT",
+              "Auscy",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,

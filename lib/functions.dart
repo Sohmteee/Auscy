@@ -1,4 +1,4 @@
-import 'package:chat_gpt_02/chatmessage.dart';
+import 'package:auscy/chatmessage.dart';
 
 jsonToChatMessage(Map<String, dynamic> json) {
   return ChatMessage(
