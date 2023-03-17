@@ -252,7 +252,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Vx.gray700,
+                  color: Vx.zinc900,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
