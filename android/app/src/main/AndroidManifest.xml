@@ -3,7 +3,7 @@
    <application
         android:label="Auscy"
         android:name="${applicationName}"
-        android:icon="@mipmap/chatgpt_icon">
+        android:icon="@mipmap/auscy_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
