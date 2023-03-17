@@ -52,7 +52,7 @@ class _ChatMessageState extends State<ChatMessage> {
               child: const CircleAvatar(
                 radius: 15,
                 backgroundColor: Vx.zinc200,
-                backgroundImage: AssetImage("assets/images/chatgpt_icon.png"),
+                backgroundImage: AssetImage("assets/images/auscy_icon.png"),
               ),
             ),
           ),
