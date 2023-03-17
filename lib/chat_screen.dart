@@ -199,7 +199,7 @@ class _ChatScreenState extends State<ChatScreen> {
         const SizedBox(width: 10),
         Container(
           decoration: const BoxDecoration(
-            color: Vx.grey,
+            color: Vx.gray600,
             shape: BoxShape.circle,
           ),
           child: IconButton(
