@@ -135,7 +135,7 @@ class _ChatScreenState extends State<ChatScreen> {
           return errorDialog(e);
         },
       );
-      is
+      _isTyping = false;
     }
   }
 
