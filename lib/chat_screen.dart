@@ -115,8 +115,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     controller.clear();
     setState(() {
-      
-      toggleSend();
+      icon = text.trim().isNotEmpty ? Icons.send : Icons.mic;
     });
 
     String prompt = getLast20Texts();
