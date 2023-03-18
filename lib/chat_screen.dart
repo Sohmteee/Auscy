@@ -143,7 +143,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Dialog(
       child: Container(
         padding: const EdgeInsets.all(20),
-        child: Text(
+        child: SelectableText(
           "$e",
           style: const TextStyle(
             fontWeight: FontWeight.bold,
