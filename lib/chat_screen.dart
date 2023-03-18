@@ -138,7 +138,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Dialog errorDialog(e) {
-    return 
+    return Container();
   }
 
   void insertNewData(String response, bool isErrorMessage) {
