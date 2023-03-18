@@ -142,7 +142,9 @@ class _ChatScreenState extends State<ChatScreen> {
   Dialog errorDialog(e) {
     return Dialog(
       child: Container(
-        
+        child: Text("This error occured while trying to respond: \n$e"
+            "\nCould you please resend your last message?"
+            "\nYou can simply copy your message by long-pressing it"),
       ),
     );
   }
