@@ -142,8 +142,7 @@ class _ChatScreenState extends State<ChatScreen> {
   errorText(e) {
     switch (e) {
       case "Failed host lookup: 'api.openai.com'":
-        return "Plese connect to the internet"
-        break;
+        return "Please connect to the internet";
       default:
     }
   }
