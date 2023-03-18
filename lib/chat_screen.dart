@@ -140,7 +140,12 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   errorText(e) {
-    swit
+    switch (e) {
+      case "Failed host lookup: 'api.openai.com'":
+        
+        break;
+      default:
+    }
   }
 
   Dialog errorDialog(e) {
