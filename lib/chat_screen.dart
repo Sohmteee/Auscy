@@ -139,7 +139,9 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  
+  errorText(e) {
+    swit
+  }
 
   Dialog errorDialog(e) {
     return Dialog(
