@@ -141,7 +141,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Dialog errorDialog(e) {
     return Dialog(
-      child: Container(),
+      child: Container(
+        
+      ),
     );
   }
 
