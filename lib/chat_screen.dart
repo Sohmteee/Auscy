@@ -131,7 +131,9 @@ class _ChatScreenState extends State<ChatScreen> {
       debugPrint(e.toString());
       showDialog(
         context: context,
-        builder: (context) {},
+        builder: (context) {
+          return errorDialog(e);
+        },
       );
       insertNewData(
           "This error occured while trying to respond: \n$e"
