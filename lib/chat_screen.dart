@@ -137,8 +137,6 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  show
-
   void insertNewData(String response, bool isErrorMessage) {
     ChatMessage botMessage = ChatMessage(
       text: response,
