@@ -111,12 +111,11 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       messages.add(message);
       _isTyping = true;
+      icon = text.trim().isNotEmpty ? Icons.send : Icons.mic;
     });
 
     controller.clear();
-    setState(() {
-      icon = text.trim().isNotEmpty ? Icons.send : Icons.mic;
-    });
+    setState(() {});
 
     String prompt = getLast20Texts();
 
