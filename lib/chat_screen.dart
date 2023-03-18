@@ -129,7 +129,10 @@ class _ChatScreenState extends State<ChatScreen> {
       }
     } catch (e) {
       debugPrint(e.toString());
-      showDialog(context: context, builder: ())
+      showDialog(
+        context: context,
+        builder: (context) {},
+      );
       insertNewData(
           "This error occured while trying to respond: \n$e"
           "\nCould you please resend your last message?"
@@ -140,9 +143,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Dialog errorDialog(e) {
     return Dialog(
-      child: Container(
-
-      ),
+      child: Container(),
     );
   }
 
