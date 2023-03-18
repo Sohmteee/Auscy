@@ -149,7 +149,7 @@ class _ChatScreenState extends State<ChatScreen> {
           "\nYou can simply copy your message by long-pressing it",
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 25,
+            fontSize: 16,
           ),
         ),
       ),
