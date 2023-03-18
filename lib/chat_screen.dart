@@ -282,7 +282,7 @@ class _ChatScreenState extends State<ChatScreen> {
             if (_isTyping)
               Row(
                 children: const [
-                  SizedBox(width: 70),
+                  SizedBox(width: 60),
                   Text(
                     "Auscy is typing",
                     style: TextStyle(
