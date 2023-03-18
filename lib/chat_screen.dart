@@ -144,7 +144,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Container(
         padding: const EdgeInsets.all(20),
         child: Text(
-          "This error occured while trying to respond: \n$e",
+          "$e",
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
