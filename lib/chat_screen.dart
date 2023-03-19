@@ -142,12 +142,9 @@ class _ChatScreenState extends State<ChatScreen> {
   Dialog errorDialog(e) {
 
     return Dialog(
-      shape: ,
+      shape: RoundedRectangleBorder(),
       child: Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-        ),
         child: Text(
           "$e",
           style: const TextStyle(
