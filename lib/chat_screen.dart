@@ -142,7 +142,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Dialog errorDialog(e) {
     return Dialog(
       // alignment: Alignment.bottomCenter,
-      backgroundColor: Vx.red00,
+      backgroundColor: Vx.red,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
