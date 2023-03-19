@@ -151,6 +151,7 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Text(
           "$e",
           style: const TextStyle(
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
