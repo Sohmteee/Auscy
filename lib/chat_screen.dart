@@ -139,19 +139,11 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  errorText(e) {
-    switch (e) {
-      case "Failed host lookup: 'api.openai.com'":
-        return "Please connect to the internet";
-      default:
-    }
-  }
-
   Dialog errorDialog(e) {
     return Dialog(
       child: Container(
         padding: const EdgeInsets.all(20),
-        child: SelectableText(
+        child: Text(
           "$e",
           style: const TextStyle(
             fontWeight: FontWeight.bold,
