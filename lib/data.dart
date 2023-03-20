@@ -44,7 +44,7 @@ final messagesInJSON = {
   ]
 };
 
-RegExp questionWordsRegex = RegExp(r'^)
+RegExp questionWordsRegex = RegExp(r'^()');
 
 List questionWords = [
   "what",
