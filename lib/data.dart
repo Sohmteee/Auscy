@@ -44,14 +44,8 @@ final messagesInJSON = {
   ]
 };
 
-String checkQuestionWord(String sentence) {
-  RegExp questionWordRegex = RegExp(r'^(who|what|when|where|why|how)\b');
-  if (questionWordRegex.hasMatch(sentence)) {
-    return 'The sentence starts with a question word.';
-  } else {
-    return 'The sentence does not start with a question word.';
-  }
-}
+RegExp questionWordRegex = RegExp(r'^(who|what|when|where|why|how)\b');
+
 
 List questionWords = [
   "what",
