@@ -126,7 +126,6 @@ class _ChatScreenState extends State<ChatScreen> {
         setState(() {
           _isTyping = false;
         });
-        return;
       } else {
         insertNewData(response.trim(), false);
       }
