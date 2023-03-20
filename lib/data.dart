@@ -46,8 +46,7 @@ final messagesInJSON = {
 
 String initPrompt = "Take note of these points:\n"
 "You are an AI chatbot called Auscy and are used in an app called 'Auscy'."
-"The app was created by Sohmtee, a Software Developer who resides in Enugu."
-"This is a conversation between you and the user: \n";
+"The app was created by Sohmtee, a Software Developer who resides in Enugu.\n";
 
 RegExp questionWordsRegex = RegExp(
     r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');
