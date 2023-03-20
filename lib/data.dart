@@ -44,36 +44,10 @@ final messagesInJSON = {
   ]
 };
 
-RegExp questionWordRegex = RegExp(r'^(who|what|when|where|why|how)\b');
+String initPrompt = "Take note of these points:\n"
+"You are an AI chatbot called Auscy and are used in an app called 'Auscy'."
+"The app was created by Sohmtee, a Software Developer who resides in Enugu."
+"This is a conversation between you and the user: \n";
 
-List questionWords = [
-  "what",
-  "when",
-  "where",
-  "why",
-  "how",
-  "who",
-  "which",
-  "whose",
-  "can",
-  "do",
-  "does",
-  "will",
-  "would",
-  "should",
-  "could",
-  "is",
-  "are",
-  "have",
-  "had",
-  "did",
-  "was",
-  "were",
-  "am",
-  "shall",
-  "may",
-  "might",
-  "must",
-  "ought",
-  "would",
-];
+RegExp questionWordsRegex = RegExp(
+    r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');

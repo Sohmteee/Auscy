@@ -65,6 +65,8 @@ class _ChatScreenState extends State<ChatScreen> {
     List<String> last20Texts =
         messages.sublist(start).map((message) => message.text).toList();
 
+    last20Texts.insert(0, initPrompt);
+
     return last20Texts.join('\n');
   }
 
@@ -73,7 +75,7 @@ class _ChatScreenState extends State<ChatScreen> {
     List<String> lines = string.split("\n");
 
     for (String line in lines) {
-      List<String> lineStatements = line.split(RegExp('[.?!]'));
+      List<String> lineStatements = line.split(RegExp('[.,?!]'));
 
       for (String statement in lineStatements) {
         statement = statement.trim();
@@ -85,7 +87,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
 
     List<String> words = statements.last.split(" ");
-    if (questionWords.contains(words[0].toLowerCase().trim())) {
+    if (questionWordsRegex.hasMatch(words[0].toLowerCase().trim())) {
       return statements.last.endsWith("?") ? false : true;
     }
 
