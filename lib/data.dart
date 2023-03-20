@@ -46,7 +46,6 @@ final messagesInJSON = {
 
 RegExp questionWordRegex = RegExp(r'^(who|what|when|where|why|how)\b');
 
-
 List questionWords = [
   "what",
   "when",
