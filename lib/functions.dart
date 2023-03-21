@@ -18,7 +18,7 @@ Future createMessage(
     'messages' : messagesInJSON,
   });
 
-  await db.collection("${mycol}").doc("${mydoc}").update({
+  await db.collection('chat').doc("${mydoc}").update({
     'url': FieldValue.arrayUnion([videos]),
   });
 }
