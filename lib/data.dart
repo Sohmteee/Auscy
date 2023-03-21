@@ -23,7 +23,7 @@ final List<ChatMessage> messages = [];
 final db = FirebaseFirestore.instance;
 
 dob() {
-  for (message in collection) {
+  for (message in messages) {
     
   }
   messagesInJSON['messages']?.add(messages[0].toJSON());
