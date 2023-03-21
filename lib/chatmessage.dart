@@ -22,7 +22,7 @@ class ChatMessage extends StatefulWidget {
   Map<String, dynamic> toJSON() {
     return {
       'text': text,
-      'sender': widget.sender == MessageSender.user ? "user" : "bot",
+      'sender': sender == MessageSender.user ? "user" : "bot",
     };
   }
 
@@ -31,7 +31,6 @@ class ChatMessage extends StatefulWidget {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
@@ -70,9 +69,8 @@ class _ChatMessageState extends State<ChatMessage> {
                     ? BubbleType.sendBubble
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
-            backGroundColor: widget.sender == MessageSender.user
-                ? Vx.zinc600
-                : Vx.zinc200,
+            backGroundColor:
+                widget.sender == MessageSender.user ? Vx.zinc600 : Vx.zinc200,
             child: Container(
               padding: const EdgeInsets.all(2),
               constraints: BoxConstraints(
