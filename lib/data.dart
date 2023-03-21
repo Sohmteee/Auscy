@@ -29,7 +29,7 @@ dob() {
 }
 
 final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
-  'messages': [
+  /* 'messages': [
     {
       'text': "Hello",
       'sender': 'user',
@@ -50,7 +50,7 @@ final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
       'sender': "bot",
       'isErroMessage': false,
     },
-  ]
+  ] */
 };
 
 String initPrompt = "Take note of these points:\n"
