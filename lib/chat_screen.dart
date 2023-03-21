@@ -169,7 +169,6 @@ class _ChatScreenState extends State<ChatScreen> {
       text: response,
       sender: MessageSender.bot,
       time: DateTime.now(),
-      isErroMessage: isErrorMessage,
     );
 
     setState(() {

@@ -13,13 +13,11 @@ class ChatMessage extends StatefulWidget {
     required this.text,
     required this.sender,
     required this.time,
-    this.isErroMessage,
   });
 
   final String text;
   final MessageSender sender;
   final DateTime time;
-  final bool? isErroMessage;
 
   @override
   State<ChatMessage> createState() => _ChatMessageState();
@@ -30,7 +28,6 @@ class _ChatMessageState extends State<ChatMessage> {
     return {
       'text': widget.text,
       'sender': widget.sender == MessageSender.user ? "user" : "bot",
-      'isErroMessage': widget.isErroMessage,
     };
   }
 
@@ -74,9 +71,7 @@ class _ChatMessageState extends State<ChatMessage> {
             margin: const EdgeInsets.only(top: 20),
             backGroundColor: widget.sender == MessageSender.user
                 ? Vx.zinc600
-                : widget.isErroMessage ?? false
-                    ? Vx.red500
-                    : Vx.zinc200,
+                : Vx.zinc200,
             child: Container(
               padding: const EdgeInsets.all(2),
               constraints: BoxConstraints(
@@ -92,9 +87,7 @@ class _ChatMessageState extends State<ChatMessage> {
                       style: TextStyle(
                         color: widget.sender == MessageSender.user
                             ? Colors.white
-                            : widget.isErroMessage ?? false
-                                ? Colors.white
-                                : Colors.black,
+                            : Colors.black,
                         fontSize: 16,
                       ),
                     ),
