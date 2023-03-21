@@ -30,7 +30,7 @@ dob() {
 
 final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
   'messages': [
-    {
+    /* {
       'text': "Hello",
       'sender': 'user',
       'isErroMessage': false,
@@ -49,7 +49,7 @@ final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
       'text': "I'm good too",
       'sender': "bot",
       'isErroMessage': false,
-    },
+    }, */
   ]
 };
 
