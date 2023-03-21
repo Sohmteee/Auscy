@@ -114,6 +114,7 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       messages.add(message);
       
+      db.collection(collectionPath)
 
       db.collection("messages").add(messagesInJSON['messages']?.add(message.toJSON())).then((DocumentReference doc) =>
           debugPrint('DocumentSnapshot added with ID: ${doc.id}'));
