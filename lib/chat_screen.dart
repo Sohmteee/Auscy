@@ -59,6 +59,8 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+  error
+
   String getLast20Texts() {
     int start = (messages.length < 20) ? 0 : (messages.length - 19);
 
