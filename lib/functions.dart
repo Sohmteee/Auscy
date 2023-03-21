@@ -14,7 +14,7 @@ Future createMessage(
     {required String username, required ChatMessage message}) async {
   final docUser = db.collection('chat').doc(username);
 
-  final json = ;
+  final json = message.toJSON();
 
-  await docUser.set(data);
+  await docUser.set(json);
 }
