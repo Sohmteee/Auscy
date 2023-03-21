@@ -24,12 +24,12 @@ final db = FirebaseFirestore.instance;
 
 dob() {
   for (ChatMessage message in messages) {
-    messagesInJSON['messages']?.add(message.toJSON());
+    messagesInJSON['messages']?.add(messages[0].toJSON());
   }
 }
 
 final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
-  /* 'messages': [
+  'messages': [
     {
       'text': "Hello",
       'sender': 'user',
@@ -50,7 +50,7 @@ final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
       'sender': "bot",
       'isErroMessage': false,
     },
-  ] */
+  ]
 };
 
 String initPrompt = "Take note of these points:\n"
