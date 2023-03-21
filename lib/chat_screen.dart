@@ -114,7 +114,7 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       messages.add(message);
 
-      db.collection("messages").add(data);
+      db.collection("messages").doc();
 
       db
           .collection("messages")
