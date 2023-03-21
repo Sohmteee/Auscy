@@ -15,6 +15,10 @@ import 'firebase_options.dart';
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
+
+/// await Firebase.initializeApp(
+///   options: DefaultFirebaseOptions.currentPlatform,
+/// );
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
