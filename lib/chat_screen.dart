@@ -181,9 +181,7 @@ class _ChatScreenState extends State<ChatScreen> {
       _isTyping = false;
       messages.add(botMessage);
       messagesInJSON['messages']?.add(botMessage.toJSON());
-            db.collection("messages").add(messagesInJSON).then(
-          (DocumentReference doc) =>
-              debugPrint('DocumentSnapshot added with ID: ${doc.id}'));
+      
     });
   }
 
