@@ -112,6 +112,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       messages.add(message);
+      
+      messagesInJSON['messages']?.add(botMessage.toJSON());
       _isTyping = true;
       icon = Icons.mic;
     });
