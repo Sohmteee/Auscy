@@ -9,5 +9,5 @@ jsonToChatMessage(Map<String, dynamic> json) {
 }
 
 Future createUser({required String name}) async{
-final 
+final docUser = db.
 }
