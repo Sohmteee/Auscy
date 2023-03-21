@@ -1,5 +1,7 @@
 import 'package:auscy/chatmessage.dart';
 
+import 'data.dart';
+
 jsonToChatMessage(Map<String, dynamic> json) {
   return ChatMessage(
     text: json['text'],
@@ -9,5 +11,5 @@ jsonToChatMessage(Map<String, dynamic> json) {
 }
 
 Future createUser({required String name}) async{
-// final docUser = db.
+final docUser = db.inx
 }
