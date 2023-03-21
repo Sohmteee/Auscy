@@ -20,7 +20,7 @@ IconData icon = Icons.mic;
 
 final List<ChatMessage> messages = [];
 
-FirebaseFirestore db = FirebaseFirestore.instance;
+final db = FirebaseFirestore.instance;
 
 final messagesInJSON = {
   'messages': [
