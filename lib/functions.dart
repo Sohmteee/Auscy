@@ -1,4 +1,5 @@
 import 'package:auscy/chatmessage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'data.dart';
 
@@ -18,7 +19,7 @@ Future createMessage(
     'messages' : messagesInJSON,
   });
 
-  await db.collection('chat').doc("${mydoc}").update({
+  await db.collection('chat').doc(username).update({
     'url': FieldValue.arrayUnion([videos]),
   });
 }
