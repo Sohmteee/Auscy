@@ -19,17 +19,18 @@ class ChatMessage extends StatefulWidget {
   final MessageSender sender;
   final DateTime time;
 
+  Map<String, dynamic> toJSON() {
+    return {
+      'text': text,
+      'sender': widget.sender == MessageSender.user ? "user" : "bot",
+    };
+  }
+
   @override
   State<ChatMessage> createState() => _ChatMessageState();
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-  Map<String, dynamic> toJSON() {
-    return {
-      'text': widget.text,
-      'sender': widget.sender == MessageSender.user ? "user" : "bot",
-    };
-  }
 
   @override
   Widget build(BuildContext context) {
