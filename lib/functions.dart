@@ -19,7 +19,7 @@ Future createMessage(
     'messages' : messagesInJSON,
   }); */
 
-  await db.collection('chat').doc(username).update({
+  await docUser.update({
     'messages': FieldValue.arrayUnion(messages),
   });
 }
