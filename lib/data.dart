@@ -19,6 +19,8 @@ IconData icon = Icons.mic;
 
 final List<ChatMessage> messages = [];
 
+db = FirebaseFirestore.instance;
+
 final messagesInJSON = {
   'messages': [
     {
