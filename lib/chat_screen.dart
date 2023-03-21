@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -114,7 +115,7 @@ class _ChatScreenState extends State<ChatScreen> {
       messages.add(message);
       messagesInJSON['messages']?.add(message.toJSON());
 
-      db.collection("messages").add(mes).then((DocumentReference doc) =>
+      db.collection("messages").add(messagesInJSON).then((DocumentReference doc) =>
           print('DocumentSnapshot added with ID: ${doc.id}'));
 
       _isTyping = true;
