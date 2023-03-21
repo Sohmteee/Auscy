@@ -22,7 +22,7 @@ final List<ChatMessage> messages = [];
 
 final db = FirebaseFirestore.instance;
 
-
+String userName = "Sohmtee";
 
 dob() {
   for (ChatMessage message in messages) {
