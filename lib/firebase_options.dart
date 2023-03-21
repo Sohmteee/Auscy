@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'firebase_options.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -67,7 +68,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '312946413238',
     projectId: 'auscy-2621e',
     storageBucket: 'auscy-2621e.appspot.com',
-    iosClientId: '312946413238-v9b277aa67dp703ki90pl0f0kd73ghk3.apps.googleusercontent.com',
+    iosClientId:
+        '312946413238-v9b277aa67dp703ki90pl0f0kd73ghk3.apps.googleusercontent.com',
     iosBundleId: 'com.sohmtee.auscy',
   );
 
@@ -77,7 +79,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '312946413238',
     projectId: 'auscy-2621e',
     storageBucket: 'auscy-2621e.appspot.com',
-    iosClientId: '312946413238-v9b277aa67dp703ki90pl0f0kd73ghk3.apps.googleusercontent.com',
+    iosClientId:
+        '312946413238-v9b277aa67dp703ki90pl0f0kd73ghk3.apps.googleusercontent.com',
     iosBundleId: 'com.sohmtee.auscy',
   );
 }
