@@ -17,4 +17,8 @@ Future createMessage(
   await docUser.set({
     'messages' : messagesInJSON,
   });
+
+  await databaseReference.collection("${mycol}").doc("${mydoc}").update({
+    'url': FieldValue.arrayUnion([videos]),
+  });
 }
