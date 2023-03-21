@@ -20,6 +20,6 @@ Future createMessage(
   });
 
   await db.collection('chat').doc(username).update({
-    'url': FieldValue.arrayUnion(messages),
+    'messages': FieldValue.arrayUnion(messages),
   });
 }
