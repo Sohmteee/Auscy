@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "312946413238",
+    "project_id": "auscy-2621e",
+    "storage_bucket": "auscy-2621e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312946413238:android:fd742d8bdd447b79016017",
+        "android_client_info": {
+          "package_name": "com.sohmtee.auscy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312946413238-0eg9gr0p0vaok678rcojr8m0aau2gd44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTPkbtTUTnayBveBueM6IJqt85vgHW9PE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312946413238-0eg9gr0p0vaok678rcojr8m0aau2gd44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
