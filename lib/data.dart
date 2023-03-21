@@ -23,7 +23,7 @@ final List<ChatMessage> messages = [];
 final db = FirebaseFirestore.instance;
 
 db() {
-  messagesInJSON
+  messagesInJSON['messages']
 }
 
 final messagesInJSON = {
