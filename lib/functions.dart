@@ -8,6 +8,6 @@ jsonToChatMessage(Map<String, dynamic> json) {
   );
 }
 
-Future createUser({required String name}) asyncb{
+Future createUser({required String name}) async{
 
 }
