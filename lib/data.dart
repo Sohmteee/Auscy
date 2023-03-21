@@ -1,4 +1,5 @@
 import 'package:auscy/chatmessage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 enum MessageSender {
@@ -19,7 +20,7 @@ IconData icon = Icons.mic;
 
 final List<ChatMessage> messages = [];
 
-db = FirebaseFirestore.instance;
+FirebaseFirestore db = FirebaseFirestore.instance;
 
 final messagesInJSON = {
   'messages': [
