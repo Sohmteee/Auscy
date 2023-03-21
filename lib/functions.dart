@@ -15,4 +15,6 @@ Future createMessage(
   final docUser = db.collection('chat').doc(username);
 
   final json = message.toJSON();  
+
+  await doc
 }
