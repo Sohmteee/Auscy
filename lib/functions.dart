@@ -10,9 +10,9 @@ jsonToChatMessage(Map<String, dynamic> json) {
   );
 }
 
-Future createMessage({required String username, required ChatMessage message}) async {
+Future createMessage(
+    {required String username, required ChatMessage message}) async {
   final docUser = db.collection('chat').doc(username);
 
-  final json = 
-
+  final json = message.toJSON();
 }
