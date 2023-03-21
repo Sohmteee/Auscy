@@ -11,7 +11,7 @@ jsonToChatMessage(Map<String, dynamic> json) {
 }
 
 Future createMessage(
-    {required String username, required ChatMessage message}) async {
+    {required String username}) async {
   final docUser = db.collection('chat').doc(username);
 
   await docUser.set({
