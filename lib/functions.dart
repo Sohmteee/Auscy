@@ -16,5 +16,5 @@ Future createMessage(
 
   final json = ;
 
-  await docUser.set(json);
+  await docUser.set;
 }
