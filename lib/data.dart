@@ -26,7 +26,7 @@ dob() {
   messagesInJSON['messages']?.add(messages[0].toJSON());
 }
 
-final Map<String, List<Map<String, Object>>> messagesInJSON = {
+final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
   'messages': [
     {
       'text': "Hello",
