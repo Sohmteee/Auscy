@@ -116,7 +116,7 @@ class _ChatScreenState extends State<ChatScreen> {
       messagesInJSON['messages']?.add(message.toJSON());
 
       db.collection("messages").add(messagesInJSON).then((DocumentReference doc) =>
-          print('DocumentSnapshot added with ID: ${doc.id}'));
+          debugPrint('DocumentSnapshot added with ID: ${doc.id}'));
 
       _isTyping = true;
       icon = Icons.mic;
