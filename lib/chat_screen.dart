@@ -80,7 +80,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
       for (String statement in lineStatements) {
         statement = statement.trim();
-
         if (statement.isNotEmpty) {
           statements.add(statement);
         }
