@@ -177,7 +177,7 @@ class _ChatScreenState extends State<ChatScreen> {
       _isTyping = false;
       messages.add(botMessage);
       messagesInJSON['messages']?.add(botMessage.toJSON());
-      createMessage(username: "Sohmtee");
+      // createMessage(username: "Sohmtee");
     });
   }
 
@@ -210,6 +210,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   minLines: 1,
                   maxLines: 6,
                   textInputAction: TextInputAction.newline,
+                  spellCheckConfiguration: const SpellCheckConfiguration(),
                   onSubmitted: (value) => _sendMessage(),
                   decoration: InputDecoration.collapsed(
                     hintText: hintText,

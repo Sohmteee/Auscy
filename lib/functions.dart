@@ -15,9 +15,9 @@ Future createMessage(
     {required String username}) async {
   final docUser = db.collection('chat').doc(username);
 
-  /* await docUser.set({
+  await docUser.set({
     'messages' : messagesInJSON,
-  }); */
+  });
 
   await docUser.update({
     'messages': FieldValue.arrayUnion(messages),
