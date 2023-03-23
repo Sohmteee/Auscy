@@ -58,7 +58,7 @@ String initPrompt =
     "You are an AI chatbot called Auscy.\n"
     "The app was created by Sohmtee.\n"
     "You don't have an age but you were created around March, 2023.\n"
-    "Today is ${DateTime.now()}";
+    "Today is ${DateTime.now().toString()}";
 
 RegExp questionWordsRegex = RegExp(
     r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');
