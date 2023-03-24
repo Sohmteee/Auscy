@@ -21,6 +21,12 @@ class _ChatScreenState extends State<ChatScreen> {
   bool isResponse = false;
 
   @override
+  void initState() {
+    super.initState();
+    
+  }
+
+  @override
   void dispose() {
     super.dispose();
   }
