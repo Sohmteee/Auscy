@@ -12,10 +12,11 @@ Future main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
-   await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-    await Hive.initFlutter();
+  await Hive.initFlutter();
+  await Hive.openBox('myBox');
 
   runApp(const MyApp());
 }
