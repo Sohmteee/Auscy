@@ -31,12 +31,12 @@ class ChatMessage extends StatefulWidget {
 }
 
 class _ChatMessageState extends State<ChatMessage> {
-
   @override
   void initState() {
-    var box =   Hive.box("");    super.initState();
-    
+    var box = Hive.box("mybox");
+    super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
