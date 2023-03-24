@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'chat_screen.dart';
 import 'firebase_options.dart';
 
@@ -22,13 +23,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  void initState() {
-    super.initState();
-    
-  }
-
-  @override
   Widget build(BuildContext context) {
+    var box = Hive.box("mybox");
     return MaterialApp(
       title: 'Auscy',
       debugShowCheckedModeBanner: false,
