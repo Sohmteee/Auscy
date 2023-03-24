@@ -26,7 +26,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     box = Hive.box("myBox");
-    if (box.get("myBox") == null) 
+    if (box.get("myBox") == null) box.add("value")
   }
 
   @override
