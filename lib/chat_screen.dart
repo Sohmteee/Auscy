@@ -20,7 +20,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
-  late var box;
+  late final Box box;
 
   @override
   void initState() {
