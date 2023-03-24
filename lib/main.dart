@@ -22,6 +22,12 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
+  void initState() {
+    super.initState();
+    
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Auscy',
