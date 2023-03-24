@@ -34,7 +34,7 @@ class _ChatMessageState extends State<ChatMessage> {
 
   @override
   void initState() {
-    super.initState();
+    var box =   Hive.box("");    super.initState();
     
   }
   @override
