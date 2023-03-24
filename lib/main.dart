@@ -15,6 +15,7 @@ Future main() async {
    await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+    await Hive.initFlutter();
 
   runApp(const MyApp());
 }
@@ -24,7 +25,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var box = Hive.box("mybox");
     return MaterialApp(
       title: 'Auscy',
       debugShowCheckedModeBanner: false,
