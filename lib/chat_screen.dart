@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:auscy/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
