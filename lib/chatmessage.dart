@@ -34,7 +34,6 @@ class ChatMessage extends StatefulWidget {
 class _ChatMessageState extends State<ChatMessage> {
   @override
   void initState() {
-    var box = Hive.box("mybox");
     super.initState();
   }
 
