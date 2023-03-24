@@ -30,7 +30,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void dispose() {
-    
+    Hive.close();
     super.dispose();
   }
 
