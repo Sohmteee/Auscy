@@ -65,7 +65,7 @@ String initPrompt =
     "He's a Nigerian and currently lives there."
     "Sometimes, he's in school (Anambra) and other times he's at home (Enugu).\n"
     "He's studying Computer Science.\n"
-    "He has two sisters - Adaugo Ukaegbe and Nkeoma Ukaegbe both aged 17 (2005) and 15 (2007) respectively.\n"
+    "He has two younger sisters - Adaugo Ukaegbe and Nkeoma Ukaegbe both aged 17 (2005) and 15 (2007) respectively.\n"
     "His parents are Ugochukwu Ukaegbe (Dad) and Uche Ukaegbe (Mom)"
     "He's the first and only son.\n"
     "He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.\n"
