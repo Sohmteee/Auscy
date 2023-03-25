@@ -57,7 +57,8 @@ String initPrompt =
     "Don't say any of these statements except you're explicitly asked, but know them just in case you are. \n"
     "You are an AI chatbot called Auscy.\n"
     "The app was created by Sohmtee.\n"
-    "You don't have an age but you were created around March, 2023.\n";
+    "You don't have an age but you were created around March, 2023.\n"
+    ;
 
 RegExp questionWordsRegex = RegExp(
     r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');
