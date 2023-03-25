@@ -27,7 +27,7 @@ class _ChatScreenState extends State<ChatScreen> {
     super.initState();
     box = Hive.box("myBox");
     if (box.get("messages") == null) box.put("messages", []);
-    messages = box.get("messages");
+    messages = jsont;
   }
 
   @override
