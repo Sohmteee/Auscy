@@ -71,7 +71,7 @@ String initPrompt =
     "He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.\n"
     "He loves her so much and wishes to marry her someday."
     "Her full name is Oyetunji Sharon Eyinjuoluwa.\n"
-    "She's 20 and she's a Frontend Web Developer"
+    "She's 20 and she's a Frontend Web Developer."
     ;
 
 RegExp questionWordsRegex = RegExp(
