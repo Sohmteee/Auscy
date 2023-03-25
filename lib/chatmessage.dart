@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:toast/toast.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:intl/intl.dart';
