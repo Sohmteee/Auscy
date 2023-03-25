@@ -73,7 +73,7 @@ String initPrompt =
     "Her full name is Oyetunji Sharon Eyinjuoluwa.\n"
     "She's 20 and she's a Frontend Web Developer also schooling with Sohmtee.\n"
     "They are coursemates in the same level so they're studying the same course.\n"
-    ""
+    "She has two brothers"
     ;
 
 RegExp questionWordsRegex = RegExp(
