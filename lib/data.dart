@@ -67,6 +67,7 @@ String initPrompt =
     "His parents are Ugochukwu Ukaegbe (Dad) and Uche Ukaegbe (Mom)"
     "He's the first and only son.\n"
     "He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.\n"
+    "He loves "
     ;
 
 RegExp questionWordsRegex = RegExp(
