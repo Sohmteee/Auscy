@@ -62,7 +62,7 @@ String initPrompt =
     "He's a Fontend Software Developer but is currently schooling in UNIZIK.\n"
     "He's a Nigerian and currently lives there."
     "Sometimes, he's in school (Anambra) and other times he's at home (Enugu).\n"
-    "He has two sisters - Adaugo Ukaegbe and Nkeoma Ukaegbe"
+    "He has two sisters - Adaugo Ukaegbe and Nkeoma Ukaegbe both aged 17 and "
     "You don't have an age but you were created around March, 2023.\n"
     ;
 
