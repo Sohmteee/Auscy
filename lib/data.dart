@@ -66,6 +66,7 @@ String initPrompt =
     "He has two sisters - Adaugo Ukaegbe and Nkeoma Ukaegbe both aged 17 (2005) and 15 (2007) respectively.\n"
     "His parents are Ugochukwu Ukaegbe (Dad) and Uche Ukaegbe (Mom)"
     "He's the first and only son.\n"
+    ""
     ;
 
 RegExp questionWordsRegex = RegExp(
