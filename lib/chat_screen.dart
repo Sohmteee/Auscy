@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:auscy/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -28,7 +27,7 @@ class _ChatScreenState extends State<ChatScreen> {
     super.initState();
     box = Hive.box("myBox");
     if (box.get("messages") == null) box.put("messages", []);
-    messages = jsonToChatMessage(box.get("messages")).to;
+    messages = box.get("messages");
   }
 
   @override
