@@ -73,8 +73,7 @@ String initPrompt =
     "Her full name is Oyetunji Sharon Eyinjuoluwa.\n"
     "She's 20 and she's a Frontend Web Developer also schooling with Sohmtee.\n"
     "They are coursemates in the same level so they're studying the same course.\n"
-    "She has two younger brothers.\n"
-    ;
+    "She has two younger brothers.\n";
 
 RegExp questionWordsRegex = RegExp(
     r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');
