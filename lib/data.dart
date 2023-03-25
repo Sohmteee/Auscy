@@ -18,7 +18,7 @@ final TextEditingController controller = TextEditingController();
 
 IconData icon = Icons.mic;
 
-List<dynamic> messages = [];
+List<ChatMessage> messages = [];
 
 final db = FirebaseFirestore.instance;
 
