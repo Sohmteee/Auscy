@@ -187,7 +187,7 @@ class _ChatScreenState extends State<ChatScreen> {
       _isTyping = false;
       messages.add(botMessage);
       box.put("messages", messages);
-      messagesInJSON['messages']?.add(botMessage.toJSON());
+      // messagesInJSON['messages']?.add(botMessage.toJSON());
       // createMessage(username: "Sohmtee");
     });
   }
