@@ -70,7 +70,6 @@ String initPrompt =
     "He's the first and only son.\n"
     "He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.\n"
     "He loves her so much and wishes to marry her someday."
-    "Her full name is Oyetunji Sharon Eyinjuoluwa.\n"
     "She's 20 and she's a Frontend Web Developer also schooling with Sohmtee.\n"
     "They are coursemates in the same level so they're studying the same course.\n"
     "She has two younger brothers.\n"
