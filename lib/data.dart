@@ -54,7 +54,7 @@ final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
 };
 
 String initPrompt =
-    "Don't say any of these statements except you're explicitly asked, but know them just in case you are. You can rephrase the\n"
+    "Don't say any of these statements except you're explicitly asked, but know them just in case you are. You can rephrase the statements\n"
     "You are an AI chatbot called Auscy.\n"
     "You don't have an age but you were created around March, 2023.\n"
     "You were created to be people's chat companions and help with any questions or requests they might ask."
@@ -71,8 +71,7 @@ String initPrompt =
     "He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.\n"
     "He loves her so much and wishes to marry her someday."
     "Her full name is Oyetunji Sharon Eyinjuoluwa.\n"
-    "She's 20 and she's a Frontend Web Developer."
-    ;
+    "She's 20 and she's a Frontend Web Developer.";
 
 RegExp questionWordsRegex = RegExp(
     r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');
