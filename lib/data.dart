@@ -70,7 +70,9 @@ String initPrompt =
     "He's the first and only son.\n"
     "He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.\n"
     "He loves her so much and wishes to marry her someday."
-    "Her full name is Oyetunji Sharon Eyinj";
+    "Her full name is Oyetunji Sharon Eyinjuoluwa.\n"
+    ""
+    ;
 
 RegExp questionWordsRegex = RegExp(
     r'^(what|when|where|why|how|who|which|whose|can|do|does|will|would|should|could|is|are|have|had|did|was|were|am|shall|may|might|must|ought|would)\b');
