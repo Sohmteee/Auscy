@@ -23,7 +23,7 @@ class _ChatTileState extends State<ChatTile> {
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
           SizedBox(width: 20),
-          
+          Text
         ],
       ),
     );
