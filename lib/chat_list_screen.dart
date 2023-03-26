@@ -31,16 +31,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
       ),
       body: SafeArea(child: ListView.builder(
         itemBuilder: (context, index) {
-          return Container(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/auscy_icon.png"),
-                ),
-              ],
-            ),
-          );
+          return chat;
         },
       )),
     );
