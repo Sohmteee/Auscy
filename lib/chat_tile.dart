@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ChatTile extends StatefulWidget {
-  const ChatTile({super.key});
+  const ChatTile({
+    super.key,
+    required this.text,
+  });
+
+  final String text;
 
   @override
   State<ChatTile> createState() => _ChatTileState();
