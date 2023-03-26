@@ -21,17 +21,13 @@ class _ChatListScreenState extends State<ChatListScreen> {
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
         ),
-        title: Row(
-          children: [
-            const Text(
+        title: const Text(
               "Auscy",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
             ),
-          
-          ],
         ),
       ),
     );
