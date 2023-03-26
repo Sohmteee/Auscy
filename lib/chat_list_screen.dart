@@ -1,3 +1,4 @@
+import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
 
 class ChatListScreen extends StatefulWidget {
@@ -31,7 +32,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
       ),
       body: SafeArea(child: ListView.builder(
         itemBuilder: (context, index) {
-          return chat;
+          return chatList.reversed.toList(  );
         },
       )),
     );
