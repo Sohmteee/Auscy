@@ -35,7 +35,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
             padding: const EdgeInsets.all(10),
             child: Row(
               children: [
-                
+                CircleAvatar(
+                  backgroundImage: AssetImage("assets/images/auscy_icon.png"),
+                ),
               ],
             ),
           );
