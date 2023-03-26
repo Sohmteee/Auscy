@@ -33,7 +33,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         itemBuilder: (context, index) {
           return Container(
             padding: const EdgeInsets.all(10),
-            
+            child: ,
           );
         },
       )),
