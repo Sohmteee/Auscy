@@ -18,12 +18,12 @@ class _ChatTileState extends State<ChatTile> {
     return Container(
       padding: const EdgeInsets.all(10),
       child: Row(
-        children: const [
-          CircleAvatar(
+        children:  [
+          const CircleAvatar(
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
           SizedBox(width: 20),
-          Text
+          Text(widget.text,)
         ],
       ),
     );
