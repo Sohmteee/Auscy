@@ -22,7 +22,6 @@ class _ChatListScreenState extends State<ChatListScreen> {
           ),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
               "Auscy",
