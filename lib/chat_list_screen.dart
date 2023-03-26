@@ -29,6 +29,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           ),
         ),
       ),
+      body: SafeArea(child: ),
     );
   }
 }
