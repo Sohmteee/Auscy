@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -14,7 +15,7 @@ class _ChatTileState extends State<ChatTile> {
     return Container(
       padding: const EdgeInsets.all(10),
       child: Row(
-        children: [
+        children: const [
           CircleAvatar(
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
