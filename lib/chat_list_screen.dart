@@ -32,7 +32,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
       ),
       body: SafeArea(child: ListView.builder(
         itemBuilder: (context, index) {
-          return chatList.reversed.toList(  );
+          return chatList.reversed.toList()[index];
         },
       )),
     );
