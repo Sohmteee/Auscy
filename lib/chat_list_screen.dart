@@ -31,31 +31,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                 fontSize: 25,
               ),
             ),
-            GestureDetector(
-              onTap: () => setState(() {
-                messages.clear();
-                box.put("messages", messages);
-                _isTyping = false;
-                setState(() {
-                  icon = controller.text.trim().isNotEmpty
-                      ? Icons.send
-                      : Icons.mic;
-                });
-              }),
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Vx.zinc900,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Text(
-                  "Reset",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            )
+          
           ],
         ),
       ),
