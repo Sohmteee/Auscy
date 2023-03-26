@@ -22,6 +22,7 @@ class _ChatTileState extends State<ChatTile> {
           CircleAvatar(
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
+          SizedBox(width: 20),
           
         ],
       ),
