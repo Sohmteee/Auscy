@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
 
