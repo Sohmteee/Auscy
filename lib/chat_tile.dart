@@ -1,16 +1,25 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class ChatTile extends StatefulWidget {
+  const ChatTile({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<ChatTile> createState() => _ChatTileState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _ChatTileState extends State<ChatTile> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Row(
+        children: [
+          CircleAvatar(
+            backgroundImage: AssetImage("assets/images/auscy_icon.png"),
+          ),
+        ],
+      ),
+    );
   }
 }
