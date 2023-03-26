@@ -22,12 +22,11 @@ class _ChatListScreenState extends State<ChatListScreen> {
           ),
         ),
         title: const Text(
-              "Auscy",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
-            ),
+          "Auscy",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
       ),
     );
