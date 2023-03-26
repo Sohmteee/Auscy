@@ -2,6 +2,8 @@ import 'package:auscy/chatmessage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import 'chat_tile.dart';
+
 enum MessageSender {
   user,
   bot,
@@ -20,7 +22,8 @@ IconData icon = Icons.mic;
 
 List messages = [];
 List chatList = [
-  ChatTile
+  ChatTile();
+  ChatTile(),
 ];
 
 final db = FirebaseFirestore.instance;
