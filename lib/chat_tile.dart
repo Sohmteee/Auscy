@@ -25,7 +25,9 @@ class _ChatTileState extends State<ChatTile> {
           const SizedBox(width: 20),
           Text(
             widget.text,
-            style: TextStyle(),
+            style: TextStyle(
+              fontSize: 16,
+            ),
           )
         ],
       ),
