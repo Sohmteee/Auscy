@@ -23,7 +23,7 @@ class _ChatTileState extends State<ChatTile> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ChatScreen(),
+            builder: (context) => ChatScreen(index: ),
           ),
         )
       },
