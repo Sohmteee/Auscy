@@ -17,7 +17,7 @@ Future main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   ); */
   await Hive.initFlutter();
-  await Hive.openBox('myBox');
+  await Hive.openBox('messages');
 
   runApp(const MyApp());
 }
