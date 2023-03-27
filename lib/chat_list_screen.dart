@@ -30,13 +30,16 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ),
       ),
       body: SafeArea(
-          child: ListView.separated(
-        itemCount: chatList.length,
-        itemBuilder: (context, index) {
-          return chatList.toList()[index];
-        },
-        separatorBuilder: (context, index) => ,
-      ),),
+        child: ListView.separated(
+          itemCount: chatList.length,
+          itemBuilder: (context, index) {
+            return chatList.toList()[index];
+          },
+          separatorBuilder: (context, index) => const Divider(
+            
+          ),
+        ),
+      ),
     );
   }
 }
