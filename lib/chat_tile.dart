@@ -30,6 +30,11 @@ class _ChatTileState extends State<ChatTile> {
                 style: const TextStyle(
                   fontSize: 16,
                 ),
+              Text(
+                widget.text ?? "",
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ],
           )
