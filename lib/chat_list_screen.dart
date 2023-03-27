@@ -17,7 +17,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         title: const Text(
-          "Auscy",
+          "Chats",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
