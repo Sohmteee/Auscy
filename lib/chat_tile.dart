@@ -10,7 +10,7 @@ class ChatTile extends StatefulWidget {
   });
 
   final String? text;
-  f
+  final int index;
   final String message;
 
   @override
@@ -25,7 +25,7 @@ class _ChatTileState extends State<ChatTile> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ChatScreen(index: ),
+            builder: (context) => ChatScreen(index: inde),
           ),
         )
       },
