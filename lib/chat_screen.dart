@@ -180,7 +180,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void insertNewData(String response, bool isErrorMessage) {
     ChatMessage botMessage = ChatMessage(
       text: response,
-      sender: _messagesender.bot,
+      sender: MessageSender.bot,
       time: DateTime.now(),
     );
 
