@@ -17,8 +17,8 @@ class ChatScreen extends StatefulWidget {
     required this.messages,
   });
 
-  int index;
-  List messages;
+  final int index;
+   List messages;
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
