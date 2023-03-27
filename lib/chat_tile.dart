@@ -29,7 +29,7 @@ class _ChatTileState extends State<ChatTile> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.text ?? "No title",
+                widget.text ?? "No Title",
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
