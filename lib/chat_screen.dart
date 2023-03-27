@@ -187,7 +187,7 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       _isTyping = false;
       _messages.add(botMessage);
-      box.put("messages", messages);
+      box.put("messages", _messages);
       // messagesInJSON['messages']?.add(botMessage.toJSON());
       // createMessage(username: "Sohmtee");
     });
@@ -282,8 +282,8 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             GestureDetector(
               onTap: () => setState(() {
-                messages.clear();
-                box.put("messages", messages);
+                _messages.clear();
+                box.put("messages", _messages);
                 _isTyping = false;
                 setState(() {
                   icon = controller.text.trim().isNotEmpty
