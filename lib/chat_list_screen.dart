@@ -37,6 +37,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           },
         ),
       ),
+      floatingActionButton: Floa,
     );
   }
 }
