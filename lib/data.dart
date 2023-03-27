@@ -22,7 +22,7 @@ IconData icon = Icons.mic;
 
 List messages = [];
 List chatList = [
-  ChatTile(text: "One"),
+  ChatTile(),
   ChatTile(text: "Two"),
 ];
 
