@@ -17,7 +17,8 @@ class ChatTile extends StatefulWidget {
 class _ChatTileState extends State<ChatTile> {
   @override
   Widget build(BuildContext context) {
-    return GD(
+    return GestureDetector(
+      onTap: (),
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Row(
