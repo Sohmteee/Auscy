@@ -21,7 +21,7 @@ final TextEditingController controller = TextEditingController();
 IconData icon = Icons.mic;
 
 List messages = [];
-List chatList = [
+List chatList = const [
   ChatTile(
     text: "One",
     message: "How are you?",
