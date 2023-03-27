@@ -4,10 +4,11 @@ class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     this.text,
-    
+    required this.message,
   });
 
   final String? text;
+  L
 
   @override
   State<ChatTile> createState() => _ChatTileState();
