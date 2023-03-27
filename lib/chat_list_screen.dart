@@ -1,5 +1,6 @@
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
@@ -38,7 +39,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Vx.,
+        backgroundColor: Vx.black,
         onPressed: () {},
         child: const Icon(
           Icons.add,
