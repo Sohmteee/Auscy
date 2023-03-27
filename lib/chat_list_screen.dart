@@ -38,7 +38,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           separatorBuilder: (context, index) => const Divider(
             thickness: 1,
             height: 2,
-            color: Colors.black,
+            color: Vx.zinc,
           ),
         ),
       ),
