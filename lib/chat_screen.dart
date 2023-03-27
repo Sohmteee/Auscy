@@ -315,9 +315,9 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                 padding: Vx.m8,
                 reverse: true,
-                itemCount: messages.length,
+                itemCount: _messages.length,
                 itemBuilder: (context, index) {
-                  return messages.reversed.toList()[index];
+                  return _messages.reversed.toList()[index];
                 },
               ),
             ),
