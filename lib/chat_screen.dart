@@ -21,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
   late final Box box;
-  List _messages = []
+  List _messages = [];
 
   @override
   void initState() {
