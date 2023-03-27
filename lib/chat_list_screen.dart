@@ -22,6 +22,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
         ),
+      ),
       body: SafeArea(
           child: ListView.builder(
         itemCount: chatList.length,
