@@ -23,8 +23,8 @@ class _ChatTileState extends State<ChatTile> {
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
           const SizedBox(width: 20),
-          Text(
-            widget.text,
+          if (widget.textText(
+            widget.text!,
             style: const TextStyle(
               fontSize: 16,
             ),
