@@ -35,7 +35,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         itemBuilder: (context, index) {
           return chatList.toList()[index];
         },
-        separatorBuilder:  Divider(),
+        separatorBuilder: (context, index) => ,
       ),),
     );
   }
