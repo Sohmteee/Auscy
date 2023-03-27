@@ -5,10 +5,12 @@ class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     this.text,
+    required this.index,
     required this.message,
   });
 
   final String? text;
+  f
   final String message;
 
   @override
