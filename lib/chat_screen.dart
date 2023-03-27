@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _messages.add(message);
-      box.put("messages", messages);
+      box.put("messages", _messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
       icon = Icons.mic;
@@ -180,7 +180,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void insertNewData(String response, bool isErrorMessage) {
     ChatMessage botMessage = ChatMessage(
       text: response,
-      sender: MessageSender.bot,
+      sender: _messagesender.bot,
       time: DateTime.now(),
     );
 
