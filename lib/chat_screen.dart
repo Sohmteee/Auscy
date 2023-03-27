@@ -32,7 +32,7 @@ class _ChatScreenState extends State<ChatScreen> {
     super.initState();
     box = Hive.box("myBox");
     if (box.get("messages") == null) box.put("messages", []);
-    _messages = box.get("messages");
+    widget.messages = box.get("messages");
   }
 
   @override
@@ -76,10 +76,10 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   String getLast20Texts() {
-    int start = (_messages.length < 20) ? 0 : (_messages.length - 19);
+    int start = (widget.messages.length < 20) ? 0 : (widget.messages.length - 19);
 
     List last20Texts =
-        _messages.sublist(start).map((message) => message.text).toList();
+        widget.messages.sublist(start).map((message) => message.text).toList();
 
     last20Texts.insert(0, initPrompt);
 
@@ -126,8 +126,8 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      _messages.add(message);
-      box.put("messages", _messages);
+      widget.messages.add(message);
+      box.put("messages", widget.messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
       icon = Icons.mic;
@@ -190,8 +190,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _isTyping = false;
-      _messages.add(botMessage);
-      box.put("messages", _messages);
+      widget.messages.add(botMessage);
+      box.put("messages", widget.messages);
       // messagesInJSON['messages']?.add(botMessage.toJSON());
       // createMessage(username: "Sohmtee");
     });
@@ -286,8 +286,8 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             GestureDetector(
               onTap: () => setState(() {
-                _messages.clear();
-                box.put("messages", _messages);
+                widget.messages.clear();
+                box.put("messages", widget.messages);
                 _isTyping = false;
                 setState(() {
                   icon = controller.text.trim().isNotEmpty
@@ -319,9 +319,9 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                 padding: Vx.m8,
                 reverse: true,
-                itemCount: _messages.length,
+                itemCount: widget.messages.length,
                 itemBuilder: (context, index) {
-                  return _messages.reversed.toList()[index];
+                  return widget.messages.reversed.toList()[index];
                 },
               ),
             ),
