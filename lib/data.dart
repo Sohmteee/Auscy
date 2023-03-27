@@ -22,8 +22,14 @@ IconData icon = Icons.mic;
 
 List messages = [];
 List chatList = [
-  ChatTile(text: "One", message),
-  ChatTile(text: "Two", message),
+  ChatTile(
+    text: "One",
+    message: "How are you?",
+  ),
+  ChatTile(
+    text: "Two",
+    message: "How are you?",
+  ),
 ];
 
 final db = FirebaseFirestore.instance;
