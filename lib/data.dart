@@ -26,7 +26,7 @@ List chatList = const [
     message: "How are you?",
   ),
   ChatTile(
-    text: "Two",
+    text: "Chat Two",
     message: "How are you?",
   ),
 ];
