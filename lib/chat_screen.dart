@@ -17,7 +17,8 @@ class ChatScreen extends StatefulWidget {
     required this.messages,
   });
 
-  List messages = [];
+  int index;
+  List messages;
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -77,7 +78,8 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   String getLast20Texts() {
-    int start = (widget.messages.length < 20) ? 0 : (widget.messages.length - 19);
+    int start =
+        (widget.messages.length < 20) ? 0 : (widget.messages.length - 19);
 
     List last20Texts =
         widget.messages.sublist(start).map((message) => message.text).toList();
