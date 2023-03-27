@@ -16,10 +16,11 @@ class _ChatListScreenState extends State<ChatListScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/auscy_icon.png"),
+        leading: const Text(
+          "Auscy",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
           ),
         ),
       ),
