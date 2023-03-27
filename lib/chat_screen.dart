@@ -15,6 +15,8 @@ class ChatScreen extends StatefulWidget {
     super.key,
     required this.messages,
   });
+  
+  List messages = [];
 
 
   @override
