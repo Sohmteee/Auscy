@@ -18,7 +18,14 @@ class _ChatTileState extends State<ChatTile> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ChatP(),
+          ),
+        )
+      },
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Row(
