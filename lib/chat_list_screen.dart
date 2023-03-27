@@ -1,6 +1,5 @@
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
@@ -31,18 +30,12 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ),
       ),
       body: SafeArea(
-        child: ListView.separated(
-          itemCount: chatList.length,
-          itemBuilder: (context, index) {
-            return chatList.toList()[index];
-          },
-          separatorBuilder: (context, index) => const Divider(
-            thickness: 1,
-            height: 2,
-            color: Vx.zinc300,
-          ),
-        ),
-      ),
+          child: ListView.builder(
+        itemCount: chatList.length,
+        itemBuilder: (context, index) {
+          return chatList.toList()[index];
+        },
+      )),
     );
   }
 }
