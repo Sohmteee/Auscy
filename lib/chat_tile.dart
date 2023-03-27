@@ -4,7 +4,7 @@ class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     this.text,
-    
+
   });
 
   final String? text;
@@ -26,7 +26,7 @@ class _ChatTileState extends State<ChatTile> {
           const SizedBox(width: 20),
           Column(
             children: [
-              if (widget.text != null)
+              (widget.text != null)
                 Text(
                   widget.text!,
                   style: const TextStyle(
