@@ -13,8 +13,9 @@ import 'data.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
     super.key,
-    this.messages,
+    required this.messages,
   });
+
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -24,7 +25,6 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
   late final Box box;
-  List _messages = [];
 
   @override
   void initState() {
