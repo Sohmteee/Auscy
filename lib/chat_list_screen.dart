@@ -18,7 +18,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         elevation: 0,
         title: Row(
           children: const [
-            SizedBox(width: 10),
+            SizedBox(width: 20),
             Text(
               "Chats",
               style: TextStyle(
