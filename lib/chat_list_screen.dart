@@ -17,10 +17,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: const SizedBox(
-          padding: EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/auscy_icon.png"),
-          ),
+          width: 10,
         ),
         title: const Text(
           "Chats",
