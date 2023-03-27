@@ -24,6 +24,7 @@ class _ChatTileState extends State<ChatTile> {
           ),
           const SizedBox(width: 20),
           Column(
+            crossAxisAlignment: ,
             children: [
               Text(
                 widget.text ?? "",
