@@ -16,9 +16,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const SizedBox(
-          width: 10,
-        ),
+        leading: const SizedBox(),
         title: const Text(
           "Chats",
           style: TextStyle(
