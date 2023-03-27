@@ -16,14 +16,14 @@ class _ChatListScreenState extends State<ChatListScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Padding(
+        leading: const SizedBox(
           padding: EdgeInsets.all(8.0),
           child: CircleAvatar(
             backgroundImage: AssetImage("assets/images/auscy_icon.png"),
           ),
         ),
         title: const Text(
-          "Cahts",
+          "Chats",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
