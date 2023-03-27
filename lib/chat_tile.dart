@@ -6,7 +6,7 @@ class ChatTile extends StatefulWidget {
     required this.text,
   });
 
-  final String text;
+  final String? text;
 
   @override
   State<ChatTile> createState() => _ChatTileState();
