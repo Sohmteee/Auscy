@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
-    required this.text,
+    this.text,
   });
 
   final String? text;
