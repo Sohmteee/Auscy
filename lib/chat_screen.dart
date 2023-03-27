@@ -13,6 +13,7 @@ import 'data.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
     super.key,
+    this
   });
 
   @override
