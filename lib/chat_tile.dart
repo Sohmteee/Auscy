@@ -1,3 +1,4 @@
+import 'package:auscy/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChatTile extends StatefulWidget {
@@ -22,7 +23,7 @@ class _ChatTileState extends State<ChatTile> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const ChatP(),
+            builder: (context) => ChatScreen(),
           ),
         )
       },
