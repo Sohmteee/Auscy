@@ -4,6 +4,7 @@ class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     this.text,
+    
   });
 
   final String? text;
