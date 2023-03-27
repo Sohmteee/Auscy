@@ -23,7 +23,6 @@ IconData icon = Icons.mic;
 List messages = [];
 List chatList = const [
   ChatTile(
-    text: "One",
     message: "How are you?",
   ),
   ChatTile(
