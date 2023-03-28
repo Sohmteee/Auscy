@@ -18,6 +18,7 @@ Future main() async {
   ); */
   await Hive.initFlutter();
   await Hive.openBox('messages');
+  await Hive.openBox('messages');
 
   runApp(const MyApp());
 }
