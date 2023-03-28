@@ -33,8 +33,8 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     box = Hive.box("messages");
-    if (box.getAt(widget.index) == null) box.putAt(widget.index, []);
-    widget.messages = box.get("messages");
+    /* if (box.getAt(widget.index) == null) box.putAt(widget.index, []);
+    widget.messages = box.get("messages"); */
   }
 
   @override
