@@ -11,12 +11,7 @@ import 'chatmessage.dart';
 import 'data.dart';
 
 class ChatScreen extends StatefulWidget {
-  ChatScreen({
-    super.key,
-    required this.messages,
-  });
-
-  List messages;
+  const ChatScreen({super.key});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -30,9 +25,9 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    box = Hive.box("messages");
-    /* if (box.getAt(widget.index) == null) box.putAt(widget.index, []);
-    widget.messages = box.get("messages"); */
+    box = Hive.box("myBox");
+    if (box.get("messages") == null) box.put("messages", []);
+    messages = box.get("messages");
   }
 
   @override
@@ -76,11 +71,10 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   String getLast20Texts() {
-    int start =
-        (widget.messages.length < 20) ? 0 : (widget.messages.length - 19);
+    int start = (messages.length < 20) ? 0 : (messages.length - 19);
 
     List last20Texts =
-        widget.messages.sublist(start).map((message) => message.text).toList();
+        messages.sublist(start).map((message) => message.text).toList();
 
     last20Texts.insert(0, initPrompt);
 
@@ -127,8 +121,8 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      widget.messages.add(message);
-      box.put("messages", widget.messages);
+      messages.add(message);
+      box.put("messages", messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
       icon = Icons.mic;
@@ -191,8 +185,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _isTyping = false;
-      widget.messages.add(botMessage);
-      box.put("messages", widget.messages);
+      messages.add(botMessage);
+      box.put("messages", messages);
       // messagesInJSON['messages']?.add(botMessage.toJSON());
       // createMessage(username: "Sohmtee");
     });
@@ -287,8 +281,8 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             GestureDetector(
               onTap: () => setState(() {
-                widget.messages.clear();
-                box.put("messages", widget.messages);
+                messages.clear();
+                box.put("messages", messages);
                 _isTyping = false;
                 setState(() {
                   icon = controller.text.trim().isNotEmpty
@@ -320,9 +314,9 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                 padding: Vx.m8,
                 reverse: true,
-                itemCount: widget.messages.length,
+                itemCount: messages.length,
                 itemBuilder: (context, index) {
-                  return widget.messages.reversed.toList()[index];
+                  return messages.reversed.toList()[index];
                 },
               ),
             ),
