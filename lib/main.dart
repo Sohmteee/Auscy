@@ -5,7 +5,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'chat_list_screen.dart';
 import 'chat_screen.dart';
-
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
@@ -34,9 +33,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         fontFamily: "Poppins",
       ),
-      home: ChatScreen(
-        messages: const [],
-      ),
+      home: const ChatScreen(),
     );
   }
 }
