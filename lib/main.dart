@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'chat_list_screen.dart';
 import 'chat_screen.dart';
+import 'firebase_options.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
@@ -15,8 +16,7 @@ Future main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   ); */
   await Hive.initFlutter();
-  await Hive.openBox('chats');
-  await Hive.openBox('messages');
+  await Hive.openBox('myBox');
 
   runApp(const MyApp());
 }
