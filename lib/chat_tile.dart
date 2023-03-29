@@ -26,7 +26,6 @@ class _ChatTileState extends State<ChatTile> {
           context,
           MaterialPageRoute(
             builder: (context) => ChatScreen(
-              index: widget.index,
               messages: [],
             ),
           ),
