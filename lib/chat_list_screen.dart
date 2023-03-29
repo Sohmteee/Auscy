@@ -34,7 +34,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
         child: ListView.builder(
           itemCount: chatList.length,
           itemBuilder: (context, index) {
-            return chatList.toList()[index];
+            return chatList.toList()
+            
+            [index];
           },
         ),
       ),
