@@ -13,9 +13,9 @@ import 'data.dart';
 class ChatScreen extends StatefulWidget {
   ChatScreen({
     super.key,
+    required this.messages,
   });
 
-  final int index;
   List messages;
 
   @override
