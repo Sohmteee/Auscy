@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Poppins",
       ),
       home: ChatScreen(
-        messages: [],
+        messages: const [],
       ),
     );
   }
