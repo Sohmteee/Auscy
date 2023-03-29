@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         fontFamily: "Poppins",
       ),
-      home: const ChatScreen(),
+      home: const ChatListScreen(),
     );
   }
 }
