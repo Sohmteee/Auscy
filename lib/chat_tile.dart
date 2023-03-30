@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
-    rethis.text,
+    this.text,
     required this.index,
     required this.message,
   });
 
-  final String text;
+  final String? text;
   final int index;
   final String message;
 
