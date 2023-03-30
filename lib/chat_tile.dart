@@ -50,7 +50,7 @@ class _ChatTileState extends State<ChatTile> {
           ),
         ),
         trailing: Text(
-          widget.message,
+          DateFormat("h:mm a").format(Date.now),
           style: const TextStyle(
             fontSize: 12,
           ),
