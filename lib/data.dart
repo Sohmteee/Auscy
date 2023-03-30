@@ -41,7 +41,7 @@ dob() {
   }
 }
 
-final Map<String, List<Map<String, dynamic>>> messagesInJSON = {
+final List<Map<String, dynamic>>> messagesInJSON = {
   'messages': [
     /* {
       'text': "Hello",
