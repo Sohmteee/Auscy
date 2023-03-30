@@ -33,7 +33,6 @@ class _ChatTileState extends State<ChatTile> {
       },
       child: Container(
         padding: const EdgeInsets.all(10),
-        width: double.maxFinite,
         child: Row(
           children: [
             const CircleAvatar(
