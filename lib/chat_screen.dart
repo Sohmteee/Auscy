@@ -13,7 +13,10 @@ import 'data.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
     super.key,
+    required this.title,
   });
+
+  Str
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
