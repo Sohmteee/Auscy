@@ -58,7 +58,6 @@ class _ChatTileState extends State<ChatTile> {
             color: Vx.gray400,
             fontSize: 10,
           ),
-          textAlign: TextAlign.end,
         ),
       ),
     );
