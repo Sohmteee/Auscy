@@ -42,6 +42,7 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 16,
           ),
         ),
+        subtitle: ,
       ),
     );
   }
