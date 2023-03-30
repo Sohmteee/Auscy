@@ -272,9 +272,9 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-             Text(
+            Text(
               widget.title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
