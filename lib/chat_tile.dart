@@ -1,6 +1,7 @@
 import 'package:auscy/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class ChatTile extends StatefulWidget {
   const ChatTile({
@@ -52,7 +53,7 @@ class _ChatTileState extends State<ChatTile> {
         trailing: Text(
           DateFormat("h:mm a").format(DateTime.now()),
           style: const TextStyle(
-            color: Vx.grey100,
+            color: Vx.gray100,
             fontSize: 8,
           ),
         ),
