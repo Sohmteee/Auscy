@@ -263,12 +263,7 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/auscy_icon.png"),
-          ),
-        ),
+        leading: const BackButton(),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
