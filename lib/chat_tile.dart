@@ -25,7 +25,7 @@ class _ChatTileState extends State<ChatTile> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>  ChatScreen(title: ,),
+            builder: (context) =>  ChatScreen(title: widget.text!,),
           ),
         );
       },
