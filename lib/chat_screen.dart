@@ -16,7 +16,7 @@ class ChatScreen extends StatefulWidget {
     required this.title,
   });
 
-  Str
+  String title;
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
