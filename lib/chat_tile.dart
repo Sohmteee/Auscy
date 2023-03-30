@@ -1,5 +1,6 @@
 import 'package:auscy/chat_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ChatTile extends StatefulWidget {
   const ChatTile({
@@ -48,7 +49,7 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 12,
           ),
         ),
-        trailing: ,
+        trailing: DateFormat("h:mm a").format(),
       ),
     );
   }
