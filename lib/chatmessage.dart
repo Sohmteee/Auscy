@@ -23,6 +23,7 @@ class ChatMessage extends StatefulWidget {
     return {
       'text': text,
       'sender': sender == MessageSender.user ? "user" : "bot",
+      'time'
     };
   }
 
