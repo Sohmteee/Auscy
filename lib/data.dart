@@ -41,8 +41,7 @@ dob() {
   }
 }
 
-final List<Map<String, dynamic>>> messagesInJSON = {
-  'messages': [
+final List<Map<String, dynamic>> messagesInJSON = [
     /* {
       'text': "Hello",
       'sender': 'user',
@@ -63,8 +62,7 @@ final List<Map<String, dynamic>>> messagesInJSON = {
       'sender': "bot",
       'isErroMessage': false,
     }, */
-  ]
-};
+  ];
 
 String initPrompt =
     "Don't mention any of these statements except you're explicitly asked, but know them just in case you are. You can rephrase the statements.\n"
