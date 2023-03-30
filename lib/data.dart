@@ -21,15 +21,17 @@ final TextEditingController controller = TextEditingController();
 IconData icon = Icons.mic;
 
 List messages = [];
-List chatList = const [
+List chatList = [
   ChatTile(
     index: 0,
     message: "How are you?",
+    time: DateTime.now(),
   ),
   ChatTile(
     text: "Chat Two",
     index: 1,
     message: "How are you?",
+    time: DateTime.now(),
   ),
 ];
 
@@ -42,7 +44,7 @@ dob() {
 }
 
 final List<Map<String, dynamic>> messagesInJSON = [
-    /* {
+  /* {
       'text': "Hello",
       'sender': 'user',
       'isErroMessage': false,
@@ -62,7 +64,7 @@ final List<Map<String, dynamic>> messagesInJSON = [
       'sender': "bot",
       'isErroMessage': false,
     }, */
-  ];
+];
 
 String initPrompt =
     "Don't mention any of these statements except you're explicitly asked, but know them just in case you are. You can rephrase the statements.\n"
