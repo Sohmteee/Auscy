@@ -37,7 +37,7 @@ final db = FirebaseFirestore.instance;
 
 dob() {
   for (ChatMessage message in messages) {
-    messagesInJSON['messages']?.add(message.toJSON());
+    messagesInJSON.add(message.toJSON());
   }
 }
 
