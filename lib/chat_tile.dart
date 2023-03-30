@@ -15,7 +15,7 @@ class ChatTile extends StatefulWidget {
   final String? text;
   final int index;
   final String message;
-  final 
+  final DateTime time;
 
   @override
   State<ChatTile> createState() => _ChatTileState();
@@ -53,7 +53,7 @@ class _ChatTileState extends State<ChatTile> {
           ),
         ),
         trailing: Text(
-          DateFormat("h:mm a").format(DateTime.now()),
+          DateFormat("h:mm a").format(widget.time),
           style: const TextStyle(
             color: Vx.gray400,
             fontSize: 10,
