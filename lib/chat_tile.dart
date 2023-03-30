@@ -52,7 +52,7 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 12,
           ),
         ),
-        trailing: Column(
+        trailing: Alignment(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
