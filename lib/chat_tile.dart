@@ -42,7 +42,13 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 16,
           ),
         ),
-        subtitle: ,
+        subtitle: Text(
+          widget.message,
+          style: const TextStyle(
+            fontSize: 12,
+          ),
+        ),
+        tr
       ),
     );
   }
