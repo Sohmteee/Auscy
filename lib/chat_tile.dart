@@ -49,7 +49,12 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 12,
           ),
         ),
-        trailing: DateFormat("h:mm a").format(),
+        trailing: Text(
+          widget.message,
+          style: const TextStyle(
+            fontSize: 12,
+          ),
+        ),
       ),
     );
   }
