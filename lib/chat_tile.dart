@@ -52,6 +52,7 @@ class _ChatTileState extends State<ChatTile> {
         trailing: Text(
           DateFormat("h:mm a").format(DateTime.now()),
           style: const TextStyle(
+            color: Vx.grey100,
             fontSize: 8,
           ),
         ),
