@@ -11,7 +11,7 @@ import 'chatmessage.dart';
 import 'data.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({
+  ChatScreen({
     super.key,
     required this.title,
   });
