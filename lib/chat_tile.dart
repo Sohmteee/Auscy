@@ -48,7 +48,7 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 12,
           ),
         ),
-        tr
+        trailing: ,
       ),
     );
   }
