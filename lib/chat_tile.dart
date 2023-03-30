@@ -9,6 +9,7 @@ class ChatTile extends StatefulWidget {
     this.text,
     required this.index,
     required this.message,
+    required this.time,
   });
 
   final String? text;
