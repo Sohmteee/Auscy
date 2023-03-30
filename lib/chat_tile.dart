@@ -52,8 +52,8 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 12,
           ),
         ),
-        trailing: Align(
-          alignment: Alignment.bottomRight,
+        trailing: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
               DateFormat("h:mm a").format(widget.time),
