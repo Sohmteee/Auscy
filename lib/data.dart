@@ -24,13 +24,14 @@ List messages = [];
 List chatList = [
   ChatTile(
     index: 0,
-    message: "How are you?",
+    messages: "How are you?",
     time: DateTime.now(),
   ),
   ChatTile(
     title: "Elon Musk",
     index: 1,
-    message: "Some very interesting facts about Elon Musk include: He is a guy",
+    messages:
+        "Some very interesting facts about Elon Musk include: He is a guy",
     time: DateTime.now(),
   ),
 ];

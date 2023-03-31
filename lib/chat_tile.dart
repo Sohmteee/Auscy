@@ -8,18 +8,18 @@ class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     this.title,
-    required this.message,
+    required this.messages,
     required this.time,
   });
 
   final String? title;
-  final List<ChatMessage> message;
+  final List<ChatMessage> messages;
   final DateTime time;
 
   Map<String, dynamic> toJSON() {
     return {
       'title': title,
-      'message': message,
+      'message': messages,
       'time': DateFormat("h:mm a").format(time),
     };
   }
@@ -56,7 +56,7 @@ class _ChatTileState extends State<ChatTile> {
           ),
         ),
         subtitle: Text(
-          widget.message,
+          widget.messages,
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
