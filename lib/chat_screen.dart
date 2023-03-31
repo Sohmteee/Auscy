@@ -30,6 +30,13 @@ class ChatScreen extends StatefulWidget {
     return messagesInJSON;
   }
 
+  Map<String, dynamic> toJSON() {
+    return {
+      'title': text,
+      'message': sender == MessageSender.user ? "user" : "bot",
+    };
+  }
+
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
