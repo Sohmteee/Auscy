@@ -22,7 +22,7 @@ class ChatTile extends StatefulWidget {
     for (ChatMessage message in messages) {
       messagesInJSON.add(message.toJSON());
     }
-    
+
     return messagesInJSON;
   }
 
@@ -30,7 +30,7 @@ class ChatTile extends StatefulWidget {
     return {
       'title': title,
       'message': messages,
-      'time': DateFormat("h:mm a").format(time),
+      'time': time,
     };
   }
 
