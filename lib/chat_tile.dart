@@ -20,7 +20,7 @@ class ChatTile extends StatefulWidget {
     List<Map<String, dynamic>> messagesInJSON = [];
 
     for (ChatMessage message in messages) {
-      messagesInJSON.add(value)
+      messagesInJSON.add(message.toJSON());
     }
   }
 
