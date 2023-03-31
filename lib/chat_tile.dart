@@ -30,7 +30,7 @@ class _ChatTileState extends State<ChatTile> {
           context,
           MaterialPageRoute(
             builder: (context) => ChatScreen(
-              title: widget.text ?? "No title",
+              title: widget.text ?? "New Chat",
               messages: [],
             ),
           ),
