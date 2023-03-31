@@ -1,3 +1,4 @@
+import 'package:auscy/chat_tile.dart';
 import 'package:auscy/chatmessage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -11,14 +12,18 @@ jsonToChatMessage(Map<String, dynamic> json) {
   );
 }
 
-jsonToChatTile()
+jsonToChatTile(Map<String, dynamic> json) {
+  return ChatTile(
+    messages: json['messages'],
+    time: json['time'],
+  );
+}
 
-Future createMessage(
-    {required String username}) async {
+Future createMessage({required String username}) async {
   final docUser = db.collection('chat').doc(username);
 
   await docUser.set({
-    'messages' : messagesInJSON,
+    'messages': messagesInJSON,
   });
 
   await docUser.update({
