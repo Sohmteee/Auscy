@@ -1,5 +1,6 @@
 import 'package:auscy/chat_screen.dart';
 import 'package:auscy/chatmessage.dart';
+import 'package:auscy/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -16,20 +17,10 @@ class ChatTile extends StatefulWidget {
   final List<ChatMessage> messages;
   final DateTime time;
 
-  List<Map<String, dynamic>> listToMap(List<ChatMessage> messages) {
-    List<Map<String, dynamic>> messagesInJSON = [];
-
-    for (ChatMessage message in messages) {
-      messagesInJSON.add(message.toJSON());
-    }
-
-    return messagesInJSON;
-  }
-
   Map<String, dynamic> toJSON() {
     return {
       'title': title,
-      'message': messages,
+      'message': listToMap(messages),
       'time': time,
     };
   }
