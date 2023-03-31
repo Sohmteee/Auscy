@@ -42,7 +42,7 @@ class _ChatTileState extends State<ChatTile> {
         ),
         title: Text(
           widget.text ?? "New Chat",
-          overflow: Ove,
+          overflow: Text,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
