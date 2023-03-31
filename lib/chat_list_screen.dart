@@ -2,6 +2,8 @@ import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'chat_screen.dart';
+
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
 
@@ -40,7 +42,17 @@ class _ChatListScreenState extends State<ChatListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Vx.black,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChatScreen(
+                title: "New Chat",
+                messages: [],
+              ),
+            ),
+          );
+        },
         child: const Icon(
           Icons.add,
           color: Colors.white,

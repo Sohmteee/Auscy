@@ -14,9 +14,11 @@ class ChatScreen extends StatefulWidget {
   ChatScreen({
     super.key,
     required this.title,
+    required this.messages,
   });
 
-  String title;
+  final String title;
+  List messages;
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -76,10 +78,11 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   String getLast20Texts() {
-    int start = (messages.length < 20) ? 0 : (messages.length - 19);
+    int start =
+        (widget.messages.length < 20) ? 0 : (widget.messages.length - 19);
 
     List last20Texts =
-        messages.sublist(start).map((message) => message.text).toList();
+        widget.messages.sublist(start).map((message) => message.text).toList();
 
     last20Texts.insert(0, initPrompt);
 
@@ -126,8 +129,8 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      messages.add(message);
-      box.put("messages", messages);
+      widget.messages.add(message);
+      // box.put("messages", messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
       icon = Icons.mic;
@@ -170,12 +173,13 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Container(
         padding: const EdgeInsets.all(20),
         child: Text(
-          "$e",
+          e.trim(),
           style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -190,8 +194,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
     setState(() {
       _isTyping = false;
-      messages.add(botMessage);
-      box.put("messages", messages);
+      widget.messages.add(botMessage);
+      // box.put("messages", messages);
       // messagesInJSON['messages']?.add(botMessage.toJSON());
       // createMessage(username: "Sohmtee");
     });
@@ -272,17 +276,20 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              widget.title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
+            Expanded(
+              child: Text(
+                widget.title,
+                maxLines: 2,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                ),
               ),
             ),
             GestureDetector(
               onTap: () => setState(() {
-                messages.clear();
-                box.put("messages", messages);
+                widget.messages.clear();
+                // box.put("messages", messages);
                 _isTyping = false;
                 setState(() {
                   icon = controller.text.trim().isNotEmpty
@@ -314,9 +321,9 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                 padding: Vx.m8,
                 reverse: true,
-                itemCount: messages.length,
+                itemCount: widget.messages.length,
                 itemBuilder: (context, index) {
-                  return messages.reversed.toList()[index];
+                  return widget.messages.reversed.toList()[index];
                 },
               ),
             ),
