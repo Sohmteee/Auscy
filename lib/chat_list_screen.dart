@@ -44,8 +44,8 @@ class _ChatListScreenState extends State<ChatListScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Vx.black,
         onPressed: () {
-          int id = chats.length;
-          chats.add(
+          int id = chatList.length;
+          chatList.add(
             ChatTile(
               id: id,
               chatScreen: ChatScreen(

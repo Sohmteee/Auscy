@@ -2,6 +2,7 @@ import 'package:auscy/chatmessage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import 'chat_screen.dart';
 import 'chat_tile.dart';
 
 enum MessageSender {
@@ -20,10 +21,8 @@ final TextEditingController controller = TextEditingController();
 
 IconData icon = Icons.mic;
 
-
 List chats = [];
 List messages = [];
-
 
 List<ChatMessage> msgs = [
   ChatMessage(
@@ -38,24 +37,24 @@ List<ChatMessage> msgs = [
   )
 ];
 
-
-
 List chatList = [
-  ChatTile(
+  /* ChatTile(
+    id: 0,
     chatScreen: ChatScreen(
-                title: "New Chat",
-                messages: const [],
-              ),
+      title: "New Chat",
+      messages: const [],
+    ),
     time: DateTime.now(),
   ),
   ChatTile(
+    id: 1,
     title: "Elon Musk",
     chatScreen: ChatScreen(
-                title: "New Chat",
-                messages: const [],
-              ),
+      title: "New Chat",
+      messages: const [],
+    ),
     time: DateTime.now(),
-  ),
+  ), */
 ];
 
 final db = FirebaseFirestore.instance;
