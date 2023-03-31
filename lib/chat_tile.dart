@@ -42,6 +42,7 @@ class _ChatTileState extends State<ChatTile> {
         ),
         title: Text(
           widget.text ?? "New Chat",
+          maxLines: 1,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
