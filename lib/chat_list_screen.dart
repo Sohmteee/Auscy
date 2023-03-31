@@ -43,7 +43,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Vx.black,
         onPressed: () {
-          h
+          chats.add(ChatT)
           Navigator.push(
             context,
             MaterialPageRoute(
