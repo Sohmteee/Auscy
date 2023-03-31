@@ -40,13 +40,11 @@ class _ChatTileState extends State<ChatTile> {
         leading: const CircleAvatar(
           backgroundImage: AssetImage("assets/images/auscy_icon.png"),
         ),
-        title: Expanded(
-          child: Text(
-            widget.text ?? "New Chat",
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+        title: Text(
+          widget.text ?? "New Chat",
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
           ),
         ),
         subtitle: Text(
