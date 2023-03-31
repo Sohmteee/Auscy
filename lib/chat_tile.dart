@@ -12,7 +12,7 @@ class ChatTile extends StatefulWidget {
   });
 
   final String? title;
-  final String message;
+  final List message;
   final DateTime time;
 
   Map<String, dynamic> toJSON() {
