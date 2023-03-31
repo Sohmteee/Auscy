@@ -18,7 +18,7 @@ class ChatTile extends StatefulWidget {
   Map<String, dynamic> toJSON() {
     return {
       'title': title,
-      'sender': sender == MessageSender.user ? "user" : "bot",
+      'message': sender == MessageSender.user ? "user" : "bot",
       'time': DateFormat("h:mm a").format(time),
     };
   }
