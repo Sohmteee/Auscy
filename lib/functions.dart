@@ -12,7 +12,7 @@ jsonToChatMessage(Map<String, dynamic> json) {
   );
 }
 
-json
+jsonToMessage() 
 
 jsonToChatTile(Map<String, dynamic> json) {
   return ChatTile(
