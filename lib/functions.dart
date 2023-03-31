@@ -11,16 +11,6 @@ jsonToChatMessage(Map<String, dynamic> json) {
   );
 }
 
-List<Map<String, dynamic>> listToMap(List<ChatMessage> messages) {
-  List<Map<String, dynamic>> messagesInJSON = [];
-
-  for (ChatMessage message in messages) {
-    messagesInJSON.add(message.toJSON());
-  }
-
-  return messagesInJSON;
-}
-
 Future createMessage(
     {required String username}) async {
   final docUser = db.collection('chat').doc(username);
