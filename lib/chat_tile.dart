@@ -12,12 +12,12 @@ class ChatTile extends StatefulWidget {
     super.key,
     required int id,
     this.title,
-    required this.messages,
+    required this.chatScreen,
     required this.time,
   });
 
   final String? title;
-  final List<ChatMessage> messages;
+  final ChatScreen chatScreen;
   final DateTime time;
 
   List<Map<String, dynamic>> listToMap(List<ChatMessage> messages) {
@@ -33,7 +33,7 @@ class ChatTile extends StatefulWidget {
   Map<String, dynamic> toJSON() {
     return {
       'title': title,
-      'message': listToMap(messages),
+      'message': listToMap(chatScreen.messages),
       'time': time,
     };
   }
