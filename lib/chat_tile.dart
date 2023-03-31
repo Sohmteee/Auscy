@@ -16,7 +16,7 @@ class ChatTile extends StatefulWidget {
   final List<ChatMessage> messages;
   final DateTime time;
 
-  listToMap(List<ChatMessage> messages) {
+  List<Map<String, dynamic>> listToMap(List<ChatMessage> messages) {
     List<Map<String, dynamic>> messagesInJSON = [];
 
     for (ChatMessage message in messages) {
