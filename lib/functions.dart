@@ -24,8 +24,9 @@ jsonToMessageList(List<Map<String, dynamic>> json) {
 
 jsonToChatTile(Map<String, dynamic> json) {
   return ChatTile(
+    id: json['id'],
     title: json['title'],
-    messages: json['messages'],
+    chatScreen: json['chatScreen'],
     time: json['time'],
   );
 }
