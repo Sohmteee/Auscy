@@ -6,7 +6,7 @@ import 'data.dart';
 jsonToChatMessage(Map<String, dynamic> json) {
   return ChatMessage(
     text: json['text'],
-    sender: json['sender'],
+    sender: json['sender'] == "user" ? MessageSender.user : MessageSender.bot,
     time: json['time'],
   );
 }
