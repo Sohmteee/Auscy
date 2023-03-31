@@ -33,7 +33,7 @@ class ChatTile extends StatefulWidget {
   Map<String, dynamic> toJSON() {
     return {
       'title': title,
-      'message': listToMap(chatScreen.messages),
+      'chatScreen': listToMap(chatScreen.messages),
       'time': time,
     };
   }
