@@ -32,8 +32,8 @@ class ChatScreen extends StatefulWidget {
 
   Map<String, dynamic> toJSON() {
     return {
-      'title': text,
-      'message': sender == MessageSender.user ? "user" : "bot",
+      'title': title,
+      'messages': listToMap(messages),
     };
   }
 
