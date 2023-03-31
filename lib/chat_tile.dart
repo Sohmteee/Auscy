@@ -1,4 +1,5 @@
 import 'package:auscy/chat_screen.dart';
+import 'package:auscy/chatmessage.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -12,7 +13,7 @@ class ChatTile extends StatefulWidget {
   });
 
   final String? title;
-  final List< message;
+  final List<ChatMessage> message;
   final DateTime time;
 
   Map<String, dynamic> toJSON() {
