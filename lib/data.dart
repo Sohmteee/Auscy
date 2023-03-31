@@ -20,11 +20,20 @@ final TextEditingController controller = TextEditingController();
 
 IconData icon = Icons.mic;
 
-List messages = [
-  
-];
+List messages = [];
 
-List<ChatMessage> msgs = [];
+List<ChatMessage> msgs = [
+  ChatMessage(
+    text: "Tell me about Elon Musk",
+    sender: MessageSender.user,
+    time: DateTime.now(),
+  ),
+  ChatMessage(
+    text: "Some very interesting facts about Elon Musk include: He is a guy",
+    sender: MessageSender.bot,
+    time: DateTime.now(),
+  )
+];
 
 List chatList = [
   ChatTile(
