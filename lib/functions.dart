@@ -31,7 +31,7 @@ jsonToChatTile(Map<String, dynamic> json) {
   );
 }
 
-Future createMessage({required String username}) async {
+/* Future createMessage({required String username}) async {
   final docUser = db.collection('chat').doc(username);
 
   await docUser.set({
@@ -41,4 +41,4 @@ Future createMessage({required String username}) async {
   await docUser.update({
     'messages': FieldValue.arrayUnion(messages),
   });
-}
+} */

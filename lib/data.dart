@@ -22,7 +22,7 @@ final TextEditingController controller = TextEditingController();
 IconData icon = Icons.mic;
 
 List chats = [];
-List messages = [];
+// List messages = [];
 
 List<ChatMessage> msgs = [
   ChatMessage(
@@ -59,11 +59,11 @@ List chatList = [
 
 final db = FirebaseFirestore.instance;
 
-dob() {
+/* dob() {
   for (ChatMessage message in messages) {
     messagesInJSON.add(message.toJSON());
   }
-}
+} */
 
 final List<Map<String, dynamic>> messagesInJSON = [
   /* {
