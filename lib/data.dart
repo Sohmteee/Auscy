@@ -21,7 +21,7 @@ final TextEditingController controller = TextEditingController();
 IconData icon = Icons.mic;
 
 List messages = [
-  ChatMessage(text: "Elon Musk", sender: MessageSender.bot, time: time)
+  
 ];
 
 List<ChatMessage> msgs = [];
