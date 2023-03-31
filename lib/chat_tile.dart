@@ -20,7 +20,7 @@ class ChatTile extends StatefulWidget {
   final ChatScreen chatScreen;
   final DateTime time;
 
-  List<Map<String, dynamic>> chatScreenToMap(List<ChatMessage> messages) {
+  List<Map<String, dynamic>> chatScreenToMap(ChatScreen chatScreen) {
     List<Map<String, dynamic>> messagesInJSON = [];
 
     for (ChatMessage message in messages) {
