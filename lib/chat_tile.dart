@@ -6,20 +6,20 @@ import 'package:velocity_x/velocity_x.dart';
 class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
-    this.text,
+    this.title,
     required this.index,
     required this.message,
     required this.time,
   });
 
-  final String? text;
+  final String? title;
   final int index;
   final String message;
   final DateTime time;
 
   Map<String, dynamic> toJSON() {
     return {
-      'text': text,
+      'text': title,
       'sender': sender == MessageSender.user ? "user" : "bot",
       'time': DateFormat("h:mm a").format(time),
     };
@@ -38,7 +38,7 @@ class _ChatTileState extends State<ChatTile> {
           context,
           MaterialPageRoute(
             builder: (context) => ChatScreen(
-              title: widget.text ?? "New Chat",
+              title: widget.title ?? "New Chat",
               messages: [],
             ),
           ),
@@ -49,7 +49,7 @@ class _ChatTileState extends State<ChatTile> {
           backgroundImage: AssetImage("assets/images/auscy_icon.png"),
         ),
         title: Text(
-          widget.text ?? "New Chat",
+          widget.title ?? "New Chat",
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontWeight: FontWeight.bold,

@@ -28,7 +28,7 @@ List chatList = [
     time: DateTime.now(),
   ),
   ChatTile(
-    text: "Elon Musk",
+    title: "Elon Musk",
     index: 1,
     message: "Some very interesting facts about Elon Musk include: He is a guy",
     time: DateTime.now(),
