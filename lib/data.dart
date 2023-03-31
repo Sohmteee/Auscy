@@ -42,12 +42,18 @@ List<ChatMessage> msgs = [
 
 List chatList = [
   ChatTile(
-    messages: msgs,
+    chatScreen: ChatScreen(
+                title: "New Chat",
+                messages: const [],
+              ),
     time: DateTime.now(),
   ),
   ChatTile(
     title: "Elon Musk",
-    messages: msgs,
+    chatScreen: ChatScreen(
+                title: "New Chat",
+                messages: const [],
+              ),
     time: DateTime.now(),
   ),
 ];

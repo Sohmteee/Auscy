@@ -44,9 +44,10 @@ class _ChatListScreenState extends State<ChatListScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Vx.black,
         onPressed: () {
+          int id = chats.length;
           chats.add(
             ChatTile(
-              id: chats.length,
+              id: id,
               chatScreen: ChatScreen(
                 title: "New Chat",
                 messages: const [],
@@ -57,7 +58,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => 
+              builder: (context) => chats[id],
             ),
           );
         },
