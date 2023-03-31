@@ -23,7 +23,7 @@ class ChatTile extends StatefulWidget {
       messagesInJSON.add(message.toJSON());
     }
 
-    return 
+    return messagesInJSON;
   }
 
   Map<String, dynamic> toJSON() {
