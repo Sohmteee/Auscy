@@ -66,7 +66,7 @@ class _ChatTileState extends State<ChatTile> {
           ),
         ),
         subtitle: Text(
-          widget.messages,
+          widget.messages.last.text,
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
