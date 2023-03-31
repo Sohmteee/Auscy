@@ -12,7 +12,7 @@ class ChatTile extends StatefulWidget {
     super.key,
     this.title,
     required this.messages,
-    required this.time,
+    required this.time, required int id,
   });
 
   final String? title;

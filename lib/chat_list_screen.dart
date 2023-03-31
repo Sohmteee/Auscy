@@ -46,6 +46,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         onPressed: () {
           chats.add(
             ChatTile(
+              id: chats.length,
               messages: [],
               time: DateTime.now(),
             ),
