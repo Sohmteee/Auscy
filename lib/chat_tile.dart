@@ -17,6 +17,7 @@ class ChatTile extends StatefulWidget {
   final DateTime time;
 
   listToMap (List<ChatMessage> messages) {
+    List<
     for (ChatMessage message in messages) {
       
     }
