@@ -12,14 +12,14 @@ jsonToChatMessage(Map<String, dynamic> json) {
   );
 }
 
-jsonToMessage() {
-
+jsonToMessages(List<Map<String, dynamic>> json) {
+  
 }
 
 jsonToChatTile(Map<String, dynamic> json) {
   return ChatTile(
     title: json['title'],
-    messages: ,
+    messages: json['messages'],
     time: json['time'],
   );
 }
