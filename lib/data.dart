@@ -38,7 +38,7 @@ List<ChatMessage> msgs = [
 ];
 
 List chatList = [
-  /* ChatTile(
+  ChatTile(
     id: 0,
     chatScreen: ChatScreen(
       title: "New Chat",
@@ -54,7 +54,7 @@ List chatList = [
       messages: const [],
     ),
     time: DateTime.now(),
-  ), */
+  ),
 ];
 
 final db = FirebaseFirestore.instance;
