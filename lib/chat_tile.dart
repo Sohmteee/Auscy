@@ -10,9 +10,10 @@ import 'package:velocity_x/velocity_x.dart';
 class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
+    required int id,
     this.title,
     required this.messages,
-    required this.time, required int id,
+    required this.time,
   });
 
   final String? title;
