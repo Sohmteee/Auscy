@@ -21,15 +21,16 @@ final TextEditingController controller = TextEditingController();
 IconData icon = Icons.mic;
 
 List messages = [];
+
+List msgs = [];
+
 List chatList = [
   ChatTile(
-    index: 0,
-    messages: "How are you?",
+    messages: msgs,
     time: DateTime.now(),
   ),
   ChatTile(
     title: "Elon Musk",
-    index: 1,
     messages:
         "Some very interesting facts about Elon Musk include: He is a guy",
     time: DateTime.now(),
