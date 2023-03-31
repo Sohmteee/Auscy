@@ -17,7 +17,13 @@ class ChatTile extends StatefulWidget {
   final String message;
   final DateTime time;
 
-  
+  Map<String, dynamic> toJSON() {
+    return {
+      'text': text,
+      'sender': sender == MessageSender.user ? "user" : "bot",
+      'time': DateFormat("h:mm a").format(time),
+    };
+  }
 
   @override
   State<ChatTile> createState() => _ChatTileState();
