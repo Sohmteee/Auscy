@@ -7,13 +7,11 @@ class ChatTile extends StatefulWidget {
   const ChatTile({
     super.key,
     this.title,
-    required this.index,
     required this.message,
     required this.time,
   });
 
   final String? title;
-  final int index;
   final String message;
   final DateTime time;
 
