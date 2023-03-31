@@ -18,7 +18,7 @@ class ChatScreen extends StatefulWidget {
   });
 
   final String title;
-  List messages;
+  List<ChatMessage> messages;
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
