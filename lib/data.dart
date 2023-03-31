@@ -30,7 +30,7 @@ List chatList = [
   ChatTile(
     text: "Elon Musk",
     index: 1,
-    message: "How are you?",
+    message: "Some very interesting facts about Elon Musk include",
     time: DateTime.now(),
   ),
 ];
