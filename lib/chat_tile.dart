@@ -46,7 +46,8 @@ class _ChatTileState extends State<ChatTile> {
   @override
   void initState() {
     super.initState();
-    box = ;
+    box = Hive.box('chats');
+    
   }
 
   @override
