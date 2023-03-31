@@ -14,6 +14,7 @@ git add .
 echo.
 echo Adding commits...
 git commit --date "1 day ago" -m "commit"
+git commit --date "1 day ago" -m "commit"
 echo Added commits successfully
 
 echo.
