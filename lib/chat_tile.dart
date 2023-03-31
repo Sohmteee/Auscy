@@ -50,6 +50,7 @@ class _ChatTileState extends State<ChatTile> {
         ),
         subtitle: Text(
           widget.message,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontSize: 12,
           ),
