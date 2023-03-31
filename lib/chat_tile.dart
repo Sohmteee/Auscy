@@ -43,7 +43,6 @@ class ChatTile extends StatefulWidget {
 
 class _ChatTileState extends State<ChatTile> {
   late Box box;
-  List chats = [];
 
   @override
   void initState() {

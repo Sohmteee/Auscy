@@ -20,7 +20,10 @@ final TextEditingController controller = TextEditingController();
 
 IconData icon = Icons.mic;
 
+
+List chats = [];
 List messages = [];
+
 
 List<ChatMessage> msgs = [
   ChatMessage(
@@ -34,6 +37,8 @@ List<ChatMessage> msgs = [
     time: DateTime.now(),
   )
 ];
+
+
 
 List chatList = [
   ChatTile(
