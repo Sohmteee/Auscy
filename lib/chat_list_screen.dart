@@ -1,3 +1,4 @@
+import 'package:auscy/chat_tile.dart';
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -43,7 +44,12 @@ class _ChatListScreenState extends State<ChatListScreen> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Vx.black,
         onPressed: () {
-          chats.add(ChatT)
+          chats.add(
+            ChatTile(
+              messages: [],
+              time: DateTime.now(),
+            ),
+          );
           Navigator.push(
             context,
             MaterialPageRoute(
