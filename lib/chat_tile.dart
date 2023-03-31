@@ -1,7 +1,6 @@
 import 'package:auscy/chat_screen.dart';
 import 'package:auscy/chatmessage.dart';
 import 'package:auscy/data.dart';
-import 'package:auscy/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
