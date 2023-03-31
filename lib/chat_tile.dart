@@ -1,5 +1,6 @@
 import 'package:auscy/chat_screen.dart';
 import 'package:auscy/chatmessage.dart';
+import 'package:auscy/data.dart';
 import 'package:auscy/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -42,13 +43,15 @@ class ChatTile extends StatefulWidget {
 
 class _ChatTileState extends State<ChatTile> {
   late Box box;
+  List chats = [];
 
   @override
   void initState() {
     super.initState();
     box = Hive.box('chats');
-    if (box.get("chats") == null) box.put("chats", []);
-    isLoggedIn = myBox.get("isLoggedIn");
+
+    if (box.get('chats') == null) box.put('chats', []);
+    chats = box.get('chats');
   }
 
   @override
@@ -60,7 +63,7 @@ class _ChatTileState extends State<ChatTile> {
           MaterialPageRoute(
             builder: (context) => ChatScreen(
               title: widget.title ?? "New Chat",
-              messages: [],
+              messages: chats,
             ),
           ),
         );
