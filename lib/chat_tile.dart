@@ -41,7 +41,7 @@ class _ChatTileState extends State<ChatTile> {
           backgroundImage: AssetImage("assets/images/auscy_icon.png"),
         ),
         title: Text(
-          widget.text ?? "No Title",
+          widget.text ?? "New Chat",
           style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
