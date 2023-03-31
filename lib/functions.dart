@@ -15,9 +15,11 @@ jsonToChatMessage(Map<String, dynamic> json) {
 jsonToMessageList(List<Map<String, dynamic>> json) {
   List<ChatMessage> messages = [];
 
-  for (ChatMessage message in json) {
+  for (Map<String, dynamic> message in json) {
     messages.add(jsonToChatMessage(message));
   }
+
+  return messages;
 }
 
 jsonToChatTile(Map<String, dynamic> json) {
