@@ -47,17 +47,17 @@ class _ChatListScreenState extends State<ChatListScreen> {
           chats.add(
             ChatTile(
               id: chats.length,
-              messages: [],
+              chatScreen: ChatScreen(
+                title: "New Chat",
+                messages: const [],
+              ),
               time: DateTime.now(),
             ),
           );
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ChatScreen(
-                title: "New Chat",
-                messages: [],
-              ),
+              builder: (context) => 
             ),
           );
         },
