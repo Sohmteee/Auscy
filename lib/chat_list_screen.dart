@@ -45,15 +45,49 @@ class _ChatListScreenState extends State<ChatListScreen> {
           },
         ),
       ),
-      floatingActionButton: Container(
-        padding: const EdgeInsets.all(15),
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-          color: Vx.gray800,
-        ),
-        child: const Icon(
-          Icons.add,
-          color: Vx.gray200,
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          int id = chatList.length;
+          setState(() {
+            ChatScreen chatScreen = ChatScreen(
+              id: id,
+              title: "New Chat",
+              messages: const [],
+            );
+            chatList.add(
+              ChatTile(
+                id: id,
+                title: chatScreen.title,
+                chatScreen: chatScreen,
+                time: DateTime.now(),
+              ),
+            );
+          });
+          if (chatList.isNotEmpty) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => chatList[id].chatScreen,
+              ),
+            );
+          }
+        },
+        child: Container(
+          padding: const EdgeInsets.all(18),
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Vx.gray800,
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(-2, 2),
+                blurRadius: 2,
+              )
+            ],
+          ),
+          child: const Icon(
+            Icons.add,
+            color: Vx.gray200,
+          ),
         ),
       ),
     );
