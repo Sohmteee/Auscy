@@ -176,7 +176,7 @@ class _ChatScreenState extends State<ChatScreen> {
         insertNewData(response.trim(), false);
       }
 
-      if (widget.messages.length > 5) {
+      if (widget.messages.length > 5 && widget.) {
         final title = await generateResponse(
             "$prompt\n In 3 words or less, summarize this in form of a title.");
         Vx.log(title);
