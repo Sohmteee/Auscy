@@ -132,6 +132,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   selectFirstThree(String title) {
+    List titleList = title.split(" ");
     
   }
 
@@ -162,7 +163,6 @@ class _ChatScreenState extends State<ChatScreen> {
     controller.clear();
 
     String prompt = getLast20Texts();
-
 
     try {
       final response = await generateResponse(prompt);
