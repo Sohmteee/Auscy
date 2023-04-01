@@ -284,8 +284,14 @@ class _ChatScreenState extends State<ChatScreen> {
         const SizedBox(width: 10),
         Container(
           decoration: const BoxDecoration(
-            color: Vx.zinc900,
+            color: Vx.gray900,
             shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(-2, 2),
+                blurRadius: 2,
+              )
+            ],
           ),
           child: IconButton(
             icon: Icon(
