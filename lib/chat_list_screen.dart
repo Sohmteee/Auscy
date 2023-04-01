@@ -26,7 +26,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
             Text(
               "Chats",
               style: TextStyle(
-                color: Colo,
+                color: Vx.gray300,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
@@ -45,7 +45,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Vx.black,
+        backgroundColor: Vx.gray800,
         onPressed: () {
           int id = chatList.length;
           setState(() {
