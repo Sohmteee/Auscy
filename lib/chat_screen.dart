@@ -170,7 +170,8 @@ class _ChatScreenState extends State<ChatScreen> {
       }
 
       if (widget.messages.length > 5) {
-        final title = await generateResponse(prompt );
+        final title = await generateResponse(prompt + "\n Give a title for this conversation in 5 words or less.");
+        widget.title = title.t;
       }
     } catch (e) {
       debugPrint(e.toString());
