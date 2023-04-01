@@ -49,9 +49,9 @@ class _ChatMessageState extends State<ChatMessage> {
         if (widget.sender == MessageSender.bot)
           Padding(
             padding: const EdgeInsets.only(top: 20),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
+            child: Container(
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(15)),
               child: const CircleAvatar(
                 radius: 15,
                 backgroundColor: Vx.gray800,
@@ -59,6 +59,7 @@ class _ChatMessageState extends State<ChatMessage> {
               ),
             ),
           ),
+          SizedBox()
         GestureDetector(
           onLongPress: () async {
             await Clipboard.setData(
