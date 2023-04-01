@@ -105,6 +105,7 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 10,
           ),
         ),
+        
       ),
     );
   }
