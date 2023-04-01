@@ -132,8 +132,8 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   selectFirstThree(String title) {
-    List titleList = title.split(" ");
-    
+    List titleList = title.split(" ").take(3).toList();
+
   }
 
   void _sendMessage() async {
