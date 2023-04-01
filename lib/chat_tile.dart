@@ -103,7 +103,9 @@ class _ChatTileState extends State<ChatTile> {
           children: [
             const SizedBox(),
             Text(
-              DateFormat("h:mm a").format(widget.time),
+              DateFormat("h:mm a").format(
+                widget.chatScreen.messages.last.time,
+              ),
               style: const TextStyle(
                 color: Vx.gray400,
                 fontSize: 10,
