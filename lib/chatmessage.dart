@@ -23,7 +23,7 @@ class ChatMessage extends StatefulWidget {
     return {
       'text': text,
       'sender': sender == MessageSender.user ? "user" : "bot",
-      'time' : time,
+      'time': time,
     };
   }
 
@@ -76,7 +76,8 @@ class _ChatMessageState extends State<ChatMessage> {
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
-                widget.sender == MessageSender.user ? Vx.zinc600 : Vx.zinc200,
+                widget.sender == MessageSender.user ? Vx.gray600 : Vx.gray200,
+            shadowColor: Vx.gray100,
             child: Container(
               padding: const EdgeInsets.all(2),
               constraints: BoxConstraints(

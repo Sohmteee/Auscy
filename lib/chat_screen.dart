@@ -388,6 +388,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   Text(
                     "Auscy is typing",
                     style: TextStyle(
+                      color: Vx.gray200,
                       fontSize: 16,
                     ),
                   ),
