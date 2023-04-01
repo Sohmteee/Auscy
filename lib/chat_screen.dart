@@ -168,6 +168,10 @@ class _ChatScreenState extends State<ChatScreen> {
       } else {
         insertNewData(response.trim(), false);
       }
+
+      if (widget.messages.length > 5) {
+        final title = await generateResponse(prompt );
+      }
     } catch (e) {
       debugPrint(e.toString());
       showDialog(
