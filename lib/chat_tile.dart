@@ -70,8 +70,15 @@ class _ChatTileState extends State<ChatTile> {
         );
       },
       child: ListTile(
-        leading: const CircleAvatar(
-          backgroundImage: AssetImage("assets/images/auscy_icon.png"),
+        leading: Container(
+          padding: const EdgeInsets.all(1),
+          decoration: const BoxDecoration(
+            color: Vx.gray200,
+            shape: BoxShape.circle,
+          ),
+          child: const CircleAvatar(
+            backgroundImage: AssetImage("assets/images/auscy_icon.png"),
+          ),
         ),
         title: Text(
           widget.title ?? "New Chat",
