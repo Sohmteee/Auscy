@@ -131,6 +131,10 @@ class _ChatScreenState extends State<ChatScreen> {
     return false;
   }
 
+  selectFirstThree(String title) {
+
+  }
+
   void _sendMessage() async {
     String text = controller.text.trim();
 
@@ -158,6 +162,7 @@ class _ChatScreenState extends State<ChatScreen> {
     controller.clear();
 
     String prompt = getLast20Texts();
+
 
     try {
       final response = await generateResponse(prompt);
