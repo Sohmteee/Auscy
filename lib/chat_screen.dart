@@ -212,7 +212,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Container(
         padding: const EdgeInsets.all(20),
         child: Text(
-          e.trim(),
+          e.toString().trim(),
           style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
