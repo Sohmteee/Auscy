@@ -47,17 +47,19 @@ class _ChatListScreenState extends State<ChatListScreen> {
         backgroundColor: Vx.black,
         onPressed: () {
           int id = chatList.length;
-          chatList.add(
-            ChatTile(
-              id: id,
-              title: "New Chat",
-              chatScreen: ChatScreen(
+          setState(() {
+            chatList.add(
+              ChatTile(
+                id: id,
                 title: "New Chat",
-                messages: const [],
+                chatScreen: ChatScreen(
+                  title: "New Chat",
+                  messages: const [],
+                ),
+                time: DateTime.now(),
               ),
-              time: DateTime.now(),
-            ),
-          );
+            );
+          });
           Navigator.push(
             context,
             MaterialPageRoute(
