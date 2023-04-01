@@ -13,10 +13,12 @@ import 'data.dart';
 class ChatScreen extends StatefulWidget {
   ChatScreen({
     super.key,
+    required this.id,
     this.title,
     required this.messages,
   });
 
+  int id;
   String? title;
   List<ChatMessage> messages;
 
@@ -305,7 +307,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Expanded(
               child: Text(
-                widget.title == null ? "New Chat": widget.title!,
+                widget.title == null ? "New Chat" : widget.title!,
                 maxLines: 2,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,

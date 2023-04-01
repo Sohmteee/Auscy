@@ -49,6 +49,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           int id = chatList.length;
           setState(() {
             ChatScreen chatScreen = ChatScreen(
+              id: id,
                   title: "New Chat",
                   messages: const [],
                 );
