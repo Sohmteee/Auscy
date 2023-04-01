@@ -341,6 +341,12 @@ class _ChatScreenState extends State<ChatScreen> {
                 decoration: BoxDecoration(
                   color: Vx.gray900,
                   borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(2, dy)
+                    )
+                  ]
+
                 ),
                 child: const Text(
                   "Clear Chat",
