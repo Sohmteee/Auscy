@@ -16,9 +16,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Vx.gray700,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Vx.gray700,
         elevation: 0,
         title: Row(
           children: const [
@@ -26,6 +26,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
             Text(
               "Chats",
               style: TextStyle(
+                color: Colo,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
@@ -64,11 +65,11 @@ class _ChatListScreenState extends State<ChatListScreen> {
           });
           if (chatList.isNotEmpty) {
             Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => chatList[id].chatScreen,
-            ),
-          );
+              context,
+              MaterialPageRoute(
+                builder: (context) => chatList[id].chatScreen,
+              ),
+            );
           }
         },
         child: const Icon(
