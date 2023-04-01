@@ -87,7 +87,7 @@ class _ChatTileState extends State<ChatTile> {
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
-            color: Vx.gray200,
+            color: Vx.gray300,
             fontSize: 12,
           ),
         ),
