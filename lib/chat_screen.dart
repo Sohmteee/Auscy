@@ -132,7 +132,7 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   selectFirstThree(String title) {
-
+    
   }
 
   void _sendMessage() async {
