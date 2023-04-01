@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ChatTile extends StatefulWidget {
-  const ChatTile({
+   ChatTile({
     super.key,
     required int id,
     this.title,
@@ -15,7 +15,7 @@ class ChatTile extends StatefulWidget {
     required this.time,
   });
 
-  final String? title;
+   String? title;
   final ChatScreen chatScreen;
   final DateTime time;
 

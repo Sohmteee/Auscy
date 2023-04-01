@@ -37,7 +37,7 @@ List<ChatMessage> msgs = [
   )
 ];
 
-List chatList = [
+List<ChatTile> chatList = [
   /* ChatTile(
     id: 0,
     chatScreen: ChatScreen(
