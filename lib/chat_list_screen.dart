@@ -39,7 +39,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           itemBuilder: (context, index) {
             return (chatList[index].chatScreen.messages.isEmpty)
                 ? null
-                : chatList[index];
+                : chatList.reversed.toList()[index];
           },
         ),
       ),
