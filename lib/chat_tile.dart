@@ -79,14 +79,14 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 16,
           ),
         ),
-        /* subtitle: Text(
+        subtitle: Text(
           widget.chatScreen.messages.last.text,
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
             fontSize: 12,
           ),
-        ), */
+        ),
         trailing: Text(
           DateFormat("h:mm a").format(widget.time),
           style: const TextStyle(
