@@ -253,7 +253,7 @@ class _ChatScreenState extends State<ChatScreen> {
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  color: Vx.zinc200,
+                  color: Vx.gray200,
                   borderRadius: isResponse
                       ? const BorderRadius.vertical(bottom: Radius.circular(20))
                       : BorderRadius.circular(20),
@@ -295,7 +295,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           child: IconButton(
             icon: Icon(
-              color: Vx.white,
+              color: Vx.gray200,
               icon,
             ),
             onPressed: () {
@@ -357,7 +357,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: const Text(
                   "Clear Chat",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Vx.gray200,
                   ),
                 ),
               ),
