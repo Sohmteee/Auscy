@@ -98,14 +98,18 @@ class _ChatTileState extends State<ChatTile> {
             fontSize: 12,
           ),
         ),
-        trailing: Text(
-          DateFormat("h:mm a").format(widget.time),
-          style: const TextStyle(
-            color: Vx.gray400,
-            fontSize: 10,
-          ),
+        trailing: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              DateFormat("h:mm a").format(widget.time),
+              style: const TextStyle(
+                color: Vx.gray400,
+                fontSize: 10,
+              ),
+            ),
+          ],
         ),
-        
       ),
     );
   }
