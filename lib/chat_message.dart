@@ -50,6 +50,7 @@ class _ChatMessageState extends State<ChatMessage> {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: Container(
+              padding: const EdgeInsets.all(2),
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(15)),
               child: const CircleAvatar(
@@ -59,7 +60,7 @@ class _ChatMessageState extends State<ChatMessage> {
               ),
             ),
           ),
-          SizedBox()
+        SizedBox(width: MediaQuery.of(context).size.width * .01),
         GestureDetector(
           onLongPress: () async {
             await Clipboard.setData(
