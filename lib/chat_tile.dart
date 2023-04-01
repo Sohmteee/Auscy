@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ChatTile extends StatefulWidget {
-   ChatTile({
+  ChatTile({
     super.key,
     required int id,
     this.title,
@@ -15,7 +15,7 @@ class ChatTile extends StatefulWidget {
     required this.time,
   });
 
-   String? title;
+  String? title;
   final ChatScreen chatScreen;
   final DateTime time;
 
@@ -77,6 +77,7 @@ class _ChatTileState extends State<ChatTile> {
           widget.title ?? "New Chat",
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
+            color: Vx.gray100,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
@@ -86,6 +87,7 @@ class _ChatTileState extends State<ChatTile> {
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
+            color: Vx.gray200,
             fontSize: 12,
           ),
         ),
