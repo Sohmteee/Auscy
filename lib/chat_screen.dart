@@ -182,9 +182,9 @@ class _ChatScreenState extends State<ChatScreen> {
         Vx.log(title);
 
         setState(() {
-          String str = title.trim();
+          String str = selectFirstThree(title.trim());
           widget.title = str;
-          chatList[widget.id].title = title.trim();
+          chatList[widget.id].title = str;
         });
       }
     } catch (e) {
