@@ -169,7 +169,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     try {
       final response = await generateResponse(prompt);
-      Vx.log(response);
+      Vx.log(response.trim());
 
       if (response.trim() == "") {
         setState(() {
