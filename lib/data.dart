@@ -50,7 +50,7 @@ List chatList = [
     id: 1,
     title: "Elon Musk",
     chatScreen: ChatScreen(
-      title: "New Chat",
+      title: title,
       messages: msgs,
     ),
     time: DateTime.now(),
