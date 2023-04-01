@@ -42,7 +42,7 @@ List chatList = [
     id: 0,
     chatScreen: ChatScreen(
       title: "New Chat",
-      messages: msgs,
+      messages: [msgs],
     ),
     time: DateTime.now(),
   ),
@@ -50,8 +50,20 @@ List chatList = [
     id: 1,
     title: "Elon Musk",
     chatScreen: ChatScreen(
-      title: title,
-      messages: msgs,
+      title: "New Chat",
+      messages: [
+        ChatMessage(
+          text: "Tell me about Elon Musk",
+          sender: MessageSender.user,
+          time: DateTime.now(),
+        ),
+        ChatMessage(
+          text:
+              "Some very interesting facts about Elon Musk include: He is a guy",
+          sender: MessageSender.bot,
+          time: DateTime.now(),
+        )
+      ],
     ),
     time: DateTime.now(),
   ),
