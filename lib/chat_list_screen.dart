@@ -50,9 +50,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
           setState(() {
             ChatScreen chatScreen = ChatScreen(
               id: id,
-                  title: "New Chat",
-                  messages: const [],
-                );
+              title: "New Chat",
+              messages: const [],
+            );
             chatList.add(
               ChatTile(
                 id: id,
