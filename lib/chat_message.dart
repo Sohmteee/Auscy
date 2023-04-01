@@ -54,7 +54,7 @@ class _ChatMessageState extends State<ChatMessage> {
                   borderRadius: BorderRadius.circular(15)),
               child: const CircleAvatar(
                 radius: 15,
-                backgroundColor: Vx.zinc200,
+                backgroundColor: Vx.gray800,
                 backgroundImage: AssetImage("assets/images/auscy_icon.png"),
               ),
             ),
