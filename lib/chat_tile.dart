@@ -115,34 +115,3 @@ class _ChatTileState extends State<ChatTile> {
     );
   }
 }
-
-/* Container(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          children: [
-            const CircleAvatar(
-              backgroundImage: AssetImage("assets/images/auscy_icon.png"),
-            ),
-            const SizedBox(width: 20),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.text ?? "No Title",
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-                Text(
-                  widget.message,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-       */
