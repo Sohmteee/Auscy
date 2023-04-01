@@ -57,10 +57,12 @@ class _ChatTileState extends State<ChatTile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        int id = chatList.length;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => ChatScreen(
+              id: id,
               title: widget.title ?? "New Chat",
               messages: widget.chatScreen.messages,
             ),
