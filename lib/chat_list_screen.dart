@@ -62,12 +62,14 @@ class _ChatListScreenState extends State<ChatListScreen> {
               ),
             );
           });
-          Navigator.push(
+          if (chatList.isNotEmpty) {
+            Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => chatList[id].chatScreen,
             ),
           );
+          }
         },
         child: const Icon(
           Icons.add,
