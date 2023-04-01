@@ -334,7 +334,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 });
               }),
               child: Container(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(13),
                 decoration: BoxDecoration(
                   color: Vx.zinc900,
                   borderRadius: BorderRadius.circular(20),
