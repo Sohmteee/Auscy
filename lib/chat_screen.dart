@@ -133,7 +133,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   selectFirstThree(String title) {
     List titleList = title.split(" ").take(3).toList();
-
+    return titleList.join(" ");
   }
 
   void _sendMessage() async {
@@ -182,7 +182,8 @@ class _ChatScreenState extends State<ChatScreen> {
         Vx.log(title);
 
         setState(() {
-          widget.title = title.trim();
+          String title = title.trim();
+          widget.title = ;
           chatList[widget.id].title = title.trim();
         });
       }
