@@ -51,10 +51,8 @@ class _ChatMessageState extends State<ChatMessage> {
             padding: const EdgeInsets.only(top: 20),
             child: Container(
               padding: const EdgeInsets.all(1),
-              decoration: BoxDecoration(
-                color: Vx.gray200,
-                borderRadius: BorderRadius.circular(15),
-              ),
+              decoration: const BoxDecoration(
+                  color: Vx.gray200, shape: BoxShape.circle),
               child: const CircleAvatar(
                 radius: 15,
                 backgroundColor: Vx.gray800,
