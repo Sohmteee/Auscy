@@ -394,7 +394,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                   SizedBox(width: 5),
                   SpinKitThreeBounce(
-                    color: Colors.black,
+                    color: Vx.gray200,
                     size: 20.0,
                   ),
                 ],
