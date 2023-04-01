@@ -340,7 +340,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
-                  "Reset",
+                  "Clear Chat",
                   style: TextStyle(
                     color: Colors.white,
                   ),
