@@ -305,7 +305,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Expanded(
               child: Text(
-                widget.title,
+                widget.title == null ? "New Chat": widget.title!,
                 maxLines: 2,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
