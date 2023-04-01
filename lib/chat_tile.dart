@@ -47,7 +47,7 @@ class _ChatTileState extends State<ChatTile> {
   @override
   void initState() {
     super.initState();
-    box = Hive.box('chats');
+    // box = Hive.box('chats');
 
     /* if (box.get('chats') == null) box.put('chats', []);
     chats = box.get('chats'); */
