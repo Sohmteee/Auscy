@@ -1,6 +1,7 @@
 import 'package:auscy/chat_tile.dart';
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chat_screen.dart';
@@ -45,34 +46,11 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ),
       ),
       floatingActionButton: Container(
-        backgroundColor: Vx.gray800,
-        elevation: 5,
-        onPressed: () {
-          int id = chatList.length;
-          setState(() {
-            ChatScreen chatScreen = ChatScreen(
-              id: id,
-              title: "New Chat",
-              messages: const [],
-            );
-            chatList.add(
-              ChatTile(
-                id: id,
-                title: chatScreen.title,
-                chatScreen: chatScreen,
-                time: DateTime.now(),
-              ),
-            );
-          });
-          if (chatList.isNotEmpty) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => chatList[id].chatScreen,
-              ),
-            );
-          }
-        },
+        padding: const EdgeInsets.all(15),
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: Vx.gray800,
+        ),
         child: const Icon(
           Icons.add,
           color: Vx.gray200,
