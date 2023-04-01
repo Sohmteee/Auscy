@@ -313,7 +313,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Vx.gray700,
+      backgroundColor: Vx.gray200,
       appBar: AppBar(
         backgroundColor: Vx.gray700,
         elevation: 0,
