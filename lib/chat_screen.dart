@@ -17,7 +17,7 @@ class ChatScreen extends StatefulWidget {
     required this.messages,
   });
 
-  final String title;
+  String title;
   List<ChatMessage> messages;
 
   List<Map<String, dynamic>> listToMap(List<ChatMessage> messages) {
@@ -170,8 +170,11 @@ class _ChatScreenState extends State<ChatScreen> {
       }
 
       if (widget.messages.length > 5) {
-        final title = await generateResponse(prompt + "\n Give a title for this conversation in 5 words or less.");
-        widget.title = title.t;
+        final title = await generateResponse(
+            "$prompt\n Give a title for this conversation in 5 words or less.");
+        Vx.log(response);
+        widget.title = title.trim();
+
       }
     } catch (e) {
       debugPrint(e.toString());
