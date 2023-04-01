@@ -99,8 +99,9 @@ class _ChatTileState extends State<ChatTile> {
           ),
         ),
         trailing: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            const SizedBox(),
             Text(
               DateFormat("h:mm a").format(widget.time),
               style: const TextStyle(
@@ -108,7 +109,6 @@ class _ChatTileState extends State<ChatTile> {
                 fontSize: 10,
               ),
             ),
-            const SizedBox(),
           ],
         ),
       ),
