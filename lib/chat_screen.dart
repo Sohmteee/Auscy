@@ -308,7 +308,9 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         backgroundColor: Vx.gray700,
         elevation: 0,
-        leading: const BackButton(),
+        leading: const BackButton(
+          color: Vx.gray200,
+        ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -317,6 +319,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 widget.title == null ? "New Chat" : widget.title!,
                 maxLines: 2,
                 style: const TextStyle(
+                  color: Vx.gray200,
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
                 ),
