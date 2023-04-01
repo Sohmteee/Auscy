@@ -26,7 +26,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
             Text(
               "Chats",
               style: TextStyle(
-                color: Vx.gray300,
+                color: Vx.gray200,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
@@ -74,7 +74,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         },
         child: const Icon(
           Icons.add,
-          color: Colors.white,
+          color: Vx.gray200,
         ),
       ),
     );
