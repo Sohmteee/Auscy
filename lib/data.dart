@@ -42,7 +42,18 @@ List chatList = [
     id: 0,
     chatScreen: ChatScreen(
       title: "New Chat",
-      messages: [msgs],
+      messages: [
+        ChatMessage(
+          text: "Hello.",
+          sender: MessageSender.user,
+          time: DateTime.now(),
+        ),
+        ChatMessage(
+          text: "Hi, I'm Auscy. What can I do for you?",
+          sender: MessageSender.bot,
+          time: DateTime.now(),
+        )
+      ],
     ),
     time: DateTime.now(),
   ),
