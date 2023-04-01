@@ -76,7 +76,7 @@ class _ChatMessageState extends State<ChatMessage> {
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
-                widget.sender == MessageSender.user ? Vx.gray600 : Vx.gray100,
+                widget.sender == MessageSender.user ? Vx.gray600 : Vx.gray200,
             shadowColor: Vx.gray800,
             child: Container(
               padding: const EdgeInsets.all(2),

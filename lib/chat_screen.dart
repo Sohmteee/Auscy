@@ -7,7 +7,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:http/http.dart' as http;
 
-import 'chatmessage.dart';
+import 'chat_message.dart';
 import 'data.dart';
 
 class ChatScreen extends StatefulWidget {

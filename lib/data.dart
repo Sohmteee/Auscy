@@ -1,4 +1,4 @@
-import 'package:auscy/chatmessage.dart';
+import 'package:auscy/chat_message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
