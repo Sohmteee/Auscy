@@ -174,9 +174,10 @@ class _ChatScreenState extends State<ChatScreen> {
       if (response.trim() == "") {
         setState(() {
           _isTyping = false;
-          Future.delayed(Duration(seconds: 1), () async {
+          Future.delayed(const Duration(seconds: 1), () async {
+            _isTyping = true;
             final response = await generateResponse(prompt);
-      Vx.log(response);
+            Vx.log(response);
           });
         });
       } else {
