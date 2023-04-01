@@ -178,7 +178,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
         setState(() {
           widget.title = title.trim();
-          chatList[id].title
+          chatList[widget.id].title = title.trim();
         });
       }
     } catch (e) {
