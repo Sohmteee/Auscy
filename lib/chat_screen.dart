@@ -60,6 +60,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void dispose() {
     Hive.close();
     super.dispose();
+    if (widget.messages.isEmpty) chatList
   }
 
   // Link for api - https://beta.openai.com/account/api-keys
