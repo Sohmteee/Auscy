@@ -173,7 +173,10 @@ class _ChatScreenState extends State<ChatScreen> {
         final title = await generateResponse(
             "$prompt\n Give a title for this conversation in 3 words or less.");
         Vx.log(title);
-        widget.title = title.trim();
+        
+        setState(() {
+          widget.title = title.trim();
+        });
       }
     } catch (e) {
       debugPrint(e.toString());

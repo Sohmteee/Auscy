@@ -48,18 +48,15 @@ class _ChatListScreenState extends State<ChatListScreen> {
         onPressed: () {
           int id = chatList.length;
           setState(() {
-            chatScreen = ChatScreen(
+            ChatScreen chatScreen = ChatScreen(
                   title: "New Chat",
                   messages: const [],
-                ),
+                );
             chatList.add(
               ChatTile(
                 id: id,
-                title: chatScreen.,
-                chatScreen: ChatScreen(
-                  title: "New Chat",
-                  messages: const [],
-                ),
+                title: chatScreen.title,
+                chatScreen: chatScreen,
                 time: DateTime.now(),
               ),
             );
