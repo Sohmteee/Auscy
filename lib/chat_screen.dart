@@ -184,6 +184,7 @@ class _ChatScreenState extends State<ChatScreen> {
         setState(() {
           String str = selectFirstThree(title.trim());
           widget.title = str;
+          chatList[widget.id].title = widget.title;
         });
       }
     } catch (e) {
