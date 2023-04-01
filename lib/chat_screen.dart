@@ -13,11 +13,11 @@ import 'data.dart';
 class ChatScreen extends StatefulWidget {
   ChatScreen({
     super.key,
-    required this.title,
+    this.title,
     required this.messages,
   });
 
-  String title;
+  String? title;
   List<ChatMessage> messages;
 
   List<Map<String, dynamic>> listToMap(List<ChatMessage> messages) {
