@@ -5,6 +5,8 @@ import 'package:hive_flutter/adapters.dart';
 
 import 'chat_list_screen.dart';
 
+late String apiKey;
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
@@ -14,6 +16,11 @@ Future main() async {
   /* await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   ); */
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  apiKey = dotenv.env['API_KEY']!;
+
   await Hive.initFlutter();
   await Hive.openBox('chats');
   await Hive.openBox('messages');
