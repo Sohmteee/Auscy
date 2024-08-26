@@ -98,21 +98,14 @@ class _ChatScreenState extends State<ChatScreen> {
   Future<String> generateResponse(String prompt) async {
     final messages = await segmentChat();
 
-    final response =
-        await http.post(Uri.parse("https://api.openai.com/v1/completions"),
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer $apiKey',
-            },
-            body: jsonEncode({
-              'model': 'text-davinci-003',
-              'prompt': prompt.trim(),
-              'temperature': 0.3,
-              'max_tokens': 3000,
-              'top_p': 1,
-              'frequency_penalty': 0.0,
-              'presence_penalty': 0.0,
-            }));
+    final response = await gemini
+        .generateContent([
+          Content.text(initPrompt),
+          ...messages,
+        ])
+        .then((value) => value.candidates.first.text)
+        .catchError((error) =>
+            'It looks like an error occurred. Check your internet connection and try again.');
 
     Map<String, dynamic> newResponse = jsonDecode(response.body);
     debugPrint(newResponse.toString());
