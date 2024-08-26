@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -169,7 +170,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     try {
       final response = await generateResponse(prompt);
-      Vx.log(response.trim());
+      log(response.trim());
 
       if (response.trim() == "") {
         setState(() {
@@ -204,7 +205,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Dialog errorDialog(e) {
     return Dialog(
-      backgroundColor: Vx.red500,
+      backgroundColor: red500,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
