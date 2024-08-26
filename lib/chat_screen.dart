@@ -286,7 +286,7 @@ class _ChatScreenState extends State<ChatScreen> {
         const SizedBox(width: 10),
         Container(
           decoration: const BoxDecoration(
-            color: Vx.grey900,
+            color: grey900,
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
@@ -312,9 +312,9 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Vx.grey700,
+      backgroundColor: grey700,
       appBar: AppBar(
-        backgroundColor: Vx.grey700,
+        backgroundColor: grey700,
         elevation: 0,
         leading: const BackButton(
           color: grey200,
@@ -347,7 +347,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Container(
                 padding: const EdgeInsets.all(13),
                 decoration: BoxDecoration(
-                  color: Vx.grey900,
+                  color: grey900,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: const [
                     BoxShadow(
