@@ -43,6 +43,12 @@ class SignInScreen extends StatelessWidget {
               log(e.toString());
             }
 
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return const CircularProgressIndicator();
+                });
+
             if (user != null) {
               log('Signed in as ${user!.displayName}');
               log('Email: ${user!.email}');
