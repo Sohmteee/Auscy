@@ -1,8 +1,5 @@
-import 'package:auscy/widgets/chat_message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-import 'widgets/chat_tile.dart';
 
 enum MessageSender {
   user,
@@ -11,7 +8,6 @@ enum MessageSender {
 
 String? reply;
 String hintText = "Type your message here";
-ChatMessage? replyMessage;
 
 bool isTyping = false;
 bool isResponse = false;
@@ -21,94 +17,8 @@ final TextEditingController controller = TextEditingController();
 IconData icon = Icons.mic;
 
 List chats = [];
-// List messages = [];
-
-List<ChatMessage> msgs = [
-  ChatMessage(
-    text: "Tell me about Elon Musk",
-    sender: MessageSender.user,
-    time: DateTime.now(),
-  ),
-  ChatMessage(
-    text: "Some very interesting facts about Elon Musk include: He is a guy",
-    sender: MessageSender.bot,
-    time: DateTime.now(),
-  )
-];
-
-List<ChatTile> chatList = [
-  /* ChatTile(
-    id: 0,
-    chatScreen: ChatScreen(
-      title: "New Chat",
-      messages: [
-        ChatMessage(
-          text: "Hello.",
-          sender: MessageSender.user,
-          time: DateTime.now(),
-        ),
-        ChatMessage(
-          text: "Hi, I'm Auscy. What can I do for you?",
-          sender: MessageSender.bot,
-          time: DateTime.now(),
-        )
-      ],
-    ),
-    time: DateTime.now(),
-  ),
-  ChatTile(
-    id: 1,
-    title: "Elon Musk",
-    chatScreen: ChatScreen(
-      title: "New Chat",
-      messages: [
-        ChatMessage(
-          text: "Tell me about Elon Musk",
-          sender: MessageSender.user,
-          time: DateTime.now(),
-        ),
-        ChatMessage(
-          text:
-              "Some very interesting facts about Elon Musk include: He is a guy",
-          sender: MessageSender.bot,
-          time: DateTime.now(),
-        )
-      ],
-    ),
-    time: DateTime.now(),
-  ), */
-];
 
 final db = FirebaseFirestore.instance;
-
-/* dob() {
-  for (ChatMessage message in messages) {
-    messagesInJSON.add(message.toJSON());
-  }
-} */
-
-final List<Map<String, dynamic>> messagesInJSON = [
-  /* {
-      'text': "Hello",
-      'sender': 'user',
-      'isErroMessage': false,
-    },
-    {
-      'text': "How are you?",
-      'sender': 'bot',
-      'isErroMessage': false,
-    },
-    {
-      'text': "I'm good, you?",
-      'sender': 'user',
-      'isErroMessage': false,
-    },
-    {
-      'text': "I'm good too",
-      'sender': "bot",
-      'isErroMessage': false,
-    }, */
-];
 
 String initPrompt =
     "Don't mention any of these statements except you're explicitly asked, but know them just in case you are. You can rephrase the statements.\n"
