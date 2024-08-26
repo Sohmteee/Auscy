@@ -28,7 +28,7 @@ class SignInScreen extends StatelessWidget {
     return userCredential.user;
   }
 
-  User? user;
+  User? user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
