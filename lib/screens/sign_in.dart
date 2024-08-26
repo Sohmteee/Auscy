@@ -5,6 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+late User? user;
+
+
 class SignInScreen extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -26,6 +29,8 @@ class SignInScreen extends StatelessWidget {
     return userCredential.user;
   }
 
+ 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +38,6 @@ class SignInScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            User? user;
-
             try {
               user = await _signInWithGoogle();
             } catch (e) {
@@ -51,8 +54,6 @@ class SignInScreen extends StatelessWidget {
                 'name': user.displayName,
               });
             }
-
-
           },
           child: const Text('Sign in with Google'),
         ),
