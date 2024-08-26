@@ -33,14 +33,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Auscy',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-        fontFamily: "Poppins",
-      ),
-      home: const ChatListScreen(),
+    return ScreenUtilInit(
+      builder: (context, _) {
+        return MaterialApp(
+          title: 'Auscy',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.grey,
+            fontFamily: "Poppins",
+          ),
+          home: const ChatListScreen(),
+        );
+      }
     );
   }
 }
