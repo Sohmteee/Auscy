@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "312946413238-0eg9gr0p0vaok678rcojr8m0aau2gd44.apps.googleusercontent.com",
+          "client_id": "312946413238-c889p0ui83agpvdifqa4htukig64og7b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sohmtee.auscy",
+            "certificate_hash": "5eebf9063523959de34809a3dde7b57de8a552ef"
+          }
+        },
+        {
+          "client_id": "312946413238-aq0aeqt58bh92eua9j1dakgrsoh5f964.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -29,6 +37,13 @@
             {
               "client_id": "312946413238-0eg9gr0p0vaok678rcojr8m0aau2gd44.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "312946413238-v9b277aa67dp703ki90pl0f0kd73ghk3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sohmtee.auscy"
+              }
             }
           ]
         }
