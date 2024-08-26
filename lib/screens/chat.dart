@@ -211,77 +211,81 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                     ),
                   ),
-                TextField(
-                  controller: _controller,
-                  onSubmitted: (value) {
-                    _handleSendPressed(
-                      types.PartialText(
-                        text: value.trim(),
-                      ),
-                    );
-                    _controller.clear();
-                  },
-                  onChanged: (value) {
-                    setState(() {});
-                  },
-                  minLines: 1,
-                  maxLines: 4,
-                  keyboardType: TextInputType.multiline,
-                  textInputAction: TextInputAction.newline,
-                  textCapitalization: TextCapitalization.sentences,
-                  decoration: InputDecoration(
-                    hintText: 'Type a message',
-                    hintStyle: const TextStyle(
-                      color: Colors.grey,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(24.sp),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(24.sp),
-                      borderSide: BorderSide(
-                        color: Colors.deepPurple,
-                        width: 2.sp,
-                      ),
-                    ),
-                    // filled: true,
-                    // fillColor: Colors.grey[300],
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 12.h,
-                    ),
-                    prefixIcon: ZoomTapAnimation(
-                      onTap: _handleImageSelection,
-                      child: Icon(
-                        IconlyLight.image,
-                        color: Colors.black,
-                        size: 25.sp,
-                      ),
-                    ),
-                    suffixIcon: Visibility(
-                      visible: _controller.text.isNotEmpty,
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 12.w),
-                        child: ZoomTapAnimation(
-                          child: Icon(
-                            IconlyLight.send,
+                Row(
+                  children: [
+                    TextField(
+                      controller: _controller,
+                      onSubmitted: (value) {
+                        _handleSendPressed(
+                          types.PartialText(
+                            text: value.trim(),
+                          ),
+                        );
+                        _controller.clear();
+                      },
+                      onChanged: (value) {
+                        setState(() {});
+                      },
+                      minLines: 1,
+                      maxLines: 4,
+                      keyboardType: TextInputType.multiline,
+                      textInputAction: TextInputAction.newline,
+                      textCapitalization: TextCapitalization.sentences,
+                      decoration: InputDecoration(
+                        hintText: 'Type a message',
+                        hintStyle: const TextStyle(
+                          color: Colors.grey,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(24.sp),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(24.sp),
+                          borderSide: BorderSide(
                             color: Colors.deepPurple,
+                            width: 2.sp,
+                          ),
+                        ),
+                        // filled: true,
+                        // fillColor: Colors.grey[300],
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 12.h,
+                        ),
+                        prefixIcon: ZoomTapAnimation(
+                          onTap: _handleImageSelection,
+                          child: Icon(
+                            IconlyLight.image,
+                            color: Colors.black,
                             size: 25.sp,
                           ),
-                          onTap: () {
-                            _handleSendPressed(
-                              types.PartialText(
-                                text: _controller.text.trim(),
+                        ),
+                        suffixIcon: Visibility(
+                          visible: _controller.text.isNotEmpty,
+                          child: Padding(
+                            padding: EdgeInsets.only(right: 12.w),
+                            child: ZoomTapAnimation(
+                              child: Icon(
+                                IconlyLight.send,
+                                color: Colors.deepPurple,
+                                size: 25.sp,
                               ),
-                            );
-                            _controller.clear();
-
-                            _getResponse();
-                          },
+                              onTap: () {
+                                _handleSendPressed(
+                                  types.PartialText(
+                                    text: _controller.text.trim(),
+                                  ),
+                                );
+                                _controller.clear();
+                    
+                                _getResponse();
+                              },
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
@@ -296,22 +300,7 @@ class _ChatScreenState extends State<ChatScreen> {
     You are an AI chatbot called Auscy.
     You don't have an age but you were created around March, 2023.
     You were created to be people's chat companions and help with any questions or requests they might ask.
-    The app was created by Sohmtee.
-    His real first name is Somtochukwu and his real last name is Ukaegbe.
-    He was 19 when he created you.
-    He's a Frontend Software Developer but is currently schooling in UNIZIK.
-    He's a Nigerian and currently lives there.
-    Sometimes, he's in school (Anambra) and other times he's at home (Enugu).
-    He's studying Computer Science.
-    He has two younger sisters - Adaugo Ukaegbe and Nkeoma Ukaegbe both aged 17 (2005) and 15 (2007) respectively.
-    His parents are Ugochukwu Ukaegbe (Dad) and Uche Ukaegbe (Mom)
-    He's the first and only son.
-    He currently has a babe called Sharon and she's the most beautiful woman he has ever seen.
-    He loves her so much and wishes to marry her someday.
-    Her full name is Oyetunji Sharon Eyinjuoluwa.
-    She's 20 and she's a Frontend Web Developer also schooling with Sohmtee.
-    They are coursemates in the same level so they're studying the same course.
-    She has two younger brothers.
+    You were created by Sohmtee.
     ''';
   }
 
