@@ -255,7 +255,7 @@ class _ChatScreenState extends State<ChatScreen> {
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  color: Vx.grey200,
+                  color: grey200,
                   borderRadius: isResponse
                       ? const BorderRadius.vertical(bottom: Radius.circular(20))
                       : BorderRadius.circular(20),
@@ -297,7 +297,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           child: IconButton(
             icon: Icon(
-              color: Vx.grey200,
+              color: grey200,
               icon,
             ),
             onPressed: () {
@@ -317,7 +317,7 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: Vx.grey700,
         elevation: 0,
         leading: const BackButton(
-          color: Vx.grey200,
+          color: grey200,
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -327,7 +327,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 widget.title == null ? "New Chat" : widget.title!,
                 maxLines: 2,
                 style: const TextStyle(
-                  color: Vx.grey200,
+                  color: grey200,
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
                 ),
@@ -359,7 +359,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: const Text(
                   "Clear Chat",
                   style: TextStyle(
-                    color: Vx.grey200,
+                    color: grey200,
                   ),
                 ),
               ),
@@ -387,13 +387,13 @@ class _ChatScreenState extends State<ChatScreen> {
                   Text(
                     "Auscy is typing",
                     style: TextStyle(
-                      color: Vx.grey200,
+                      color: grey200,
                       fontSize: 16,
                     ),
                   ),
                   SizedBox(width: 5),
                   SpinKitThreeBounce(
-                    color: Vx.grey200,
+                    color: grey200,
                     size: 20.0,
                   ),
                 ],

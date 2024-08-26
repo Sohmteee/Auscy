@@ -51,11 +51,11 @@ class _ChatMessageState extends State<ChatMessage> {
             padding: const EdgeInsets.only(top: 20),
             child: Container(
               padding: const EdgeInsets.all(1),
-              decoration: const BoxDecoration(
-                  color: Vx.grey200, shape: BoxShape.circle),
+              decoration:
+                  const BoxDecoration(color: grey200, shape: BoxShape.circle),
               child: const CircleAvatar(
                 radius: 15,
-                backgroundColor: Vx.grey800,
+                backgroundColor: grey800,
                 backgroundImage: AssetImage("assets/images/auscy_icon.png"),
               ),
             ),
@@ -78,8 +78,8 @@ class _ChatMessageState extends State<ChatMessage> {
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
-                widget.sender == MessageSender.user ? Vx.grey600 : Vx.grey200,
-            shadowColor: Vx.grey800,
+                widget.sender == MessageSender.user ? Vx.grey600 : grey200,
+            shadowColor: grey800,
             child: Container(
               padding: const EdgeInsets.all(2),
               constraints: BoxConstraints(

@@ -73,7 +73,7 @@ class _ChatTileState extends State<ChatTile> {
         leading: Container(
           padding: const EdgeInsets.all(1),
           decoration: const BoxDecoration(
-            color: Vx.grey200,
+            color: grey200,
             shape: BoxShape.circle,
           ),
           child: const CircleAvatar(

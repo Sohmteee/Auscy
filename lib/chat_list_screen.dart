@@ -26,7 +26,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
             Text(
               "Chats",
               style: TextStyle(
-                color: Vx.grey200,
+                color: grey200,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
@@ -75,7 +75,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           padding: const EdgeInsets.all(18),
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: Vx.grey800,
+            color: grey800,
             boxShadow: [
               BoxShadow(
                 offset: Offset(-2, 2),
@@ -85,7 +85,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           ),
           child: const Icon(
             Icons.add,
-            color: Vx.grey200,
+            color: grey200,
           ),
         ),
       ),
