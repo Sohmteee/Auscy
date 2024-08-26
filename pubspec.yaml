@@ -12,12 +12,10 @@ dependencies:
   animated_text_kit: ^4.2.2
   cloud_firestore: ^5.2.1
   cupertino_icons: ^1.0.2
-  # firebase_auth: ^5.1.4
-  firebase_auth: ^4.0.0
+  firebase_auth: ^5.1.4
   firebase_core: ^3.3.0
   flutter:
     sdk: flutter
-  flutter_auth_ui: ^3.1.0
   flutter_chat_types: ^3.6.2
   flutter_chat_ui: ^1.6.15
   flutter_dotenv: ^5.0.2
