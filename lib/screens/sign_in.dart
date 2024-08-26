@@ -93,7 +93,7 @@ class SignInScreen extends StatelessWidget {
               const Text('Continue with'),
               SizedBox(width: 8.w),
               SvgPicture.asset(
-                'assets/svg/google_logo.svg',
+                'assets/svg/google-icon.svg',
                 width: 25.w,
               ),
             ],
