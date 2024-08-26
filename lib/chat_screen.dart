@@ -147,11 +147,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
       if (widget.messages.length > 5 && widget.title == "New Chat") {
         final title = await generateResponse(
-            "$prompt\n In 3 words or less, summarize this in form of a title.");
+           prePrompt:  "In 3 words or less, summarize this in form of a title.");
         log(title);
 
         setState(() {
-          String str = selectFirstThree(title.trim());
           widget.title = str;
           chatList[widget.id].title = str;
         });
