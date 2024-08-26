@@ -13,7 +13,7 @@ dependencies:
   cloud_firestore: ^4.4.5
   cupertino_icons: ^1.0.2
   firebase_auth: ^5.1.4
-  firebase_core: ^2.8.0
+  firebase_core: ^3.3.0
   flutter:
     sdk: flutter
   flutter_chat_types: ^3.6.2
