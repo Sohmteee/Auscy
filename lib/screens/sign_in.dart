@@ -53,6 +53,8 @@ class SignInScreen extends StatelessWidget {
                 'name': user.displayName,
               });
 
+              showSnackBar(context, 'Signed in as ${user.displayName}');
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -66,7 +68,7 @@ class SignInScreen extends StatelessWidget {
                 'Failed to sign in',
                 duration: 3,
                 gravity: Toast.bottom,
-                
+
               );
             }
           },
