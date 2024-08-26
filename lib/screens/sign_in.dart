@@ -39,15 +39,14 @@ class SignInScreen extends StatelessWidget {
           onPressed: () async {
             try {
               user = await _signInWithGoogle();
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const CircularProgressIndicator();
+                  });
             } catch (e) {
               log(e.toString());
             }
-
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return const CircularProgressIndicator();
-                });
 
             if (user != null) {
               log('Signed in as ${user!.displayName}');
@@ -59,6 +58,8 @@ class SignInScreen extends StatelessWidget {
                 'name': user!.displayName,
                 'uid': user!.uid,
               });
+
+              Navigator.pop(context);
 
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
