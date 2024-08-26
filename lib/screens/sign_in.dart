@@ -51,6 +51,7 @@ class SignInScreen extends StatelessWidget {
               usersDB.doc(user!.uid).set({
                 'email': user!.email,
                 'name': user!.displayName,
+                'uid': user!.uid,
               });
 
               ScaffoldMessenger.of(context).showSnackBar(
