@@ -81,14 +81,14 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<List<Content>> segmentChat({int length = 20}) async {
     final messages =
-        widget.chatRoom.messages.take(length).toList().reversed.toList();
+        widget.messages.take(length).toList().reversed.toList();
 
     final List<Content> contents = [];
 
     for (var message in messages) {
       // String role = message.author.id == yamDoctor.id ? 'yam doctor' : 'user';
 
-      if (message is types.TextMessage) {
+      if (message is ) {
         contents.add(
           Content.text(message.text),
         );
