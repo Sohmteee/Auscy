@@ -274,8 +274,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         child: Container(
                           padding: EdgeInsets.only(
                             left: 10.sp,
-                            right: 12.sp,
-                            top: 12.sp,
+                            right: (sendIcon == IconlyBold.send ? 12 : 10).sp,
+                            top: (sendIcon == IconlyBold.send ? 12 : 10).sp,
                             bottom: 12.sp,
                           ),
                           decoration: const BoxDecoration(
