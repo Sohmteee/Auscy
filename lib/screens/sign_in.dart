@@ -35,7 +35,6 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Google Sign-In')),
       body: Center(
         child: TextButton(
           onPressed: () async {
@@ -90,12 +89,12 @@ class SignInScreen extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('Continue with'),
-              SizedBox(width: 8.w),
               SvgPicture.asset(
                 'assets/svg/google-icon.svg',
-                width: 25.w,
+                width: 20.w,
               ),
+              SizedBox(width: 8.w),
+              const Text('Sign in with Google'),
             ],
           ),
         ),
