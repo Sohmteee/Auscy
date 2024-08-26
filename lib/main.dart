@@ -1,5 +1,7 @@
+import 'package:auscy/firebase_options.dart';
 import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/screens/home.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -15,9 +17,9 @@ Future main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
-  /* await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ); */
+  );
 
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
