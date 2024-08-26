@@ -1,6 +1,5 @@
-import 'package:auscy/chat_tile.dart';
-import 'package:auscy/chat_message.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:auscy/widgets/chat_message.dart';
+import 'package:auscy/widgets/chat_tile.dart';
 
 import 'data.dart';
 

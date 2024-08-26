@@ -1,9 +1,8 @@
-import 'package:auscy/chat_message.dart';
+import 'package:auscy/widgets/chat_message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import 'chat_screen.dart';
-import 'chat_tile.dart';
+import 'widgets/chat_tile.dart';
 
 enum MessageSender {
   user,

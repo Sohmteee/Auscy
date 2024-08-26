@@ -1,4 +1,4 @@
-import 'package:auscy/chat_tile.dart';
+import 'package:auscy/widgets/chat_tile.dart';
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';

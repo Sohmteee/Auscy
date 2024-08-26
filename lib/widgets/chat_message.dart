@@ -5,7 +5,7 @@ import 'package:toast/toast.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:intl/intl.dart';
 
-import 'data.dart';
+import '../data.dart';
 
 class ChatMessage extends StatefulWidget {
   const ChatMessage({

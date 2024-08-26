@@ -1,5 +1,5 @@
 import 'package:auscy/chat_screen.dart';
-import 'package:auscy/chat_message.dart';
+import 'package:auscy/widgets/chat_message.dart';
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
