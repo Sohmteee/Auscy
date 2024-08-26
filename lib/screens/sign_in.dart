@@ -53,7 +53,13 @@ class SignInScreen extends StatelessWidget {
                 'name': user.displayName,
               });
 
-              showSnackBar(context, 'Signed in as ${user.displayName}');
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Signed in as ${user.displayName}'),
+                  showCloseIcon: true,
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
 
               Navigator.push(
                 context,
