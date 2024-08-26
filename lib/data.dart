@@ -3,4 +3,4 @@ import 'package:flutter/material.dart';
 
 IconData sendIcon = Icons.mic;
 
-final db = FirebaseFirestore.instance;
+final usersDB = FirebaseFirestore.instance.collection('users');

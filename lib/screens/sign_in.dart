@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:auscy/data.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -44,7 +45,14 @@ class SignInScreen extends StatelessWidget {
               log('Signed in as ${user.displayName}');
               log('Email: ${user.email}');
               log('UID: ${user.uid}');
+
+              usersDB.doc(user.uid).set({
+                'email': user.email,
+                'name': user.displayName,
+              });
             }
+
+
           },
           child: const Text('Sign in with Google'),
         ),
