@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:auscy/data.dart';
+import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/main.dart';
 import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/providers/chatroom.dart';

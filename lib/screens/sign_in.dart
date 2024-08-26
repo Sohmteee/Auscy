@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:auscy/data.dart';
+import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/screens/home.dart';
 import 'package:auscy/widgets/text.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -1,3 +1,4 @@
+import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/firebase_options.dart';
 import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/screens/sign_in.dart';
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: false,
             fontFamily: 'Quicksand',
             scaffoldBackgroundColor: Colors.white,
+            primaryColor: primaryColor,
             appBarTheme: AppBarTheme(
               backgroundColor: Colors.white,
               elevation: 0,
