@@ -78,6 +78,30 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   // Link for api - https://beta.openai.com/account/api-keys
+
+  Future<List<Content>> segmentChat({int length = 20}) async {
+    final messages =
+        widget.chatRoom.messages.take(length).toList().reversed.toList();
+
+    final List<Content> contents = [];
+
+    for (var message in messages) {
+      // String role = message.author.id == yamDoctor.id ? 'yam doctor' : 'user';
+
+      if (message is types.TextMessage) {
+        contents.add(
+          Content.text(message.text),
+        );
+      } else if (message is types.ImageMessage) {
+        contents.add(
+            Content.data('image/png', await File(message.uri).readAsBytes()));
+      }
+    }
+
+    debugPrint(contents.toString());
+    return contents;
+  }
+
   Future<String> generateResponse(String prompt) async {
     final apiKey = dotenv.env['API_KEY']!;
     final response =
