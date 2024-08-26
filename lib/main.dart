@@ -47,8 +47,24 @@ class MyApp extends StatelessWidget {
         title: 'Auscy',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.grey,
-          fontFamily: "Poppins",
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepPurple,
+          ),
+          useMaterial3: false,
+          fontFamily: 'Quicksand',
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            iconTheme: const IconThemeData(
+              color: Colors.black,
+            ),
+            titleTextStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
         home: const HomeScreen(),
       );
