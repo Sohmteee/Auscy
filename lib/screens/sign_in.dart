@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_any_logo/flutter_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:toast/toast.dart';
 
@@ -92,7 +93,7 @@ class SignInScreen extends StatelessWidget {
             children: [
               const Text('Continue with'),
               SizedBox(width: 8.w),
-              SvgImage.asset('assets/svg/google_logo.svg'),
+              SvgPicture.asset('assets/svg/google_logo.svg'),
             ],
           ),
         ),
