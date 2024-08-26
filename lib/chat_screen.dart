@@ -110,15 +110,6 @@ class _ChatScreenState extends State<ChatScreen> {
     return response;
   }
 
-  String? endsWithPunctuation(String inputString) {
-    if (inputString.endsWith('.') ||
-        inputString.endsWith('?') ||
-        inputString.endsWith('!')) {
-      return null;
-    } else {
-      return shouldAddQuestionMark(inputString) ? '?' : '.';
-    }
-  }
 
   String getLast20Texts() {
     int start =
@@ -165,11 +156,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
     if (text.isEmpty) return;
 
-    String? punctuation = endsWithPunctuation(text);
-    if (punctuation != null) {
-      text += punctuation;
-    }
-
     ChatMessage message = ChatMessage(
       text: text,
       sender: MessageSender.user,
@@ -185,8 +171,6 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     controller.clear();
-
-    String prompt = getLast20Texts();
 
     try {
       final response = await generateResponse(prompt);
