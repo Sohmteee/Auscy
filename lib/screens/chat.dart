@@ -415,7 +415,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final response = await gemini
         .generateContent([
           Content.text('''
-Please name the chat based on the chat so far. You can name it based on the yam disease if any has been diagnosed. Whatever your response is, it should be nothing more than 5 words. Don't use the word 'chat' in naming. The chat so far is as follows:\n
+Please name the chat based on the chat so far. Whatever your response is, it should be nothing more than 5 words. Don't use the word 'chat' in naming. The chat so far is as follows:\n
         '''),
           ...messages,
         ])
