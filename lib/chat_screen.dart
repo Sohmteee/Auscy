@@ -100,16 +100,17 @@ class _ChatScreenState extends State<ChatScreen> {
 
     final response = await gemini
         .generateContent([
-       if (prePrompt != null)   Content.text(prePrompt!),
+          if (prePrompt != null) Content.text(prePrompt),
           ...messages,
         ])
-        .then((value) => value.candidates.first.text?.trim() ?? 'I can\'t help you with that.')
+        .then((value) =>
+            value.candidates.first.text?.trim() ??
+            'I can\'t help you with that.')
         .catchError((error) =>
             'It looks like an error occurred. Check your internet connection and try again.');
 
     return response;
   }
-
 
   bool shouldAddQuestionMark(String string) {
     List<String> statements = [];
