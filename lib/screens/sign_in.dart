@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:auscy/data.dart';
 import 'package:auscy/screens/home.dart';
+import 'package:auscy/widgets/text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,22 +67,19 @@ class SignInScreen extends StatelessWidget {
 
               Navigator.pop(context);
 
-              /* ScaffoldMessenger.of(context).showSnackBar(
+              ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Signed in as ${user!.displayName}'),
+                  content: AppBoldText(
+                    'Signed in as ${user!.displayName}',
+                  ),
                   showCloseIcon: true,
+                  closeIconColor: Colors.white,
+                  backgroundColor: Colors.green,
                   behavior: SnackBarBehavior.floating,
                 ),
-              ); */
-
-              ToastContext().init(context); 
-              Toast.show(
-                'Signed in as ${user!.displayName}',
-                duration: 3,
-                gravity: Toast.bottom,
               );
 
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const HomeScreen(),
