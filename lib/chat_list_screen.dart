@@ -1,7 +1,6 @@
 import 'package:auscy/chat_tile.dart';
 import 'package:auscy/data.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'chat_screen.dart';
@@ -21,8 +20,8 @@ class _ChatListScreenState extends State<ChatListScreen> {
       appBar: AppBar(
         backgroundColor: Vx.gray700,
         elevation: 0,
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             SizedBox(width: 20),
             Text(
               "Chats",
