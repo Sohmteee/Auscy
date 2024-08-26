@@ -95,12 +95,12 @@ class _ChatScreenState extends State<ChatScreen> {
     return contents;
   }
 
-  Future<String> generateResponse() async {
+  Future<String> generateResponse({String? prePrompt}) async {
     final messages = await segmentChat();
 
     final response = await gemini
         .generateContent([
-          Content.text(initPrompt),
+       if (prePrompt != null)   Content.text(prePrompt!),
           ...messages,
         ])
         .then((value) => value.candidates.first.text?.trim() ?? 'I can\'t help you with that.')
