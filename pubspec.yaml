@@ -16,15 +16,15 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_chat_bubble: ^2.0.2
+  flutter_chat_types: ^3.6.2
+  flutter_chat_ui: ^1.6.15
   flutter_dotenv: ^5.0.2
   flutter_spinkit: ^5.1.0
   google_generative_ai: ^0.4.5
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  # http: ^0.13.5
   intl: ^0.17.0
   toast: ^0.3.0
-  # velocity_x: ^3.6.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -72,4 +72,4 @@ flutter:
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  # see https://flutter.dev/c
