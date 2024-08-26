@@ -95,7 +95,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return contents;
   }
 
-  Future<String> generateResponse(String prompt) async {
+  Future<String> generateResponse() async {
     final messages = await segmentChat();
 
     final response = await gemini
@@ -107,7 +107,7 @@ class _ChatScreenState extends State<ChatScreen> {
         .catchError((error) =>
             'It looks like an error occurred. Check your internet connection and try again.');
 
-    
+    return response;
   }
 
   String? endsWithPunctuation(String inputString) {
