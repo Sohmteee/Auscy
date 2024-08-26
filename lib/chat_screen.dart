@@ -112,34 +112,6 @@ class _ChatScreenState extends State<ChatScreen> {
     return response;
   }
 
-  bool shouldAddQuestionMark(String string) {
-    List<String> statements = [];
-    List<String> lines = string.split("\n");
-
-    for (String line in lines) {
-      List<String> lineStatements = line.split(RegExp('[.,?!]'));
-
-      for (String statement in lineStatements) {
-        statement = statement.trim();
-        if (statement.isNotEmpty) {
-          statements.add(statement);
-        }
-      }
-    }
-
-    List<String> words = statements.last.split(" ");
-    if (questionWordsRegex.hasMatch(words.first.toLowerCase().trim())) {
-      return statements.last.endsWith("?") ? false : true;
-    }
-
-    return false;
-  }
-
-  selectFirstThree(String title) {
-    List titleList = title.split(" ").take(3).toList();
-    return titleList.join(" ");
-  }
-
   void _sendMessage() async {
     String text = controller.text.trim();
 
