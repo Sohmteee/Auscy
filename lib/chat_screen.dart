@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  // Link for api - https://beta.openai.com/account/api-keys
+  // Link for api - https://beta.openai.com/account/api-keys 
   Future<String> generateResponse(String prompt) async {
     final apiKey = dotenv.env['API_KEY']!;
     final response =
