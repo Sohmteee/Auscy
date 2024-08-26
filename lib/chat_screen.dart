@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:auscy/models/chatroom.dart';
 import 'package:app/providers/chatroom.dart';
-import 'package:app/widgets/text.dart';
+import 'package:auscy/widgets/text.dart';
 import 'package:auscy/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' /* show Uint8List, rootBundle */;
