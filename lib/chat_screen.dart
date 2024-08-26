@@ -164,6 +164,10 @@ class _ChatScreenState extends State<ChatScreen> {
         },
       );
       _isTyping = false;
+    } finally {
+      setState(() {
+        _isTyping = false;
+      });
     }
   }
 
