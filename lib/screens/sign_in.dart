@@ -42,6 +42,8 @@ class SignInScreen extends StatelessWidget {
 
             if (user != null) {
               log('Signed in as ${user.displayName}');
+              log('Email: ${user.email}');
+              log('UID: ${user.uid}');
             }
           },
           child: const Text('Sign in with Google'),
