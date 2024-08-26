@@ -3,17 +3,22 @@ import 'dart:io';
 
 import 'package:auscy/models/chatroom.dart';
 import 'package:app/providers/chatroom.dart';
+import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/widgets/text.dart';
 import 'package:auscy/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' /* show Uint8List, rootBundle */;
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_chat_ui/flutter_chat_ui.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
+import 'package:iconly/iconly.dart';
 
 import 'package:path_provider/path_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 
@@ -42,7 +47,7 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   final types.User auscy = const types.User(
     id: 'auscy',
-    firstName: 'Yam Doctor',
+    firstName: 'Auscy',
     role: types.Role.admin,
   );
 
@@ -141,7 +146,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   11 => 'November',
                   12 => 'December',
                   _ => '',
-                }} ${p0.dateTime.day}${p0.dateTime.year == DateTime.now().year ? '' : ', ${p0.dateTime.year}'}';
+                },} ${p0.dateTime.day}${p0.dateTime.year == DateTime.now().year ? '' : ', ${p0.dateTime.year}'}';
               }
             }
 
@@ -184,7 +189,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       child: Row(
                         children: [
                           const Text(
-                            'Yam Doctor is typing',
+                            'Auscy is typing',
                             style: TextStyle(
                               color: Colors.grey,
                               // fontSize: 12,
