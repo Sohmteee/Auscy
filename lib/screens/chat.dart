@@ -2,16 +2,14 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:auscy/models/chatroom.dart';
-import 'package:app/providers/chatroom.dart';
 import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/widgets/text.dart';
 import 'package:auscy/main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' /* show Uint8List, rootBundle */;
+import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
@@ -135,21 +133,28 @@ class _ChatScreenState extends State<ChatScreen> {
               } else if (dayDiff == 1) {
                 return 'Yesterday';
               } else {
-                return '${switch (p0.dateTime.month) {
-                  1 => 'January',
-                  2 => 'February',
-                  3 => 'March',
-                  4 => 'April',
-                  5 => 'May',
-                  6 => 'June',
-                  7 => 'July',
-                  8 => 'August',
-                  9 => 'September',
-                  10 => 'October',
-                  11 => 'November',
-                  12 => 'December',
-                  _ => '',
-                },} ${p0.dateTime.day}${p0.dateTime.year == DateTime.now().year ? '' : ', ${p0.dateTime.year}'}';
+               const monthNames = {
+                  1: 'January',
+                  2: 'February',
+                  3: 'March',
+                  4: 'April',
+                  5: 'May',
+                  6: 'June',
+                  7: 'July',
+                  8: 'August',
+                  9: 'September',
+                  10: 'October',
+                  11: 'November',
+                  12: 'December'
+                };
+
+                final monthName = monthNames[p0.dateTime.month] ?? '';
+                final day = p0.dateTime.day;
+                final year = p0.dateTime.year == DateTime.now().year
+                    ? ''
+                    : ', ${p0.dateTime.year}';
+
+                return '$monthName $day$year';
               }
             }
 
