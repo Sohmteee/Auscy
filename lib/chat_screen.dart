@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      widget.messages.insert(0, message);
+      widget.messages = [message, ...widget.messages];
       // box.put("messages", messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
