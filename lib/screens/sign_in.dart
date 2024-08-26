@@ -1,12 +1,10 @@
 import 'dart:developer';
 
 import 'package:auscy/data.dart';
+import 'package:auscy/screens/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-late User? user;
-
 
 class SignInScreen extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -29,8 +27,6 @@ class SignInScreen extends StatelessWidget {
     return userCredential.user;
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +34,8 @@ class SignInScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
+            User? user;
+
             try {
               user = await _signInWithGoogle();
             } catch (e) {
@@ -53,6 +51,13 @@ class SignInScreen extends StatelessWidget {
                 'email': user.email,
                 'name': user.displayName,
               });
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomeScreen(),
+                ),
+              );
             }
           },
           child: const Text('Sign in with Google'),
