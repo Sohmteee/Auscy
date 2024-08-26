@@ -1,9 +1,11 @@
+import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:provider/provider.dart';
 
 late String apiKey;
 
@@ -25,7 +27,14 @@ Future main() async {
   await Hive.openBox('chats');
   await Hive.openBox('messages');
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ChatRoomProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
