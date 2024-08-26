@@ -52,12 +52,12 @@ class _ChatMessageState extends State<ChatMessage> {
             padding: const EdgeInsets.only(top: 20),
             child: Container(
               padding: const EdgeInsets.all(1),
-              decoration:
-                  const BoxDecoration(color: grey200, shape: BoxShape.circle),
-              child: const CircleAvatar(
+              decoration: BoxDecoration(color: grey200, shape: BoxShape.circle),
+              child: CircleAvatar(
                 radius: 15,
                 backgroundColor: grey800,
-                backgroundImage: AssetImage("assets/images/auscy_icon.png"),
+                backgroundImage:
+                    const AssetImage("assets/images/auscy_icon.png"),
               ),
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:auscy/chat_screen.dart';
 import 'package:auscy/data.dart';
+import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/widgets/chat_message.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class ChatTile extends StatefulWidget {
   ChatTile({
@@ -72,7 +72,7 @@ class _ChatTileState extends State<ChatTile> {
       child: ListTile(
         leading: Container(
           padding: const EdgeInsets.all(1),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: grey200,
             shape: BoxShape.circle,
           ),
@@ -83,7 +83,7 @@ class _ChatTileState extends State<ChatTile> {
         title: Text(
           widget.title ?? "New Chat",
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
+          style: TextStyle(
             color: grey100,
             fontWeight: FontWeight.bold,
             fontSize: 16,
@@ -93,7 +93,7 @@ class _ChatTileState extends State<ChatTile> {
           widget.chatScreen.messages.last.text,
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
-          style: const TextStyle(
+          style: TextStyle(
             color: grey300,
             fontSize: 12,
           ),
@@ -106,7 +106,7 @@ class _ChatTileState extends State<ChatTile> {
               DateFormat("h:mm a").format(
                 widget.chatScreen.messages.last.time,
               ),
-              style: const TextStyle(
+              style: TextStyle(
                 color: grey400,
                 fontSize: 10,
               ),
