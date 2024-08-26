@@ -1,10 +1,9 @@
+import 'package:auscy/screens/chat_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
-
-import 'chat_list_screen.dart';
 
 late String apiKey;
 
@@ -34,18 +33,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      builder: (context, _) {
-        return MaterialApp(
-          title: 'Auscy',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.grey,
-            fontFamily: "Poppins",
-          ),
-          home: const ChatListScreen(),
-        );
-      }
-    );
+    return ScreenUtilInit(builder: (context, _) {
+      return MaterialApp(
+        title: 'Auscy',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.grey,
+          fontFamily: "Poppins",
+        ),
+        home: const ChatListScreen(),
+      );
+    });
   }
 }
