@@ -7,8 +7,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:velocity_x/velocity_x.dart';
 
-import 'widgets/chat_message.dart';
 import 'data.dart';
+import 'widgets/chat_message.dart';
 
 class ChatScreen extends StatefulWidget {
   ChatScreen({
@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  // Link for api - https://beta.openai.com/account/api-keys 
+  // Link for api - https://beta.openai.com/account/api-keys
   Future<String> generateResponse(String prompt) async {
     final apiKey = dotenv.env['API_KEY']!;
     final response =
@@ -255,7 +255,7 @@ class _ChatScreenState extends State<ChatScreen> {
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  color: Vx.gray200,
+                  color: Vx.grey200,
                   borderRadius: isResponse
                       ? const BorderRadius.vertical(bottom: Radius.circular(20))
                       : BorderRadius.circular(20),
@@ -286,7 +286,7 @@ class _ChatScreenState extends State<ChatScreen> {
         const SizedBox(width: 10),
         Container(
           decoration: const BoxDecoration(
-            color: Vx.gray900,
+            color: Vx.grey900,
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
@@ -297,7 +297,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           child: IconButton(
             icon: Icon(
-              color: Vx.gray200,
+              color: Vx.grey200,
               icon,
             ),
             onPressed: () {
@@ -312,12 +312,12 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Vx.gray700,
+      backgroundColor: Vx.grey700,
       appBar: AppBar(
-        backgroundColor: Vx.gray700,
+        backgroundColor: Vx.grey700,
         elevation: 0,
         leading: const BackButton(
-          color: Vx.gray200,
+          color: Vx.grey200,
         ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -327,7 +327,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 widget.title == null ? "New Chat" : widget.title!,
                 maxLines: 2,
                 style: const TextStyle(
-                  color: Vx.gray200,
+                  color: Vx.grey200,
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
                 ),
@@ -347,7 +347,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Container(
                 padding: const EdgeInsets.all(13),
                 decoration: BoxDecoration(
-                  color: Vx.gray900,
+                  color: Vx.grey900,
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: const [
                     BoxShadow(
@@ -359,7 +359,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: const Text(
                   "Clear Chat",
                   style: TextStyle(
-                    color: Vx.gray200,
+                    color: Vx.grey200,
                   ),
                 ),
               ),
@@ -387,13 +387,13 @@ class _ChatScreenState extends State<ChatScreen> {
                   Text(
                     "Auscy is typing",
                     style: TextStyle(
-                      color: Vx.gray200,
+                      color: Vx.grey200,
                       fontSize: 16,
                     ),
                   ),
                   SizedBox(width: 5),
                   SpinKitThreeBounce(
-                    color: Vx.gray200,
+                    color: Vx.grey200,
                     size: 20.0,
                   ),
                 ],

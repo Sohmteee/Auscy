@@ -1,5 +1,5 @@
-import 'package:auscy/widgets/chat_tile.dart';
 import 'package:auscy/data.dart';
+import 'package:auscy/widgets/chat_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -16,9 +16,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Vx.gray700,
+      backgroundColor: Vx.grey700,
       appBar: AppBar(
-        backgroundColor: Vx.gray700,
+        backgroundColor: Vx.grey700,
         elevation: 0,
         title: const Row(
           children: [
@@ -26,7 +26,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
             Text(
               "Chats",
               style: TextStyle(
-                color: Vx.gray200,
+                color: Vx.grey200,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
@@ -75,7 +75,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           padding: const EdgeInsets.all(18),
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: Vx.gray800,
+            color: Vx.grey800,
             boxShadow: [
               BoxShadow(
                 offset: Offset(-2, 2),
@@ -85,7 +85,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
           ),
           child: const Icon(
             Icons.add,
-            color: Vx.gray200,
+            color: Vx.grey200,
           ),
         ),
       ),

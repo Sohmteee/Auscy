@@ -1,6 +1,6 @@
 import 'package:auscy/chat_screen.dart';
-import 'package:auscy/widgets/chat_message.dart';
 import 'package:auscy/data.dart';
+import 'package:auscy/widgets/chat_message.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
@@ -73,7 +73,7 @@ class _ChatTileState extends State<ChatTile> {
         leading: Container(
           padding: const EdgeInsets.all(1),
           decoration: const BoxDecoration(
-            color: Vx.gray200,
+            color: Vx.grey200,
             shape: BoxShape.circle,
           ),
           child: const CircleAvatar(
@@ -84,7 +84,7 @@ class _ChatTileState extends State<ChatTile> {
           widget.title ?? "New Chat",
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
-            color: Vx.gray100,
+            color: Vx.grey100,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
@@ -94,7 +94,7 @@ class _ChatTileState extends State<ChatTile> {
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
-            color: Vx.gray300,
+            color: Vx.grey300,
             fontSize: 12,
           ),
         ),
@@ -107,7 +107,7 @@ class _ChatTileState extends State<ChatTile> {
                 widget.chatScreen.messages.last.time,
               ),
               style: const TextStyle(
-                color: Vx.gray400,
+                color: Vx.grey400,
                 fontSize: 10,
               ),
             ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:toast/toast.dart';
 // import 'package:velocity_x/velocity_x.dart';
 import 'package:intl/intl.dart';
+import 'package:toast/toast.dart';
 
 import '../data.dart';
 
@@ -52,10 +52,10 @@ class _ChatMessageState extends State<ChatMessage> {
             child: Container(
               padding: const EdgeInsets.all(1),
               decoration: const BoxDecoration(
-                  color: Vx.gray200, shape: BoxShape.circle),
+                  color: Vx.grey200, shape: BoxShape.circle),
               child: const CircleAvatar(
                 radius: 15,
-                backgroundColor: Vx.gray800,
+                backgroundColor: Vx.grey800,
                 backgroundImage: AssetImage("assets/images/auscy_icon.png"),
               ),
             ),
@@ -78,8 +78,8 @@ class _ChatMessageState extends State<ChatMessage> {
                     : BubbleType.receiverBubble),
             margin: const EdgeInsets.only(top: 20),
             backGroundColor:
-                widget.sender == MessageSender.user ? Vx.gray600 : Vx.gray200,
-            shadowColor: Vx.gray800,
+                widget.sender == MessageSender.user ? Vx.grey600 : Vx.grey200,
+            shadowColor: Vx.grey800,
             child: Container(
               padding: const EdgeInsets.all(2),
               constraints: BoxConstraints(
