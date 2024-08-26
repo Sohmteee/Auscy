@@ -8,19 +8,13 @@ import 'package:auscy/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' /* show Uint8List, rootBundle */;
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 // import 'package:flutter_gemini/flutter_gemini.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
-import 'package:iconly/iconly.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:open_filex/open_filex.dart';
+
 import 'package:path_provider/path_provider.dart';
-import 'package:provider/provider.dart';
-import 'package:uuid/uuid.dart';
-import 'package:zoom_tap_animation/zoom_tap_animation.dart';
+
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
