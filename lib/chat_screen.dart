@@ -111,18 +111,6 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
 
-  String getLast20Texts() {
-    int start =
-        (widget.messages.length < 20) ? 0 : (widget.messages.length - 19);
-
-    List last20Texts =
-        widget.messages.sublist(start).map((message) => message.text).toList();
-
-    last20Texts.insert(0, initPrompt);
-
-    return last20Texts.join('\n');
-  }
-
   bool shouldAddQuestionMark(String string) {
     List<String> statements = [];
     List<String> lines = string.split("\n");
@@ -173,7 +161,7 @@ class _ChatScreenState extends State<ChatScreen> {
     controller.clear();
 
     try {
-      final response = await generateResponse(prompt);
+      final response = await generateResponse();
       log(response.trim());
 
       if (response.trim() == "") {
