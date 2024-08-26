@@ -4,6 +4,8 @@ import 'package:auscy/data.dart';
 import 'package:auscy/screens/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_any_logo/flutter_logo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:toast/toast.dart';
 
@@ -85,10 +87,12 @@ class SignInScreen extends StatelessWidget {
               );
             }
           },
-          child: const Row(
+          child: Row(
             children: [
-              AnyLogo.tech.google.image(),
-              Text('Sign in with Google'),
+              AnyLogo.tech.google.image(
+                width: 24.w,
+              ),
+              const Text('Sign in with Google'),
             ],
           ),
         ),
