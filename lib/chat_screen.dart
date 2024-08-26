@@ -90,7 +90,7 @@ class _ChatScreenState extends State<ChatScreen> {
       );
     }
 
-    debugPrint(contents.toString());
+    log(contents.map((content) => content.parts).toString());
     return contents;
   }
 
@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      widget.messages.insert(0,  message);
+      widget.messages.insert(0, message);
       // box.put("messages", messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
@@ -156,7 +156,7 @@ class _ChatScreenState extends State<ChatScreen> {
         });
       }
     } catch (e) {
-      debugPrint(e.toString());
+      log(e.toString());
       showDialog(
         context: context,
         builder: (context) {
