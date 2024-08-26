@@ -1,3 +1,4 @@
+import 'package:auscy/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.grey,
           fontFamily: "Poppins",
         ),
-        home: const ChatListScreen(),
+        home: const HomeScreen(),
       );
     });
   }
