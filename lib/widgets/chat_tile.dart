@@ -84,7 +84,7 @@ class _ChatTileState extends State<ChatTile> {
           widget.title ?? "New Chat",
           overflow: TextOverflow.ellipsis,
           style: const TextStyle(
-            color: Vx.grey100,
+            color: grey100,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),
@@ -94,7 +94,7 @@ class _ChatTileState extends State<ChatTile> {
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
           style: const TextStyle(
-            color: Vx.grey300,
+            color: grey300,
             fontSize: 12,
           ),
         ),
@@ -107,7 +107,7 @@ class _ChatTileState extends State<ChatTile> {
                 widget.chatScreen.messages.last.time,
               ),
               style: const TextStyle(
-                color: Vx.grey400,
+                color: grey400,
                 fontSize: 10,
               ),
             ),
