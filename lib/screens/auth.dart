@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_ui/flutter_auth_ui.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
