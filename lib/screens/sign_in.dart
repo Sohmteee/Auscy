@@ -37,7 +37,7 @@ class SignInScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Google Sign-In')),
       body: Center(
-        child: ElevatedButton(
+        child: TextButton(
           onPressed: () async {
             try {
               user = await _signInWithGoogle();
@@ -91,7 +91,7 @@ class SignInScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text('Continue with'),
-              SizedBox(width: 10.w),
+              SizedBox(width: 8.w),
               AnyLogo.tech.google.image(
                 width: 55.w,
               ),
