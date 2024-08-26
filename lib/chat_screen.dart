@@ -90,7 +90,7 @@ class _ChatScreenState extends State<ChatScreen> {
       );
     }
 
-    log(contents.map((content) => content.parts).toString());
+    log(messages.map((message) => message.text).toString());
     return contents;
   }
 
