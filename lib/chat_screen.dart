@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:auscy/data/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -183,7 +184,7 @@ class _ChatScreenState extends State<ChatScreen> {
       if (widget.messages.length > 5 && widget.title == "New Chat") {
         final title = await generateResponse(
             "$prompt\n In 3 words or less, summarize this in form of a title.");
-        Vx.log(title);
+        log(title);
 
         setState(() {
           String str = selectFirstThree(title.trim());
@@ -286,10 +287,10 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         const SizedBox(width: 10),
         Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: grey900,
             shape: BoxShape.circle,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 offset: Offset(-2, 2),
                 blurRadius: 2,
@@ -317,7 +318,7 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         backgroundColor: grey700,
         elevation: 0,
-        leading: const BackButton(
+        leading: BackButton(
           color: grey200,
         ),
         title: Row(
@@ -327,7 +328,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Text(
                 widget.title == null ? "New Chat" : widget.title!,
                 maxLines: 2,
-                style: const TextStyle(
+                style: TextStyle(
                   color: grey200,
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
@@ -357,7 +358,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     )
                   ],
                 ),
-                child: const Text(
+                child: Text(
                   "Clear Chat",
                   style: TextStyle(
                     color: grey200,
@@ -373,7 +374,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Flexible(
               child: ListView.builder(
-                padding: Vx.m8,
+                padding: const EdgeInsets.all(8),
                 reverse: true,
                 itemCount: widget.messages.length,
                 itemBuilder: (context, index) {
@@ -382,9 +383,9 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             if (_isTyping)
-              const Row(
+              Row(
                 children: [
-                  SizedBox(width: 60),
+                  const SizedBox(width: 60),
                   Text(
                     "Auscy is typing",
                     style: TextStyle(
@@ -392,7 +393,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   SpinKitThreeBounce(
                     color: grey200,
                     size: 20.0,
