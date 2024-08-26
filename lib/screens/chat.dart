@@ -289,14 +289,16 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                         ),
                         onTap: () {
-                          _handleSendPressed(
-                            types.PartialText(
-                              text: _controller.text.trim(),
-                            ),
-                          );
-                          _controller.clear();
+                          if (_controller.text.trim().isNotEmpty) {
+                            _handleSendPressed(
+                              types.PartialText(
+                                text: _controller.text.trim(),
+                              ),
+                            );
+                            _controller.clear();
 
-                          _getResponse();
+                            _getResponse();
+                          }
                         },
                       ),
                     ),
