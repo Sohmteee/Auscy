@@ -204,7 +204,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                           SizedBox(width: 10.w),
                           SpinKitThreeBounce(
-                            color: Colors.deepPurple,
+                            color: primaryColor,
                             size: 20.sp,
                           ),
                         ],
@@ -247,7 +247,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24.sp),
                             borderSide: BorderSide(
-                              color: Colors.deepPurple,
+                              color: primaryColor,
                               width: 2.sp,
                             ),
                           ),
@@ -279,7 +279,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             bottom: 12.sp,
                           ),
                           decoration: const BoxDecoration(
-                            color: Colors.deepPurple,
+                            color: primaryColor,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(

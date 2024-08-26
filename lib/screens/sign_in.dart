@@ -74,7 +74,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                   showCloseIcon: true,
                   closeIconColor: Colors.white,
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: primaryColor,
                   behavior: SnackBarBehavior.floating,
                 ),
               );
