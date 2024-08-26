@@ -79,7 +79,7 @@ class _ChatScreenState extends State<ChatScreen> {
   // Link for api - https://beta.openai.com/account/api-keys
 
   Future<List<Content>> segmentChat({int length = 20}) async {
-    final messages = widget.messages.take(length).toList().reversed.toList();
+    final messages = widget.messages.take(length).toList();
 
     final List<Content> contents = [];
 
@@ -123,7 +123,10 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      widget.messages = [message, ...widget.messages];
+      widget.messages = [
+        ...widget.messages,
+        message,
+      ];
       // box.put("messages", messages);
       // messagesInJSON['messages']?.add(message.toJSON());
       _isTyping = true;
