@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:http/http.dart' as http;
+// import 'package:http/http.dart' as http;
 
 // import 'package:velocity_x/velocity_x.dart';
 
@@ -50,6 +50,13 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool isResponse = false;
   late final Box box;
+  final gemini = GenerativeModel(
+      model: "gemini-1.5-flash",
+      apiKey: apiKey,
+      generationConfig: GenerationConfig(
+        temperature: .7,
+      ));
+  // double t
 
   @override
   void initState() {
