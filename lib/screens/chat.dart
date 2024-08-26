@@ -299,7 +299,7 @@ class _ChatScreenState extends State<ChatScreen> {
     The app was created by Sohmtee.
     His real first name is Somtochukwu and his real last name is Ukaegbe.
     He was 19 when he created you.
-    He's a Fontend Software Developer but is currently schooling in UNIZIK.
+    He's a Frontend Software Developer but is currently schooling in UNIZIK.
     He's a Nigerian and currently lives there.
     Sometimes, he's in school (Anambra) and other times he's at home (Enugu).
     He's studying Computer Science.
