@@ -58,6 +58,9 @@ class SignInScreen extends StatelessWidget {
                   builder: (context) => const HomeScreen(),
                 ),
               );
+            } else {
+              log('Failed to sign in');
+              
             }
           },
           child: const Text('Sign in with Google'),
