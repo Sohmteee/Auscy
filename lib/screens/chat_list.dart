@@ -3,7 +3,7 @@ import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/widgets/chat_tile.dart';
 import 'package:flutter/material.dart';
 
-import 'chat_screen.dart';
+import 'chat.dart';
 
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({super.key});
