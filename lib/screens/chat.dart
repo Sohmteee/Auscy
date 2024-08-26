@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:auscy/data.dart';
 import 'package:auscy/main.dart';
 import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/providers/chatroom.dart';
@@ -224,7 +225,11 @@ class _ChatScreenState extends State<ChatScreen> {
                           _controller.clear();
                         },
                         onChanged: (value) {
-                          setState(() {});
+                          setState(() {
+                            sendIcon = value.trim().isEmpty
+                                ? Icons.mic_rounded
+                                : IconlyLight.send;
+                          });
                         },
                         minLines: 1,
                         maxLines: 4,
@@ -278,7 +283,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            IconlyLight.send,
+                            sendIcon,
                             color: Colors.white,
                             size: 25.sp,
                           ),
