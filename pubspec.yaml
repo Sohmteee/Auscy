@@ -21,7 +21,7 @@ dependencies:
   google_generative_ai: ^0.4.5
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  http: ^0.13.5
+  # http: ^0.13.5
   intl: ^0.17.0
   toast: ^0.3.0
   # velocity_x: ^3.6.0
