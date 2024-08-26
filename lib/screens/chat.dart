@@ -228,7 +228,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           setState(() {
                             sendIcon = value.trim().isEmpty
                                 ? Icons.mic_rounded
-                                : IconlyLight.send;
+                                : IconlyBold.send;
                           });
                         },
                         minLines: 1,
