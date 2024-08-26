@@ -103,13 +103,11 @@ class _ChatScreenState extends State<ChatScreen> {
           Content.text(initPrompt),
           ...messages,
         ])
-        .then((value) => value.candidates.first.text)
+        .then((value) => value.candidates.first.text.trim)
         .catchError((error) =>
             'It looks like an error occurred. Check your internet connection and try again.');
 
-    Map<String, dynamic> newResponse = jsonDecode(response.body);
-    debugPrint(newResponse.toString());
-    return newResponse['choices'][0]['text'];
+    
   }
 
   String? endsWithPunctuation(String inputString) {
