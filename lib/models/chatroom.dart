@@ -4,13 +4,13 @@ import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 class ChatRoom {
   final String id;
   String title;
-  Chat chat;
+  Chat? chat;
   List<types.Message> messages = [];
 
   ChatRoom({
     required this.id,
     required this.title,
-    required this.chat,
+    this.chat,
     required this.messages,
   });
 
@@ -18,10 +18,17 @@ class ChatRoom {
     return ChatRoom(
       id: json['id'],
       title: json['title'],
-      chat: Chat.fromJson(json['chat']),
-      messages: (json['messages'] as List).map((e) => types.Message.fromJson(e)).toList(),
+      messages: (json['messages'] as List)
+          .map((e) => types.Message.fromJson(e))
+          .toList(),
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'messages': messages.map((e) => e.toJson()).toList(),
+    };
+  }
 }
-
-

@@ -123,7 +123,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 .toList()
                 .toString());
           },
-          user: widget.chatRoom.chat.user,
+          user: widget.chatRoom.chat!.user,
           dateHeaderBuilder: (p0) {
             String headerText;
             getDateDifference() {
