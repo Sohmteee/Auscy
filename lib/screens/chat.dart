@@ -213,29 +213,6 @@ class _ChatScreenState extends State<ChatScreen> {
                 Row(
                   children: [
                     Expanded(
-                      suffixIcon: Visibility(
-                        visible: _controller.text.isNotEmpty,
-                        child: Padding(
-                          padding: EdgeInsets.only(right: 12.w),
-                          child: ZoomTapAnimation(
-                            child: Icon(
-                              IconlyLight.send,
-                              color: Colors.deepPurple,
-                              size: 25.sp,
-                            ),
-                            onTap: () {
-                              _handleSendPressed(
-                                types.PartialText(
-                                  text: _controller.text.trim(),
-                                ),
-                              );
-                              _controller.clear();
-
-                              _getResponse();
-                            },
-                          ),
-                        ),
-                      ),
                       child: TextField(
                         controller: _controller,
                         onSubmitted: (value) {
@@ -286,27 +263,26 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                       ),
                     ),
-                    Visibility(
-                      visible: _controller.text.isNotEmpty,
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 12.w),
-                        child: ZoomTapAnimation(
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.w),
+                      child: ZoomTapAnimation(
+                        child: Container(
                           child: Icon(
                             IconlyLight.send,
                             color: Colors.deepPurple,
                             size: 25.sp,
                           ),
-                          onTap: () {
-                            _handleSendPressed(
-                              types.PartialText(
-                                text: _controller.text.trim(),
-                              ),
-                            );
-                            _controller.clear();
-
-                            _getResponse();
-                          },
                         ),
+                        onTap: () {
+                          _handleSendPressed(
+                            types.PartialText(
+                              text: _controller.text.trim(),
+                            ),
+                          );
+                          _controller.clear();
+
+                          _getResponse();
+                        },
                       ),
                     ),
                   ],
