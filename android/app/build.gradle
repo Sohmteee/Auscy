@@ -1,4 +1,9 @@
-// import org.gradle.api.GradleException
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+import org.gradle.api.GradleException
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -21,12 +26,6 @@ if (flutterVersionCode == null) {
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
-}
-
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'org.jetbrains.kotlin.android' version '1.5.21' apply false
 }
 
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
