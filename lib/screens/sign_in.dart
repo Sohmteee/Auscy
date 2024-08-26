@@ -88,11 +88,12 @@ class SignInScreen extends StatelessWidget {
             }
           },
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               AnyLogo.tech.google.image(
-                width: 24.w,
+                width: 35.w,
               ),
-              const Text('Sign in with Google'),
+              // const Text('Sign in with Google'),
             ],
           ),
         ),
