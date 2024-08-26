@@ -28,6 +28,8 @@ class SignInScreen extends StatelessWidget {
     return userCredential.user;
   }
 
+  User? user;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +37,6 @@ class SignInScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            User? user;
-
             try {
               user = await _signInWithGoogle();
             } catch (e) {
@@ -44,18 +44,18 @@ class SignInScreen extends StatelessWidget {
             }
 
             if (user != null) {
-              log('Signed in as ${user.displayName}');
-              log('Email: ${user.email}');
-              log('UID: ${user.uid}');
+              log('Signed in as ${user!.displayName}');
+              log('Email: ${user!.email}');
+              log('UID: ${user!.uid}');
 
-              usersDB.doc(user.uid).set({
-                'email': user.email,
-                'name': user.displayName,
+              usersDB.doc(user!.uid).set({
+                'email': user!.email,
+                'name': user!.displayName,
               });
 
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Signed in as ${user.displayName}'),
+                  content: Text('Signed in as ${user!.displayName}'),
                   showCloseIcon: true,
                   behavior: SnackBarBehavior.floating,
                 ),
@@ -74,7 +74,6 @@ class SignInScreen extends StatelessWidget {
                 'Failed to sign in',
                 duration: 3,
                 gravity: Toast.bottom,
-
               );
             }
           },
