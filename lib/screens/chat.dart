@@ -264,12 +264,17 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12.w),
+                      padding: EdgeInsets.only(left: 8.w),
                       child: ZoomTapAnimation(
                         child: Container(
+                          padding: EdgeInsets.all(12.sp),
+                          decoration: const BoxDecoration(
+                            color: Colors.deepPurple,
+                            shape: BoxShape.circle,
+                          ),
                           child: Icon(
                             IconlyLight.send,
-                            color: Colors.deepPurple,
+                            color: Colors.white,
                             size: 25.sp,
                           ),
                         ),
