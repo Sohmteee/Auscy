@@ -58,7 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void dispose() {
-    Hive.close();
+    // Hive.close();
     super.dispose();
     if (widget.messages.isEmpty) {
       chatList.removeAt(widget.id);
