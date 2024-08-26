@@ -32,7 +32,14 @@ class SignInScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            User? user = await _signInWithGoogle();
+            User? user;
+
+            try {
+              user = await _signInWithGoogle();
+            } catch (e) {
+              log(e.toString());
+            }
+
             if (user != null) {
               log('Signed in as ${user.displayName}');
             }
