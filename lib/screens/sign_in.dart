@@ -85,7 +85,7 @@ class SignInScreen extends StatelessWidget {
               );
             }
           },
-          child: const Text('Sign in with Google'),
+          child: const Row(children: [],),
         ),
       ),
     );
