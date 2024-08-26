@@ -43,7 +43,11 @@ class SignInScreen extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (context) {
-                    return const CircularProgressIndicator();
+                    return SizedBox(
+                      width: 100.w,
+                      height: 100.h,
+                      child: const CircularProgressIndicator(),
+                    );
                   });
             } catch (e) {
               log(e.toString());
