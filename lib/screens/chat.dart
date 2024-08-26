@@ -14,6 +14,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:path_provider/path_provider.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 
 class ChatScreen extends StatefulWidget {
@@ -39,8 +40,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   final TextEditingController _controller = TextEditingController();
   bool _isTyping = false;
-  final types.User yamDoctor = const types.User(
-    id: 'yamDoctor',
+  final types.User auscy = const types.User(
+    id: 'auscy',
     firstName: 'Yam Doctor',
     role: types.Role.admin,
   );
@@ -292,7 +293,7 @@ class _ChatScreenState extends State<ChatScreen> {
     final List<Content> contents = [];
 
     for (var message in messages) {
-      // String role = message.author.id == yamDoctor.id ? 'yam doctor' : 'user';
+      // String role = message.author.id == auscy.id ? 'yam doctor' : 'user';
 
       if (message is types.TextMessage) {
         contents.add(
@@ -333,7 +334,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
     final message = types.TextMessage(
       id: const Uuid().v4(),
-      author: yamDoctor,
+      author: auscy,
       createdAt: DateTime.now().millisecondsSinceEpoch,
       text: response.trim(),
     );
@@ -369,7 +370,7 @@ class _ChatScreenState extends State<ChatScreen> {
     debugPrint(response);
     final message = types.TextMessage(
       id: const Uuid().v4(),
-      author: yamDoctor,
+      author: auscy,
       createdAt: DateTime.now().millisecondsSinceEpoch,
       text: response ?? 'I cannot help you with that',
     );
