@@ -1,4 +1,4 @@
-import 'package:app/models/chatroom.dart';
+import 'package:auscy/models/chatroom.dart';
 import 'package:flutter/material.dart';
 
 class ChatRoomProvider extends ChangeNotifier {
