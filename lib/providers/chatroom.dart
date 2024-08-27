@@ -3,12 +3,13 @@ import 'dart:developer';
 import 'package:auscy/data.dart';
 import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/screens/sign_in.dart';
+import 'package:auscy/widgets/text.dart';
 import 'package:flutter/material.dart';
 
 class ChatRoomProvider extends ChangeNotifier {
   List<ChatRoom> chats = [];
 
-  void addChat(ChatRoom chat) {
+  void addChat(BuildContext context, {required ChatRoom chat}) {
     chats.add(chat);
     try {
       usersDB.doc(user?.uid).set({
@@ -18,7 +19,10 @@ class ChatRoomProvider extends ChangeNotifier {
       log(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Failed to add chat'),
+          content: AppBoldText('Failed to add chat'),
+          closeIconColor: Colors.white,
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
         ),
       );
     }
