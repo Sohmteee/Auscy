@@ -68,7 +68,7 @@ class SignInScreen extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: AppBoldText(
-                    e.toString(),
+                    e.toString().split(']').last,
                     textAlign: TextAlign.center,
                   ),
                   showCloseIcon: true,
