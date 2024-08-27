@@ -3,8 +3,6 @@ import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/screens/chat.dart';
 import 'package:auscy/widgets/text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Consumer<ChatRoomProvider>(
       builder: (context, chatRoomProvider, _) {
-        final chats = chatRoomProvider.chats;
+        final chatRooms = chatRoomProvider.chats;
 
         return Scaffold(
           appBar: AppBar(
@@ -44,23 +42,22 @@ class _HomeScreenState extends State<HomeScreen> {
             child: FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
               onPressed: () async {
+                String id = const Uuid().v4();
+
                 await chatRoomProvider.addChat(
                   context,
                   chatRoom: ChatRoom(
-                    id: const Uuid().v4(),
+                    id: id,
                     title: 'New Chat',
                     messages: [],
                   ),
                 );
 
-                debugPrint(
-                    'Chats: ${chats.map((chat) => chat.title).toList()}');
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => ChatScreen(
-                      chatRoom: chats.singleWhere((chat) => chat.id == id),
+                      chatRoom: chatRooms.singleWhere((chatRoom) => chatRoom.id == id),
                     ),
                   ),
                 );
@@ -70,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          body: chats.isEmpty
+          body: chatRooms.isEmpty
               ? Center(
                   child: AppText(
                     'No chats yet',
@@ -78,10 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 )
               : ListView.builder(
-                  itemCount: chats.length,
+                  itemCount: chatRooms.length,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    final chatRoom = chats[chats.length - index - 1];
+                    final chatRoom = chatRooms[chatRooms.length - index - 1];
 
                     return ListTile(
                       onTap: () {
