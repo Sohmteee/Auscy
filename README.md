@@ -2,6 +2,8 @@
 
 Auscy is an open-source chatbot application designed to provide users with a conversational AI experience. It utilizes the Google Gemini API to generate responses and handle various conversational tasks. This project aims to create a versatile and interactive chatbot experience for users.
 
+<br/>
+
 ## 📋 Table of Contents
 
 - [Features](#features)
@@ -15,6 +17,8 @@ Auscy is an open-source chatbot application designed to provide users with a con
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
+<br/>
+
 ## ✨ Features
 
 - **Chat Interface**: A real-time chat interface where users can interact with the chatbot.
@@ -22,6 +26,8 @@ Auscy is an open-source chatbot application designed to provide users with a con
 - **Image Handling**: Support for sending and displaying images within the chat.
 - **Chat Naming**: Automatic naming of chats based on conversation history.
 - **Chat History**: Persistent storage and retrieval of chat messages.
+
+<br/>
 
 ## 🚀 Getting Started
 
