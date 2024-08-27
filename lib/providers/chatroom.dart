@@ -20,10 +20,16 @@ class ChatRoomProvider extends ChangeNotifier {
         return Dialog(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          child: SizedBox(
-            width: 100.sp,
-            height: 100.sp,
-            child: const CircularProgressIndicator(),
+          child: Center(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                alignment: Alignment.center,
+                width: 100.sp,
+                height: 100.sp,
+                child: const CircularProgressIndicator(),
+              ),
+            ),
           ),
         );
       },
@@ -63,10 +69,16 @@ class ChatRoomProvider extends ChangeNotifier {
         return Dialog(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          child: SizedBox(
-            width: 100.sp,
-            height: 100.sp,
-            child: const CircularProgressIndicator(),
+          child: Center(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                alignment: Alignment.center,
+                width: 100.sp,
+                height: 100.sp,
+                child: const CircularProgressIndicator(),
+              ),
+            ),
           ),
         );
       },
