@@ -36,11 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: FloatingActionButton(
             backgroundColor: Theme.of(context).primaryColor,
-            onPressed: () {
+            onPressed: () async {
               String id = const Uuid().v4();
               List<types.Message> messages = [];
 
-             await chatRoomProvider.addChat(
+              await chatRoomProvider.addChat(
                 context,
                 chatRoom: ChatRoom(
                   id: id,
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       chatRoom.title,
                     ),
                     trailing: PopupMenuButton<int>(
-                      onSelected: (int result) {
+                      onSelected: (int result) async {
                         if (result == 1) {
                           showDialog(
                               context: context,
@@ -127,8 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           textCapitalization:
                                               TextCapitalization.words,
-                                          onSubmitted: (value) {
-                                            chatRoomProvider.renameChat(
+                                          onSubmitted: (value) async {
+                                            await chatRoomProvider.renameChat(
                                               chatRoom,
                                               value,
                                             );
@@ -141,7 +141,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 );
                               });
                         } else if (result == 2) {
-                          chatRoomProvider.removeChat(context, chatRoom: chatRoom);
+                          await chatRoomProvider.removeChat(context,
+                              chatRoom: chatRoom);
                         }
                       },
                       shape: RoundedRectangleBorder(

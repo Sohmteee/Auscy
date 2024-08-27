@@ -108,7 +108,7 @@ class ChatRoomProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void renameChat(ChatRoom chat, String title) {
+  Future<void> renameChat(ChatRoom chat, String title) {
     chat.title = title;
     notifyListeners();
   }
