@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auscy/data.dart';
 import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/screens/sign_in.dart';
@@ -8,10 +10,17 @@ class ChatRoomProvider extends ChangeNotifier {
 
   void addChat(ChatRoom chat) {
     chats.add(chat);
-    try{
-      usersDB.doc(user?.uid).set(chat.toJson());
-    } catch(e) {
-
+    try {
+      usersDB.doc(user?.uid).set({
+        'chats': chats.map((chat) => chat.toJson()).toList(),
+      });
+    } catch (e) {
+      log(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Failed to add chat'),
+        ),
+      );
     }
     notifyListeners();
   }
