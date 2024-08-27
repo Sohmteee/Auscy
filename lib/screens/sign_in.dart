@@ -49,10 +49,16 @@ class SignInScreen extends StatelessWidget {
                   return Dialog(
                     elevation: 0,
                     backgroundColor: Colors.transparent,
-                    child: SizedBox(
-                      width: 50.sp,
-                      height: 50.sp,
-                      child: const CircularProgressIndicator(),
+                    child: Center(
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        
+                        child: SizedBox(
+                          width: 50.sp,
+                          height: 50.sp,
+                          child: const CircularProgressIndicator(),
+                        ),
+                      ),
                     ),
                   );
                 },
