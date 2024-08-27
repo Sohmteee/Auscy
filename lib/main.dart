@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive_flutter/adapters.dart';
+// import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 
 late String apiKey;
@@ -26,9 +26,9 @@ Future main() async {
   await dotenv.load(fileName: ".env");
   apiKey = dotenv.env['API_KEY']!;
 
-  await Hive.initFlutter();
-  await Hive.openBox('chats');
-  await Hive.openBox('messages');
+  // await Hive.initFlutter();
+  // await Hive.openBox('chats');
+  // await Hive.openBox('messages');
 
   runApp(
     MultiProvider(

@@ -118,7 +118,7 @@ class SignInScreen extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: AppBoldText(
-                    'Failed to sign in, check your internet connection and try again.',
+                    'Failed to sign in, try again.',
                     textAlign: TextAlign.center,
                   ),
                   showCloseIcon: true,
