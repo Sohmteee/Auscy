@@ -60,11 +60,14 @@ class SignInScreen extends StatelessWidget {
               log('Email: ${user!.email}');
               log('UID: ${user!.uid}');
 
-              usersDB.doc(user!.uid).set({
-                'email': user!.email,
-                'name': user!.displayName,
-                'uid': user!.uid,
-              });
+              usersDB.doc(user!.uid).set(
+                {
+                  'email': user!.email,
+                  'name': user!.displayName,
+                  'uid': user!.uid,
+                },
+                options: SetOptions(merge: true),
+              );
 
               Navigator.pop(context);
 
