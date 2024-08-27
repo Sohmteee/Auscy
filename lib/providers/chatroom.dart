@@ -48,9 +48,32 @@ class ChatRoomProvider extends ChangeNotifier {
     }
   }
 
-  void removeChat(ChatRoom chat) {
+  void removeChat({requird ChatRoom chatRoom}) {
     chats.remove(chat);
-    notifyListeners();
+    try {
+      usersDB.doc(user?.uid).set(
+        {
+          'chats': chats.map((chat) => chat.toJson()).toList(),
+        },
+        SetOptions(merge: true),
+      );
+      log('Chat was added');
+    } catch (e) {
+      log(e.toString());
+      chats.remove(chatRoom);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: AppBoldText(
+              'Failed to add chat, check your internet connection and try again.'),
+          closeIconColor: Colors.white,
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } finally {
+      Navigator.pop(context);
+      notifyListeners();
+    }
   }
 
   void renameChat(ChatRoom chat, String title) {
