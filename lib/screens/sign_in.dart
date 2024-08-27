@@ -4,6 +4,7 @@ import 'package:auscy/data.dart';
 import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/screens/home.dart';
 import 'package:auscy/widgets/text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -66,8 +67,7 @@ class SignInScreen extends StatelessWidget {
                   'name': user!.displayName,
                   'uid': user!.uid,
                 },
-                
-                options: SetOptions(merge: true),
+                SetOptions(merge: true),
               );
 
               Navigator.pop(context);

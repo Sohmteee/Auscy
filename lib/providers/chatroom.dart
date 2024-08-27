@@ -4,6 +4,7 @@ import 'package:auscy/data.dart';
 import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/screens/sign_in.dart';
 import 'package:auscy/widgets/text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,9 +23,12 @@ class ChatRoomProvider extends ChangeNotifier {
           );
         });
     try {
-      usersDB.doc(user?.uid).set({
-        'chats': chats.map((chat) => chat.toJson()).toList(),
-      });
+      usersDB.doc(user?.uid).set(
+        {
+          'chats': chats.map((chat) => chat.toJson()).toList(),
+        },
+        SetOptions(merge: true),
+      );
       log('Chat was added');
     } catch (e) {
       log(e.toString());
