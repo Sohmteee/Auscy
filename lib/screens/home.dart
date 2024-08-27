@@ -129,8 +129,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                               TextCapitalization.words,
                                           onSubmitted: (value) async {
                                             await chatRoomProvider.renameChat(
-                                              chatRoom,
-                                              value,
+                                             chatRoom: chatRoom,
+                                             title: value,
                                             );
                                             Navigator.pop(context);
                                           },

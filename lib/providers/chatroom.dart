@@ -108,8 +108,32 @@ class ChatRoomProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> renameChat(ChatRoom chat, String title) {
-    chat.title = title;
+  Future<void> renameChat(
+    BuildContext context, {
+    required ChatRoom chatRoom,
+    required String title,
+  }) async {
+    chatRoom.title = title;
+    try {
+      await usersDB.doc(user?.uid).set(
+        {
+          'chats': chats.map((chat) => chat.toJson()).toList(),
+        },
+        SetOptions(merge: true),
+      );
+      log('Chat was renamed');
+    } catch (e) {
+      log(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: AppBoldText(
+              'Failed to rename chat, check your internet connection and try again.'),
+          closeIconColor: Colors.white,
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
     notifyListeners();
   }
 }
