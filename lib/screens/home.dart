@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Consumer<ChatRoomProvider>(
       builder: (context, chatRoomProvider, _) {
-        List chats = chatRoomProvider.chats;
+        final chats = chatRoomProvider.chats;
 
         return Scaffold(
           appBar: AppBar(
