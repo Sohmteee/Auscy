@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:toast/toast.dart';
 
 User? user = FirebaseAuth.instance.currentUser;
 
@@ -116,11 +115,17 @@ class SignInScreen extends StatelessWidget {
               );
             } else {
               log('Failed to sign in');
-              ToastContext().init(context);
-              Toast.show(
-                'Failed to sign in',
-                duration: 3,
-                gravity: Toast.bottom,
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: AppBoldText(
+                    'Failed to sign in, check your internet connection and try again.',
+                    textAlign: TextAlign.center,
+                  ),
+                  showCloseIcon: true,
+                  closeIconColor: Colors.white,
+                  backgroundColor: Colors.red,
+                  behavior: SnackBarBehavior.floating,
+                ),
               );
             }
           },
