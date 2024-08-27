@@ -57,9 +57,10 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void initState() {
-    chatInDB = await usersDB.doc(user!.uid).get();
+    _loadChat();
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -583,7 +584,8 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
     _addMessage(textMessage);
   }
 
-  void _loadMessages() async {
+  void _loadChat() async {
+    chatInDB = await usersDB.doc(user!.uid).get();
     final response = await rootBundle.loadString('assets/messages.json');
     final messages = (jsonDecode(response) as List)
         .map((e) => types.Message.fromJson(e as Map<String, dynamic>))
