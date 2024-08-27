@@ -87,6 +87,7 @@ class SignInScreen extends StatelessWidget {
                 SnackBar(
                   content: AppBoldText(
                     'Welcome, ${user!.displayName}',
+                    textAlign: TextAlign.center,
                   ),
                   showCloseIcon: true,
                   closeIconColor: Colors.white,

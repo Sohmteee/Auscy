@@ -6,6 +6,7 @@ class AppBoldText extends StatelessWidget {
     this.fontSize,
     this.fontWeight,
     this.color,
+    this.textAlign,
     super.key,
   });
 
@@ -13,6 +14,7 @@ class AppBoldText extends StatelessWidget {
   double? fontSize;
   FontWeight? fontWeight;
   Color? color;
+  TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class AppBoldText extends StatelessWidget {
         fontFamily: 'Quicksand',
         fontSize: fontSize,
       ),
+      textAlign: textAlign,
     );
   }
 }
@@ -33,6 +36,7 @@ class AppText extends StatelessWidget {
     this.fontSize,
     this.fontWeight,
     this.color,
+    this.textAlign,
     super.key,
   });
 
@@ -40,6 +44,7 @@ class AppText extends StatelessWidget {
   double? fontSize;
   FontWeight? fontWeight;
   Color? color;
+  TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +55,7 @@ class AppText extends StatelessWidget {
         fontFamily: 'Quicksand',
         fontSize: fontSize,
       ),
+      textAlign: textAlign,
     );
   }
 }
