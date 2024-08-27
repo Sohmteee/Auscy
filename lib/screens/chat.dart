@@ -37,7 +37,8 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final chatInDB = await usersDB.doc(user!.uid).get();
+  late var chatInDB;
+
   final gemini = GenerativeModel(
       model: "gemini-1.5-flash",
       apiKey: apiKey,
@@ -53,6 +54,12 @@ class _ChatScreenState extends State<ChatScreen> {
     firstName: 'Auscy',
     role: types.Role.admin,
   );
+
+  @override
+  void initState() {
+    chatInDB = await usersDB.doc(user!.uid).get();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
