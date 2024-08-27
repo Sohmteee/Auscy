@@ -583,7 +583,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
 
   void _loadChat() async {
     chatInDB = await usersDB.doc(user!.uid).get().then((data) {
-      return (data.data()!['chats'] as List<Map<String, dynamic>>)
+      return (data.data()!['chats'] as List)
           .singleWhere((chat) {
         return chat['id'] == widget.chatRoom.id;
       });
