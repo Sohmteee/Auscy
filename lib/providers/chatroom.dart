@@ -17,6 +17,7 @@ class ChatRoomProvider extends ChangeNotifier {
       });
     } catch (e) {
       log(e.toString());
+      chats.remove(chat);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: AppBoldText('Failed to add chat'),
@@ -25,8 +26,9 @@ class ChatRoomProvider extends ChangeNotifier {
           behavior: SnackBarBehavior.floating,
         ),
       );
+    } finally {
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   void removeChat(ChatRoom chat) {
