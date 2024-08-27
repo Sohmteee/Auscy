@@ -11,8 +11,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ChatRoomProvider extends ChangeNotifier {
   List<ChatRoom> chats = [];
 
-  initChats() {
-    
+  Future<void> initChats() async {
+    await usersDB.doc(user?.uid).get().then((doc) {
+      if (doc.exists) {
+        chats = (doc.data()!['chats'] as List)
+            .map((chat) => ChatRoom.fromJson(chat))
+            .toList();
+        notifyListeners();
+      }
+    });
+    log('ChatRoomProvider initialized');
   }
 
   Future<void> addChat(BuildContext context,

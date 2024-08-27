@@ -19,6 +19,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    super.initState();
+    context.read<ChatRoomProvider>().initChats();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<ChatRoomProvider>(
       builder: (context, chatRoomProvider, _) {
