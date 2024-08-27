@@ -52,10 +52,10 @@ class SignInScreen extends StatelessWidget {
                     child: Center(
                       child: AspectRatio(
                         aspectRatio: 1,
-                        
-                        child: SizedBox(
-                          width: 50.sp,
-                          height: 50.sp,
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 100.sp,
+                          height: 100.sp,
                           child: const CircularProgressIndicator(),
                         ),
                       ),
