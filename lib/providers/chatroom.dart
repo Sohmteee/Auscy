@@ -12,7 +12,7 @@ class ChatRoomProvider extends ChangeNotifier {
 
   void addChat(BuildContext context, {required ChatRoom chatRoom}) {
     chats.add(chatRoom);
-      showDialog(
+    showDialog(
         context: context,
         builder: (context) {
           return SizedBox(
@@ -25,7 +25,7 @@ class ChatRoomProvider extends ChangeNotifier {
       usersDB.doc(user?.uid).set({
         'chats': chats.map((chat) => chat.toJson()).toList(),
       });
-      log('Chat was added')
+      log('Chat was added');
     } catch (e) {
       log(e.toString());
       chats.remove(chatRoom);
