@@ -1,7 +1,9 @@
 import 'dart:developer';
 
 import 'package:auscy/data.dart';
+import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/screens/home.dart';
+import 'package:auscy/widgets/text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +65,18 @@ class SignInScreen extends StatelessWidget {
               );
             } catch (e) {
               log(e.toString());
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: AppBoldText(
+                    e.toString(),
+                    textAlign: TextAlign.center,
+                  ),
+                  showCloseIcon: true,
+                  closeIconColor: Colors.white,
+                  backgroundColor: primaryColor,
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
             }
 
             if (user != null) {
