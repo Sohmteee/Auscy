@@ -103,10 +103,9 @@ class ChatRoomProvider extends ChangeNotifier {
           behavior: SnackBarBehavior.floating,
         ),
       );
-    } finally {
-      Navigator.pop(context);
-      notifyListeners();
     }
+    Navigator.pop(context);
+    notifyListeners();
   }
 
   void renameChat(ChatRoom chat, String title) {
