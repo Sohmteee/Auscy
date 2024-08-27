@@ -6,6 +6,7 @@ import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/main.dart';
 import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/providers/chatroom.dart';
+import 'package:auscy/screens/sign_in.dart';
 import 'package:auscy/widgets/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -36,7 +37,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final 
+  final chatInDB = await usersDB.doc(user!.uid).get();
   final gemini = GenerativeModel(
       model: "gemini-1.5-flash",
       apiKey: apiKey,
