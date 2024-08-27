@@ -61,7 +61,7 @@ class SignInScreen extends StatelessWidget {
               log('Email: ${user!.email}');
               log('UID: ${user!.uid}');
 
-              usersDB.doc(user!.uid).set(
+              await usersDB.doc(user!.uid).set(
                 {
                   'email': user!.email,
                   'name': user!.displayName,

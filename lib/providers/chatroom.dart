@@ -11,7 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ChatRoomProvider extends ChangeNotifier {
   List<ChatRoom> chats = [];
 
-  void addChat(BuildContext context, {required ChatRoom chatRoom}) {
+  Future<void> addChat(BuildContext context,
+      {required ChatRoom chatRoom}) async {
     chats.add(chatRoom);
     showDialog(
         context: context,
@@ -23,7 +24,7 @@ class ChatRoomProvider extends ChangeNotifier {
           );
         });
     try {
-      usersDB.doc(user?.uid).set(
+      await usersDB.doc(user?.uid).set(
         {
           'chats': chats.map((chat) => chat.toJson()).toList(),
         },
@@ -48,10 +49,20 @@ class ChatRoomProvider extends ChangeNotifier {
     }
   }
 
-  void removeChat(BuildContext context, {required ChatRoom chatRoom}) {
+  Future<void> removeChat(BuildContext context,
+      {required ChatRoom chatRoom}) async {
     chats.remove(chatRoom);
+    showDialog(
+        context: context,
+        builder: (context) {
+          return SizedBox(
+            width: 100.sp,
+            height: 100.sp,
+            child: const CircularProgressIndicator(),
+          );
+        });
     try {
-      usersDB.doc(user?.uid).set(
+      await usersDB.doc(user?.uid).set(
         {
           'chats': chats.map((chat) => chat.toJson()).toList(),
         },
