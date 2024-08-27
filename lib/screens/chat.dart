@@ -381,7 +381,7 @@ class _ChatScreenState extends State<ChatScreen> {
       text: response.trim(),
     );
 
-    _addMessage(message);
+    await _addMessage(message);
   }
 
   /*  void _getImageResponse(Uint8List image) async {
@@ -443,10 +443,16 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
     });
   }
 
-  void _addMessage(types.Message message) {
-    setState(() {
-      widget.chatRoom.messages.insert(0, message);
-    });
+  void _addMessage(types.Message message) async {
+    try {
+      setState(() {
+        widget.chatRoom.messages.insert(0, message);
+      });
+
+      
+
+
+    } catch (e) {}
 
     if (widget.chatRoom.title == 'New Chat') {
       print('Name chat..........................................');
@@ -474,7 +480,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
         uri: result.files.single.path!,
       );
 
-      _addMessage(message);
+      await _addMessage(message);
     }
   }
  */
@@ -501,7 +507,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
           width: image.width.toDouble(),
         );
 
-        _addMessage(message);
+        await await _addMessage(message);
         _getResponse();
       }
     } catch (e) {
@@ -570,7 +576,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
     });
   }
 
-  void _handleSendPressed(types.PartialText message) {
+  void _handleSendPressed(types.PartialText message) async {
     final textMessage = types.TextMessage(
       author: widget.chatRoom.chat!.user,
       createdAt: DateTime.now().millisecondsSinceEpoch,
@@ -578,13 +584,12 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
       text: message.text,
     );
 
-    _addMessage(textMessage);
+    await await _addMessage(textMessage);
   }
 
   void _loadChat() async {
     chatInDB = await usersDB.doc(user!.uid).get().then((data) {
-      return (data.data()!['chats'] as List)
-          .singleWhere((chat) {
+      return (data.data()!['chats'] as List).singleWhere((chat) {
         return chat['id'] == widget.chatRoom.id;
       });
     });
