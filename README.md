@@ -102,6 +102,6 @@ Thanks to Google for providing the [Google Gemini API](https://ai.google.dev/) u
 
 For questions or support, please contact [sohmteecodes@gmail.com](mailto:sohmteecodes@gmail.com).
 
----
+<br/>
 
 Thank you for using Auscy! Feel free to explore, contribute, and improve the chatbot application.
