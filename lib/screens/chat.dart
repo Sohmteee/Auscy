@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:auscy/data.dart';
@@ -382,7 +383,7 @@ class _ChatScreenState extends State<ChatScreen> {
       text: response.trim(),
     );
 
-    _addMessage(message);
+    await _addMessage(message);
   }
 
   /*  void _getImageResponse(Uint8List image) async {
@@ -462,7 +463,10 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
         },
         SetOptions(merge: true),
       );
-    } catch (e) {}
+    } catch (e) {
+      log(e.toString());
+      widget.chatRoom.messages.remove(message);
+    }
 
     if (widget.chatRoom.title == 'New Chat') {
       print('Name chat..........................................');
@@ -517,7 +521,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
           width: image.width.toDouble(),
         );
 
-        await await _addMessage(message);
+        await _addMessage(message);
         _getResponse();
       }
     } catch (e) {
