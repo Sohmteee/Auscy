@@ -46,7 +46,7 @@ To get started with Auscy, follow the instructions below.
     - Add your Google Gemini API key to `.env` in the root of the project. It should look something like:
 
     ```
-    API_KEY=
+    API_KEY=<YOUR-API-KEY>
     ```
 
 5. Run the application:
