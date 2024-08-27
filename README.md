@@ -73,11 +73,15 @@ Contributions to Auscy are welcome! If you'd like to contribute, please follow t
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit) file for details.
+
+## Acknowledgements
+
+- Thanks to Google for providing the [Google Gemini API](https://ai.google.dev/) used in this project.
 
 ## Contact
 
-For questions or support, please contact [your-email@example.com](mailto:your-email@example.com).
+For questions or support, please contact [sohmteecodes@gmail.com](mailto:sohmteecodes@gmail.com).
 
 ---
 
