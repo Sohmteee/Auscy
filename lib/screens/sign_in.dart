@@ -66,7 +66,8 @@ class SignInScreen extends StatelessWidget {
                   'name': user!.displayName,
                   'uid': user!.uid,
                 },
-                SetOptions(merge: true),
+                
+                options: SetOptions(merge: true),
               );
 
               Navigator.pop(context);
