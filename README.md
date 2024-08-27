@@ -43,7 +43,11 @@ To get started with Auscy, follow the instructions below.
 4. Set up Firebase and the Google Gemini API:
 
     - Add your Firebase configuration to `lib/firebase_options.dart`.
-    - Add your Google Gemini API key to `lib/constants.dart`.
+    - Add your Google Gemini API key to `.env` in the root of the project. It should look something like:
+
+    ```
+    API_KEY=
+    ```
 
 5. Run the application:
 
