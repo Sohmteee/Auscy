@@ -481,7 +481,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
         final image = await decodeImageFromList(bytes);
 
         final message = types.ImageMessage(
-          author: widget.chatRoom.chat.user,
+          author: widget.chatRoom.chat!.user,
           createdAt: DateTime.now().millisecondsSinceEpoch,
           height: image.height.toDouble(),
           id: const Uuid().v4(),
@@ -562,7 +562,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
 
   void _handleSendPressed(types.PartialText message) {
     final textMessage = types.TextMessage(
-      author: widget.chatRoom.chat.user,
+      author: widget.chatRoom.chat!.user,
       createdAt: DateTime.now().millisecondsSinceEpoch,
       id: const Uuid().v4(),
       text: message.text,
