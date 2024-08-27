@@ -33,6 +33,9 @@ To get started with Auscy, follow the instructions below.
 - Firebase setup
 - Google Gemini API key
 
+
+<br/>
+
 ### 🛠️ Installation
 
 1. Clone the repository:
@@ -68,6 +71,8 @@ To get started with Auscy, follow the instructions below.
     flutter run
     ```
 
+<br/>
+
 ## 💬 Usage
 
 1. Open the application on your device or emulator.
@@ -75,11 +80,15 @@ To get started with Auscy, follow the instructions below.
 3. Start a new chat or continue an existing chat.
 4. Send messages and images to interact with the chatbot.
 
+<br/>
+
 ## 🚧 Upcoming Features
 
 - **Voice Notes**: Users will be able to send and receive voice notes.
 - **Voice Replies**: The chatbot will respond with voice notes.
 - **Transcripts**: A system to view transcripts of voice notes.
+
+<br/>
 
 ## 🤝 Contributing
 
@@ -90,13 +99,20 @@ Contributions to Auscy are welcome! If you'd like to contribute, please follow t
 3. Make your changes and test them thoroughly.
 4. Submit a pull request describing your changes.
 
+<br/>
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit) file for details.
 
+<br/>
+
 ## 🙏 Acknowledgements
 
 Thanks to Google for providing the [Google Gemini API](https://ai.google.dev/) used in this project.
+
+<br/>
+
 
 ## 📧 Contact
 
