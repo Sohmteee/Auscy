@@ -45,14 +45,13 @@ class SignInScreen extends StatelessWidget {
               user = await _signInWithGoogle();
               showDialog(
                 context: context,
-                
                 builder: (context) {
                   return Dialog(
-                    el
+                    elevation: 0,
                     backgroundColor: Colors.transparent,
                     child: SizedBox(
-                      width: 100.sp,
-                      height: 100.sp,
+                      width: 50.sp,
+                      height: 50.sp,
                       child: const CircularProgressIndicator(),
                     ),
                   );

@@ -18,6 +18,7 @@ class ChatRoomProvider extends ChangeNotifier {
       context: context,
       builder: (context) {
         return Dialog(
+          elevation: 0,
           backgroundColor: Colors.transparent,
           child: SizedBox(
             width: 100.sp,
@@ -56,10 +57,11 @@ class ChatRoomProvider extends ChangeNotifier {
   Future<void> removeChat(BuildContext context,
       {required ChatRoom chatRoom}) async {
     chats.remove(chatRoom);
-   showDialog(
+    showDialog(
       context: context,
       builder: (context) {
         return Dialog(
+          elevation: 0,
           backgroundColor: Colors.transparent,
           child: SizedBox(
             width: 100.sp,
