@@ -37,7 +37,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  late var chatInDB;
+  late Map<String, dynamic> chatInDB;
 
   final gemini = GenerativeModel(
       model: "gemini-1.5-flash",
