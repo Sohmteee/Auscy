@@ -11,6 +11,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ChatRoomProvider extends ChangeNotifier {
   List<ChatRoom> chats = [];
 
+  
+
   Future<void> addChat(BuildContext context,
       {required ChatRoom chatRoom}) async {
     chats.add(chatRoom);
