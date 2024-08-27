@@ -10,9 +10,16 @@ class ChatRoom {
   ChatRoom({
     required this.id,
     required this.title,
-    this.chat,
     required this.messages,
-  });
+  }) : chat = Chat(
+          onSendPressed: (message) {},
+          user: const types.User(
+            id: 'user',
+            firstName: 'You',
+            role: types.Role.user,
+          ),
+          messages: const [],
+        );
 
   factory ChatRoom.fromJson(Map<String, dynamic> json) {
     return ChatRoom(

@@ -50,15 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     id: const Uuid().v4(),
                     title: 'New Chat',
                     messages: [],
-                    chat: Chat(
-                      onSendPressed: (message) {},
-                      user: const types.User(
-                        id: 'user',
-                        firstName: 'You',
-                        role: types.Role.user,
-                      ),
-                      messages: const [],
-                    ),
                   ),
                 );
 
