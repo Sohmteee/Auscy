@@ -44,15 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: FloatingActionButton(
               backgroundColor: Theme.of(context).primaryColor,
               onPressed: () async {
-                String id = const Uuid().v4();
-                List<types.Message> messages = [];
-
                 await chatRoomProvider.addChat(
                   context,
                   chatRoom: ChatRoom(
-                    id: id,
+                    id: const Uuid().v4(),
                     title: 'New Chat',
-                    messages: messages,
+                    messages: [],
                     chat: Chat(
                       onSendPressed: (message) {},
                       user: const types.User(
