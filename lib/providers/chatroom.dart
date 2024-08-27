@@ -48,8 +48,8 @@ class ChatRoomProvider extends ChangeNotifier {
     }
   }
 
-  void removeChat({requird ChatRoom chatRoom}) {
-    chats.remove(chat);
+  void removeChat(BuildContext context, {required ChatRoom chatRoom}) {
+    chats.remove(chatRoom);
     try {
       usersDB.doc(user?.uid).set(
         {
@@ -64,7 +64,7 @@ class ChatRoomProvider extends ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: AppBoldText(
-              'Failed to add chat, check your internet connection and try again.'),
+              'Failed to remove chat, check your internet connection and try again.'),
           closeIconColor: Colors.white,
           backgroundColor: Colors.red,
           behavior: SnackBarBehavior.floating,

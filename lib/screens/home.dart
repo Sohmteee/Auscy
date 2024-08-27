@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 );
                               });
                         } else if (result == 2) {
-                          chatRoomProvider.removeChat(chatRoom);
+                          chatRoomProvider.removeChat(context, chatRoom: chatRoom);
                         }
                       },
                       shape: RoundedRectangleBorder(
