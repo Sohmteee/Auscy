@@ -14,7 +14,7 @@ class ChatRoomProvider extends ChangeNotifier {
   Future<void> initChats() async {
     await usersDB.doc(user?.uid).get().then((doc) {
       if (doc.exists) {
-        chats = (doc.data()!['chats'] as List)
+        chats = (doc.data()?['chats'] as List)
             .map((chat) => ChatRoom.fromJson(chat))
             .toList();
         notifyListeners();
