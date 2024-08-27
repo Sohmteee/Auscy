@@ -360,7 +360,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
 
     final response = await gemini
-        .generateContent([
+        .([
           Content.text(preResponse),
           ...messages,
         ])
