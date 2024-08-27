@@ -20,7 +20,8 @@ class ChatRoomProvider extends ChangeNotifier {
       chats.remove(chat);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: AppBoldText('Failed to add chat'),
+          content: AppBoldText(
+              'Failed to add chat, check your internet connection and try again.'),
           closeIconColor: Colors.white,
           backgroundColor: Colors.red,
           behavior: SnackBarBehavior.floating,

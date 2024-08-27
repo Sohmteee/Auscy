@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
               String id = const Uuid().v4();
               List<types.Message> messages = [];
 
-              chatRoomProvider.addChat(
+              chatRoomProvider.addChat(context, chat:
                 ChatRoom(
                   id: id,
                   title: 'New Chat',
