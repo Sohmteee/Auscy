@@ -11,6 +11,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:toast/toast.dart';
 
+User? user = FirebaseAuth.instance.currentUser;
+
 class SignInScreen extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -31,8 +33,6 @@ class SignInScreen extends StatelessWidget {
         await _auth.signInWithCredential(credential);
     return userCredential.user;
   }
-
-  User? user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
