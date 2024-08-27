@@ -585,7 +585,13 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
   }
 
   void _loadChat() async {
-    chatInDB = await usersDB.doc(user!.uid).get();
+    chatInDB = await usersDB.doc(user!.uid).get().whenComplete(() {
+      if (chatInDB.data() == null) {
+        usersDB.doc(user!.uid).set({
+          'chats': [widget.chatRoom.toJson()],
+        });
+      }
+    });
     final response = await rootBundle.loadString('assets/messages.json');
     final messages = (jsonDecode(response) as List)
         .map((e) => types.Message.fromJson(e as Map<String, dynamic>))
