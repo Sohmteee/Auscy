@@ -15,16 +15,18 @@ class ChatRoomProvider extends ChangeNotifier {
       {required ChatRoom chatRoom}) async {
     chats.add(chatRoom);
     showDialog(
-        context: context,
-        builder: (context) {
-          return Dialog(
-            child: SizedBox(
-              width: 100.sp,
-              height: 100.sp,
-              child: const CircularProgressIndicator(),
-            ),
-          );
-        });
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: SizedBox(
+            width: 100.sp,
+            height: 100.sp,
+            child: const CircularProgressIndicator(),
+          ),
+        );
+      },
+    );
     try {
       await usersDB.doc(user?.uid).set(
         {
@@ -54,15 +56,19 @@ class ChatRoomProvider extends ChangeNotifier {
   Future<void> removeChat(BuildContext context,
       {required ChatRoom chatRoom}) async {
     chats.remove(chatRoom);
-    showDialog(
-        context: context,
-        builder: (context) {
-          return SizedBox(
+   showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: SizedBox(
             width: 100.sp,
             height: 100.sp,
             child: const CircularProgressIndicator(),
-          );
-        });
+          ),
+        );
+      },
+    );
     try {
       await usersDB.doc(user?.uid).set(
         {
