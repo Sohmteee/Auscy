@@ -1,9 +1,7 @@
 import 'dart:developer';
 
 import 'package:auscy/data.dart';
-import 'package:auscy/data/colors/colors.dart';
 import 'package:auscy/screens/home.dart';
-import 'package:auscy/widgets/text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +81,7 @@ class SignInScreen extends StatelessWidget {
 
               Navigator.pop(context);
 
-              ScaffoldMessenger.of(context).showSnackBar(
+              /*  ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: AppBoldText(
                     'Welcome, ${user!.displayName}',
@@ -94,7 +92,7 @@ class SignInScreen extends StatelessWidget {
                   backgroundColor: primaryColor,
                   behavior: SnackBarBehavior.floating,
                 ),
-              );
+              ); */
 
               Navigator.push(
                 context,
