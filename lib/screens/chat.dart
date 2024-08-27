@@ -7,6 +7,7 @@ import 'package:auscy/models/chatroom.dart';
 import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/screens/sign_in.dart';
 import 'package:auscy/widgets/text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
@@ -381,7 +382,7 @@ class _ChatScreenState extends State<ChatScreen> {
       text: response.trim(),
     );
 
-    await _addMessage(message);
+    _addMessage(message);
   }
 
   /*  void _getImageResponse(Uint8List image) async {
@@ -443,15 +444,24 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
     });
   }
 
-  void _addMessage(types.Message message) async {
+  Future<void> _addMessage(types.Message message) async {
     try {
       setState(() {
         widget.chatRoom.messages.insert(0, message);
       });
 
-      
-
-
+      await usersDB.doc(user!.uid).set(
+        {
+          'chats':
+              (await usersDB.doc(user!.uid).get()).data()!['chats'].map((chat) {
+            if (chat['id'] == widget.chatRoom.id) {
+              chat['messages'].insert(0, message.toJson());
+            }
+            return chat;
+          }).toList(),
+        },
+        SetOptions(merge: true),
+      );
     } catch (e) {}
 
     if (widget.chatRoom.title == 'New Chat') {
@@ -584,7 +594,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
       text: message.text,
     );
 
-    await await _addMessage(textMessage);
+    await _addMessage(textMessage);
   }
 
   void _loadChat() async {
