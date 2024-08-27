@@ -86,7 +86,7 @@ class SignInScreen extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: AppBoldText(
-                    'Signed in as ${user!.displayName}',
+                    'Welcome, ${user!.displayName}',
                   ),
                   showCloseIcon: true,
                   closeIconColor: Colors.white,
