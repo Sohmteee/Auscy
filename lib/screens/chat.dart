@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:auscy/data.dart';
@@ -9,7 +8,6 @@ import 'package:auscy/providers/chatroom.dart';
 import 'package:auscy/screens/sign_in.dart';
 import 'package:auscy/widgets/text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,7 +58,6 @@ class _ChatScreenState extends State<ChatScreen> {
     _loadChat();
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -586,17 +583,17 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
 
   void _loadChat() async {
     chatInDB = await usersDB.doc(user!.uid).get().then((data) {
-      return (data.data()!['chats'] as List<Map<String, dynamic>>).singleWhere((chat) {
+      return (data.data()!['chats'] as List<Map<String, dynamic>>)
+          .singleWhere((chat) {
         return chat['id'] == widget.chatRoom.id;
       });
     });
-    final response = await rootBundle.loadString('assets/messages.json');
-    final messages = (jsonDecode(response) as List)
-        .map((e) => types.Message.fromJson(e as Map<String, dynamic>))
-        .toList();
 
     setState(() {
-      widget.chatRoom.messages = messages;
+      widget.chatRoom.title = chatInDB['title'];
+      widget.chatRoom.messages = (chatInDB['messages'] as List)
+          .map((e) => types.Message.fromJson(e))
+          .toList();
     });
   }
 }
