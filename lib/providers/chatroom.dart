@@ -17,10 +17,12 @@ class ChatRoomProvider extends ChangeNotifier {
     showDialog(
         context: context,
         builder: (context) {
-          return SizedBox(
-            width: 100.sp,
-            height: 100.sp,
-            child: const CircularProgressIndicator(),
+          return Dialog(
+            child: SizedBox(
+              width: 100.sp,
+              height: 100.sp,
+              child: const CircularProgressIndicator(),
+            ),
           );
         });
     try {
