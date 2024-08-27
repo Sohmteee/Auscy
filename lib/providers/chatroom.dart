@@ -25,6 +25,7 @@ class ChatRoomProvider extends ChangeNotifier {
       usersDB.doc(user?.uid).set({
         'chats': chats.map((chat) => chat.toJson()).toList(),
       });
+      log('Chat was added')
     } catch (e) {
       log(e.toString());
       chats.remove(chatRoom);
