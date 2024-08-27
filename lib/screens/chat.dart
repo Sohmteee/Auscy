@@ -36,6 +36,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final 
   final gemini = GenerativeModel(
       model: "gemini-1.5-flash",
       apiKey: apiKey,
@@ -428,9 +429,11 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
 
     debugPrint('Chat Name: $response');
     setState(() {
-      context
-          .read<ChatRoomProvider>()
-          .renameChat(context, chatRoom: widget.chatRoom, response!.trim());
+      context.read<ChatRoomProvider>().renameChat(
+            context,
+            chatRoom: widget.chatRoom,
+            title: response!.trim(),
+          );
     });
   }
 
