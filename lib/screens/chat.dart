@@ -447,10 +447,6 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
 
   Future<void> _addMessage(types.Message message) async {
     try {
-      setState(() {
-        widget.chatRoom.messages.insert(0, message);
-      });
-
       await usersDB.doc(user!.uid).set(
         {
           'chats':
@@ -463,9 +459,11 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
         },
         SetOptions(merge: true),
       );
+      setState(() {
+        widget.chatRoom.messages.insert(0, message);
+      });
     } catch (e) {
       log(e.toString());
-      widget.chatRoom.messages.remove(message);
     }
 
     if (widget.chatRoom.title == 'New Chat') {
