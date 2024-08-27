@@ -88,8 +88,9 @@ class _ChatScreenState extends State<ChatScreen> {
                                 textCapitalization: TextCapitalization.words,
                                 onSubmitted: (value) {
                                   context.read<ChatRoomProvider>().renameChat(
-                                        widget.chatRoom,
-                                        value,
+                                        context,
+                                        chatRoom: widget.chatRoom,
+                                        title: value,
                                       );
                                   Navigator.pop(context);
                                 },
@@ -429,7 +430,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
     setState(() {
       context
           .read<ChatRoomProvider>()
-          .renameChat(widget.chatRoom, response!.trim());
+          .renameChat(context, chatRoom: widget.chatRoom, response!.trim());
     });
   }
 
