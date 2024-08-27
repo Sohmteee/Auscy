@@ -377,7 +377,9 @@ class _ChatScreenState extends State<ChatScreen> {
     debugPrint(response);
 
     final message = types.TextMessage(
-      id: const Uuid().v4(),
+      id: widget.chatRoom.messages.isEmpty
+          ? '0'
+          : widget.chatRoom.messages.length.toString(),
       author: auscy,
       createdAt: DateTime.now().millisecondsSinceEpoch,
       text: response.trim(),
@@ -413,7 +415,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
     debugPrint(response);
     final message = types.TextMessage(
-      id: const Uuid().v4(),
+      id: widget.chatRoom.messages.isEmpty
+              ? '0'
+              : widget.chatRoom.messages.length.toString(),
       author: auscy,
       createdAt: DateTime.now().millisecondsSinceEpoch,
       text: response ?? 'I cannot help you with that',
@@ -485,7 +489,9 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
       final message = types.FileMessage(
         author: widget.chatRoom.chat.user,
         createdAt: DateTime.now().millisecondsSinceEpoch,
-        id: const Uuid().v4(),
+        id: widget.chatRoom.messages.isEmpty
+              ? '0'
+              : widget.chatRoom.messages.length.toString(),
         mimeType: lookupMimeType(result.files.single.path!),
         name: result.files.single.name,
         size: result.files.single.size,
@@ -509,10 +515,12 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
         final image = await decodeImageFromList(bytes);
 
         final message = types.ImageMessage(
+          id: widget.chatRoom.messages.isEmpty
+              ? '0'
+              : widget.chatRoom.messages.length.toString(),
           author: widget.chatRoom.chat!.user,
           createdAt: DateTime.now().millisecondsSinceEpoch,
           height: image.height.toDouble(),
-          id: widget.chatRoom.messages.length.toString(),
           name: result.name,
           size: bytes.length,
           uri: result.path,
