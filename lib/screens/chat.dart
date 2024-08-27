@@ -512,7 +512,7 @@ Please name the chat based on the chat so far. Whatever your response is, it sho
           author: widget.chatRoom.chat!.user,
           createdAt: DateTime.now().millisecondsSinceEpoch,
           height: image.height.toDouble(),
-          id: const Uuid().v4(),
+          id: widget.chatRoom.messages.length.toString(),
           name: result.name,
           size: bytes.length,
           uri: result.path,
