@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577474389957",
+    "project_id": "auscy-99955",
+    "storage_bucket": "auscy-99955.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577474389957:android:0cb17610f232c360d64dac",
+        "android_client_info": {
+          "package_name": "com.sohmtee.auscy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3RCNsnJGGPDqWQmnIZSCSfJ18cdaDrT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
