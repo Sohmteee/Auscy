@@ -1,9 +1,14 @@
+import 'dart:async';
 import 'dart:developer';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:auscy/res/res.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:http/http.dart' as http;
+import 'package:permission_handler/permission_handler.dart';
+import 'package:record/record.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({
@@ -33,6 +38,14 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isTyping = false;
   bool _isProcessingResponse = false;
   bool _isImageUploading = false;
+  bool _isNamingChat = false;
+
+  bool _isRecording = false;
+  final _recorder = AudioRecorder();
+
+  Timer? _recordingTimer;
+  int _recordDuration = 0;
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   final types.User auscy = const types.User(
     id: 'auscy',
@@ -40,10 +53,44 @@ class _ChatScreenState extends State<ChatScreen> {
     role: types.Role.admin,
   );
 
+  Future<void> _initializeRecorder() async {
+    final micStatus = await Permission.microphone.request();
+    // final storageStatus = await Permission.storage.request();
+
+    if (micStatus != PermissionStatus.granted) {
+      log('Microphone permission not granted');
+      showTopSnackBar(
+        Overlay.of(context),
+        CustomSnackBar.error(
+          message: 'Please grant microphone permissions',
+        ),
+      );
+      return;
+    }
+
+    // if (storageStatus != PermissionStatus.granted) {
+    //   log('Storage permission not granted');
+    //   showTopSnackBar(
+    //     Overlay.of(context),
+    //     CustomSnackBar.error(
+    //       message: 'Please grant storage permissions',
+    //     ),
+    //   );
+    // }
+  }
+
   @override
   void initState() {
     _loadChat();
+    _initializeRecorder();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _audioPlayer.dispose();
+    super.dispose();
   }
 
   @override
@@ -179,7 +226,9 @@ class _ChatScreenState extends State<ChatScreen> {
           emojiEnlargementBehavior: EmojiEnlargementBehavior.multi,
           typingIndicatorOptions: TypingIndicatorOptions(
             typingMode: TypingIndicatorMode.avatar,
-            typingUsers: [if (_isTyping) auscy],
+            typingUsers: [
+              if (_isTyping) auscy,
+            ],
             customTypingIndicatorBuilder: (
                 {required bubbleAlignment,
                 required context,
@@ -188,9 +237,9 @@ class _ChatScreenState extends State<ChatScreen> {
               return Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16,
-                    bottom: 8,
+                  padding: EdgeInsets.only(
+                    left: 16.w,
+                    bottom: 8.h,
                   ),
                   child: Row(
                     children: [
@@ -213,99 +262,129 @@ class _ChatScreenState extends State<ChatScreen> {
             },
           ),
           isAttachmentUploading: _isImageUploading,
-          
           customBottomWidget: SizedBox(
-            child: Row(
+            child: Column(
               children: [
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    onSubmitted: (value) {
-                      _handleSendPressed(
-                        types.PartialText(
-                          text: value.trim(),
-                        ),
-                      );
-                      _controller.clear();
-                    },
-                    onChanged: (value) {
-                      setState(() {
-                        sendIcon = value.trim().isEmpty
-                            ? Icons.mic_rounded
-                            : IconlyBold.send;
-                      });
-                    },
-                    minLines: 1,
-                    maxLines: 4,
-                    keyboardType: TextInputType.multiline,
-                    textInputAction: TextInputAction.newline,
-                    textCapitalization: TextCapitalization.sentences,
-                    decoration: InputDecoration(
-                      hintText: 'Type a message',
-                      hintStyle: const TextStyle(
-                        color: Colors.grey,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(24.sp),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(24.sp),
-                        borderSide: BorderSide(
-                          color: primaryColor,
-                          width: 2.sp,
-                        ),
-                      ),
-                      // filled: true,
-                      // fillColor: Colors.grey[300],
-                      contentPadding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: 12.h,
-                      ),
-                      prefixIcon: ZoomTapAnimation(
-                        onTap: _handleImageSelection,
-                        child: Icon(
-                          IconlyLight.image,
-                          color: Colors.black,
-                          size: 25.sp,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8.w),
-                  child: ZoomTapAnimation(
-                    child: Container(
-                      padding: EdgeInsets.only(
-                        left: 10.sp,
-                        right: (sendIcon == IconlyBold.send ? 12 : 10).sp,
-                        top: (sendIcon == IconlyBold.send ? 12 : 10).sp,
-                        bottom: 12.sp,
-                      ),
-                      decoration: const BoxDecoration(
-                        color: primaryColor,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        sendIcon,
-                        color: Colors.white,
-                        size: 20.sp,
-                      ),
-                    ),
-                    onTap: () {
-                      if (_controller.text.trim().isNotEmpty) {
-                        _handleSendPressed(
-                          types.PartialText(
-                            text: _controller.text.trim(),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _controller,
+                        onSubmitted: (value) {
+                          _handleSendPressed(
+                            types.PartialText(
+                              text: value.trim(),
+                            ),
+                          );
+                          _controller.clear();
+                        },
+                        onChanged: (value) {
+                          setState(() {});
+                        },
+                        enabled: !_isRecording,
+                        minLines: 1,
+                        maxLines: 4,
+                        keyboardType: TextInputType.multiline,
+                        textInputAction: TextInputAction.newline,
+                        textCapitalization: TextCapitalization.sentences,
+                        decoration: InputDecoration(
+                          hintText: 'Type a message',
+                          hintStyle: const TextStyle(
+                            color: Colors.grey,
                           ),
-                        );
-                        _controller.clear();
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24.sp),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24.sp),
+                            borderSide: BorderSide(
+                              color: primaryColor,
+                              width: 2.sp,
+                            ),
+                          ),
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 12.h,
+                          ),
+                          prefixIcon: ZoomTapAnimation(
+                            onTap: _handleImageSelection,
+                            child: Icon(
+                              IconlyLight.image,
+                              color: Colors.black,
+                              size: 25.sp,
+                            ),
+                          ),
+                          suffixIcon: ZoomTapAnimation(
+                            onTap: () {
+                              if (_isRecording) {
+                                _stopRecording();
+                              } else {
+                                _startRecording();
+                              }
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                vertical: 10.h,
+                              ),
+                              child: SvgPicture.asset(
+                                _isRecording
+                                    ? 'assets/svg/mic-off.svg'
+                                    : 'assets/svg/mic.svg',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.w),
+                      child: Opacity(
+                        opacity: _controller.text.trim().isEmpty || _isTyping
+                            ? 0.3
+                            : 1,
+                        child: ZoomTapAnimation(
+                          child: Container(
+                            padding: EdgeInsets.only(
+                              left: 10.sp,
+                              right: 12.sp,
+                              top: 12.sp,
+                              bottom: 12.sp,
+                            ),
+                            decoration: const BoxDecoration(
+                              color: primaryColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              IconlyBold.send,
+                              color: Colors.white,
+                              size: 20.sp,
+                            ),
+                          ),
+                          onTap: () {
+                            if (_controller.text.trim().isEmpty || _isTyping) {
+                              return;
+                            }
+                            if (_controller.text.trim().isEmpty) {
+                              _startRecording();
+                            } else {
+                              if (_controller.text.trim().isNotEmpty) {
+                                _handleSendPressed(
+                                  types.PartialText(
+                                    text: _controller.text.trim(),
+                                  ),
+                                );
+                                _controller.clear();
 
-                        _getResponse();
-                      }
-                    },
-                  ),
+                                _getResponse();
+                              }
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
+                if (_isRecording) Container(),
               ],
             ),
           ),
@@ -336,6 +415,9 @@ class _ChatScreenState extends State<ChatScreen> {
       } else if (message is types.ImageMessage) {
         contents.add(
             Content.data('image/png', await File(message.uri).readAsBytes()));
+      } else if (message is types.AudioMessage) {
+        contents.add(
+            Content.data('audio/opus', await File(message.uri).readAsBytes()));
       }
     }
 
@@ -380,54 +462,34 @@ class _ChatScreenState extends State<ChatScreen> {
     await _addMessage(message);
   }
 
-  /*  void _getImageResponse(Uint8List image) async {
-    setState(() {
-      _isTyping = true;
-    });
-
-    final response = await gemini
-        .textAndImage(
-          images: [image],
-          text: '''
-          Describe the image(s)
-          If it contains yam(s), tell the user if the yam is good or bad, if it has any diseases.
-          If they aren't pictures of yams, let the user know.
-          $preResponse
-          ''',
-          generationConfig: GenerationConfig(
-            temperature: temp,
-          ),
-        )
-        .then((value) => value?.content?.parts?.last.text)
-        .catchError((error) => error.toString());
-
-    setState(() {
-      _isTyping = false;
-    });
-
-    debugPrint(response);
-    final message = types.TextMessage(
-      id: const Uuid().v4(),
-      author: auscy,
-      createdAt: DateTime.now().millisecondsSinceEpoch,
-      text: response ?? 'I cannot help you with that',
-    );
-
-    _addMessage(message);
-  }
- */
   Future<void> _nameChat() async {
+    if (_isNamingChat) return; // Prevents duplicate execution
+    _isNamingChat = true;
+
     final messages = await segmentChat(length: 5);
 
     final response = await gemini
-        .generateContent([
-          Content.text('''
-Please name the chat based on the chat so far. Whatever your response is, it must be nothing more than 5 words. Don't use the word 'chat' in naming. The title should have punctuation but the first letter of each word should be capitalized. The chat so far is as follows:\n
+        .generateContent(
+          [
+            Content.text('''
+Analyze the conversation so far and generate a concise, engaging title that best represents the overall topic or theme of the chat. The title should be no more than 5 words, avoid generic terms like 'chat' or 'conversation,' and should have proper punctuation. Capitalize the first letter of each word. If the discussion is casual or lacks a clear theme, generate a creative yet relevant title based on the messages exchanged:\n
         '''),
-          ...messages,
-        ])
+            ...messages,
+          ],
+          generationConfig: GenerationConfig(
+            maxOutputTokens: 10,
+          ),
+        )
         .then((value) => value.candidates.first.text)
-        .catchError((error) => 'New Chat');
+        .catchError((error) {
+          showTopSnackBar(
+            Overlay.of(context),
+            CustomSnackBar.error(
+              message: error.toString(),
+            ),
+          );
+          return 'New Chat';
+        });
 
     debugPrint('Chat Name: $response');
     setState(() {
@@ -437,10 +499,13 @@ Please name the chat based on the chat so far. Whatever your response is, it mus
             title: response!.trim(),
           );
     });
+
+    _isNamingChat = false;
   }
 
   Future<void> _addMessage(types.Message message) async {
     try {
+      log('Adding message: ${message.toJson()}');
       setState(() {
         // Ensure the message ID is unique
         if (!widget.chatRoom.messages.any((m) => m.id == message.id)) {
@@ -472,30 +537,100 @@ Please name the chat based on the chat so far. Whatever your response is, it mus
     }
   }
 
+  void _startRecording() async {
+    FocusScope.of(context).unfocus();
+    try {
+      await _initializeRecorder();
+
+      bool hasPermission = await _recorder.hasPermission();
+      if (!hasPermission) {
+        log('Microphone permission not granted');
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(
+            message: 'Microphone permission is required to record audio.',
+          ),
+        );
+        return;
+      }
+
+      final directory = await getApplicationDocumentsDirectory();
+      final filePath =
+          '${directory.path}/${DateTime.now().millisecondsSinceEpoch}.opus';
+
+      await _recorder.start(
+        RecordConfig(
+          encoder: AudioEncoder.opus,
+        ),
+        path: filePath,
+      );
+
+      setState(() {
+        _isRecording = true;
+        _recordDuration = 0;
+      });
+
+      _recordingTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+        setState(() {
+          _recordDuration++;
+        });
+      });
+    } catch (e) {
+      log('Error starting recording: $e');
+      showTopSnackBar(
+        Overlay.of(context),
+        CustomSnackBar.error(
+          message: 'Failed to start recording. Try again.',
+        ),
+      );
+    }
+  }
+
+  void _stopRecording() async {
+    if (!_isRecording) return; // Prevents stopping if not recording
+
+    try {
+      final path = await _recorder.stop();
+      _recordingTimer?.cancel();
+
+      if (path != null) {
+        setState(() {
+          _isRecording = false;
+        });
+
+        _sendAudioMessage(path);
+      }
+    } catch (e) {
+      log('Error stopping recording: $e');
+      showTopSnackBar(
+        Overlay.of(context),
+        CustomSnackBar.error(
+          message: 'Failed to stop recording. Try again.',
+        ),
+      );
+    }
+  }
+
+  void _sendAudioMessage(String filePath) async {
+    final message = types.AudioMessage(
+      id: const Uuid().v4(),
+      author: widget.chatRoom.chat!.user,
+      createdAt: DateTime.now().millisecondsSinceEpoch,
+      uri: filePath,
+      size: File(filePath).lengthSync(),
+      duration: Duration(seconds: _recordDuration),
+      name: 'Audio Message',
+    );
+
+    await _addMessage(message);
+
+    _getResponse();
+  }
+
   void _handleAttachmentPressed() {
     _handleImageSelection();
   }
 
-  /*  void _handleFileSelection() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.any,
-    );
-
-    if (result != null && result.files.single.path != null) {
-      final message = types.FileMessage(
-        author: widget.chatRoom.chat.user,
-        createdAt: DateTime.now().millisecondsSinceEpoch,
-        id: const Uuid().v4(),
-        mimeType: lookupMimeType(result.files.single.path!),
-        name: result.files.single.name,
-        size: result.files.single.size,
-        uri: result.files.single.path!,
-      );
-
-      await _addMessage(message);
-    }
-  }
- */
   void _handleImageSelection() async {
     try {
       final result = await ImagePicker().pickMultiImage(
