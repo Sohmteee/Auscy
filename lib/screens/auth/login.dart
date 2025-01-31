@@ -283,33 +283,4 @@ class _SigninScreenState extends State<SigninScreen> {
       ),
     );
   }
-
-  /// Build Register Text
-  Widget _buildRegisterText() {
-    return RichText(
-      text: TextSpan(
-        text: "Don't have an account? ",
-        style: TextStyle(
-          // fontSize: 14.sp,
-          color: Colors.grey,
-          fontFamily: 'Quicksand',
-        ),
-        children: [
-          TextSpan(
-            text: 'Register here',
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                // Navigate to register screen
-              },
-            style: TextStyle(
-              // fontSize: 16.sp,
-              fontFamily: 'Quicksand',
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
