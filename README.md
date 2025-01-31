@@ -39,43 +39,42 @@ To get started with Auscy, follow the instructions below.
 - Firebase setup
 - Google Gemini API key
 
-
 <br/>
 
 ### 🛠️ Installation
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/sohmteee/auscy.git
-    ```
+   ```bash
+   git clone https://github.com/sohmteee/auscy.git
+   ```
 
 2. Navigate to the project directory:
 
-    ```bash
-    cd auscy
-    ```
+   ```bash
+   cd auscy
+   ```
 
 3. Install the dependencies:
 
-    ```bash
-    flutter pub get
-    ```
+   ```bash
+   flutter pub get
+   ```
 
 4. Set up Firebase and the Google Gemini API:
 
-    - Add your Firebase configuration to `lib/firebase_options.dart`.
-    - Add your Google Gemini API key to `.env` in the root of the project. It should look something like:
+   - Add your Firebase configuration to `lib/firebase_options.dart`.
+   - Add your Google Gemini API key to `.env` in the root of the project. It should look something like:
 
-    ```
-    API_KEY=<YOUR-API-KEY>
-    ```
+   ```
+   GEMINI_API_KEY=<YOUR-API-KEY>
+   ```
 
 5. Run the application:
 
-    ```bash
-    flutter run
-    ```
+   ```bash
+   flutter run
+   ```
 
 <br/>
 
@@ -118,7 +117,6 @@ This project is licensed under the MIT License - see the [LICENSE](https://opens
 Thanks to Google for providing the [Google Gemini API](https://ai.google.dev/) used in this project.
 
 <br/>
-
 
 ## 📧 Contact
 

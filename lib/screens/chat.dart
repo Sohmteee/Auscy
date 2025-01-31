@@ -25,14 +25,6 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   late Map<String, dynamic> chatInDB;
 
-  final gemini = GenerativeModel(
-    model: "gemini-1.5-flash-latest",
-    apiKey: apiKey,
-    generationConfig: GenerationConfig(
-      temperature: .7,
-    ),
-  );
-
   final TextEditingController _controller = TextEditingController();
 
   bool _isTyping = false;
@@ -41,6 +33,7 @@ class _ChatScreenState extends State<ChatScreen> {
   bool _isNamingChat = false;
 
   bool _isRecording = false;
+  bool _isTranscribing = false;
   final _recorder = AudioRecorder();
 
   Timer? _recordingTimer;
@@ -281,7 +274,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         onChanged: (value) {
                           setState(() {});
                         },
-                        enabled: !_isRecording,
+                        enabled: !_isRecording && !_isTranscribing,
                         minLines: 1,
                         maxLines: 4,
                         keyboardType: TextInputType.multiline,
@@ -314,25 +307,23 @@ class _ChatScreenState extends State<ChatScreen> {
                               size: 25.sp,
                             ),
                           ),
-                          suffixIcon: ZoomTapAnimation(
-                            onTap: () {
-                              if (_isRecording) {
-                                _stopRecording();
-                              } else {
-                                _startRecording();
-                              }
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 10.h,
-                              ),
-                              child: SvgPicture.asset(
-                                _isRecording
-                                    ? 'assets/svg/mic-off.svg'
-                                    : 'assets/svg/mic.svg',
-                              ),
-                            ),
-                          ),
+                          suffixIcon: !_isRecording
+                              ? ZoomTapAnimation(
+                                  onTap: () {
+                                    _startRecording();
+                                  },
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 10.h,
+                                    ),
+                                    child: SvgPicture.asset(
+                                      _isRecording
+                                          ? 'assets/svg/mic-off.svg'
+                                          : 'assets/svg/mic.svg',
+                                    ),
+                                  ),
+                                )
+                              : null,
                         ),
                       ),
                     ),
@@ -364,27 +355,107 @@ class _ChatScreenState extends State<ChatScreen> {
                             if (_controller.text.trim().isEmpty || _isTyping) {
                               return;
                             }
-                            if (_controller.text.trim().isEmpty) {
-                              _startRecording();
-                            } else {
-                              if (_controller.text.trim().isNotEmpty) {
-                                _handleSendPressed(
-                                  types.PartialText(
-                                    text: _controller.text.trim(),
-                                  ),
-                                );
-                                _controller.clear();
 
-                                _getResponse();
-                              }
-                            }
+                            _handleSendPressed(
+                              types.PartialText(
+                                text: _controller.text.trim(),
+                              ),
+                            );
+                            _controller.clear();
+
+                            _getResponse();
                           },
                         ),
                       ),
                     ),
                   ],
                 ),
-                if (_isRecording) Container(),
+                if (_isRecording || _isTranscribing)
+                  GestureDetector(
+                    onTap: _stopRecording,
+                    child: Container(
+                      height: 150.h,
+                      width: double.infinity,
+                      margin: EdgeInsets.only(top: 10.h),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(24.sp),
+                      ),
+                      child: _isRecording
+                          ? Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {
+                                        _recordingTimer?.cancel();
+                                        _recorder.stop().catchError((e) {
+                                          log('Error stopping recording: $e');
+                                          showTopSnackBar(
+                                            Overlay.of(context),
+                                            CustomSnackBar.error(
+                                              message:
+                                                  'Failed to stop recording. Try again.',
+                                            ),
+                                          );
+                                          return null;
+                                        });
+                                        setState(() {
+                                          _isRecording = false;
+                                        });
+                                      },
+                                      icon: const Icon(
+                                        Icons.close,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Spacer(flex: 2),
+                                Text(
+                                  "${(_recordDuration ~/ 60).toString().padLeft(2, '0')}:${(_recordDuration % 60).toString().padLeft(2, '0')}",
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 16.sp,
+                                  ),
+                                ),
+                                Spacer(),
+                                Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        Icons.stop_circle_outlined,
+                                        color: Colors.red,
+                                      ),
+                                      5.sW,
+                                      Text('Tap to stop recording'),
+                                    ],
+                                  ),
+                                ),
+                                Spacer(flex: 3),
+                              ],
+                            )
+                          : _isTranscribing
+                              ? Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SpinKitThreeBounce(
+                                        color: primaryColor,
+                                        size: 20.sp,
+                                      ),
+                                      10.sW,
+                                      Text(
+                                        'Converting to text...',
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              : Container(),
+                    ),
+                  ),
               ],
             ),
           ),
@@ -587,20 +658,9 @@ Analyze the conversation so far and generate a concise, engaging title that best
   }
 
   void _stopRecording() async {
-    if (!_isRecording) return; // Prevents stopping if not recording
+    if (!_isRecording) return;
 
-    try {
-      final path = await _recorder.stop();
-      _recordingTimer?.cancel();
-
-      if (path != null) {
-        setState(() {
-          _isRecording = false;
-        });
-
-        _sendAudioMessage(path);
-      }
-    } catch (e) {
+    final path = await _recorder.stop().catchError((e) {
       log('Error stopping recording: $e');
       showTopSnackBar(
         Overlay.of(context),
@@ -608,23 +668,39 @@ Analyze the conversation so far and generate a concise, engaging title that best
           message: 'Failed to stop recording. Try again.',
         ),
       );
-    }
-  }
+      return null;
+    });
 
-  void _sendAudioMessage(String filePath) async {
-    final message = types.AudioMessage(
-      id: const Uuid().v4(),
-      author: widget.chatRoom.chat!.user,
-      createdAt: DateTime.now().millisecondsSinceEpoch,
-      uri: filePath,
-      size: File(filePath).lengthSync(),
-      duration: Duration(seconds: _recordDuration),
-      name: 'Audio Message',
-    );
+    _recordingTimer?.cancel();
 
-    await _addMessage(message);
+    setState(() {
+      _isRecording = false;
+    });
 
-    _getResponse();
+    if (path == null) return;
+
+    setState(() {
+      _isTranscribing = true;
+    });
+    await deepgram.listen.file(File(path)).then((result) {
+      if (result.transcript != null && result.transcript!.trim().isNotEmpty) {
+        log(result.transcript!);
+        setState(() {
+          _controller.text += "${result.transcript!} ";
+        });
+      }
+    }).catchError((error) {
+      showTopSnackBar(
+        Overlay.of(context),
+        CustomSnackBar.error(
+          message: error.toString(),
+        ),
+      );
+    }).whenComplete(() {
+      setState(() {
+        _isTranscribing = false;
+      });
+    });
   }
 
   void _handleAttachmentPressed() {
@@ -731,6 +807,9 @@ Analyze the conversation so far and generate a concise, engaging title that best
       );
       await _addMessage(uniqueMessage);
     }
+    setState(() {
+      _isImageUploading = false;
+    });
     if (prompt.isNotEmpty) {
       final textMessage = types.TextMessage(
         author: widget.chatRoom.chat!.user,
@@ -740,9 +819,7 @@ Analyze the conversation so far and generate a concise, engaging title that best
       );
       await _addMessage(textMessage);
     }
-    setState(() {
-      _isImageUploading = false;
-    });
+
     _getResponse();
   }
 

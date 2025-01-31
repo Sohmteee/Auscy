@@ -33,26 +33,7 @@ class ChatRoomProvider extends ChangeNotifier {
   Future<void> addChat(BuildContext context,
       {required ChatRoom chatRoom}) async {
     chats.add(chatRoom);
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Dialog(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          child: Center(
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                alignment: Alignment.center,
-                width: 100.sp,
-                height: 100.sp,
-                child: const CircularProgressIndicator(),
-              ),
-            ),
-          ),
-        );
-      },
-    );
+    Loader.show(context);
     try {
       await usersDB.doc(user?.uid).set(
         {
@@ -74,7 +55,7 @@ class ChatRoomProvider extends ChangeNotifier {
         ),
       );
     } finally {
-      Navigator.pop(context);
+      Loader.hide(context);
       WidgetsBinding.instance.addPostFrameCallback((_) {
         notifyListeners();
       });
@@ -84,26 +65,8 @@ class ChatRoomProvider extends ChangeNotifier {
   Future<void> removeChat(BuildContext context,
       {required ChatRoom chatRoom}) async {
     chats.remove(chatRoom);
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Dialog(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          child: Center(
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                alignment: Alignment.center,
-                width: 100.sp,
-                height: 100.sp,
-                child: const CircularProgressIndicator(),
-              ),
-            ),
-          ),
-        );
-      },
-    );
+
+    Loader.show(context);
     try {
       await usersDB.doc(user?.uid).set(
         {
@@ -125,7 +88,7 @@ class ChatRoomProvider extends ChangeNotifier {
         ),
       );
     }
-    Navigator.pop(context);
+    Loader.hide(context);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       notifyListeners();
     });

@@ -93,9 +93,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: isLoadingChats
               ? Center(
-                  child: AppText(
-                    'Loading chats...',
-                    color: Colors.deepPurple,
+                  child: SpinKitChasingDots(
+                    color: Theme.of(context).primaryColor,
+                    size: 50.sp,
                   ),
                 )
               : chatRooms.isEmpty
