@@ -36,6 +36,7 @@ dependencies:
   mime: ^2.0.0
   path_provider: ^2.1.4
   permission_handler: ^11.3.1
+  pinput: ^5.0.1
   provider: ^6.1.2
   record: ^5.2.0
   top_snackbar_flutter: ^3.1.0

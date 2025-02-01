@@ -1,10 +1,7 @@
-import 'dart:convert';
 import 'dart:developer' as dev;
 
 import 'package:auscy/res/res.dart';
 import 'package:auscy/screens/auth/phone.dart';
-import 'package:flutter_web_auth/flutter_web_auth.dart';
-import 'package:http/http.dart' as http;
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 
 User? user = FirebaseAuth.instance.currentUser;
@@ -56,7 +53,7 @@ class _SigninScreenState extends State<SigninScreen> {
               Spacer(flex: 3),
               _buildGoogleSignInButton(),
               16.sH,
-              _buildPhoneSignInButton(),
+              _buildPhoneSignInButton(isDarkMode),
               Spacer(flex: 3),
             ],
           ),
@@ -135,13 +132,22 @@ class _SigninScreenState extends State<SigninScreen> {
   }
 
   /// Build Phone Sign-In Button
-  Widget _buildPhoneSignInButton() {
+  Widget _buildPhoneSignInButton(bool isDarkMode) {
     return ZoomTapAnimation(
       child: ElevatedButton.icon(
         onPressed: () {
-          Navigator.pushNamed(context, PhoneSignInScreen.route);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PhoneSignInScreen(),
+            ),
+          );
         },
-        icon: Icon(Icons.phone),
+        icon: Icon(
+          Icons.phone,
+          color: isDarkMode ? lightColor : darkColor,
+          size: 24.sp,
+        ),
         label: AppText(
           'Sign in with Phone',
           fontSize: 16.sp,
