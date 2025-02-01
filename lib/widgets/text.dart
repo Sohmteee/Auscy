@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppBoldText extends StatelessWidget {
+class AppBoldText extends StatefulWidget {
   const AppBoldText(
     this.text, {
     this.fontSize,
@@ -17,20 +17,26 @@ class AppBoldText extends StatelessWidget {
   final TextAlign? textAlign;
 
   @override
+  State<AppBoldText> createState() => _AppBoldTextState();
+}
+
+class _AppBoldTextState extends State<AppBoldText> {
+  @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      widget.text,
       style: TextStyle(
-        fontWeight: fontWeight ?? FontWeight.bold,
+        fontWeight: widget.fontWeight ?? FontWeight.bold,
         fontFamily: 'Quicksand',
-        fontSize: fontSize,
+        fontSize: widget.fontSize,
+        color: widget.color ?? Theme.of(context).textTheme.bodySmall?.color,
       ),
-      textAlign: textAlign,
+      textAlign: widget.textAlign,
     );
   }
 }
 
-class AppText extends StatelessWidget {
+class AppText extends StatefulWidget {
   const AppText(
     this.text, {
     this.fontSize,
@@ -47,15 +53,21 @@ class AppText extends StatelessWidget {
   final TextAlign? textAlign;
 
   @override
+  State<AppText> createState() => _AppTextState();
+}
+
+class _AppTextState extends State<AppText> {
+  @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      widget.text,
       style: TextStyle(
-        fontWeight: fontWeight ?? FontWeight.normal,
+        fontWeight: widget.fontWeight ?? FontWeight.normal,
         fontFamily: 'Quicksand',
-        fontSize: fontSize,
+        fontSize: widget.fontSize,
+        color: widget.color ?? Theme.of(context).textTheme.bodySmall?.color,
       ),
-      textAlign: textAlign,
+      textAlign: widget.textAlign,
     );
   }
 }

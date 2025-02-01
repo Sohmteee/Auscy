@@ -1,6 +1,10 @@
+import 'dart:convert';
 import 'dart:developer' as dev;
 
 import 'package:auscy/res/res.dart';
+import 'package:auscy/screens/auth/phone.dart';
+import 'package:flutter_web_auth/flutter_web_auth.dart';
+import 'package:http/http.dart' as http;
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 
 User? user = FirebaseAuth.instance.currentUser;
@@ -16,15 +20,12 @@ class SigninScreen extends StatefulWidget {
 class _SigninScreenState extends State<SigninScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-  bool _obscurePassword = true;
-  String? _emailError;
-  String? _passwordError;
-
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
+
     var box = Hive.box('userBox');
     var uid = box.get('uid');
 
@@ -45,61 +46,18 @@ class _SigninScreenState extends State<SigninScreen> {
               Spacer(flex: 3),
               Row(
                 children: [
-                  Text(
+                  AppBoldText(
                     'Sign in',
-                    style: TextStyle(
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    fontSize: 32.sp,
+                    fontWeight: FontWeight.bold,
                   ),
                 ],
               ),
-              Spacer(flex: 2),
-              _buildEmailField(),
-              16.sH,
-              _buildPasswordField(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      //TODO:  Implement forgot password navigation
-                    },
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Spacer(flex: 1),
-              _buildSignInButton(),
-              16.sH,
-              Row(
-                children: [
-                  Expanded(
-                    child: Divider(
-                      color: Colors.black38,
-                    ),
-                  ),
-                  15.sW,
-                  Text('OR'),
-                  15.sW,
-                  Expanded(
-                    child: Divider(
-                      color: Colors.black38,
-                    ),
-                  ),
-                ],
-              ),
-              16.sH,
-              _buildGoogleSignInButton(),
               Spacer(flex: 3),
-              // _buildRegisterText(),
-              // 10.sH,
+              _buildGoogleSignInButton(),
+              16.sH,
+              _buildPhoneSignInButton(),
+              Spacer(flex: 3),
             ],
           ),
         ),
@@ -148,114 +106,6 @@ class _SigninScreenState extends State<SigninScreen> {
     }
   }
 
-  /// Handles Email/Password Sign In
-  void _login() async {
-    if (emailController.text.trim().isEmpty) {
-      setState(() {
-        _emailError = 'Please provide an email';
-      });
-      return;
-    }
-
-    if (passwordController.text.trim().isEmpty) {
-      setState(() {
-        _passwordError = 'Please provide a password';
-      });
-      return;
-    }
-
-    Loader.show(context);
-
-    await _auth
-        .signInWithEmailAndPassword(
-      email: emailController.text.trim(),
-      password: passwordController.text.trim(),
-    )
-        .then((userCredential) {
-      final user = userCredential.user;
-      if (user != null) {
-        Hive.box('userBox').put('uid', user.uid);
-
-        usersDB.doc(user.uid).set({
-          'email': user.email,
-          'name': user.displayName,
-          'uid': user.uid,
-        }, SetOptions(merge: true));
-
-        Loader.hide(context);
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()));
-      }
-    }).catchError((error) {
-      Loader.hide(context);
-      dev.log(error.toString());
-      showTopSnackBar(
-        Overlay.of(context),
-        CustomSnackBar.error(
-            message: "Sign in failed. Check your credentials."),
-      );
-    });
-  }
-
-  /// Build Email TextField
-  Widget _buildEmailField() {
-    return TextField(
-      controller: emailController,
-      keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-        labelText: 'Email',
-        errorText: _emailError,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r)),
-      ),
-      onChanged: (value) {
-        setState(() {
-          _emailError = AuthValidator.validateEmail(value);
-        });
-      },
-    );
-  }
-
-  /// Build Password TextField
-  Widget _buildPasswordField() {
-    return TextField(
-      controller: passwordController,
-      obscureText: _obscurePassword,
-      decoration: InputDecoration(
-        labelText: 'Password',
-        errorText: _passwordError,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r)),
-        suffixIcon: IconButton(
-          icon: Icon(
-            _obscurePassword ? IconlyLight.hide : IconlyLight.show,
-          ),
-          onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
-        ),
-      ),
-    );
-  }
-
-  /// Build Sign In Button
-  Widget _buildSignInButton() {
-    return ZoomTapAnimation(
-      child: ElevatedButton(
-        onPressed: _login,
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          minimumSize: Size(double.infinity, 48.h),
-          backgroundColor: Theme.of(context).primaryColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.r),
-            side: BorderSide(color: Colors.grey.shade300),
-          ),
-        ),
-        child: Text(
-          'Sign in',
-          style: TextStyle(fontSize: 18.sp, color: Colors.white),
-        ),
-      ),
-    );
-  }
-
   /// Build Google Sign-In Button
   Widget _buildGoogleSignInButton() {
     return ZoomTapAnimation(
@@ -265,9 +115,36 @@ class _SigninScreenState extends State<SigninScreen> {
           'assets/svg/google-icon.svg',
           height: 24.h,
         ),
-        label: Text(
+        label: AppText(
           'Sign in with Google',
-          style: TextStyle(fontSize: 16.sp),
+          fontSize: 16.sp,
+        ),
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          minimumSize: Size(double.infinity, 48.h),
+          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.black,
+          splashFactory: NoSplash.splashFactory,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
+            side: BorderSide(color: Colors.grey.shade300),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Build Phone Sign-In Button
+  Widget _buildPhoneSignInButton() {
+    return ZoomTapAnimation(
+      child: ElevatedButton.icon(
+        onPressed: () {
+          Navigator.pushNamed(context, PhoneSignInScreen.route);
+        },
+        icon: Icon(Icons.phone),
+        label: AppText(
+          'Sign in with Phone',
+          fontSize: 16.sp,
         ),
         style: ElevatedButton.styleFrom(
           elevation: 0,

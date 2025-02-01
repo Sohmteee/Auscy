@@ -2,18 +2,16 @@ name: auscy
 description: "A new Flutter project."
 publish_to: "none"
 
-version: 1.0.0+1
+version: 1.1.0+2
 
 environment:
   sdk: ^3.6.1
 
 dependencies:
-  animated_text_kit: ^4.2.2
-  audioplayers: ^6.1.1
   cloud_firestore: ^5.2.1
+  country_code_picker: ^3.2.0
   cupertino_icons: ^1.0.8
   deepgram_speech_to_text: ^3.0.3
-  file_picker: ^8.3.1
   firebase_auth: ^5.1.4
   firebase_core: ^3.3.0
   flutter:
@@ -21,10 +19,12 @@ dependencies:
   flutter_chat_types: ^3.6.2
   flutter_chat_ui: ^1.6.15
   flutter_dotenv: ^5.0.2
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.4.4
   flutter_screenutil: ^5.9.3
-  flutter_sound_record: ^3.3.2
   flutter_spinkit: ^5.1.0
   flutter_svg: ^2.0.10+1
+  flutter_web_auth: ^0.6.0
   google_generative_ai: ^0.4.5
   google_sign_in: ^6.2.1
   hive: ^2.2.3
@@ -34,7 +34,6 @@ dependencies:
   image_picker: ^1.1.2
   intl: ^0.20.2
   mime: ^2.0.0
-  open_filex: ^4.5.0
   path_provider: ^2.1.4
   permission_handler: ^11.3.1
   provider: ^6.1.2

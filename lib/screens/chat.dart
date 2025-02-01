@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:auscy/res/res.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
@@ -38,7 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Timer? _recordingTimer;
   int _recordDuration = 0;
-  final AudioPlayer _audioPlayer = AudioPlayer();
+  // final AudioPlayer _audioPlayer = AudioPlayer();
 
   final types.User auscy = const types.User(
     id: 'auscy',
@@ -82,12 +82,15 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void dispose() {
     _controller.dispose();
-    _audioPlayer.dispose();
+    _recorder.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode =
+        MediaQuery.of(context).platformBrightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.chatRoom.title),
@@ -101,6 +104,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     context: context,
                     builder: (context) {
                       return Dialog(
+                        backgroundColor: isDarkMode
+                            ? darkBackgroundColor
+                            : lightBackgroundColor,
                         child: Padding(
                           padding: EdgeInsets.all(20.w),
                           child: Column(
@@ -115,8 +121,14 @@ class _ChatScreenState extends State<ChatScreen> {
                                 controller: TextEditingController(
                                     text: widget.chatRoom.title),
                                 autofocus: true,
+                                style: TextStyle(
+                                  color: isDarkMode ? lightColor : darkColor,
+                                ),
                                 decoration: const InputDecoration(
                                   hintText: 'Enter new chat title',
+                                  hintStyle: TextStyle(
+                                    color: Colors.grey,
+                                  ),
                                 ),
                                 textCapitalization: TextCapitalization.words,
                                 onSubmitted: (value) {
@@ -157,6 +169,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 .toList()
                 .toString());
           },
+          theme: isDarkMode ? const DarkChatTheme() : const DefaultChatTheme(),
           user: widget.chatRoom.chat!.user,
           dateHeaderBuilder: (p0) {
             String headerText;
@@ -280,6 +293,9 @@ class _ChatScreenState extends State<ChatScreen> {
                         keyboardType: TextInputType.multiline,
                         textInputAction: TextInputAction.newline,
                         textCapitalization: TextCapitalization.sentences,
+                        style: TextStyle(
+                          color: isDarkMode ? lightColor : darkColor,
+                        ),
                         decoration: InputDecoration(
                           hintText: 'Type a message',
                           hintStyle: const TextStyle(
@@ -287,6 +303,12 @@ class _ChatScreenState extends State<ChatScreen> {
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24.sp),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(24.sp),
+                            borderSide: BorderSide(
+                              color: isDarkMode ? lightColor : darkColor,
+                            ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24.sp),
@@ -303,7 +325,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             onTap: _handleImageSelection,
                             child: Icon(
                               IconlyLight.image,
-                              color: Colors.black,
+                              color: isDarkMode ? lightColor : darkColor,
                               size: 25.sp,
                             ),
                           ),
@@ -317,9 +339,9 @@ class _ChatScreenState extends State<ChatScreen> {
                                       vertical: 10.h,
                                     ),
                                     child: SvgPicture.asset(
-                                      _isRecording
-                                          ? 'assets/svg/mic-off.svg'
-                                          : 'assets/svg/mic.svg',
+                                      'assets/svg/mic.svg',
+                                      color:
+                                          isDarkMode ? lightColor : darkColor,
                                     ),
                                   ),
                                 )
@@ -378,7 +400,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       width: double.infinity,
                       margin: EdgeInsets.only(top: 10.h),
                       decoration: BoxDecoration(
-                        color: Colors.grey[300],
+                        color: Theme.of(context).colorScheme.secondary,
                         borderRadius: BorderRadius.circular(24.sp),
                       ),
                       child: _isRecording
@@ -430,7 +452,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                         color: Colors.red,
                                       ),
                                       5.sW,
-                                      Text('Tap to stop recording'),
+                                      AppText('Tap to stop recording'),
                                     ],
                                   ),
                                 ),
@@ -466,8 +488,31 @@ class _ChatScreenState extends State<ChatScreen> {
 
   String get preResponse {
     return '''
-    You are an AI chatbot called Auscy created by Sohmtee to be people's chat companions and help with any questions or requests they might ask.
-    ''';
+  You are an AI chatbot called Auscy, created by Somtochukwu Ukaegbe (Sohmtee), a multi-talented Flutter developer, software engineer, UI/UX designer, tech enthusiast, and creative thinker. He has built a variety of applications, including chatbots, inventory management systems, word games, and more. Sohmtee is passionate about learning new technologies, sharing knowledge, and helping others grow in their careers. He is always eager to explore new ideas, experiment with innovative solutions, and collaborate with like-minded individuals to create impactful projects. His github link is https://github.com/sohmteee (display it exactly like this in plain text)
+
+  Auscy is designed to be a highly versatile and engaging AI assistant, capable of helping users with a wide range of topics, including:
+
+  - **Technology & Software Development:** Assisting with software architecture, debugging, cloud services, app deployment, UI/UX design, backend and frontend development, and API integration.
+  - **AI & Machine Learning:** Explaining AI concepts, offering guidance on chatbot development, voice processing, and text generation models like Gemini and Deepgram.
+  - **General Knowledge:** Answering questions about science, history, geography, mathematics, finance, health, psychology, and current events.
+  - **Personal Productivity:** Offering study techniques, time management strategies, productivity hacks, note-taking methods, and motivation to help users stay on track.
+  - **Education & Learning:** Assisting with academic subjects, providing explanations for complex topics, and helping users study more efficiently.
+  - **Entertainment & Creativity:** Engaging in fun conversations, recommending books, movies, anime, or music, generating creative story ideas, and assisting with poetry or scriptwriting.
+  - **Life & Self-Improvement:** Giving advice on personal growth, career decisions, maintaining a balanced lifestyle, relationship guidance, and mental wellness.
+  - **Voice & Speech Processing:** Transcribing voice messages, analyzing spoken words, generating human-like responses, and offering voice assistant capabilities.
+  - **Casual Conversations & Social Topics:** Chatting about hobbies, trending topics, gaming, pop culture, sports, and engaging in light-hearted discussions.
+  - **Finance & Crypto:** Providing insights on personal finance, budgeting, saving, cryptocurrency, blockchain, and making informed financial decisions.
+  - **Business & Entrepreneurship:** Assisting with business ideas, branding strategies, marketing insights, customer engagement, and startup planning.
+  - **Travel & Culture:** Giving travel recommendations, explaining cultural differences, helping with trip planning, and providing language learning support.
+  - **Fitness & Nutrition:** Suggesting workout routines, healthy diet plans, meal prep ideas, and general wellness tips.
+  - **DIY & Electronics:** Helping with basic electronics, IoT projects (like ESP32 integrations), hardware troubleshooting, and home automation.
+  - **Social Media & Content Creation:** Assisting with post ideas, engagement strategies, video editing tips, and growing a brand online.
+  - **Legal & Ethical Guidance:** Offering general insights on laws, contracts, digital privacy, ethical dilemmas, and cybersecurity awareness.
+
+  Auscy should always maintain a friendly, engaging, and helpful tone. Whether a user needs technical guidance, life advice, or just a casual chat, Auscy should be there to assist in the best possible way.
+
+  ${user!.displayName != null ? 'The user\'s name is ${user!.displayName!.split(' ').first}' : ''}
+  ''';
   }
 
   Future<List<Content>> segmentChat({int length = 20}) async {
@@ -514,7 +559,13 @@ class _ChatScreenState extends State<ChatScreen> {
         .then((value) =>
             value.candidates.first.text?.trim() ??
             'I can\'t help you with that.')
-        .catchError((error) => error.toString());
+        .catchError((error) {
+          if (error is GenerativeAIException) {
+            return 'Auscy is overloaded. Please try again later.';
+          } else {
+            return error.toString();
+          }
+        });
 
     setState(() {
       _isTyping = false;
@@ -657,50 +708,48 @@ Analyze the conversation so far and generate a concise, engaging title that best
     }
   }
 
-  void _stopRecording() async {
+void _stopRecording() async {
     if (!_isRecording) return;
 
-    final path = await _recorder.stop().catchError((e) {
-      log('Error stopping recording: $e');
-      showTopSnackBar(
-        Overlay.of(context),
-        CustomSnackBar.error(
-          message: 'Failed to stop recording. Try again.',
-        ),
-      );
-      return null;
-    });
+    try {
+      final path = await _recorder.stop();
+      _recordingTimer?.cancel();
 
-    _recordingTimer?.cancel();
-
-    setState(() {
-      _isRecording = false;
-    });
-
-    if (path == null) return;
-
-    setState(() {
-      _isTranscribing = true;
-    });
-    await deepgram.listen.file(File(path)).then((result) {
-      if (result.transcript != null && result.transcript!.trim().isNotEmpty) {
-        log(result.transcript!);
-        setState(() {
-          _controller.text += "${result.transcript!} ";
-        });
-      }
-    }).catchError((error) {
-      showTopSnackBar(
-        Overlay.of(context),
-        CustomSnackBar.error(
-          message: error.toString(),
-        ),
-      );
-    }).whenComplete(() {
       setState(() {
-        _isTranscribing = false;
+        _isRecording = false;
       });
-    });
+
+      if (path == null) return;
+
+      setState(() {
+        _isTranscribing = true;
+      });
+
+      await deepgram.listen.file(File(path)).then((result) {
+        if (result.transcript != null && result.transcript!.trim().isNotEmpty) {
+          log(result.transcript!);
+          setState(() {
+            _controller.text += "${result.transcript!} ";
+          });
+        }
+      }).catchError((error) {
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.error(
+            message: error.toString(),
+          ),
+        );
+      }).whenComplete(() {
+        setState(() {
+          _isTranscribing = false;
+        });
+      });
+    } catch (e) {
+      log('Error stopping recording: $e');
+    } finally {
+      await _recorder.dispose(); // 🔹 Ensure microphone is completely released
+      log('Microphone released successfully');
+    }
   }
 
   void _handleAttachmentPressed() {
@@ -864,7 +913,7 @@ Analyze the conversation so far and generate a concise, engaging title that best
         }
       }
 
-      await OpenFilex.open(localPath);
+      // await OpenFilex.open(localPath);
     }
   }
 

@@ -11,11 +11,13 @@ Future main() async {
   await dotenv.load();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
+    systemNavigationBarColor: Colors.transparent,
   ));
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   WidgetsFlutterBinding.ensureInitialized();
 
   await dotenv.load(fileName: ".env");
@@ -60,7 +62,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Auscy',
           debugShowCheckedModeBanner: false,
+          themeMode: ThemeMode.system,
           theme: lightTheme,
+          darkTheme: darkTheme,
           home: SigninScreen(),
         );
       },

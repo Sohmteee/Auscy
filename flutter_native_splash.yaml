@@ -1,0 +1,15 @@
+flutter_native_splash:
+  color: "#FFFEFE"
+  image: assets/images/auscy_icon_inverted.png
+  android: true
+  ios: true
+  image_dark: assets/images/auscy_icon.png
+  color_dark: "#030203"
+
+  android_12:
+    color: "#FFFEFE"
+    image: assets/images/auscy_icon_inverted.png
+    android: true
+    ios: true
+    image_dark: assets/images/auscy_icon.png
+    color_dark: "#030203"

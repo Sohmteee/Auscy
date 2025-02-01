@@ -33,7 +33,6 @@ export 'package:auscy/firebase_options.dart';
 export 'package:auscy/main.dart';
 
 // packages
-export 'package:animated_text_kit/animated_text_kit.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:cupertino_icons/cupertino_icons.dart';
 export 'package:firebase_auth/firebase_auth.dart';
@@ -51,7 +50,7 @@ export 'package:http/http.dart';
 export 'package:iconly/iconly.dart';
 export 'package:image_picker/image_picker.dart';
 export 'package:mime/mime.dart';
-export 'package:open_filex/open_filex.dart';
+// export 'package:open_filex/open_filex.dart';
 export 'package:path_provider/path_provider.dart';
 export 'package:provider/provider.dart';
 export 'package:top_snackbar_flutter/top_snack_bar.dart';

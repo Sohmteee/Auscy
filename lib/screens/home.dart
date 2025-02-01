@@ -45,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     Text(
                       'Logout',
                       style: TextStyle(
-                        color: Colors.black,
                         fontSize: 16.sp,
                       ),
                     ),
@@ -128,6 +127,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             chatRoom.title,
                           ),
                           trailing: PopupMenuButton<int>(
+                            iconColor:
+                                Theme.of(context).textTheme.bodySmall?.color,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                             onSelected: (int result) async {
                               if (result == 1) {
                                 showDialog(
@@ -186,9 +188,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    const Icon(IconlyLight.edit),
+                                    Icon(
+                                      IconlyLight.edit,
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.color,
+                                    ),
                                     SizedBox(width: 10.w),
-                                    const Text('Rename'),
+                                    const AppText('Rename'),
                                   ],
                                 ),
                               ),
@@ -197,9 +205,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    const Icon(IconlyLight.delete),
+                                    Icon(
+                                      IconlyLight.delete,
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.color,
+                                    ),
                                     SizedBox(width: 10.w),
-                                    const Text('Delete'),
+                                    const AppText('Delete'),
                                   ],
                                 ),
                               ),
