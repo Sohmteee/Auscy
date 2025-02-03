@@ -5,8 +5,6 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
-import org.gradle.api.GradleException
-
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -17,7 +15,7 @@ if (localPropertiesFile.exists()) {
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+    throw new Exception("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
@@ -29,8 +27,6 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
-
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace = "com.sohmtee.auscy.app"
@@ -61,7 +57,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("C:\\Users\\Sohmtee\\Documents\\Coding Projects\\Flutter Projects\\apps\\mobile\\Auscy\\app\\android\\app\\auscy-key.jks")
+            storeFile file("../app/auscy-key.jks")             
             storePassword "password"
             keyAlias "auscy-key"
             keyPassword "password"
@@ -70,6 +66,9 @@ android {
 
     buildTypes {
         release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
     }

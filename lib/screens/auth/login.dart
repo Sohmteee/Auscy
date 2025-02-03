@@ -15,6 +15,7 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
@@ -40,7 +41,7 @@ class _SigninScreenState extends State<SigninScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(flex: 3),
+              Spacer(flex: 1),
               Row(
                 children: [
                   AppBoldText(

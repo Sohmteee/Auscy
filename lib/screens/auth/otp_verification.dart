@@ -132,16 +132,40 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     );
 
     try {
-      final user = await auth.signInWithCredential(credential);
+      final userCredentials = await auth.signInWithCredential(credential);
       log("User signed in successfully.");
-      log('$user');
+      log('$userCredentials');
       showTopSnackBar(
         Overlay.of(context),
         CustomSnackBar.success(
           message: 'User signed in successfully.',
         ),
       );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      );
+
+      if (userCredentials.user != null) {
+        var box = Hive.box('userBox');
+        box.put('uid', userCredentials.user?.uid);
+
+        await usersDB.doc(user!.uid).set({
+          'email': user!.email,
+          'name': user!.displayName,
+          'photoURL': user!.photoURL,
+          'uid': user!.uid,
+        }, SetOptions(merge: true));
+
+        Loader.hide(context);
+
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()));
+      }
     } catch (e) {
+      Loader.hide(context);
       log("Error signing in: $e");
       if (e is FirebaseAuthException) {
         showTopSnackBar(
@@ -158,8 +182,6 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
           ),
         );
       }
-    } finally {
-      Loader.hide(context);
     }
   }
 }

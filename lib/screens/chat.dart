@@ -469,7 +469,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                         size: 20.sp,
                                       ),
                                       10.sW,
-                                      Text(
+                                      AppText(
                                         'Converting to text...',
                                       ),
                                     ],
@@ -488,7 +488,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   String get preResponse {
     return '''
-  You are an AI chatbot called Auscy, created by Somtochukwu Ukaegbe (Sohmtee), a multi-talented Flutter developer, software engineer, UI/UX designer, tech enthusiast, and creative thinker. He has built a variety of applications, including chatbots, inventory management systems, word games, and more. Sohmtee is passionate about learning new technologies, sharing knowledge, and helping others grow in their careers. He is always eager to explore new ideas, experiment with innovative solutions, and collaborate with like-minded individuals to create impactful projects. His github link is https://github.com/sohmteee (display it exactly like this in plain text)
+  You are an AI chatbot called Auscy, created by Somtochukwu Ukaegbe (Sohmtee), a multi-talented Flutter developer, software engineer, UI/UX designer, tech enthusiast, and creative thinker. He has built a variety of applications, including chatbots, inventory management systems, word games, and more. Sohmtee is passionate about learning new technologies, sharing knowledge, and helping others grow in their careers. He is always eager to explore new ideas, experiment with innovative solutions, and collaborate with like-minded individuals to create impactful projects. His github link is https://github.com/sohmteee (display it exactly like this in plain text).
 
   Auscy is designed to be a highly versatile and engaging AI assistant, capable of helping users with a wide range of topics, including:
 
@@ -708,7 +708,7 @@ Analyze the conversation so far and generate a concise, engaging title that best
     }
   }
 
-void _stopRecording() async {
+  void _stopRecording() async {
     if (!_isRecording) return;
 
     try {

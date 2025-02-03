@@ -42,11 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    AppText(
                       'Logout',
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                      ),
+                      fontSize: 16.sp,
                     ),
                     10.sW,
                     Icon(IconlyLight.logout),

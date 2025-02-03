@@ -21,7 +21,6 @@ export 'package:auscy/providers/chatroom.dart';
 export 'package:auscy/screens/auth/login.dart';
 export 'package:auscy/screens/chat.dart';
 export 'package:auscy/screens/home.dart';
-export 'package:auscy/screens/sign_in.dart';
 
 // widgets
 export 'package:auscy/widgets/loader.dart';

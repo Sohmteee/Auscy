@@ -127,10 +127,12 @@ class _PhoneSignInScreenState extends State<PhoneSignInScreen> {
       BuildContext context, String phoneNumber) async {
     FirebaseAuth auth = FirebaseAuth.instance;
 
+    Loader.show(context);
     await auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
       timeout: const Duration(seconds: 60),
       verificationCompleted: (PhoneAuthCredential credential) async {
+        Loader.hide(context);
         await auth.signInWithCredential(credential);
         log("Phone number automatically verified and user signed in.");
         showTopSnackBar(
@@ -139,13 +141,19 @@ class _PhoneSignInScreenState extends State<PhoneSignInScreen> {
         );
       },
       verificationFailed: (FirebaseAuthException e) {
+        Loader.hide(context);
         log("Verification failed: ${e.message}");
         showTopSnackBar(
           Overlay.of(context),
-          CustomSnackBar.error(message: "Verification failed. Try again."),
+          CustomSnackBar.error(message: e.message!.split('.').first),
         );
       },
       codeSent: (String verificationId, int? resendToken) {
+        Loader.hide(context);
+        showTopSnackBar(
+          Overlay.of(context),
+          CustomSnackBar.success(message: "OTP sent successfully."),
+        );
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -157,6 +165,7 @@ class _PhoneSignInScreenState extends State<PhoneSignInScreen> {
         );
       },
       codeAutoRetrievalTimeout: (String verificationId) {
+        Loader.hide(context);
         log("Timeout. Verification ID: $verificationId");
         showTopSnackBar(
           Overlay.of(context),
