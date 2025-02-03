@@ -100,7 +100,7 @@ To get started with Auscy, follow the instructions below.
 ## 💎 What's New
 
 - **Light & Dark Mode**: Added automatic theme switching based on system settings.
-- **Voice Recognition**: Added transcription of voice messages into text using DeepSeek.
+- **Enhanced Speech-to-Text**: Accurately convert spoken words into text for seamless hands-free interaction.
 - **Context Awareness**: Improved context-aware responses based on conversation history.
 - **Error Handling**: Enhanced error handling for API failures and connectivity issues.
 
